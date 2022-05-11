@@ -1,0 +1,18 @@
+director:
+  image:
+    repository: atlas-matchmaking-director
+    pullPolicy: IfNotPresent
+
+matchfunction:
+  labels:
+    app: atlas-matchmaking
+    component: matchfunction
+  selectorLabels:
+    app: atlas-matchmaking
+    component: matchfunction
+  image:
+    repository: atlas-matchmaking-matchfunction
+    pullPolicy: IfNotPresent
+
+release:
+  name: local

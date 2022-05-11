@@ -1,0 +1,15 @@
+/**
+ * Read configs from meta tags if available, otherwise use the process.env injected from build.
+ *
+ * @param  (Object) Provides applcation configs.
+ */
+const configs = {
+  name: (): string => 'Scene Editor',
+  longName: (): string => 'Scene Editor',
+  SERVER_URL: `https://${globalThis.process.env['VITE_SERVER_HOST']}`,
+  APP_URL: `https://${globalThis.process.env['VITE_APP_HOST']}`,
+  FEATHERS_STORE_KEY: globalThis.process.env['VITE_FEATHERS_STORE_KEY'],
+  ROOT_REDIRECT: globalThis.process.env['VITE_ROOT_REDIRECT']
+}
+
+export default configs

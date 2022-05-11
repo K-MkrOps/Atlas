@@ -1,0 +1,5 @@
+charts:
+  - name: atlas
+    repo:
+      git: atlas/xrsocial-ops
+      published: https://helm.atlasfoundation.io

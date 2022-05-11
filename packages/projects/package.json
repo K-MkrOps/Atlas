@@ -1,0 +1,25 @@
+{
+  "name": "@atlas/projects",
+  "version": "0.5.3",
+  "main": "index.ts",
+  "description": "",
+  "scripts": {
+    "update-name-gh-package": "node scripts/update-name-gh-package.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AtlasFoundation/Atlas.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AtlasFoundation/Atlas/issues"
+  },
+  "homepage": "https://github.com/AtlasFoundation/Atlas#readme",
+  "dependencies": {
+    "@atlas/engine": "^0.5.3"
+  }
+}

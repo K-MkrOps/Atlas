@@ -1,0 +1,9 @@
+{
+  "name": "@atlas/ops",
+  "version": "0.5.3",
+  "private": true,
+  "description": "Dev Ops tooling for Atlas",
+  "repository": "http://github.com/AtlasFoundation/Atlas",
+  "author": "Atlas",
+  "license": "MIT"
+}

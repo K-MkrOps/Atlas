@@ -1,0 +1,17 @@
+{{- if (.Values.analytics).enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "atlas.analytics.fullname" . }}
+  labels:
+    {{- include "atlas.analytics.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.analytics.service.type }}
+  ports:
+    - port: {{ .Values.analytics.service.port }}
+      targetPort: {{ .Values.analytics.service.port }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "atlas.analytics.selectorLabels" . | nindent 4 }}
+{{- end -}}

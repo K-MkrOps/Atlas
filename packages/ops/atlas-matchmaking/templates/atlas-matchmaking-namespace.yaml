@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ include "atlas.matchmaking-namespace" . }}
+  labels:
+    app: {{ include "atlas.matchmaking-namespace" . }}
+    release: {{ .Release.Name }}
