@@ -15,4 +15,4 @@ for more details.
 
 
 ## License
-[MIT](LICENSE) - Copyright (c) 2021-2022 AtlasFoundation
+[MIT](LICENSE) - Copyright (c) 2021-2022 Atlas Foundation
