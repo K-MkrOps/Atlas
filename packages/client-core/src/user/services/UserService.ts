@@ -1,9 +1,9 @@
 import { Paginated } from '@feathersjs/feathers'
 import { createState, none, useState } from '@speigg/hookstate'
 
-import { Relationship } from '@atlas/common/src/interfaces/Relationship'
-import { RelationshipSeed } from '@atlas/common/src/interfaces/Relationship'
-import { User } from '@atlas/common/src/interfaces/User'
+import { Relationship } from '@atlasfoundation/common/src/interfaces/Relationship'
+import { RelationshipSeed } from '@atlasfoundation/common/src/interfaces/Relationship'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
 
 import { client } from '../../feathers'
 import { store, useDispatch } from '../../store'

@@ -1,10 +1,10 @@
 import { Matrix3, Matrix4, Quaternion, Vector3 } from 'three'
 
-import { useDispatch } from '@atlas/client-core/src/store'
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { World } from '@atlas/engine/src/ecs/classes/World'
-import { defineQuery, getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { Object3DComponent } from '@atlas/engine/src/scene/components/Object3DComponent'
+import { useDispatch } from '@atlasfoundation/client-core/src/store'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import { defineQuery, getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
 
 import { EditorCameraComponent } from '../classes/EditorCameraComponent'
 import { FlyControlComponent } from '../classes/FlyControlComponent'

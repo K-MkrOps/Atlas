@@ -8,7 +8,7 @@ import hooks from './channel.hooks'
 import createModel from './channel.model'
 
 // Add this service to the service type index
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     channel: Channel
   }

@@ -1,8 +1,8 @@
 import assert, { strictEqual } from 'assert'
 import matches from 'ts-matches'
 
-import { UserId } from '@atlas/common/src/interfaces/UserId'
-import ActionFunctions, { ActionRecipients } from '@atlas/hyperflux/functions/ActionFunctions'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import ActionFunctions, { ActionRecipients } from '@atlasfoundation/hyperflux/functions/ActionFunctions'
 
 import { Engine } from '../../ecs/classes/Engine'
 import { createEngine } from '../../initializeEngine'

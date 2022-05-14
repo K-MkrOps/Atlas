@@ -1,26 +1,26 @@
-import type { ProjectConfigInterface } from '@atlas/projects/ProjectConfigInterface'
+import type { ProjectConfigInterface } from '@atlasfoundation/projects/ProjectConfigInterface'
 
 const config: ProjectConfigInterface = {
   onEvent: './projectEventHooks.ts',
-  thumbnail: '/static/atlas_thumbnail.jpg',
+  thumbnail: './public/default.jpeg',
   routes: {
     '/': {
-      component: () => import('@atlas/client/src/pages/index'),
+      component: () => import('@atlasfoundation/client/src/pages/index'),
       props: {
         exact: true
       }
     },
     '/admin': {
-      component: () => import('@atlas/client-core/src/admin/adminRoutes')
+      component: () => import('@atlasfoundation/client-core/src/admin/adminRoutes')
     },
     '/location': {
-      component: () => import('@atlas/client/src/pages/location/location')
+      component: () => import('@atlasfoundation/client/src/pages/location/location')
     },
     '/auth': {
-      component: () => import('@atlas/client/src/pages/auth/authRoutes')
+      component: () => import('@atlasfoundation/client/src/pages/auth/authRoutes')
     },
     '/editor': {
-      component: () => import('@atlas/client/src/pages/editor/editor')
+      component: () => import('@atlasfoundation/client/src/pages/editor/editor')
     }
   },
   services: undefined,

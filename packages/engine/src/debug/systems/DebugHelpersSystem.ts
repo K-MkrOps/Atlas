@@ -12,7 +12,7 @@ import {
   Vector3
 } from 'three'
 
-import { addActionReceptor } from '@atlas/hyperflux'
+import { addActionReceptor } from '@atlasfoundation/hyperflux'
 
 import { AvatarComponent } from '../../avatar/components/AvatarComponent'
 import { Engine } from '../../ecs/classes/Engine'

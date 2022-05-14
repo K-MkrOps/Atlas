@@ -1,6 +1,6 @@
-import { SpawnTestBot, TestBot } from '@atlas/common/src/interfaces/TestBot'
-import config from '@atlas/server-core/src/appconfig'
-import logger from '@atlas/server-core/src/logger'
+import { SpawnTestBot, TestBot } from '@atlasfoundation/common/src/interfaces/TestBot'
+import config from '@atlasfoundation/server-core/src/appconfig'
+import logger from '@atlasfoundation/server-core/src/logger'
 
 import { Application } from '../../../declarations'
 

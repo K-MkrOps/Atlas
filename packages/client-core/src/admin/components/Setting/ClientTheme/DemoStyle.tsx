@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ThemeOptions } from '@atlas/common/src/interfaces/ClientSetting'
+import { ThemeOptions } from '@atlasfoundation/common/src/interfaces/ClientSetting'
 
 interface DemoStyleProps {
   theme: ThemeOptions

@@ -1,10 +1,10 @@
 import React, { Fragment, Suspense, useEffect } from 'react'
 import { Redirect, Switch } from 'react-router-dom'
 
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { EngineActions } from '@atlas/engine/src/ecs/classes/EngineService'
-import { initializeCoreSystems, initializeSceneSystems } from '@atlas/engine/src/initializeEngine'
-import { dispatchAction } from '@atlas/hyperflux'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { EngineActions } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { initializeCoreSystems, initializeSceneSystems } from '@atlasfoundation/engine/src/initializeEngine'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import CircularProgress from '@mui/material/CircularProgress'
 

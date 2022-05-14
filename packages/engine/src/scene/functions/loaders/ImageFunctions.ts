@@ -10,7 +10,7 @@ import {
   sRGBEncoding
 } from 'three'
 
-import { ComponentJson } from '@atlas/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { AssetLoader } from '../../../assets/classes/AssetLoader'
 import { AssetClass } from '../../../assets/enum/AssetClass'

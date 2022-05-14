@@ -1,7 +1,7 @@
 import { createState, useState } from '@speigg/hookstate'
 
-import { AvatarInterface } from '@atlas/common/src/interfaces/AvatarInterface'
-import { AvatarResult } from '@atlas/common/src/interfaces/AvatarResult'
+import { AvatarInterface } from '@atlasfoundation/common/src/interfaces/AvatarInterface'
+import { AvatarResult } from '@atlasfoundation/common/src/interfaces/AvatarResult'
 
 import { client } from '../../feathers'
 import { store, useDispatch } from '../../store'

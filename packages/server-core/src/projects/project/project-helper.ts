@@ -1,7 +1,7 @@
 import appRootPath from 'app-root-path'
 import path from 'path'
 
-import { ProjectConfigInterface, ProjectEventHooks } from '@atlas/projects/ProjectConfigInterface'
+import { ProjectConfigInterface, ProjectEventHooks } from '@atlasfoundation/projects/ProjectConfigInterface'
 
 import { Application } from '../../../declarations'
 import config from '../../appconfig'
@@ -67,7 +67,7 @@ export const onProjectEvent = async (
 
 export const getProjectConfig = async (projectName: string): Promise<ProjectConfigInterface> => {
   try {
-    return (await import(`@atlas/projects/projects/${projectName}/atlas.config.ts`)).default
+    return (await import(`@atlasfoundation/projects/projects/${projectName}/atlas.config.ts`)).default
   } catch (e) {
     logger.error(
       e,

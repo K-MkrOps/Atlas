@@ -1,8 +1,8 @@
 import { Box3, Matrix3, Sphere, Spherical, Vector3 } from 'three'
 
-import { World } from '@atlas/engine/src/ecs/classes/World'
-import { defineQuery, getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { Object3DComponent } from '@atlas/engine/src/scene/components/Object3DComponent'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import { defineQuery, getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
 
 import { EditorCameraComponent } from '../classes/EditorCameraComponent'
 

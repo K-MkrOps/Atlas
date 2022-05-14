@@ -1,9 +1,9 @@
 import React, { ChangeEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { PostprocessingComponent } from '@atlas/engine/src/scene/components/PostprocessingComponent'
-import { Effects } from '@atlas/engine/src/scene/constants/PostProcessing'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { PostprocessingComponent } from '@atlasfoundation/engine/src/scene/components/PostprocessingComponent'
+import { Effects } from '@atlasfoundation/engine/src/scene/constants/PostProcessing'
 
 import LooksIcon from '@mui/icons-material/Looks'
 import Checkbox from '@mui/material/Checkbox'

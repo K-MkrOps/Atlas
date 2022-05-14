@@ -6,7 +6,7 @@ import hooks from './instance-authorized-user.hooks'
 import createModel from './instance-authorized-user.model'
 
 // Add this service to the service type index
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'instance-authorized-user': InstanceAuthorizedUser
   }

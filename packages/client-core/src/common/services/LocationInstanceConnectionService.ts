@@ -1,12 +1,12 @@
 import { Paginated } from '@feathersjs/feathers'
 import { createState, useState } from '@speigg/hookstate'
 
-import { Instance } from '@atlas/common/src/interfaces/Instance'
-import { InstanceServerProvisionResult } from '@atlas/common/src/interfaces/InstanceServerProvisionResult'
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { EngineActions } from '@atlas/engine/src/ecs/classes/EngineService'
-import { Network } from '@atlas/engine/src/networking/classes/Network'
-import { dispatchAction } from '@atlas/hyperflux'
+import { Instance } from '@atlasfoundation/common/src/interfaces/Instance'
+import { InstanceServerProvisionResult } from '@atlasfoundation/common/src/interfaces/InstanceServerProvisionResult'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { EngineActions } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { client } from '../../feathers'
 import { accessLocationState } from '../../social/services/LocationService'

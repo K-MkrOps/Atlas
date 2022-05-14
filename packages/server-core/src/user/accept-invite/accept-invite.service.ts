@@ -8,7 +8,7 @@ import hooks from './accept-invite.hooks'
 /**
  * accept invite service
  */
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'a-i': AcceptInvite
   }

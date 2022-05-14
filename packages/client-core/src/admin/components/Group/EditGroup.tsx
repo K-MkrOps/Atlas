@@ -2,7 +2,7 @@ import _ from 'lodash'
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Group } from '@atlas/common/src/interfaces/Group'
+import { Group } from '@atlasfoundation/common/src/interfaces/Group'
 
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'

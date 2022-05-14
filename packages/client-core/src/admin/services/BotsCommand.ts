@@ -1,6 +1,6 @@
 import { createState, useState } from '@speigg/hookstate'
 
-import { BotCommands, CreateBotCammand } from '@atlas/common/src/interfaces/AdminBot'
+import { BotCommands, CreateBotCammand } from '@atlasfoundation/common/src/interfaces/AdminBot'
 
 import { client } from '../../feathers'
 import { useDispatch } from '../../store'

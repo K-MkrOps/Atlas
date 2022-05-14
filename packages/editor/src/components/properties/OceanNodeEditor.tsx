@@ -1,10 +1,10 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useEngineState } from '@atlas/engine/src/ecs/classes/EngineService'
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { ErrorComponent } from '@atlas/engine/src/scene/components/ErrorComponent'
-import { OceanComponent } from '@atlas/engine/src/scene/components/OceanComponent'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { ErrorComponent } from '@atlasfoundation/engine/src/scene/components/ErrorComponent'
+import { OceanComponent } from '@atlasfoundation/engine/src/scene/components/OceanComponent'
 
 import WaterIcon from '@mui/icons-material/Water'
 

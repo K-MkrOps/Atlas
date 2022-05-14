@@ -3,7 +3,7 @@ import { Magiclink } from './magic-link.class'
 import magicLinkDocs from './magic-link.docs'
 import hooks from './magic-link.hooks'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'magic-link': Magiclink
   }

@@ -1,7 +1,7 @@
 import { Paginated, Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { AdminAuthSetting as AdminAuthSettingInterface } from '@atlas/common/src/interfaces/AdminAuthSetting'
+import { AdminAuthSetting as AdminAuthSettingInterface } from '@atlasfoundation/common/src/interfaces/AdminAuthSetting'
 
 import { Application } from '../../../declarations'
 import config from '../../appconfig'

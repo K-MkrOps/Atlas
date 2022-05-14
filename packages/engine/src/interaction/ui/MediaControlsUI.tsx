@@ -1,7 +1,7 @@
 import { createState } from '@speigg/hookstate'
 import React, { useEffect, useState } from 'react'
 
-import { useXRUIState } from '@atlas/engine/src/xrui/functions/useXRUIState'
+import { useXRUIState } from '@atlasfoundation/engine/src/xrui/functions/useXRUIState'
 
 import { Pause, PlayArrow } from '@mui/icons-material'
 

@@ -14,7 +14,7 @@ import {
   Vector3
 } from 'three'
 
-import { Deg2Rad, normalizeRange, rotate } from '@atlas/common/src/utils/mathUtils'
+import { Deg2Rad, normalizeRange, rotate } from '@atlasfoundation/common/src/utils/mathUtils'
 
 import checkPositionIsValid from '../common/functions/checkPositionIsValid'
 import { Engine } from '../ecs/classes/Engine'

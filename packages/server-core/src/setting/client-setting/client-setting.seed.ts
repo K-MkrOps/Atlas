@@ -1,4 +1,4 @@
-import defaultThemeSettings from '@atlas/common/src/constants/DefaultThemeSettings'
+import defaultThemeSettings from '@atlasfoundation/common/src/constants/DefaultThemeSettings'
 
 export const clientSeed = {
   path: 'client-setting',

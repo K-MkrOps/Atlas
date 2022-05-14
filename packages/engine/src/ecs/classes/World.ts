@@ -1,9 +1,9 @@
 import * as bitecs from 'bitecs'
 
-import { NetworkId } from '@atlas/common/src/interfaces/NetworkId'
-import { ComponentJson } from '@atlas/common/src/interfaces/SceneInterface'
-import { UserId } from '@atlas/common/src/interfaces/UserId'
-import { createHyperStore } from '@atlas/hyperflux'
+import { NetworkId } from '@atlasfoundation/common/src/interfaces/NetworkId'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { createHyperStore } from '@atlasfoundation/hyperflux'
 
 import { AvatarComponent } from '../../avatar/components/AvatarComponent'
 import { SceneLoaderType } from '../../common/constants/PrefabFunctionType'

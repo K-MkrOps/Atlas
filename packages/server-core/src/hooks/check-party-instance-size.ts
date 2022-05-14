@@ -2,8 +2,8 @@ import { HookContext, Paginated } from '@feathersjs/feathers'
 import _ from 'lodash'
 import Sequelize, { Op } from 'sequelize'
 
-import { Instance } from '@atlas/common/src/interfaces/Instance'
-import { PartyUser } from '@atlas/common/src/interfaces/PartyUser'
+import { Instance } from '@atlasfoundation/common/src/interfaces/Instance'
+import { PartyUser } from '@atlasfoundation/common/src/interfaces/PartyUser'
 
 import { Application } from '../../declarations'
 import config from '../appconfig'

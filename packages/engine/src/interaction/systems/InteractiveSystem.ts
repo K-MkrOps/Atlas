@@ -1,6 +1,6 @@
 import { Not } from 'bitecs'
 
-import { dispatchAction } from '@atlas/hyperflux'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { AudioComponent } from '../../audio/components/AudioComponent'
 import { AvatarComponent } from '../../avatar/components/AvatarComponent'

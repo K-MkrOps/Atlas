@@ -1,8 +1,8 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { MediaComponent } from '@atlas/engine/src/scene/components/MediaComponent'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { MediaComponent } from '@atlasfoundation/engine/src/scene/components/MediaComponent'
 
 import BooleanInput from '../inputs/BooleanInput'
 import InputGroup from '../inputs/InputGroup'

@@ -1,4 +1,4 @@
-import { ComponentJson } from '@atlas/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { AssetLoader } from '../../../assets/classes/AssetLoader'
 import { GLTF } from '../../../assets/loaders/gltf/GLTFLoader'

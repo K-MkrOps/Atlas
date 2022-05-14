@@ -2,8 +2,8 @@ import { detect, detectOS } from 'detect-browser'
 import _ from 'lodash'
 import { AudioListener, PerspectiveCamera, Scene } from 'three'
 
-import { addActionReceptor, dispatchAction, registerState } from '@atlas/hyperflux'
-import ActionFunctions from '@atlas/hyperflux/functions/ActionFunctions'
+import { addActionReceptor, dispatchAction, registerState } from '@atlasfoundation/hyperflux'
+import ActionFunctions from '@atlasfoundation/hyperflux/functions/ActionFunctions'
 
 import { getGLTFLoader } from './assets/classes/AssetLoader'
 import { initializeKTX2Loader } from './assets/functions/createGLTFLoader'

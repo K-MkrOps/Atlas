@@ -1,8 +1,8 @@
 import { Paginated } from '@feathersjs/feathers'
 import { createState, useState } from '@speigg/hookstate'
 
-import { User } from '@atlas/common/src/interfaces/User'
-import { UserRole } from '@atlas/common/src/interfaces/UserRole'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
+import { UserRole } from '@atlasfoundation/common/src/interfaces/UserRole'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'

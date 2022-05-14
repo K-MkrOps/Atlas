@@ -1,5 +1,5 @@
-import { World } from '@atlas/engine/src/ecs/classes/World'
-import { defineQuery, getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import { defineQuery, getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 
 import { InputComponent } from '../classes/InputComponent'
 

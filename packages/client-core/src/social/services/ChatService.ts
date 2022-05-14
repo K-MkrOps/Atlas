@@ -1,15 +1,15 @@
 import { Paginated } from '@feathersjs/feathers'
 import { createState, none, useState } from '@speigg/hookstate'
 
-import { Channel } from '@atlas/common/src/interfaces/Channel'
-import { Group } from '@atlas/common/src/interfaces/Group'
-import { Instance } from '@atlas/common/src/interfaces/Instance'
-import { Message } from '@atlas/common/src/interfaces/Message'
-import { Party } from '@atlas/common/src/interfaces/Party'
-import { User } from '@atlas/common/src/interfaces/User'
-import { handleCommand, isCommand } from '@atlas/engine/src/common/functions/commandHandler'
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { isPlayerLocal } from '@atlas/engine/src/networking/utils/isPlayerLocal'
+import { Channel } from '@atlasfoundation/common/src/interfaces/Channel'
+import { Group } from '@atlasfoundation/common/src/interfaces/Group'
+import { Instance } from '@atlasfoundation/common/src/interfaces/Instance'
+import { Message } from '@atlasfoundation/common/src/interfaces/Message'
+import { Party } from '@atlasfoundation/common/src/interfaces/Party'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
+import { handleCommand, isCommand } from '@atlasfoundation/engine/src/common/functions/commandHandler'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { isPlayerLocal } from '@atlasfoundation/engine/src/networking/utils/isPlayerLocal'
 
 import { AlertService } from '../../common/services/AlertService'
 import { accessLocationInstanceConnectionState } from '../../common/services/LocationInstanceConnectionService'
@@ -26,7 +26,7 @@ interface ChatMessageProps {
 
 //State
 
-// TODO: find existing interfaces for these or move these to @atlas/common/src/interfaces
+// TODO: find existing interfaces for these or move these to @atlasfoundation/common/src/interfaces
 const state = createState({
   channels: {
     channels: [] as Channel[],

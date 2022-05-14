@@ -8,7 +8,7 @@ import hooks from './invite.hooks'
 import createModel from './invite.model'
 
 // Add this service to the service type index
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     invite: Invite
   }

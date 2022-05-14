@@ -2,8 +2,8 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Quaternion, Vector3 } from 'three'
 
-import { updateCameraTransform } from '@atlas/engine/src/scene/functions/loaders/ScenePreviewCameraFunctions'
-import { TransformComponent } from '@atlas/engine/src/transform/components/TransformComponent'
+import { updateCameraTransform } from '@atlasfoundation/engine/src/scene/functions/loaders/ScenePreviewCameraFunctions'
+import { TransformComponent } from '@atlasfoundation/engine/src/transform/components/TransformComponent'
 
 import CameraAltIcon from '@mui/icons-material/CameraAlt'
 

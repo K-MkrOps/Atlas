@@ -1,4 +1,4 @@
-import { ChannelType } from '@atlas/common/src/interfaces/Channel'
+import { ChannelType } from '@atlasfoundation/common/src/interfaces/Channel'
 
 // Types borrowed from Mediasoup
 

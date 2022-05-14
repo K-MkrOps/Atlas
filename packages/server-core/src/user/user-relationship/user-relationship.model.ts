@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { UserRelationshipInterface } from '@atlas/common/src/dbmodels/UserRelationship'
+import { UserRelationshipInterface } from '@atlasfoundation/common/src/dbmodels/UserRelationship'
 
 import { Application } from '../../../declarations'
 

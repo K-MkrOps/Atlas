@@ -1,4 +1,3 @@
-
 export enum XR_FOLLOW_MODE {
   HEAD,
   CONTROLLER

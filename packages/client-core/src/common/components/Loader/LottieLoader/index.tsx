@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { randomNumber } from '@atlas/engine/src/common/functions/MathRandomFunctions'
+import { randomNumber } from '@atlasfoundation/engine/src/common/functions/MathRandomFunctions'
 
 import styles from '../loader.module.scss'
 

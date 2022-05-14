@@ -1,5 +1,5 @@
 {
-  "name": "@atlas/projects",
+  "name": "@atlasfoundation/projects",
   "version": "0.5.3",
   "main": "index.ts",
   "description": "",
@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/AtlasFoundation/Atlas#readme",
   "dependencies": {
-    "@atlas/engine": "^0.5.3"
+    "@atlasfoundation/engine": "^0.5.3"
   }
 }

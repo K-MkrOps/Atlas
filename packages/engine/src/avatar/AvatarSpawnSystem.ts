@@ -1,7 +1,7 @@
 import { Quaternion, Vector3 } from 'three'
 import matches from 'ts-matches'
 
-import { addActionReceptor, dispatchAction } from '@atlas/hyperflux'
+import { addActionReceptor, dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { AudioTagComponent } from '../audio/components/AudioTagComponent'
 import { FollowCameraComponent, FollowCameraDefaultValues } from '../camera/components/FollowCameraComponent'

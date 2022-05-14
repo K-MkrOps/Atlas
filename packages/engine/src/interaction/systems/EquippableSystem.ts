@@ -1,6 +1,6 @@
 import matches from 'ts-matches'
 
-import { addActionReceptor } from '@atlas/hyperflux'
+import { addActionReceptor } from '@atlasfoundation/hyperflux'
 
 import { Engine } from '../../ecs/classes/Engine'
 import { World } from '../../ecs/classes/World'

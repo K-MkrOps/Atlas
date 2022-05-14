@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { ScopeTypeInterface } from '@atlas/common/src/dbmodels/ScopeType'
+import { ScopeTypeInterface } from '@atlasfoundation/common/src/dbmodels/ScopeType'
 
 import { Application } from '../../../declarations'
 

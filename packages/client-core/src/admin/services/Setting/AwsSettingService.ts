@@ -1,7 +1,7 @@
 import { Paginated } from '@feathersjs/feathers'
 import { createState, useState } from '@speigg/hookstate'
 
-import { AdminAwsSetting, PatchAwsSetting } from '@atlas/common/src/interfaces/AdminAwsSetting'
+import { AdminAwsSetting, PatchAwsSetting } from '@atlasfoundation/common/src/interfaces/AdminAwsSetting'
 
 import { AlertService } from '../../../common/services/AlertService'
 import { client } from '../../../feathers'

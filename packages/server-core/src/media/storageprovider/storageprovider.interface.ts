@@ -1,4 +1,4 @@
-import { FileContentType } from '@atlas/common/src/interfaces/FileContentType'
+import { FileContentType } from '@atlasfoundation/common/src/interfaces/FileContentType'
 
 export interface PutObjectParams {
   isDirectory?: boolean

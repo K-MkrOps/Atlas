@@ -1,4 +1,4 @@
-import restrictUserRole from '@atlas/server-core/src/hooks/restrict-user-role'
+import restrictUserRole from '@atlasfoundation/server-core/src/hooks/restrict-user-role'
 
 import { Application } from '../../../declarations'
 import authenticate from '../../hooks/authenticate'
@@ -9,7 +9,7 @@ import projectDocs from './project.docs'
 import hooks from './project.hooks'
 import createModel from './project.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     project: Project
     'project-build': any

@@ -12,14 +12,14 @@ import {
   Vector3
 } from 'three'
 
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { Entity } from '@atlas/engine/src/ecs/classes/Entity'
-import { World } from '@atlas/engine/src/ecs/classes/World'
-import { defineQuery, getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { getEntityNodeArrayFromEntities } from '@atlas/engine/src/ecs/functions/EntityTreeFunctions'
-import InfiniteGridHelper from '@atlas/engine/src/scene/classes/InfiniteGridHelper'
-import TransformGizmo from '@atlas/engine/src/scene/classes/TransformGizmo'
-import { Object3DComponent } from '@atlas/engine/src/scene/components/Object3DComponent'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import { defineQuery, getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { getEntityNodeArrayFromEntities } from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import InfiniteGridHelper from '@atlasfoundation/engine/src/scene/classes/InfiniteGridHelper'
+import TransformGizmo from '@atlasfoundation/engine/src/scene/classes/TransformGizmo'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
 import {
   SnapMode,
   TransformAxis,
@@ -28,8 +28,8 @@ import {
   TransformModeType,
   TransformPivot,
   TransformPivotType
-} from '@atlas/engine/src/scene/constants/transformConstants'
-import { TransformSpace } from '@atlas/engine/src/scene/constants/transformConstants'
+} from '@atlasfoundation/engine/src/scene/constants/transformConstants'
+import { TransformSpace } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import { EditorCameraComponent, EditorCameraComponentType } from '../classes/EditorCameraComponent'
 import { EditorControlComponent } from '../classes/EditorControlComponent'

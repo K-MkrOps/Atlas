@@ -1,4 +1,4 @@
-import { defineAction } from '@atlas/hyperflux'
+import { defineAction } from '@atlasfoundation/hyperflux'
 
 import { matchesWeightsParameters } from '../../avatar/animation/Util'
 import {

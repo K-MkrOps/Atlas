@@ -2,16 +2,16 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Color } from 'three'
 
-import { getDirectoryFromUrl } from '@atlas/common/src/utils/getDirectoryFromUrl'
-import { useEngineState } from '@atlas/engine/src/ecs/classes/EngineService'
-import { getComponent, hasComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { ErrorComponent } from '@atlas/engine/src/scene/components/ErrorComponent'
+import { getDirectoryFromUrl } from '@atlasfoundation/common/src/utils/getDirectoryFromUrl'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { getComponent, hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { ErrorComponent } from '@atlasfoundation/engine/src/scene/components/ErrorComponent'
 import {
   SkyboxComponent,
   SkyboxComponentType,
   SkyBoxShaderProps
-} from '@atlas/engine/src/scene/components/SkyboxComponent'
-import { SkyTypeEnum } from '@atlas/engine/src/scene/constants/SkyTypeEnum'
+} from '@atlasfoundation/engine/src/scene/components/SkyboxComponent'
+import { SkyTypeEnum } from '@atlasfoundation/engine/src/scene/constants/SkyTypeEnum'
 
 import CloudIcon from '@mui/icons-material/Cloud'
 

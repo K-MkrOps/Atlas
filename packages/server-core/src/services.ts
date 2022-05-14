@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { ProjectConfigInterface } from '@atlas/projects/ProjectConfigInterface'
+import { ProjectConfigInterface } from '@atlasfoundation/projects/ProjectConfigInterface'
 
 import { Application } from '../declarations'
 import AnalyticsServices from './analytics/services'

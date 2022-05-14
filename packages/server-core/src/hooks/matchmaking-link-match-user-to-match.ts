@@ -1,6 +1,6 @@
 import { Hook, HookContext } from '@feathersjs/feathers'
 
-import { OpenMatchTicketAssignment } from '@atlas/matchmaking/src/interfaces'
+import { OpenMatchTicketAssignment } from '@atlasfoundation/matchmaking/src/interfaces'
 
 import logger from '../logger'
 

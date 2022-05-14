@@ -1,7 +1,7 @@
 import React, { useImperativeHandle, useState } from 'react'
 import styled from 'styled-components'
 
-import { onWindowResize } from '@atlas/client-core/src/user/components/UserMenu/menus/helperFunctions'
+import { onWindowResize } from '@atlasfoundation/client-core/src/user/components/UserMenu/menus/helperFunctions'
 
 import { AudioPreviewPanel } from './AssetPreviewPanels/AudioPreviewPanel'
 import { ImagePreviewPanel } from './AssetPreviewPanels/ImagePreviewPanel'

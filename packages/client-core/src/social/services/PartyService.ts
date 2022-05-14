@@ -1,14 +1,14 @@
 import { Paginated } from '@feathersjs/feathers'
 // TODO: Reenable me! But decoupled so we don't need to import this lib
-// import { endVideoChat } from '@atlas/client-networking/src/transports/SocketWebRTCClientFunctions';
+// import { endVideoChat } from '@atlasfoundation/client-networking/src/transports/SocketWebRTCClientFunctions';
 import { createState, useState } from '@speigg/hookstate'
 import i18n from 'i18next'
 import _ from 'lodash'
 
-import { Channel } from '@atlas/common/src/interfaces/Channel'
-import { Party } from '@atlas/common/src/interfaces/Party'
-import { PartyUser } from '@atlas/common/src/interfaces/PartyUser'
-import { User } from '@atlas/common/src/interfaces/User'
+import { Channel } from '@atlasfoundation/common/src/interfaces/Channel'
+import { Party } from '@atlasfoundation/common/src/interfaces/Party'
+import { PartyUser } from '@atlasfoundation/common/src/interfaces/PartyUser'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
 
 import { AlertService } from '../../common/services/AlertService'
 import { accessLocationInstanceConnectionState } from '../../common/services/LocationInstanceConnectionService'

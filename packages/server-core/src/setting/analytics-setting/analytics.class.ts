@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { SettingAnalytics as SettingAnalyticsInterface } from '@atlas/common/src/interfaces/SettingAnalytics'
+import { SettingAnalytics as SettingAnalyticsInterface } from '@atlasfoundation/common/src/interfaces/SettingAnalytics'
 
 import { Application } from '../../../declarations'
 

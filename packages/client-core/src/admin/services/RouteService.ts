@@ -1,7 +1,7 @@
 import { Paginated } from '@feathersjs/feathers'
 import { createState, useState } from '@speigg/hookstate'
 
-import { InstalledRoutesInterface } from '@atlas/common/src/interfaces/Route'
+import { InstalledRoutesInterface } from '@atlasfoundation/common/src/interfaces/Route'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'

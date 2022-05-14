@@ -1,5 +1,5 @@
-import { EntityTreeNode } from '@atlas/engine/src/ecs/classes/EntityTree'
-import { findIndexOfEntityNode } from '@atlas/engine/src/ecs/functions/EntityTreeFunctions'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { findIndexOfEntityNode } from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
 
 import traverseEarlyOut from './traverseEarlyOut'
 

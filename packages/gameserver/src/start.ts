@@ -4,11 +4,11 @@ import fs from 'fs'
 import https from 'https'
 import psList from 'ps-list'
 
-import { pipe } from '@atlas/common/src/utils/pipe'
-import { Network } from '@atlas/engine/src/networking/classes/Network'
-import '@atlas/engine/src/patchEngineNode'
-import { Application } from '@atlas/server-core/declarations'
-import config from '@atlas/server-core/src/appconfig'
+import { pipe } from '@atlasfoundation/common/src/utils/pipe'
+import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
+import '@atlasfoundation/engine/src/patchEngineNode'
+import { Application } from '@atlasfoundation/server-core/declarations'
+import config from '@atlasfoundation/server-core/src/appconfig'
 import {
   configureK8s,
   configureOpenAPI,
@@ -16,8 +16,8 @@ import {
   configureSocketIO,
   createFeathersExpressApp,
   serverPipe
-} from '@atlas/server-core/src/createApp'
-import logger from '@atlas/server-core/src/logger'
+} from '@atlasfoundation/server-core/src/createApp'
+import logger from '@atlasfoundation/server-core/src/logger'
 
 import channels from './channels'
 import { ServerTransportHandler, SocketWebRTCServerTransport } from './SocketWebRTCServerTransport'

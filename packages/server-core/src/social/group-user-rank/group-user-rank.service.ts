@@ -4,7 +4,7 @@ import groupUserRankDocs from './group-user-rank.docs'
 import hooks from './group-user-rank.hooks'
 import createModel from './group-user-rank.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'group-user-rank': GroupUserRank
   }

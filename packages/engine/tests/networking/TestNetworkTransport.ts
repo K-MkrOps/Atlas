@@ -1,5 +1,5 @@
-import { UserId } from '@atlas/common/src/interfaces/UserId'
-import { Action } from '@atlas/hyperflux/functions/ActionFunctions'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { Action } from '@atlasfoundation/hyperflux/functions/ActionFunctions'
 
 import { NetworkTransportHandler } from '../../src/networking/classes/Network'
 import { NetworkTransport } from '../../src/networking/interfaces/NetworkTransport'

@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { InstanceAuthorizedUser as InstanceAuthorizedUserInterface } from '@atlas/common/src/interfaces/InstanceAuthorizedUser'
+import { InstanceAuthorizedUser as InstanceAuthorizedUserInterface } from '@atlasfoundation/common/src/interfaces/InstanceAuthorizedUser'
 
 import { Application } from '../../../declarations'
 

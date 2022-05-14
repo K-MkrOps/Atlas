@@ -1,8 +1,8 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { HemisphereLightComponent } from '@atlas/engine/src/scene/components/HemisphereLightComponent'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { HemisphereLightComponent } from '@atlasfoundation/engine/src/scene/components/HemisphereLightComponent'
 
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser'
 

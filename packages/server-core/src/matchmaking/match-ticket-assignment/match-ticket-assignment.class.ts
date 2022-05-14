@@ -1,8 +1,8 @@
 import { BadRequest, NotFound } from '@feathersjs/errors'
 import { Id, NullableId, Params, ServiceMethods } from '@feathersjs/feathers'
 
-import { getTicketsAssignment } from '@atlas/matchmaking/src/functions'
-import { OpenMatchTicketAssignment } from '@atlas/matchmaking/src/interfaces'
+import { getTicketsAssignment } from '@atlasfoundation/matchmaking/src/functions'
+import { OpenMatchTicketAssignment } from '@atlasfoundation/matchmaking/src/interfaces'
 
 import { Application } from '../../../declarations'
 import config from '../../appconfig'

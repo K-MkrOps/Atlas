@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { accessEngineState } from '@atlas/engine/src/ecs/classes/EngineService'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { accessEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
 
 import PauseIcon from '@mui/icons-material/Pause'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'

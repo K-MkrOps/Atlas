@@ -3,8 +3,8 @@ import appRootPath from 'app-root-path'
 import fs from 'fs'
 import path from 'path'
 
-import { SceneData, SceneJson } from '@atlas/common/src/interfaces/SceneInterface'
-import defaultSceneSeed from '@atlas/projects/default-project/default.scene.json'
+import { SceneData, SceneJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import defaultSceneSeed from '@atlasfoundation/projects/default-project/default.scene.json'
 
 import { Application } from '../../../declarations'
 import logger from '../../logger'

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { store } from '@atlas/client-core/src/store'
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { AssetComponent, LoadState } from '@atlas/engine/src/scene/components/AssetComponent'
-import { loadAsset, unloadAsset } from '@atlas/engine/src/scene/functions/loaders/AssetComponentFunctions'
+import { store } from '@atlasfoundation/client-core/src/store'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { AssetComponent, LoadState } from '@atlasfoundation/engine/src/scene/components/AssetComponent'
+import { loadAsset, unloadAsset } from '@atlasfoundation/engine/src/scene/functions/loaders/AssetComponentFunctions'
 
 import { exportAsset } from '../../functions/assetFunctions'
 import { EditorAction } from '../../services/EditorServices'

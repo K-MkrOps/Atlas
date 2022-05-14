@@ -1,28 +1,28 @@
 import { Mesh, MeshBasicMaterial, Vector3 } from 'three'
 
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { Entity } from '@atlas/engine/src/ecs/classes/Entity'
-import { World } from '@atlas/engine/src/ecs/classes/World'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
 import {
   addComponent,
   defineQuery,
   getComponent,
   hasComponent
-} from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { useWorld } from '@atlas/engine/src/ecs/functions/SystemHooks'
-import { EngineRenderer } from '@atlas/engine/src/renderer/WebGLRendererSystem'
-import { beforeMaterialCompile } from '@atlas/engine/src/scene/classes/BPCEMShader'
-import CubemapCapturer from '@atlas/engine/src/scene/classes/CubemapCapturer'
-import { convertCubemapToEquiImageData } from '@atlas/engine/src/scene/classes/ImageUtils'
-import { CubemapBakeComponent } from '@atlas/engine/src/scene/components/CubemapBakeComponent'
-import { NameComponent } from '@atlas/engine/src/scene/components/NameComponent'
-import { ScenePreviewCameraTagComponent } from '@atlas/engine/src/scene/components/ScenePreviewCamera'
+} from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { EngineRenderer } from '@atlasfoundation/engine/src/renderer/WebGLRendererSystem'
+import { beforeMaterialCompile } from '@atlasfoundation/engine/src/scene/classes/BPCEMShader'
+import CubemapCapturer from '@atlasfoundation/engine/src/scene/classes/CubemapCapturer'
+import { convertCubemapToEquiImageData } from '@atlasfoundation/engine/src/scene/classes/ImageUtils'
+import { CubemapBakeComponent } from '@atlasfoundation/engine/src/scene/components/CubemapBakeComponent'
+import { NameComponent } from '@atlasfoundation/engine/src/scene/components/NameComponent'
+import { ScenePreviewCameraTagComponent } from '@atlasfoundation/engine/src/scene/components/ScenePreviewCamera'
 import {
   parseCubemapBakeProperties,
   SCENE_COMPONENT_CUBEMAP_BAKE_DEFAULT_VALUES,
   updateCubemapBake
-} from '@atlas/engine/src/scene/functions/loaders/CubemapBakeFunctions'
-import { TransformComponent } from '@atlas/engine/src/transform/components/TransformComponent'
+} from '@atlasfoundation/engine/src/scene/functions/loaders/CubemapBakeFunctions'
+import { TransformComponent } from '@atlasfoundation/engine/src/transform/components/TransformComponent'
 
 import { accessEditorState } from '../services/EditorServices'
 import { uploadProjectFile } from './assetFunctions'

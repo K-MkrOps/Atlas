@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import defaultThemeSettings from '@atlas/common/src/constants/DefaultThemeSettings'
-import { ThemeSetting } from '@atlas/common/src/interfaces/ClientSetting'
+import defaultThemeSettings from '@atlasfoundation/common/src/constants/DefaultThemeSettings'
+import { ThemeSetting } from '@atlasfoundation/common/src/interfaces/ClientSetting'
 
 import { Button } from '@mui/material'
 

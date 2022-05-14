@@ -3,8 +3,8 @@
  */
 import { Matrix4 } from 'three'
 
-import { Entity } from '@atlas/engine/src/ecs/classes/Entity'
-import { EntityTreeNode } from '@atlas/engine/src/ecs/classes/EntityTree'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
 
 export const IDENTITY_MAT_4 = new Matrix4().identity()
 

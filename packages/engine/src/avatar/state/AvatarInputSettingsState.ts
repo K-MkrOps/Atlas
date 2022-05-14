@@ -1,6 +1,6 @@
 import { createState, useState } from '@speigg/hookstate'
 
-import { XR_FOLLOW_MODE, XR_ROTATION_MODE } from '@atlas/engine/src/xr/types/XRUserSettings'
+import { XR_FOLLOW_MODE, XR_ROTATION_MODE } from '@atlasfoundation/engine/src/xr/types/XRUserSettings'
 
 type AvatarInputSettingsStateType = {
   controlType: 'None' | 'XR Hands' | 'Oculus Quest'

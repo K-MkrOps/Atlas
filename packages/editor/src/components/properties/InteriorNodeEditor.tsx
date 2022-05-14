@@ -1,10 +1,10 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useEngineState } from '@atlas/engine/src/ecs/classes/EngineService'
-import { getComponent, hasComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { ErrorComponent } from '@atlas/engine/src/scene/components/ErrorComponent'
-import { InteriorComponent } from '@atlas/engine/src/scene/components/InteriorComponent'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { getComponent, hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { ErrorComponent } from '@atlasfoundation/engine/src/scene/components/ErrorComponent'
+import { InteriorComponent } from '@atlasfoundation/engine/src/scene/components/InteriorComponent'
 
 import LocationCityIcon from '@mui/icons-material/LocationCity'
 

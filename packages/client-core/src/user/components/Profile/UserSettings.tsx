@@ -1,8 +1,8 @@
-// import { PositionalAudioSystem } from '@atlas/engine/src/audio/systems/PositionalAudioSystem'
+// import { PositionalAudioSystem } from '@atlasfoundation/engine/src/audio/systems/PositionalAudioSystem'
 import React, { ChangeEvent, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
 
 import { Image, Mic, SurroundSound, VolumeUp } from '@mui/icons-material'
 import Checkbox from '@mui/material/Checkbox'

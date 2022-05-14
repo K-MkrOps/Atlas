@@ -1,8 +1,8 @@
 import { HookContext } from '@feathersjs/feathers'
 
-import createGroupOwner from '@atlas/server-core/src/hooks/create-group-owner'
-import groupPermissionAuthenticate from '@atlas/server-core/src/hooks/group-permission-authenticate'
-import removeGroupUsers from '@atlas/server-core/src/hooks/remove-group-users'
+import createGroupOwner from '@atlasfoundation/server-core/src/hooks/create-group-owner'
+import groupPermissionAuthenticate from '@atlasfoundation/server-core/src/hooks/group-permission-authenticate'
+import removeGroupUsers from '@atlasfoundation/server-core/src/hooks/remove-group-users'
 
 import authenticate from '../../hooks/authenticate'
 import logger from '../../logger'

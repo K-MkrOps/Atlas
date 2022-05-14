@@ -1,7 +1,7 @@
 import { NullableId, Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { UserSetting } from '@atlas/common/src/interfaces/User'
+import { UserSetting } from '@atlasfoundation/common/src/interfaces/User'
 
 import { Application } from '../../../declarations'
 

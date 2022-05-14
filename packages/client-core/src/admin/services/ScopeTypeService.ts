@@ -1,7 +1,7 @@
 import { Paginated } from '@feathersjs/feathers'
 import { createState, useState } from '@speigg/hookstate'
 
-import { AdminScopeType } from '@atlas/common/src/interfaces/AdminScopeType'
+import { AdminScopeType } from '@atlasfoundation/common/src/interfaces/AdminScopeType'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'

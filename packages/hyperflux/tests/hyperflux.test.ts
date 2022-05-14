@@ -1,7 +1,7 @@
 import assert from 'assert'
 
-import { UserId } from '@atlas/common/src/interfaces/UserId'
-import { matches, matchesWithDefault } from '@atlas/engine/src/common/functions/MatchesUtils'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { matches, matchesWithDefault } from '@atlasfoundation/engine/src/common/functions/MatchesUtils'
 
 import {
   addActionReceptor,

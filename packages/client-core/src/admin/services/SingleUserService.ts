@@ -1,7 +1,7 @@
 import { createState, useState } from '@speigg/hookstate'
 
-import { UserSeed } from '@atlas/common/src/interfaces/User'
-import { User } from '@atlas/common/src/interfaces/User'
+import { UserSeed } from '@atlasfoundation/common/src/interfaces/User'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'

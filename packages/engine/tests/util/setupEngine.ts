@@ -1,4 +1,4 @@
-import { UserId } from '@atlas/common/src/interfaces/UserId'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 
 import { NetworkTransportHandler } from '../../src/networking/classes/Network'
 import { NetworkTransport } from '../../src/networking/interfaces/NetworkTransport'

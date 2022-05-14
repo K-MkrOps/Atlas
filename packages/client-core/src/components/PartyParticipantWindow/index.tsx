@@ -3,9 +3,9 @@ import classNames from 'classnames'
 import React, { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useAppState } from '@atlas/client-core/src/common/services/AppService'
-import { MediaStreamService, useMediaStreamState } from '@atlas/client-core/src/media/services/MediaStreamService'
-import { useLocationState } from '@atlas/client-core/src/social/services/LocationService'
+import { useAppState } from '@atlasfoundation/client-core/src/common/services/AppService'
+import { MediaStreamService, useMediaStreamState } from '@atlasfoundation/client-core/src/media/services/MediaStreamService'
+import { useLocationState } from '@atlasfoundation/client-core/src/social/services/LocationService'
 import {
   globalMuteProducer,
   globalUnmuteProducer,
@@ -13,14 +13,14 @@ import {
   pauseProducer,
   resumeConsumer,
   resumeProducer
-} from '@atlas/client-core/src/transports/SocketWebRTCClientFunctions'
-import { getMediaTransport } from '@atlas/client-core/src/transports/SocketWebRTCClientTransport'
-import { getAvatarURLForUser } from '@atlas/client-core/src/user/components/UserMenu/util'
-import { useAuthState } from '@atlas/client-core/src/user/services/AuthService'
-import { useUserState } from '@atlas/client-core/src/user/services/UserService'
-import { useEngineState } from '@atlas/engine/src/ecs/classes/EngineService'
-import { MessageTypes } from '@atlas/engine/src/networking/enums/MessageTypes'
-import { MediaStreams } from '@atlas/engine/src/networking/systems/MediaStreamSystem'
+} from '@atlasfoundation/client-core/src/transports/SocketWebRTCClientFunctions'
+import { getMediaTransport } from '@atlasfoundation/client-core/src/transports/SocketWebRTCClientTransport'
+import { getAvatarURLForUser } from '@atlasfoundation/client-core/src/user/components/UserMenu/util'
+import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
+import { useUserState } from '@atlasfoundation/client-core/src/user/services/UserService'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { MessageTypes } from '@atlasfoundation/engine/src/networking/enums/MessageTypes'
+import { MediaStreams } from '@atlasfoundation/engine/src/networking/systems/MediaStreamSystem'
 
 import {
   Launch,

@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { ImageFileTypes, ModelFileTypes, VideoFileTypes } from '@atlas/engine/src/assets/constants/fileTypes'
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { InteractableComponent } from '@atlas/engine/src/interaction/components/InteractableComponent'
-import { ModelComponent } from '@atlas/engine/src/scene/components/ModelComponent'
+import { ImageFileTypes, ModelFileTypes, VideoFileTypes } from '@atlasfoundation/engine/src/assets/constants/fileTypes'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { InteractableComponent } from '@atlasfoundation/engine/src/interaction/components/InteractableComponent'
+import { ModelComponent } from '@atlasfoundation/engine/src/scene/components/ModelComponent'
 
 import { setPropertyOnSelectionEntities } from '../../classes/History'
 import { ItemTypes } from '../../constants/AssetTypes'

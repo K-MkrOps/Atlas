@@ -1,8 +1,8 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { PointLightComponent } from '@atlas/engine/src/scene/components/PointLightComponent'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { PointLightComponent } from '@atlasfoundation/engine/src/scene/components/PointLightComponent'
 
 import LightbulbIcon from '@mui/icons-material/Lightbulb'
 

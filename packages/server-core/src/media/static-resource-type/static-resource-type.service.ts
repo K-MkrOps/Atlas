@@ -4,7 +4,7 @@ import staticResourceTypeDocs from './static-resource-type.docs'
 import hooks from './static-resource-type.hooks'
 import createModel from './static-resource-type.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'static-resource-type': StaticResourceType
   }

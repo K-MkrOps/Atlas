@@ -1,7 +1,7 @@
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { EngineRenderer } from '@atlas/engine/src/renderer/WebGLRendererSystem'
-import { Object3DComponent } from '@atlas/engine/src/scene/components/Object3DComponent'
-import { Effects } from '@atlas/engine/src/scene/constants/PostProcessing'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { EngineRenderer } from '@atlasfoundation/engine/src/renderer/WebGLRendererSystem'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
+import { Effects } from '@atlasfoundation/engine/src/scene/constants/PostProcessing'
 
 import { accessSelectionState } from '../services/SelectionServices'
 

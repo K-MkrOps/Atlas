@@ -5,8 +5,8 @@ import { random } from 'lodash'
 import { Sequelize } from 'sequelize'
 import { v1 as uuidv1 } from 'uuid'
 
-import { IdentityProviderInterface } from '@atlas/common/src/dbmodels/IdentityProvider'
-import { isDev } from '@atlas/common/src/utils/isDev'
+import { IdentityProviderInterface } from '@atlasfoundation/common/src/dbmodels/IdentityProvider'
+import { isDev } from '@atlasfoundation/common/src/utils/isDev'
 
 import { Application } from '../../../declarations'
 import config from '../../appconfig'

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { User } from '@atlas/common/src/interfaces/User'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
 
 import Divider from '@mui/material/Divider'
 import Grid from '@mui/material/Grid'

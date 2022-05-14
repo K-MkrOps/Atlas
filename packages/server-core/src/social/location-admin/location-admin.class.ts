@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { LocationAdmin as LocationAdminInterface } from '@atlas/common/src/interfaces/LocationAdmin'
+import { LocationAdmin as LocationAdminInterface } from '@atlasfoundation/common/src/interfaces/LocationAdmin'
 
 import { Application } from '../../../declarations'
 

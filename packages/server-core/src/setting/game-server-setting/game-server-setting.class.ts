@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { GameServerSetting as GameServerSettingInterface } from '@atlas/common/src/interfaces/GameServerSetting'
+import { GameServerSetting as GameServerSettingInterface } from '@atlasfoundation/common/src/interfaces/GameServerSetting'
 
 import { Application } from '../../../declarations'
 

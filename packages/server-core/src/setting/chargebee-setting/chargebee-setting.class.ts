@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { ChargebeeSetting as ChargebeeSettingDataType } from '@atlas/common/src/interfaces/ChargebeeSetting'
+import { ChargebeeSetting as ChargebeeSettingDataType } from '@atlasfoundation/common/src/interfaces/ChargebeeSetting'
 
 import { Application } from '../../../declarations'
 

@@ -1,7 +1,7 @@
 import { AnimationMixer, BufferGeometry, Mesh, Object3D, Quaternion, Vector3 } from 'three'
 import { NavMesh, Polygon } from 'yuka'
 
-import { dispatchAction } from '@atlas/hyperflux'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { AnimationComponent } from '../../avatar/components/AnimationComponent'
 import { parseGeometry } from '../../common/functions/parseGeometry'

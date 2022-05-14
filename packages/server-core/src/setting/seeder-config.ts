@@ -1,4 +1,4 @@
-import { ServicesSeedConfig } from '@atlas/common/src/interfaces/ServicesSeedConfig'
+import { ServicesSeedConfig } from '@atlasfoundation/common/src/interfaces/ServicesSeedConfig'
 
 import { analyticsSeed } from './analytics-setting/analytics.seed'
 import { authenticationSeed } from './authentication-setting/authentication.seed'

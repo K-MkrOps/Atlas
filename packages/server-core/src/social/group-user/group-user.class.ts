@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { GroupUser as GroupUserInterface } from '@atlas/common/src/interfaces/GroupUser'
+import { GroupUser as GroupUserInterface } from '@atlasfoundation/common/src/interfaces/GroupUser'
 
 import { Application } from '../../../declarations'
 

@@ -1,7 +1,7 @@
 import { TypedArray } from 'bitecs'
 
-import { NetworkId } from '@atlas/common/src/interfaces/NetworkId'
-import { UserId } from '@atlas/common/src/interfaces/UserId'
+import { NetworkId } from '@atlasfoundation/common/src/interfaces/NetworkId'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 
 import { Entity } from '../../ecs/classes/Entity'
 import { World } from '../../ecs/classes/World'

@@ -1,6 +1,6 @@
 import { Group, Object3D, Quaternion, Vector3 } from 'three'
 
-import { dispatchAction } from '@atlas/hyperflux'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { BoneNames } from '../../avatar/AvatarBoneMatching'
 import { AvatarAnimationComponent } from '../../avatar/components/AvatarAnimationComponent'

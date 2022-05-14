@@ -1,6 +1,6 @@
 import { createState, useState } from '@speigg/hookstate'
 
-import { SceneData } from '@atlas/common/src/interfaces/SceneInterface'
+import { SceneData } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { client } from '../../feathers'
 import { store, useDispatch } from '../../store'

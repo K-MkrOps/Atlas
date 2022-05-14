@@ -1,6 +1,6 @@
 import '@feathersjs/transport-commons'
 
-import { Application } from '@atlas/server-core/declarations'
+import { Application } from '@atlasfoundation/server-core/declarations'
 
 export default (app: Application): void => {
   if (typeof app.channel !== 'function') {

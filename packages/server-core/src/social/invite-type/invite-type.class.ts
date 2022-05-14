@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { InviteType as InviteTypeInterface } from '@atlas/common/src/interfaces/InviteType'
+import { InviteType as InviteTypeInterface } from '@atlasfoundation/common/src/interfaces/InviteType'
 
 import { Application } from '../../../declarations'
 

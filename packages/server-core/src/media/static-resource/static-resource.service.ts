@@ -1,4 +1,4 @@
-import { StaticResourceInterface } from '@atlas/common/src/dbmodels/StaticResource'
+import { StaticResourceInterface } from '@atlasfoundation/common/src/dbmodels/StaticResource'
 
 import { Application } from '../../../declarations'
 import { StaticResource } from './static-resource.class'
@@ -6,7 +6,7 @@ import staticResourceDocs from './static-resource.docs'
 import hooks from './static-resource.hooks'
 import createModel from './static-resource.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'static-resource': StaticResource
   }

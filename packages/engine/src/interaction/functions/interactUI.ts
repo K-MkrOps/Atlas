@@ -11,7 +11,7 @@ import {
   Vector3
 } from 'three'
 
-import { XRUIComponent } from '@atlas/engine/src/xrui/components/XRUIComponent'
+import { XRUIComponent } from '@atlasfoundation/engine/src/xrui/components/XRUIComponent'
 
 import { AssetLoader } from '../../assets/classes/AssetLoader'
 import { FollowCameraComponent } from '../../camera/components/FollowCameraComponent'

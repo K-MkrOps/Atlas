@@ -9,7 +9,7 @@ import notifier from './auth-management.notifier'
  * A function which register service for auth management
  *
  */
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     authManagement: InstanceType<ReturnType<typeof authManagement>>
   }

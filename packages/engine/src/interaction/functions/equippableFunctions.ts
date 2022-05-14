@@ -1,4 +1,4 @@
-import { dispatchAction } from '@atlas/hyperflux'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { ParityValue } from '../../common/enums/ParityValue'
 import { Engine } from '../../ecs/classes/Engine'

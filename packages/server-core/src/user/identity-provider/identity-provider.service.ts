@@ -4,7 +4,7 @@ import identyDocs from './identity-provider.docs'
 import hooks from './identity-provider.hooks'
 import createModel from './identity-provider.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'identity-provider': IdentityProvider
   }

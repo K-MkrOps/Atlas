@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Euler } from 'three'
 
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { TransformComponent } from '@atlas/engine/src/transform/components/TransformComponent'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { TransformComponent } from '@atlasfoundation/engine/src/transform/components/TransformComponent'
 
 import { executeCommandWithHistoryOnSelection } from '../../classes/History'
 import EditorCommands from '../../constants/EditorCommands'

@@ -1,7 +1,7 @@
 // === SETUP WEBXR === //
 import { Quaternion, Vector3 } from 'three'
 
-import { dispatchAction } from '@atlas/hyperflux'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { Engine } from '../../ecs/classes/Engine'
 import { EngineActions } from '../../ecs/classes/EngineService'

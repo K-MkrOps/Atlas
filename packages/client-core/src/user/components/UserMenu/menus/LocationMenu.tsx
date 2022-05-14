@@ -2,7 +2,7 @@ import { Paginated } from '@feathersjs/feathers'
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Location, LocationSeed } from '@atlas/common/src/interfaces/Location'
+import { Location, LocationSeed } from '@atlasfoundation/common/src/interfaces/Location'
 
 import AddIcon from '@mui/icons-material/Add'
 import SearchIcon from '@mui/icons-material/Search'

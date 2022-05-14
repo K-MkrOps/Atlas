@@ -6,16 +6,16 @@ import { useLocation } from 'react-router-dom'
 import {
   ClientSettingService,
   useClientSettingState
-} from '@atlas/client-core/src/admin/services/Setting/ClientSettingService'
-import { Alerts } from '@atlas/client-core/src/common/components/Alerts'
-import UIDialog from '@atlas/client-core/src/common/components/Dialog'
-import UserToast from '@atlas/client-core/src/common/components/Toast/UserToast'
-import { theme as defaultTheme } from '@atlas/client-core/src/theme'
-import UserMenu from '@atlas/client-core/src/user/components/UserMenu'
-import { useAuthState } from '@atlas/client-core/src/user/services/AuthService'
-import { respawnAvatar } from '@atlas/engine/src/avatar/functions/respawnAvatar'
-import { isTouchAvailable } from '@atlas/engine/src/common/functions/DetectFeatures'
-import { useWorld } from '@atlas/engine/src/ecs/functions/SystemHooks'
+} from '@atlasfoundation/client-core/src/admin/services/Setting/ClientSettingService'
+import { Alerts } from '@atlasfoundation/client-core/src/common/components/Alerts'
+import UIDialog from '@atlasfoundation/client-core/src/common/components/Dialog'
+import UserToast from '@atlasfoundation/client-core/src/common/components/Toast/UserToast'
+import { theme as defaultTheme } from '@atlasfoundation/client-core/src/theme'
+import UserMenu from '@atlasfoundation/client-core/src/user/components/UserMenu'
+import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
+import { respawnAvatar } from '@atlasfoundation/engine/src/avatar/functions/respawnAvatar'
+import { isTouchAvailable } from '@atlasfoundation/engine/src/common/functions/DetectFeatures'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
 
 import { FullscreenExit, Refresh, ZoomOutMap } from '@mui/icons-material'
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown'
@@ -30,7 +30,7 @@ import MediaIconsBox from '../MediaIconsBox'
 import PartyVideoWindows from '../PartyVideoWindows'
 import styles from './index.module.scss'
 
-const TouchGamepad = React.lazy(() => import('@atlas/client-core/src/common/components/TouchGamepad'))
+const TouchGamepad = React.lazy(() => import('@atlasfoundation/client-core/src/common/components/TouchGamepad'))
 
 declare module '@mui/styles/defaultTheme' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface

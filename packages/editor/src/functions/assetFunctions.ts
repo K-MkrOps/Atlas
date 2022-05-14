@@ -1,22 +1,22 @@
 import { Object3D } from 'three'
 
-import { client } from '@atlas/client-core/src/feathers'
-import { uploadToFeathersService } from '@atlas/client-core/src/util/upload'
-import { Entity } from '@atlas/engine/src/ecs/classes/Entity'
-import { EntityTreeNode } from '@atlas/engine/src/ecs/classes/EntityTree'
+import { client } from '@atlasfoundation/client-core/src/feathers'
+import { uploadToFeathersService } from '@atlasfoundation/client-core/src/util/upload'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
 import {
   addComponent,
   getComponent,
   hasComponent,
   removeComponent
-} from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { AssetComponent } from '@atlas/engine/src/scene/components/AssetComponent'
+} from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { AssetComponent } from '@atlasfoundation/engine/src/scene/components/AssetComponent'
 import {
   Object3DComponent,
   Object3DComponentType,
   Object3DWithEntity
-} from '@atlas/engine/src/scene/components/Object3DComponent'
-import { sceneToGLTF } from '@atlas/engine/src/scene/functions/GLTFConversion'
+} from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
+import { sceneToGLTF } from '@atlasfoundation/engine/src/scene/functions/GLTFConversion'
 
 import { accessEditorState } from '../services/EditorServices'
 

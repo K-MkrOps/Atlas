@@ -1,11 +1,11 @@
 import classNames from 'classnames'
 import React, { useEffect, useState } from 'react'
 
-import secondsToString from '@atlas/common/src/utils/secondsToString'
+import secondsToString from '@atlasfoundation/common/src/utils/secondsToString'
 // import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 // import PauseIcon from '@mui/icons-material/Pause'
 // import ArrowBackIcon from '@mui/icons-material/ArrowBack'
-import triggerNavigation from '@atlas/common/src/utils/triggerNavigation'
+import triggerNavigation from '@atlasfoundation/common/src/utils/triggerNavigation'
 
 import styles from './index.module.scss'
 

@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { v4 as uuidv4 } from 'uuid'
 
-import { BotCommands, CreateBotAsAdmin } from '@atlas/common/src/interfaces/AdminBot'
-import { Instance } from '@atlas/common/src/interfaces/Instance'
+import { BotCommands, CreateBotAsAdmin } from '@atlasfoundation/common/src/interfaces/AdminBot'
+import { Instance } from '@atlasfoundation/common/src/interfaces/Instance'
 
 import { Autorenew, Face, Save } from '@mui/icons-material'
 import Button from '@mui/material/Button'

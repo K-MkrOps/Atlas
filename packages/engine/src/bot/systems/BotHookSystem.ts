@@ -1,4 +1,4 @@
-import { isDev } from '@atlas/common/src/utils/isDev'
+import { isDev } from '@atlasfoundation/common/src/utils/isDev'
 
 import { AvatarInputSchema } from '../../avatar/AvatarInputSchema'
 import { Engine } from '../../ecs/classes/Engine'

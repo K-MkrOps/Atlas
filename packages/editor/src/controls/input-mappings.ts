@@ -1,4 +1,4 @@
-import { EngineRenderer } from '@atlas/engine/src/renderer/WebGLRendererSystem'
+import { EngineRenderer } from '@atlasfoundation/engine/src/renderer/WebGLRendererSystem'
 
 import { getInput } from '../functions/parseInputActionMapping'
 

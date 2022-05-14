@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { MatchUserInterface } from '@atlas/common/src/dbmodels/MatchUser'
+import { MatchUserInterface } from '@atlasfoundation/common/src/dbmodels/MatchUser'
 
 import { Application } from '../../../declarations'
 

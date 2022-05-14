@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import ProfileMenu from '@atlas/client-core/src/user/components/UserMenu/menus/ProfileMenu'
-import { useAuthState } from '@atlas/client-core/src/user/services/AuthService'
+import ProfileMenu from '@atlasfoundation/client-core/src/user/components/UserMenu/menus/ProfileMenu'
+import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
 
 import { Person } from '@mui/icons-material'
 import { ClickAwayListener, IconButton } from '@mui/material'

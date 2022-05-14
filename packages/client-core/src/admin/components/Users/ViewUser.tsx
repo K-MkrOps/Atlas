@@ -2,9 +2,9 @@ import _ from 'lodash'
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { AdminScopeType } from '@atlas/common/src/interfaces/AdminScopeType'
-import { User } from '@atlas/common/src/interfaces/User'
-import { CreateEditUser } from '@atlas/common/src/interfaces/User'
+import { AdminScopeType } from '@atlasfoundation/common/src/interfaces/AdminScopeType'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
+import { CreateEditUser } from '@atlasfoundation/common/src/interfaces/User'
 
 import { Save } from '@mui/icons-material'
 import Avatar from '@mui/material/Avatar'

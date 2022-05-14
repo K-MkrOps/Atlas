@@ -1,4 +1,4 @@
-import type { World } from '@atlas/engine/src/ecs/classes/World'
+import type { World } from '@atlasfoundation/engine/src/ecs/classes/World'
 
 import type { ProjectConfigInterface } from './ProjectConfigInterface'
 

@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { LocationBan as LocationBanInterface } from '@atlas/common/src/interfaces/LocationBan'
+import { LocationBan as LocationBanInterface } from '@atlasfoundation/common/src/interfaces/LocationBan'
 
 import { Application } from '../../../declarations'
 

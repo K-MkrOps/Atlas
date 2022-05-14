@@ -1,13 +1,13 @@
 import React, { useCallback, useState } from 'react'
 
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
 import {
   accessEngineRendererState,
   EngineRendererAction,
   useEngineRendererState
-} from '@atlas/engine/src/renderer/EngineRendererState'
-import { ObjectLayers } from '@atlas/engine/src/scene/constants/ObjectLayers'
-import { dispatchAction } from '@atlas/hyperflux'
+} from '@atlasfoundation/engine/src/renderer/EngineRendererState'
+import { ObjectLayers } from '@atlasfoundation/engine/src/scene/constants/ObjectLayers'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import SelectAllIcon from '@mui/icons-material/SelectAll'
 import SquareFootIcon from '@mui/icons-material/SquareFoot'

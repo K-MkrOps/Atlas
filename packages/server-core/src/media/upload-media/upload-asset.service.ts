@@ -2,7 +2,7 @@ import { Params } from '@feathersjs/feathers'
 import express from 'express'
 import multer from 'multer'
 
-import { AdminAssetUploadArgumentsType, AssetUploadType } from '@atlas/common/src/interfaces/UploadAssetInterface'
+import { AdminAssetUploadArgumentsType, AssetUploadType } from '@atlasfoundation/common/src/interfaces/UploadAssetInterface'
 
 import { Application } from '../../../declarations'
 import restrictUserRole from '../../hooks/restrict-user-role'
@@ -14,7 +14,7 @@ import hooks from './upload-asset.hooks'
 
 const multipartMiddleware = multer({ limits: { fieldSize: Infinity } })
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'upload-asset': any
   }

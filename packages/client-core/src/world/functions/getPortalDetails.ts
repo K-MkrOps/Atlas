@@ -1,8 +1,8 @@
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { Entity } from '@atlas/engine/src/ecs/classes/Entity'
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { PortalComponent } from '@atlas/engine/src/scene/components/PortalComponent'
-import { setRemoteLocationDetail } from '@atlas/engine/src/scene/functions/createPortal'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { PortalComponent } from '@atlasfoundation/engine/src/scene/components/PortalComponent'
+import { setRemoteLocationDetail } from '@atlasfoundation/engine/src/scene/functions/createPortal'
 
 import { client } from '../../feathers'
 

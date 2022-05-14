@@ -2,7 +2,7 @@ import i18n from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 
-import { getI18nConfigs as getClientCoreI18nConfigs } from '@atlas/client-core/src/i18n'
+import { getI18nConfigs as getClientCoreI18nConfigs } from '@atlasfoundation/client-core/src/i18n'
 
 import translation from '../i18n/en/translation.json'
 

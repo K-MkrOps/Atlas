@@ -3,9 +3,9 @@ import React, { memo, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import InfiniteScroll from 'react-infinite-scroller'
 
-import ConfirmModal from '@atlas/client-core/src/admin/common/ConfirmModal'
-import { FileBrowserService, useFileBrowserState } from '@atlas/client-core/src/common/services/FileBrowserService'
-import { ScenePrefabs } from '@atlas/engine/src/scene/functions/registerPrefabs'
+import ConfirmModal from '@atlasfoundation/client-core/src/admin/common/ConfirmModal'
+import { FileBrowserService, useFileBrowserState } from '@atlasfoundation/client-core/src/common/services/FileBrowserService'
+import { ScenePrefabs } from '@atlasfoundation/engine/src/scene/functions/registerPrefabs'
 
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import AutorenewIcon from '@mui/icons-material/Autorenew'

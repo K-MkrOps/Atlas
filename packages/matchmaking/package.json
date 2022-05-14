@@ -1,8 +1,8 @@
 {
-  "name": "@atlas/matchmaking",
+  "name": "@atlasfoundation/matchmaking",
   "version": "0.5.3",
   "author": {
-    "name": "AtlasFoundation Collective",
+    "name": "Atlas Foundation",
     "email": "hello@atlasfoundation.io"
   },
   "publishConfig": {

@@ -1,6 +1,6 @@
 import { CircleBufferGeometry, Color, Group, Mesh, MeshStandardMaterial, Object3D } from 'three'
 
-import { ComponentJson } from '@atlas/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import {
   ComponentDeserializeFunction,

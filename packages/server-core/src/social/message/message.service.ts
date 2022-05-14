@@ -1,4 +1,4 @@
-import { Message as MessageInterface } from '@atlas/common/src/interfaces/Message'
+import { Message as MessageInterface } from '@atlasfoundation/common/src/interfaces/Message'
 
 import { Application } from '../../../declarations'
 import { Message } from './message.class'
@@ -6,7 +6,7 @@ import messageDocs from './message.docs'
 import hooks from './message.hooks'
 import createModel from './message.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     message: Message
   }

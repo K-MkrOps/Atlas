@@ -3,9 +3,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { CubemapBakeComponent } from '@atlas/engine/src/scene/components/CubemapBakeComponent'
-import { CubemapBakeTypes } from '@atlas/engine/src/scene/types/CubemapBakeTypes'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { CubemapBakeComponent } from '@atlasfoundation/engine/src/scene/components/CubemapBakeComponent'
+import { CubemapBakeTypes } from '@atlasfoundation/engine/src/scene/types/CubemapBakeTypes'
 
 import SportsGolfIcon from '@mui/icons-material/SportsGolf'
 

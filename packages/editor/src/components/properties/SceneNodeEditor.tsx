@@ -12,15 +12,15 @@ import {
   VSMShadowMap
 } from 'three'
 
-import { DistanceModel, DistanceModelOptions } from '@atlas/engine/src/audio/constants/AudioConstants'
-import { getComponent, hasComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { PositionalAudioSettingsComponent } from '@atlas/engine/src/scene/components/AudioSettingsComponent'
-import { FogComponent } from '@atlas/engine/src/scene/components/FogComponent'
-import { MetaDataComponent } from '@atlas/engine/src/scene/components/MetaDataComponent'
-import { RenderSettingComponent } from '@atlas/engine/src/scene/components/RenderSettingComponent'
-import { SimpleMaterialTagComponent } from '@atlas/engine/src/scene/components/SimpleMaterialTagComponent'
-import { FogType } from '@atlas/engine/src/scene/constants/FogType'
-import { SCENE_COMPONENT_SIMPLE_MATERIALS } from '@atlas/engine/src/scene/functions/loaders/SimpleMaterialFunctions'
+import { DistanceModel, DistanceModelOptions } from '@atlasfoundation/engine/src/audio/constants/AudioConstants'
+import { getComponent, hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { PositionalAudioSettingsComponent } from '@atlasfoundation/engine/src/scene/components/AudioSettingsComponent'
+import { FogComponent } from '@atlasfoundation/engine/src/scene/components/FogComponent'
+import { MetaDataComponent } from '@atlasfoundation/engine/src/scene/components/MetaDataComponent'
+import { RenderSettingComponent } from '@atlasfoundation/engine/src/scene/components/RenderSettingComponent'
+import { SimpleMaterialTagComponent } from '@atlasfoundation/engine/src/scene/components/SimpleMaterialTagComponent'
+import { FogType } from '@atlasfoundation/engine/src/scene/constants/FogType'
+import { SCENE_COMPONENT_SIMPLE_MATERIALS } from '@atlasfoundation/engine/src/scene/functions/loaders/SimpleMaterialFunctions'
 
 import LanguageIcon from '@mui/icons-material/Language'
 

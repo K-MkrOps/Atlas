@@ -1,7 +1,7 @@
 import { RenderPass } from 'postprocessing'
 import { Light, MeshBasicMaterial, MeshNormalMaterial } from 'three'
 
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
 
 import { RenderModes, RenderModesType } from '../constants/RenderModes'
 import { accessEngineRendererState } from '../EngineRendererState'

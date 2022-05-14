@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { useDispatch } from '@atlas/client-core/src/store'
-import InfiniteGridHelper from '@atlas/engine/src/scene/classes/InfiniteGridHelper'
-import { SnapMode } from '@atlas/engine/src/scene/constants/transformConstants'
+import { useDispatch } from '@atlasfoundation/client-core/src/store'
+import InfiniteGridHelper from '@atlasfoundation/engine/src/scene/classes/InfiniteGridHelper'
+import { SnapMode } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import AttractionsIcon from '@mui/icons-material/Attractions'
 

@@ -3,7 +3,7 @@ import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import Sequelize, { Op } from 'sequelize'
 import slugify from 'slugify'
 
-import { Location as LocationType } from '@atlas/common/src/interfaces/Location'
+import { Location as LocationType } from '@atlasfoundation/common/src/interfaces/Location'
 
 import { Application } from '../../../declarations'
 import logger from '../../logger'

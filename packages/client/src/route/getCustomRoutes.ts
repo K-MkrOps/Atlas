@@ -1,8 +1,8 @@
 import i18n from 'i18next'
 import { lazy } from 'react'
 
-import { client } from '@atlas/client-core/src/feathers'
-import { loadRoute } from '@atlas/projects/loadRoute'
+import { client } from '@atlasfoundation/client-core/src/feathers'
+import { loadRoute } from '@atlasfoundation/projects/loadRoute'
 
 export type CustomRoute = {
   route: string

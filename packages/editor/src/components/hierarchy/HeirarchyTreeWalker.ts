@@ -1,6 +1,6 @@
-import { Entity } from '@atlas/engine/src/ecs/classes/Entity'
-import { EntityTreeNode } from '@atlas/engine/src/ecs/classes/EntityTree'
-import { useWorld } from '@atlas/engine/src/ecs/functions/SystemHooks'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
 
 export type HeirarchyTreeNodeType = {
   depth: number

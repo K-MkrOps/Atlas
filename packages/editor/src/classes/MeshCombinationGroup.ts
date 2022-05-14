@@ -1,6 +1,6 @@
 import { BufferGeometry, Mesh, MeshBasicMaterial, MeshStandardMaterial, Object3D, SkinnedMesh, Texture } from 'three'
 
-import { mergeBufferGeometries } from '@atlas/engine/src/common/classes/BufferGeometryUtils'
+import { mergeBufferGeometries } from '@atlasfoundation/engine/src/common/classes/BufferGeometryUtils'
 
 import asyncTraverse from '../functions/asyncTraverse'
 import hashImage from '../functions/hashImage'

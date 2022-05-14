@@ -1,7 +1,7 @@
 import assert from 'assert'
 import { v1 } from 'uuid'
 
-import { User } from '@atlas/common/src/interfaces/User'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
 
 import { Application } from '../../../declarations'
 import { createFeathersExpressApp } from '../../createApp'

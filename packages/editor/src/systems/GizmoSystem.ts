@@ -1,9 +1,9 @@
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { World } from '@atlas/engine/src/ecs/classes/World'
-import { defineQuery, getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import TransformGizmo from '@atlas/engine/src/scene/classes/TransformGizmo'
-import { Object3DComponent } from '@atlas/engine/src/scene/components/Object3DComponent'
-import { TransformGizmoComponent } from '@atlas/engine/src/scene/components/TransformGizmo'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import { defineQuery, getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import TransformGizmo from '@atlasfoundation/engine/src/scene/classes/TransformGizmo'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
+import { TransformGizmoComponent } from '@atlasfoundation/engine/src/scene/components/TransformGizmo'
 
 const GIZMO_SIZE = 10
 

@@ -1,4 +1,4 @@
-import config from '@atlas/server-core/src/appconfig'
+import config from '@atlasfoundation/server-core/src/appconfig'
 
 const DEFAULT_INTERVAL_SECONDS = 1800
 const configInterval = parseInt(config.analytics.processInterval)

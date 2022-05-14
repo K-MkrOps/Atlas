@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { AuthenticationInterface } from '@atlas/common/src/dbmodels/Authentication'
+import { AuthenticationInterface } from '@atlasfoundation/common/src/dbmodels/Authentication'
 
 import { Application } from '../../../declarations'
 

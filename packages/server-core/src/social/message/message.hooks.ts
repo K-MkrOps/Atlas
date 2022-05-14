@@ -1,7 +1,7 @@
-import addAssociations from '@atlas/server-core/src/hooks/add-associations'
-import channelPermissionAuthenticate from '@atlas/server-core/src/hooks/channel-permission-authenticate'
-import messagePermissionAuthenticate from '@atlas/server-core/src/hooks/message-permission-authenticate'
-import removeMessageStatuses from '@atlas/server-core/src/hooks/remove-message-statuses'
+import addAssociations from '@atlasfoundation/server-core/src/hooks/add-associations'
+import channelPermissionAuthenticate from '@atlasfoundation/server-core/src/hooks/channel-permission-authenticate'
+import messagePermissionAuthenticate from '@atlasfoundation/server-core/src/hooks/message-permission-authenticate'
+import removeMessageStatuses from '@atlasfoundation/server-core/src/hooks/remove-message-statuses'
 
 import authenticate from '../../hooks/authenticate'
 

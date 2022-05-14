@@ -2,7 +2,7 @@ import { Paginated, Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import { Op } from 'sequelize'
 
-import { Group as GroupInterface } from '@atlas/common/src/interfaces/Group'
+import { Group as GroupInterface } from '@atlasfoundation/common/src/interfaces/Group'
 
 import { Application } from '../../../declarations'
 import { UserDataType } from '../../user/user/user.class'

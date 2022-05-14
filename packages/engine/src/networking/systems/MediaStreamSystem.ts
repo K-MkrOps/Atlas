@@ -1,5 +1,5 @@
-import { ChannelType } from '@atlas/common/src/interfaces/Channel'
-import { defineAction, dispatchAction } from '@atlas/hyperflux'
+import { ChannelType } from '@atlasfoundation/common/src/interfaces/Channel'
+import { defineAction, dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { isClient } from '../../common/functions/isClient'
 import { matches } from '../../common/functions/MatchesUtils'

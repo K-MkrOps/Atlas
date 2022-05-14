@@ -1,7 +1,7 @@
 import { NullableId, Paginated, Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { ClientSetting as ClientSettingInterface } from '@atlas/common/src/interfaces/ClientSetting'
+import { ClientSetting as ClientSettingInterface } from '@atlasfoundation/common/src/interfaces/ClientSetting'
 
 import { Application } from '../../../declarations'
 

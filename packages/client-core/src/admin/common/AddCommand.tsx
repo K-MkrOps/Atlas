@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { BotCommands } from '@atlas/common/src/interfaces/AdminBot'
+import { BotCommands } from '@atlasfoundation/common/src/interfaces/AdminBot'
 
 import DeleteIcon from '@mui/icons-material/Delete'
 import Button from '@mui/material/Button'

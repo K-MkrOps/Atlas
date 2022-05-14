@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { TransformMode } from '@atlas/engine/src/scene/constants/transformConstants'
+import { TransformMode } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import { useEditorHelperState } from '../../services/EditorHelperState'
 import { useSelectionState } from '../../services/SelectionServices'

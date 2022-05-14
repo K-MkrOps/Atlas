@@ -1,7 +1,7 @@
 import assert from 'assert'
 import { MathUtils } from 'three'
 
-import { ComponentJson } from '@atlas/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { Engine } from '../../../ecs/classes/Engine'
 import { createEntity } from '../../../ecs/functions/EntityFunctions'

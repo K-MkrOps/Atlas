@@ -34,7 +34,7 @@ Projects have a few conventions.
   models, feathers services and the project thumbnail can be defined
 
 A project can also have a package.json to provide custom dependencies.
-`@atlas/*` monorepo dependencies will be symlinked and not needed, but some
+`@atlasfoundation/*` monorepo dependencies will be symlinked and not needed, but some
 package managers (such as pnpm) require these to be defined. If so, they should
 be defined in `peerDependencies`.
 

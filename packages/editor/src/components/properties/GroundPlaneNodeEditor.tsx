@@ -1,8 +1,8 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { GroundPlaneComponent } from '@atlas/engine/src/scene/components/GroundPlaneComponent'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { GroundPlaneComponent } from '@atlasfoundation/engine/src/scene/components/GroundPlaneComponent'
 
 import SquareIcon from '@mui/icons-material/Square'
 

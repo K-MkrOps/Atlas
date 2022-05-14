@@ -1,7 +1,7 @@
 import { Group } from 'three'
 import matches from 'ts-matches'
 
-import { addActionReceptor } from '@atlas/hyperflux'
+import { addActionReceptor } from '@atlasfoundation/hyperflux'
 
 import { isClient } from '../common/functions/isClient'
 import { Engine } from '../ecs/classes/Engine'

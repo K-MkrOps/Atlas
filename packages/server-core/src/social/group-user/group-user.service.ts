@@ -5,7 +5,7 @@ import groupUserDocs from './group-user.docs'
 import hooks from './group-user.hooks'
 import createModel from './group-user.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'group-user': GroupUser
   }

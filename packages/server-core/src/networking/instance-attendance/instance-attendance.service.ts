@@ -4,7 +4,7 @@ import instanceAttendanceDocs from './instance-attendance.docs'
 import hooks from './instance-attendance.hooks'
 import createModel from './instance-attendance.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'instance-attendance': InstanceAttendance
   }

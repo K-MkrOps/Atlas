@@ -4,7 +4,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
 
-import { validateEmail, validatePhoneNumber } from '@atlas/common/src/config'
+import { validateEmail, validatePhoneNumber } from '@atlasfoundation/common/src/config'
 
 import { Check, Close, Create, GitHub, Send } from '@mui/icons-material'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'

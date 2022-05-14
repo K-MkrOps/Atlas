@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { GameserverSubdomainProvisionInterface } from '@atlas/common/src/dbmodels/GameserverSubdomainProvision'
+import { GameserverSubdomainProvisionInterface } from '@atlasfoundation/common/src/dbmodels/GameserverSubdomainProvision'
 
 import { Application } from '../../../declarations'
 

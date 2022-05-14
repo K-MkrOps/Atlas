@@ -1,7 +1,7 @@
 import assert from 'assert'
 import proxyquire from 'proxyquire'
 
-import { ComponentJson } from '@atlas/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { CameraMode } from '../../../camera/types/CameraMode'
 import { ProjectionType } from '../../../camera/types/ProjectionType'

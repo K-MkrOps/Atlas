@@ -1,8 +1,8 @@
 import { none } from '@speigg/hookstate'
 import matches from 'ts-matches'
 
-import { UserId } from '@atlas/common/src/interfaces/UserId'
-import { addActionReceptor, dispatchAction, getState } from '@atlas/hyperflux'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { addActionReceptor, dispatchAction, getState } from '@atlasfoundation/hyperflux'
 
 import { Engine } from '../../ecs/classes/Engine'
 import { World } from '../../ecs/classes/World'

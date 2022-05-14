@@ -1,10 +1,10 @@
 import { Box3 } from 'three'
 
-import { ComponentJson } from '@atlas/common/src/interfaces/SceneInterface'
-import { AvatarDissolveComponent } from '@atlas/engine/src/avatar/components/AvatarDissolveComponent'
-import { AvatarEffectComponent, MaterialMap } from '@atlas/engine/src/avatar/components/AvatarEffectComponent'
-import { DissolveEffect } from '@atlas/engine/src/avatar/DissolveEffect'
-import { loadGrowingEffectObject } from '@atlas/engine/src/avatar/functions/avatarFunctions'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { AvatarDissolveComponent } from '@atlasfoundation/engine/src/avatar/components/AvatarDissolveComponent'
+import { AvatarEffectComponent, MaterialMap } from '@atlasfoundation/engine/src/avatar/components/AvatarEffectComponent'
+import { DissolveEffect } from '@atlasfoundation/engine/src/avatar/DissolveEffect'
+import { loadGrowingEffectObject } from '@atlasfoundation/engine/src/avatar/functions/avatarFunctions'
 
 import {
   ComponentDeserializeFunction,

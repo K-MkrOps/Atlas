@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 
-import { VrIcon } from '@atlas/client-core/src/common/components/Icons/Vricon'
-import { useLocationInstanceConnectionState } from '@atlas/client-core/src/common/services/LocationInstanceConnectionService'
+import { VrIcon } from '@atlasfoundation/client-core/src/common/components/Icons/Vricon'
+import { useLocationInstanceConnectionState } from '@atlasfoundation/client-core/src/common/services/LocationInstanceConnectionService'
 import {
   MediaInstanceConnectionService,
   useMediaInstanceConnectionState
-} from '@atlas/client-core/src/common/services/MediaInstanceConnectionService'
-import { MediaStreamService, useMediaStreamState } from '@atlas/client-core/src/media/services/MediaStreamService'
-import { useChatState } from '@atlas/client-core/src/social/services/ChatService'
-import { useLocationState } from '@atlas/client-core/src/social/services/LocationService'
+} from '@atlasfoundation/client-core/src/common/services/MediaInstanceConnectionService'
+import { MediaStreamService, useMediaStreamState } from '@atlasfoundation/client-core/src/media/services/MediaStreamService'
+import { useChatState } from '@atlasfoundation/client-core/src/social/services/ChatService'
+import { useLocationState } from '@atlasfoundation/client-core/src/social/services/LocationService'
 import {
   configureMediaTransports,
   createCamAudioProducer,
@@ -17,19 +17,19 @@ import {
   leave,
   pauseProducer,
   resumeProducer
-} from '@atlas/client-core/src/transports/SocketWebRTCClientFunctions'
-import { getMediaTransport } from '@atlas/client-core/src/transports/SocketWebRTCClientTransport'
-import { useAuthState } from '@atlas/client-core/src/user/services/AuthService'
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { EngineActions, useEngineState } from '@atlas/engine/src/ecs/classes/EngineService'
+} from '@atlasfoundation/client-core/src/transports/SocketWebRTCClientFunctions'
+import { getMediaTransport } from '@atlasfoundation/client-core/src/transports/SocketWebRTCClientTransport'
+import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { EngineActions, useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
 import {
   startFaceTracking,
   startLipsyncTracking,
   stopFaceTracking,
   stopLipsyncTracking
-} from '@atlas/engine/src/input/functions/WebcamInput'
-import { MediaStreams } from '@atlas/engine/src/networking/systems/MediaStreamSystem'
-import { dispatchAction } from '@atlas/hyperflux'
+} from '@atlasfoundation/engine/src/input/functions/WebcamInput'
+import { MediaStreams } from '@atlasfoundation/engine/src/networking/systems/MediaStreamSystem'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { Mic, MicOff, Videocam, VideocamOff } from '@mui/icons-material'
 import FaceIcon from '@mui/icons-material/Face'

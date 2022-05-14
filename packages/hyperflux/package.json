@@ -1,5 +1,5 @@
 {
-  "name": "@atlas/hyperflux",
+  "name": "@atlasfoundation/hyperflux",
   "version": "0.5.3",
   "main": "index.ts",
   "description": "State Management for Atlas",

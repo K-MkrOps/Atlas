@@ -1,7 +1,7 @@
 import { Vector3 } from 'three'
 
-import { EntityTreeNode } from '@atlas/engine/src/ecs/classes/EntityTree'
-import { createMappedComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { createMappedComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 
 export type EditorCameraComponentType = {
   center: Vector3

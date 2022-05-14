@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { TransformSpace } from '@atlas/engine/src/scene/constants/transformConstants'
+import { TransformSpace } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import LanguageIcon from '@mui/icons-material/Language'
 

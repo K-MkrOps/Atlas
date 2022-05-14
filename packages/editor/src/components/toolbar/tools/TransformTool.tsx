@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { TransformMode } from '@atlas/engine/src/scene/constants/transformConstants'
+import { TransformMode } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import HeightIcon from '@mui/icons-material/Height'
 import OpenWithIcon from '@mui/icons-material/OpenWith'

@@ -6,7 +6,7 @@ import hooks from './rtc-ports.hooks'
 import createModel from './rtc-ports.model'
 
 // Add this service to the service type index
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'rtc-ports': RtcPorts
   }

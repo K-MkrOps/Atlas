@@ -3,7 +3,7 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 import { HookReturn } from 'sequelize/types/lib/hooks'
 
-import { LocationAdminInterface } from '@atlas/common/src/dbmodels/LocationAdmin'
+import { LocationAdminInterface } from '@atlasfoundation/common/src/dbmodels/LocationAdmin'
 
 import { Application } from '../../../declarations'
 

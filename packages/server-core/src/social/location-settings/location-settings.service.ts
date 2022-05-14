@@ -6,7 +6,7 @@ import hooks from './location-settings.hooks'
 import createModel from './location-settings.model'
 
 // Add this service to the service type index
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'location-settings': LocationSettings
   }

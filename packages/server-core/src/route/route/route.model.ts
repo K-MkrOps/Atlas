@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { RouteInterface } from '@atlas/common/src/dbmodels/Route'
+import { RouteInterface } from '@atlasfoundation/common/src/dbmodels/Route'
 
 import { Application } from '../../../declarations'
 

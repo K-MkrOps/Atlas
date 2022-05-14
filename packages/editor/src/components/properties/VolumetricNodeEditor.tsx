@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { VolumetricFileTypes } from '@atlas/engine/src/assets/constants/fileTypes'
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { VolumetricComponent } from '@atlas/engine/src/scene/components/VolumetricComponent'
-import { VolumetricPlayMode } from '@atlas/engine/src/scene/constants/VolumetricPlayMode'
-import { toggleVolumetric } from '@atlas/engine/src/scene/functions/loaders/VolumetricFunctions'
+import { VolumetricFileTypes } from '@atlasfoundation/engine/src/assets/constants/fileTypes'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { VolumetricComponent } from '@atlasfoundation/engine/src/scene/components/VolumetricComponent'
+import { VolumetricPlayMode } from '@atlasfoundation/engine/src/scene/constants/VolumetricPlayMode'
+import { toggleVolumetric } from '@atlasfoundation/engine/src/scene/functions/loaders/VolumetricFunctions'
 
 import VideocamIcon from '@mui/icons-material/Videocam'
 

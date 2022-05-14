@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { ChargebeeSettingInterface } from '@atlas/common/src/dbmodels/ChargebeeSetting'
+import { ChargebeeSettingInterface } from '@atlasfoundation/common/src/dbmodels/ChargebeeSetting'
 
 import { Application } from '../../../declarations'
 

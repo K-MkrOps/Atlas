@@ -1,7 +1,7 @@
 import { Quaternion, SkinnedMesh, Vector2, Vector3 } from 'three'
 
-import { isDev } from '@atlas/common/src/utils/isDev'
-import { dispatchAction } from '@atlas/hyperflux'
+import { isDev } from '@atlasfoundation/common/src/utils/isDev'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { FollowCameraComponent } from '../camera/components/FollowCameraComponent'
 import { TargetCameraRotationComponent } from '../camera/components/TargetCameraRotationComponent'

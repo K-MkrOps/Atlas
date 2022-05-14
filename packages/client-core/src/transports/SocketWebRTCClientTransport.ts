@@ -2,20 +2,20 @@ import * as mediasoupClient from 'mediasoup-client'
 import { DataProducer, Transport as MediaSoupTransport } from 'mediasoup-client/lib/types'
 import { io as ioclient, Socket } from 'socket.io-client'
 
-import { UserId } from '@atlas/common/src/interfaces/UserId'
-import { matches } from '@atlas/engine/src/common/functions/MatchesUtils'
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { matches } from '@atlasfoundation/engine/src/common/functions/MatchesUtils'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
 import {
   Network,
   NetworkTransportHandler,
   TransportType,
   TransportTypes
-} from '@atlas/engine/src/networking/classes/Network'
-import { MessageTypes } from '@atlas/engine/src/networking/enums/MessageTypes'
-import { NetworkTransport } from '@atlas/engine/src/networking/interfaces/NetworkTransport'
-import { MediaStreams } from '@atlas/engine/src/networking/systems/MediaStreamSystem'
-import { addActionReceptor, defineAction } from '@atlas/hyperflux'
-import { Action } from '@atlas/hyperflux/functions/ActionFunctions'
+} from '@atlasfoundation/engine/src/networking/classes/Network'
+import { MessageTypes } from '@atlasfoundation/engine/src/networking/enums/MessageTypes'
+import { NetworkTransport } from '@atlasfoundation/engine/src/networking/interfaces/NetworkTransport'
+import { MediaStreams } from '@atlasfoundation/engine/src/networking/systems/MediaStreamSystem'
+import { addActionReceptor, defineAction } from '@atlasfoundation/hyperflux'
+import { Action } from '@atlasfoundation/hyperflux/functions/ActionFunctions'
 
 import { accessAuthState } from '../user/services/AuthService'
 import { gameserverHost } from '../util/config'

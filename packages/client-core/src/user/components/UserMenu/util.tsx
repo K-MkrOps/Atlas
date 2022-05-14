@@ -1,5 +1,5 @@
-import { UserId } from '@atlas/common/src/interfaces/UserId'
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
 
 export const Views = {
   Closed: '',

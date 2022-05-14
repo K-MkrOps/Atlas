@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { IdentityProviderInterface } from '@atlas/common/src/dbmodels/IdentityProvider'
+import { IdentityProviderInterface } from '@atlasfoundation/common/src/dbmodels/IdentityProvider'
 
 import { Application } from '../../../declarations'
 

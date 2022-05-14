@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import ProfileMenu from '@atlas/client-core/src/user/components/UserMenu/menus/ProfileMenu'
+import ProfileMenu from '@atlasfoundation/client-core/src/user/components/UserMenu/menus/ProfileMenu'
 
 import { ChevronLeft, ChevronRight, Menu } from '@mui/icons-material'
 import { Person } from '@mui/icons-material'

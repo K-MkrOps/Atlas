@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { GithubCallback } from '@atlas/client-core/src/user/components/Oauth/GithubCallback'
+import { GithubCallback } from '@atlasfoundation/client-core/src/user/components/Oauth/GithubCallback'
 
 export const GithubHomePage = () => <GithubCallback />
 

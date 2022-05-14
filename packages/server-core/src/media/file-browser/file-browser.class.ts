@@ -3,7 +3,7 @@ import appRootPath from 'app-root-path'
 import fs from 'fs'
 import path from 'path/posix'
 
-import { FileContentType } from '@atlas/common/src/interfaces/FileContentType'
+import { FileContentType } from '@atlasfoundation/common/src/interfaces/FileContentType'
 
 import { Application } from '../../../declarations'
 import { copyRecursiveSync, getIncrementalName } from '../FileUtil'

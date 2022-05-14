@@ -1,6 +1,6 @@
 import { createState, useState } from '@speigg/hookstate'
 
-import { AdminAnalytics, AdminAnalyticsResult } from '@atlas/common/src/interfaces/AdminAnalyticsData'
+import { AdminAnalytics, AdminAnalyticsResult } from '@atlasfoundation/common/src/interfaces/AdminAnalyticsData'
 
 import { client } from '../../feathers'
 import { store, useDispatch } from '../../store'

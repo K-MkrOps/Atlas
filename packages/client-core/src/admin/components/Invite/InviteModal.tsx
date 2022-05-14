@@ -5,7 +5,7 @@ import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator'
 import { useHistory } from 'react-router-dom'
 import { Dropdown } from 'semantic-ui-react'
 
-import { User } from '@atlas/common/src/interfaces/User'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
 
 import MuiAlert, { AlertProps } from '@mui/material/Alert'
 import Button from '@mui/material/Button'

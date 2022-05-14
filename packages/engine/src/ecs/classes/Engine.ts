@@ -1,7 +1,7 @@
 import { AudioListener, Object3D, OrthographicCamera, PerspectiveCamera, Scene, XRFrame } from 'three'
 
-import type { UserId } from '@atlas/common/src/interfaces/UserId'
-import { createHyperStore } from '@atlas/hyperflux'
+import type { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { createHyperStore } from '@atlasfoundation/hyperflux'
 
 import type { InputValue } from '../../input/interfaces/InputValue'
 import type { World } from '../classes/World'

@@ -1,8 +1,8 @@
 import { disallow } from 'feathers-hooks-common'
 
-import addUriToFile from '@atlas/server-core/src/hooks/add-uri-to-file'
-import logRequest from '@atlas/server-core/src/hooks/log-request'
-import attachOwnerIdInSavingContact from '@atlas/server-core/src/hooks/set-loggedin-user-in-body'
+import addUriToFile from '@atlasfoundation/server-core/src/hooks/add-uri-to-file'
+import logRequest from '@atlasfoundation/server-core/src/hooks/log-request'
+import attachOwnerIdInSavingContact from '@atlasfoundation/server-core/src/hooks/set-loggedin-user-in-body'
 
 import authenticate from '../../hooks/authenticate'
 

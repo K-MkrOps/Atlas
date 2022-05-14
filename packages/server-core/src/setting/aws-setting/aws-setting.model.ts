@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { AwsInterface } from '@atlas/common/src/dbmodels/Aws'
+import { AwsInterface } from '@atlasfoundation/common/src/dbmodels/Aws'
 
 import { Application } from '../../../declarations'
 

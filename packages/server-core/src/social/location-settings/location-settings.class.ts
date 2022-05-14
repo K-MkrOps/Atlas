@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { LocationSettings as LocationSettingsInterface } from '@atlas/common/src/interfaces/LocationSettings'
+import { LocationSettings as LocationSettingsInterface } from '@atlasfoundation/common/src/interfaces/LocationSettings'
 
 import { Application } from '../../../declarations'
 

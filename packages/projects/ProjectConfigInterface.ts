@@ -1,5 +1,5 @@
-import type { World } from '@atlas/engine/src/ecs/classes/World'
-import type { Application } from '@atlas/server-core/declarations'
+import type { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import type { Application } from '@atlasfoundation/server-core/declarations'
 
 export interface ProjectConfigInterface {
   /**

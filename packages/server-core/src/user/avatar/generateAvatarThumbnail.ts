@@ -13,9 +13,9 @@ import {
   MAX_ALLOWED_TRIANGLES,
   THUMBNAIL_HEIGHT,
   THUMBNAIL_WIDTH
-} from '@atlas/common/src/constants/AvatarConstants'
-import { createGLTFLoader } from '@atlas/engine/src/assets/functions/createGLTFLoader'
-import { loadDRACODecoder } from '@atlas/engine/src/assets/loaders/gltf/NodeDracoLoader'
+} from '@atlasfoundation/common/src/constants/AvatarConstants'
+import { createGLTFLoader } from '@atlasfoundation/engine/src/assets/functions/createGLTFLoader'
+import { loadDRACODecoder } from '@atlasfoundation/engine/src/assets/loaders/gltf/NodeDracoLoader'
 
 import logger from '../../logger'
 

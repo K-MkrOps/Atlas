@@ -6,9 +6,9 @@ import {
   initialize3D,
   onWindowResize,
   renderScene
-} from '@atlas/client-core/src/user/components/UserMenu/menus/helperFunctions'
-import { loadAvatarModelAsset } from '@atlas/engine/src/avatar/functions/avatarFunctions'
-import { getOrbitControls } from '@atlas/engine/src/input/functions/loadOrbitControl'
+} from '@atlasfoundation/client-core/src/user/components/UserMenu/menus/helperFunctions'
+import { loadAvatarModelAsset } from '@atlasfoundation/engine/src/avatar/functions/avatarFunctions'
+import { getOrbitControls } from '@atlasfoundation/engine/src/input/functions/loadOrbitControl'
 
 import CircularProgress from '@mui/material/CircularProgress'
 

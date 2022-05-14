@@ -4,7 +4,7 @@ import locationDocs from './location.docs'
 import hooks from './location.hooks'
 import createModel from './location.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     location: Location
   }

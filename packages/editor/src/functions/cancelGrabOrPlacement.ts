@@ -1,4 +1,4 @@
-import { TransformMode } from '@atlas/engine/src/scene/constants/transformConstants'
+import { TransformMode } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import { EditorHistory, executeCommandWithHistoryOnSelection, revertHistory } from '../classes/History'
 import EditorCommands from '../constants/EditorCommands'

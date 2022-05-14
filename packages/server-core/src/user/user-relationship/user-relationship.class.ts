@@ -2,7 +2,7 @@ import { NullableId, Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import { Sequelize, Transaction } from 'sequelize'
 
-import { UserRelationshipInterface } from '@atlas/common/src/dbmodels/UserRelationship'
+import { UserRelationshipInterface } from '@atlasfoundation/common/src/dbmodels/UserRelationship'
 
 import { Application } from '../../../declarations'
 import config from '../../appconfig'

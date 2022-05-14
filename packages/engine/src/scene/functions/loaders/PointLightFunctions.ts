@@ -1,6 +1,6 @@
 import { Color, IcosahedronGeometry, Mesh, MeshBasicMaterial, PointLight, Vector2 } from 'three'
 
-import { ComponentJson } from '@atlas/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import {
   ComponentDeserializeFunction,

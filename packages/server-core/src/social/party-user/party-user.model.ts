@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { PartyUserInterface } from '@atlas/common/src/dbmodels/PartyUser'
+import { PartyUserInterface } from '@atlasfoundation/common/src/dbmodels/PartyUser'
 
 import { Application } from '../../../declarations'
 

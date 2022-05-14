@@ -1,6 +1,6 @@
 import { Vector2, Vector3 } from 'three'
 
-import { UserId } from '@atlas/common/src/interfaces/UserId'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 
 import { Entity } from '../../ecs/classes/Entity'
 import { addComponent, getComponent } from '../../ecs/functions/ComponentFunctions'

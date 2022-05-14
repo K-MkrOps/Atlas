@@ -1,6 +1,6 @@
 import assert from 'assert'
 
-import { defineState, getState, registerState } from '@atlas/hyperflux'
+import { defineState, getState, registerState } from '@atlasfoundation/hyperflux'
 
 import { createEngine, initializeCoreSystems } from '../../initializeEngine'
 import { Engine } from '../classes/Engine'

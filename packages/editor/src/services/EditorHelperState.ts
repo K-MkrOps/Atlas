@@ -1,8 +1,8 @@
 import { createState, useState } from '@speigg/hookstate'
 
-import { store } from '@atlas/client-core/src/store'
-import { ClientStorage } from '@atlas/engine/src/common/classes/ClientStorage'
-import InfiniteGridHelper from '@atlas/engine/src/scene/classes/InfiniteGridHelper'
+import { store } from '@atlasfoundation/client-core/src/store'
+import { ClientStorage } from '@atlasfoundation/engine/src/common/classes/ClientStorage'
+import InfiniteGridHelper from '@atlasfoundation/engine/src/scene/classes/InfiniteGridHelper'
 import {
   SnapMode,
   SnapModeType,
@@ -11,7 +11,7 @@ import {
   TransformPivot,
   TransformPivotType,
   TransformSpace
-} from '@atlas/engine/src/scene/constants/transformConstants'
+} from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import { EditorHelperKeys } from '../constants/EditorHelperKeys'
 import { SceneState } from '../functions/sceneRenderFunctions'

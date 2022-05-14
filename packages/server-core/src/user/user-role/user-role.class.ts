@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { UserRole as UserRoleInterface } from '@atlas/common/src/interfaces/UserRole'
+import { UserRole as UserRoleInterface } from '@atlasfoundation/common/src/interfaces/UserRole'
 
 import { Application } from '../../../declarations'
 

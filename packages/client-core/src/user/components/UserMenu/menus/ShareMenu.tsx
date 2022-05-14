@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { isShareAvailable } from '@atlas/engine/src/common/functions/DetectFeatures'
+import { isShareAvailable } from '@atlasfoundation/engine/src/common/functions/DetectFeatures'
 
 import { FileCopy, Send } from '@mui/icons-material'
 import Button from '@mui/material/Button'

@@ -1,12 +1,12 @@
-import { store } from '@atlas/client-core/src/store'
-import { EntityTreeNode } from '@atlas/engine/src/ecs/classes/EntityTree'
+import { store } from '@atlasfoundation/client-core/src/store'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
 import {
   ComponentConstructor,
   ComponentType,
   getComponent
-} from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { useWorld } from '@atlas/engine/src/ecs/functions/SystemHooks'
-import { EntityNodeComponent } from '@atlas/engine/src/scene/components/EntityNodeComponent'
+} from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { EntityNodeComponent } from '@atlasfoundation/engine/src/scene/components/EntityNodeComponent'
 
 import arrayShallowEqual from '../functions/arrayShallowEqual'
 import { serializeObject3DArray, serializeProperties } from '../functions/debug'

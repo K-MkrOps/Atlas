@@ -1,6 +1,6 @@
-import { PortalDetail } from '@atlas/common/src/interfaces/PortalInterface'
-import { SceneData, SceneJson } from '@atlas/common/src/interfaces/SceneInterface'
-import { isDev } from '@atlas/common/src/utils/isDev'
+import { PortalDetail } from '@atlasfoundation/common/src/interfaces/PortalInterface'
+import { SceneData, SceneJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { isDev } from '@atlasfoundation/common/src/utils/isDev'
 
 import config from '../../appconfig'
 import { getCachedAsset } from '../../media/storageprovider/getCachedAsset'

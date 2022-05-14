@@ -5,17 +5,17 @@ import { useTranslation } from 'react-i18next'
 import AutoSizer from 'react-virtualized-auto-sizer'
 import { areEqual, FixedSizeList } from 'react-window'
 
-import { AllFileTypes } from '@atlas/engine/src/assets/constants/fileTypes'
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
+import { AllFileTypes } from '@atlasfoundation/engine/src/assets/constants/fileTypes'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 import {
   getEntityNodeArrayFromEntities,
   traverseEntityNode
-} from '@atlas/engine/src/ecs/functions/EntityTreeFunctions'
-import { useWorld } from '@atlas/engine/src/ecs/functions/SystemHooks'
-import { NameComponent } from '@atlas/engine/src/scene/components/NameComponent'
-import { Object3DComponent } from '@atlas/engine/src/scene/components/Object3DComponent'
-import { useHookEffect } from '@atlas/hyperflux'
+} from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { NameComponent } from '@atlasfoundation/engine/src/scene/components/NameComponent'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
+import { useHookEffect } from '@atlasfoundation/hyperflux'
 
 import { EditorCameraComponent } from '../../classes/EditorCameraComponent'
 import { executeCommandWithHistory, setPropertyOnEntityNode } from '../../classes/History'

@@ -1,9 +1,9 @@
 import { MathUtils } from 'three'
 
-import { Entity } from '@atlas/engine/src/ecs/classes/Entity'
-import { addComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { createEntity } from '@atlas/engine/src/ecs/functions/EntityFunctions'
-import { TransformMode } from '@atlas/engine/src/scene/constants/transformConstants'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { addComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { createEntity } from '@atlasfoundation/engine/src/ecs/functions/EntityFunctions'
+import { TransformMode } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import { EditorControlComponent } from '../classes/EditorControlComponent'
 import { FlyControlComponent } from '../classes/FlyControlComponent'

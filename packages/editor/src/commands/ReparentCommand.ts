@@ -1,16 +1,16 @@
 import { Vector3 } from 'three'
 
-import { store } from '@atlas/client-core/src/store'
-import { EntityTreeNode } from '@atlas/engine/src/ecs/classes/EntityTree'
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
+import { store } from '@atlasfoundation/client-core/src/store'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 import {
   getEntityNodeArrayFromEntities,
   reparentEntityNode
-} from '@atlas/engine/src/ecs/functions/EntityTreeFunctions'
-import { useWorld } from '@atlas/engine/src/ecs/functions/SystemHooks'
-import { TransformSpace } from '@atlas/engine/src/scene/constants/transformConstants'
-import { reparentObject3D } from '@atlas/engine/src/scene/functions/ReparentFunction'
-import { TransformComponent } from '@atlas/engine/src/transform/components/TransformComponent'
+} from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { TransformSpace } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
+import { reparentObject3D } from '@atlasfoundation/engine/src/scene/functions/ReparentFunction'
+import { TransformComponent } from '@atlasfoundation/engine/src/transform/components/TransformComponent'
 
 import { executeCommand } from '../classes/History'
 import EditorCommands from '../constants/EditorCommands'

@@ -1,11 +1,11 @@
 import { Matrix4, Vector3 } from 'three'
 
-import { store } from '@atlas/client-core/src/store'
-import { EntityTreeNode } from '@atlas/engine/src/ecs/classes/EntityTree'
-import { getComponent, hasComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { Object3DComponent } from '@atlas/engine/src/scene/components/Object3DComponent'
-import { TransformSpace } from '@atlas/engine/src/scene/constants/transformConstants'
-import { TransformComponent } from '@atlas/engine/src/transform/components/TransformComponent'
+import { store } from '@atlasfoundation/client-core/src/store'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { getComponent, hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
+import { TransformSpace } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
+import { TransformComponent } from '@atlasfoundation/engine/src/transform/components/TransformComponent'
 
 import arrayShallowEqual from '../functions/arrayShallowEqual'
 import { serializeObject3D, serializeVector3 } from '../functions/debug'

@@ -1,6 +1,6 @@
 import { iff } from 'feathers-hooks-common'
 
-import isAction from '@atlas/server-core/src/hooks/is-action'
+import isAction from '@atlasfoundation/server-core/src/hooks/is-action'
 
 import authenticate from '../../hooks/authenticate'
 

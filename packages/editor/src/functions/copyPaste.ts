@@ -1,6 +1,6 @@
-import { store } from '@atlas/client-core/src/store'
-import { EntityTreeNode } from '@atlas/engine/src/ecs/classes/EntityTree'
-import { useWorld } from '@atlas/engine/src/ecs/functions/SystemHooks'
+import { store } from '@atlasfoundation/client-core/src/store'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
 
 import { executeCommandWithHistory } from '../classes/History'
 import EditorCommands from '../constants/EditorCommands'

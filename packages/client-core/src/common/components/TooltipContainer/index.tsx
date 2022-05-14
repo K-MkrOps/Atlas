@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { isTouchAvailable } from '@atlas/engine/src/common/functions/DetectFeatures'
+import { isTouchAvailable } from '@atlasfoundation/engine/src/common/functions/DetectFeatures'
 
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
 import TouchApp from '@mui/icons-material/TouchApp'

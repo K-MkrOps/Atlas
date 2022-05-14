@@ -2,8 +2,8 @@ import _ from 'lodash'
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { AdminScopeType } from '@atlas/common/src/interfaces/AdminScopeType'
-import { CreateEditUser } from '@atlas/common/src/interfaces/User'
+import { AdminScopeType } from '@atlasfoundation/common/src/interfaces/AdminScopeType'
+import { CreateEditUser } from '@atlasfoundation/common/src/interfaces/User'
 
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'

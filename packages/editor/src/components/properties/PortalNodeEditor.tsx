@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Euler } from 'three'
 
-import { client } from '@atlas/client-core/src/feathers'
-import { PortalDetail } from '@atlas/common/src/interfaces/PortalInterface'
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { PortalComponent } from '@atlas/engine/src/scene/components/PortalComponent'
+import { client } from '@atlasfoundation/client-core/src/feathers'
+import { PortalDetail } from '@atlasfoundation/common/src/interfaces/PortalInterface'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { PortalComponent } from '@atlasfoundation/engine/src/scene/components/PortalComponent'
 
 import MeetingRoomIcon from '@mui/icons-material/MeetingRoom'
 

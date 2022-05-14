@@ -11,8 +11,8 @@ import {
   UniformsUtils
 } from 'three'
 
-import { ComponentJson } from '@atlas/common/src/interfaces/SceneInterface'
-import { XRUIComponent } from '@atlas/engine/src/xrui/components/XRUIComponent'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { XRUIComponent } from '@atlasfoundation/engine/src/xrui/components/XRUIComponent'
 
 import { ComponentDeserializeFunction, ComponentSerializeFunction } from '../../../common/constants/PrefabFunctionType'
 import { Engine } from '../../../ecs/classes/Engine'

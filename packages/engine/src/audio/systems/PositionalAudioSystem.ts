@@ -1,6 +1,6 @@
 import { Audio as AudioObject } from 'three'
 
-import { addActionReceptor } from '@atlas/hyperflux'
+import { addActionReceptor } from '@atlasfoundation/hyperflux'
 
 import { AvatarComponent } from '../../avatar/components/AvatarComponent'
 import { matches } from '../../common/functions/MatchesUtils'

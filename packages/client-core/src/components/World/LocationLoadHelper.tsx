@@ -2,30 +2,30 @@ import { useHistory } from 'react-router-dom'
 import { Quaternion, Vector3 } from 'three'
 import matches from 'ts-matches'
 
-import { AppAction, GeneralStateList } from '@atlas/client-core/src/common/services/AppService'
-import { accessProjectState } from '@atlas/client-core/src/common/services/ProjectService'
-import { MediaStreamService } from '@atlas/client-core/src/media/services/MediaStreamService'
-import { LocationService } from '@atlas/client-core/src/social/services/LocationService'
-import { useDispatch } from '@atlas/client-core/src/store'
-import { ClientTransportHandler } from '@atlas/client-core/src/transports/SocketWebRTCClientTransport'
-import { AuthState } from '@atlas/client-core/src/user/services/AuthService'
-import { getPortalDetails } from '@atlas/client-core/src/world/functions/getPortalDetails'
-import { SceneData, SceneJson } from '@atlas/common/src/interfaces/SceneInterface'
-import { UserId } from '@atlas/common/src/interfaces/UserId'
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { initSystems, SystemModuleType } from '@atlas/engine/src/ecs/functions/SystemFunctions'
+import { AppAction, GeneralStateList } from '@atlasfoundation/client-core/src/common/services/AppService'
+import { accessProjectState } from '@atlasfoundation/client-core/src/common/services/ProjectService'
+import { MediaStreamService } from '@atlasfoundation/client-core/src/media/services/MediaStreamService'
+import { LocationService } from '@atlasfoundation/client-core/src/social/services/LocationService'
+import { useDispatch } from '@atlasfoundation/client-core/src/store'
+import { ClientTransportHandler } from '@atlasfoundation/client-core/src/transports/SocketWebRTCClientTransport'
+import { AuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
+import { getPortalDetails } from '@atlasfoundation/client-core/src/world/functions/getPortalDetails'
+import { SceneData, SceneJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { initSystems, SystemModuleType } from '@atlasfoundation/engine/src/ecs/functions/SystemFunctions'
 import {
   initializeCoreSystems,
   initializeRealtimeSystems,
   initializeSceneSystems
-} from '@atlas/engine/src/initializeEngine'
-import { Network } from '@atlas/engine/src/networking/classes/Network'
-import { NetworkWorldAction } from '@atlas/engine/src/networking/functions/NetworkWorldAction'
-import { updateNearbyAvatars } from '@atlas/engine/src/networking/systems/MediaStreamSystem'
-import { loadSceneFromJSON } from '@atlas/engine/src/scene/functions/SceneLoading'
-import { addActionReceptor, dispatchAction } from '@atlas/hyperflux'
-import { loadEngineInjection } from '@atlas/projects/loadEngineInjection'
-import { getSystemsFromSceneData } from '@atlas/projects/loadSystemInjection'
+} from '@atlasfoundation/engine/src/initializeEngine'
+import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
+import { NetworkWorldAction } from '@atlasfoundation/engine/src/networking/functions/NetworkWorldAction'
+import { updateNearbyAvatars } from '@atlasfoundation/engine/src/networking/systems/MediaStreamSystem'
+import { loadSceneFromJSON } from '@atlasfoundation/engine/src/scene/functions/SceneLoading'
+import { addActionReceptor, dispatchAction } from '@atlasfoundation/hyperflux'
+import { loadEngineInjection } from '@atlasfoundation/projects/loadEngineInjection'
+import { getSystemsFromSceneData } from '@atlasfoundation/projects/loadSystemInjection'
 
 export const retrieveLocationByName = (locationName: string) => {
   if (locationName === globalThis.process.env['VITE_LOBBY_LOCATION_NAME']) {
@@ -83,11 +83,11 @@ const createOfflineUser = (sceneData: SceneJson) => {
 const injectedSystems: SystemModuleType<any>[] = [
   {
     type: 'PRE_RENDER',
-    systemModulePromise: import('@atlas/client-core/src/systems/XRUILoadingSystem')
+    systemModulePromise: import('@atlasfoundation/client-core/src/systems/XRUILoadingSystem')
   },
   {
     type: 'PRE_RENDER',
-    systemModulePromise: import('@atlas/client-core/src/systems/AvatarUISystem')
+    systemModulePromise: import('@atlasfoundation/client-core/src/systems/AvatarUISystem')
   }
 ]
 

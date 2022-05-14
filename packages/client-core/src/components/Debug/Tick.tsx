@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useEngineState } from '@atlas/engine/src/ecs/classes/EngineService'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
 
 import styles from './styles.module.scss'
 

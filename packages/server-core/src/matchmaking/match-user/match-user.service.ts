@@ -4,7 +4,7 @@ import matchUserDocs from './match-user.docs'
 import hooks from './match-user.hooks'
 import createModel from './match-user.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'match-user': MatchUser
   }

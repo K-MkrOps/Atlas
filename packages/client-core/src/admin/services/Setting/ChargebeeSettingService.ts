@@ -1,7 +1,7 @@
 import { Paginated } from '@feathersjs/feathers'
 import { createState, useState } from '@speigg/hookstate'
 
-import { ChargebeeSetting } from '@atlas/common/src/interfaces/ChargebeeSetting'
+import { ChargebeeSetting } from '@atlasfoundation/common/src/interfaces/ChargebeeSetting'
 
 import { AlertService } from '../../../common/services/AlertService'
 import { client } from '../../../feathers'

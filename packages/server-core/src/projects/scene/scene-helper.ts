@@ -1,7 +1,7 @@
 import { Params } from '@feathersjs/feathers'
 import express from 'express'
 
-import { PortalDetail } from '@atlas/common/src/interfaces/PortalInterface'
+import { PortalDetail } from '@atlasfoundation/common/src/interfaces/PortalInterface'
 
 import { Application } from '../../../declarations'
 import { parseScenePortals } from './scene-parser'

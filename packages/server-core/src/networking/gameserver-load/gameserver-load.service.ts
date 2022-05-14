@@ -1,7 +1,7 @@
 import { Application } from '../../../declarations'
 import hooks from './gameserver-load.hooks'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'gameserver-load': any
   }

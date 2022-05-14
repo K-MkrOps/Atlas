@@ -1,6 +1,6 @@
 import assert, { strictEqual } from 'assert'
 
-import { NetworkId } from '@atlas/common/src/interfaces/NetworkId'
+import { NetworkId } from '@atlasfoundation/common/src/interfaces/NetworkId'
 
 import { Entity } from '../../ecs/classes/Entity'
 import { NetworkObjectComponent } from '../components/NetworkObjectComponent'

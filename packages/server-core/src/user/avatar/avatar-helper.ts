@@ -2,8 +2,8 @@ import { Params } from '@feathersjs/feathers'
 import fs from 'fs'
 import path from 'path'
 
-import { AvatarProps } from '@atlas/common/src/interfaces/AvatarInterface'
-import { CommonKnownContentTypes } from '@atlas/common/src/utils/CommonKnownContentTypes'
+import { AvatarProps } from '@atlasfoundation/common/src/interfaces/AvatarInterface'
+import { CommonKnownContentTypes } from '@atlasfoundation/common/src/utils/CommonKnownContentTypes'
 
 import { Application } from '../../../declarations'
 import logger from '../../logger'

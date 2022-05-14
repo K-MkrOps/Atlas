@@ -1,8 +1,8 @@
 import { createState, useState } from '@speigg/hookstate'
 
-import { store } from '@atlas/client-core/src/store'
-import { Entity } from '@atlas/engine/src/ecs/classes/Entity'
-import { EntityTreeNode } from '@atlas/engine/src/ecs/classes/EntityTree'
+import { store } from '@atlasfoundation/client-core/src/store'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
 
 import { filterParentEntities } from '../functions/filterParentEntities'
 

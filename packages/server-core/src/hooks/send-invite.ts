@@ -3,9 +3,9 @@ import appRootPath from 'app-root-path'
 import * as path from 'path'
 import * as pug from 'pug'
 
-import { IdentityProviderInterface } from '@atlas/common/src/dbmodels/IdentityProvider'
-import { Invite as InviteType } from '@atlas/common/src/interfaces/Invite'
-import { UserId } from '@atlas/common/src/interfaces/UserId'
+import { IdentityProviderInterface } from '@atlasfoundation/common/src/dbmodels/IdentityProvider'
+import { Invite as InviteType } from '@atlasfoundation/common/src/interfaces/Invite'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 
 import config from '../appconfig'
 import logger from '../logger'

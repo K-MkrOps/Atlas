@@ -1,7 +1,7 @@
 import { createState, useState } from '@speigg/hookstate'
 
-import { isIOS } from '@atlas/common/src/utils/isIOS'
-import { dispatchAction } from '@atlas/hyperflux'
+import { isIOS } from '@atlasfoundation/common/src/utils/isIOS'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { ClientStorage } from '../common/classes/ClientStorage'
 import { Engine } from '../ecs/classes/Engine'

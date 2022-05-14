@@ -2,7 +2,7 @@ import { App } from '@octokit/app'
 import { createAppAuth } from '@octokit/auth-app'
 import { Octokit } from '@octokit/rest'
 
-import { GithubAppInterface } from '@atlas/common/src/interfaces/GithubAppInterface'
+import { GithubAppInterface } from '@atlasfoundation/common/src/interfaces/GithubAppInterface'
 
 import config from '../../appconfig'
 import logger from '../../logger'

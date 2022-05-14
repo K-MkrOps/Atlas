@@ -22,8 +22,8 @@ import {
   XRSession
 } from 'three'
 
-import { isDev } from '@atlas/common/src/utils/isDev'
-import { addActionReceptor, dispatchAction } from '@atlas/hyperflux'
+import { isDev } from '@atlasfoundation/common/src/utils/isDev'
+import { addActionReceptor, dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { CSM } from '../assets/csm/CSM'
 import { ExponentialMovingAverage } from '../common/classes/ExponentialAverageCurve'

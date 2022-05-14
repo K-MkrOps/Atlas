@@ -1,11 +1,11 @@
-import { World } from '@atlas/engine/src/ecs/classes/World'
-import { defineQuery, getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { removeEntity } from '@atlas/engine/src/ecs/functions/EntityFunctions'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import { defineQuery, getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { removeEntity } from '@atlasfoundation/engine/src/ecs/functions/EntityFunctions'
 import {
   iterateEntityNode,
   removeEntityNodeFromParent,
   reparentEntityNode
-} from '@atlas/engine/src/ecs/functions/EntityTreeFunctions'
+} from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
 
 import { AssetComponent, AssetLoadedComponent, LoadState } from '../components/AssetComponent'
 import { reparentObject3D } from '../functions/ReparentFunction'

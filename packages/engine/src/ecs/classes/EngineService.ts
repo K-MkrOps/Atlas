@@ -1,7 +1,7 @@
 import { createState, useState } from '@speigg/hookstate'
 
-import { UserId } from '@atlas/common/src/interfaces/UserId'
-import { defineAction } from '@atlas/hyperflux'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { defineAction } from '@atlasfoundation/hyperflux'
 
 import { matches, matchesUserId, Validator } from '../../common/functions/MatchesUtils'
 import { InteractableComponentType } from '../../interaction/components/InteractableComponent'

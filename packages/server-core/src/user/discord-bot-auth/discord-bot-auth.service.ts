@@ -2,7 +2,7 @@ import { Application } from '../../../declarations'
 import { DicscordBotAuth } from './discord-bot-auth.class'
 import hooks from './discord-bot-auth.hooks'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'discord-bot-auth': DicscordBotAuth
   }

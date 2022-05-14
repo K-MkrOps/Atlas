@@ -1,7 +1,7 @@
 import { Paginated } from '@feathersjs/feathers'
 import { createState, useState } from '@speigg/hookstate'
 
-import { InviteType } from '@atlas/common/src/interfaces/InviteType'
+import { InviteType } from '@atlasfoundation/common/src/interfaces/InviteType'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'

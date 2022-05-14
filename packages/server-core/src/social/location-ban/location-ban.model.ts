@@ -3,7 +3,7 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 import { HookReturn } from 'sequelize/types/lib/hooks'
 
-import { LocationBanInterface } from '@atlas/common/src/dbmodels/LocationBan'
+import { LocationBanInterface } from '@atlasfoundation/common/src/dbmodels/LocationBan'
 
 import { Application } from '../../../declarations'
 

@@ -1,8 +1,8 @@
-import { store } from '@atlas/client-core/src/store'
-import { EntityTreeNode } from '@atlas/engine/src/ecs/classes/EntityTree'
-import { addComponent, removeComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { getEntityNodeArrayFromEntities } from '@atlas/engine/src/ecs/functions/EntityTreeFunctions'
-import { SelectTagComponent } from '@atlas/engine/src/scene/components/SelectTagComponent'
+import { store } from '@atlasfoundation/client-core/src/store'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { addComponent, removeComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { getEntityNodeArrayFromEntities } from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { SelectTagComponent } from '@atlasfoundation/engine/src/scene/components/SelectTagComponent'
 
 import { executeCommand } from '../classes/History'
 import EditorCommands from '../constants/EditorCommands'

@@ -1,6 +1,6 @@
 import { Op } from 'sequelize'
 
-import { UserRelationshipInterface } from '@atlas/common/src/dbmodels/UserRelationship'
+import { UserRelationshipInterface } from '@atlasfoundation/common/src/dbmodels/UserRelationship'
 
 import { Application } from '../../../declarations'
 import logger from '../../logger'
@@ -9,7 +9,7 @@ import { UserRelationship } from './user-relationship.class'
 import hooks from './user-relationship.hooks'
 import createModel from './user-relationship.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'user-relationship': UserRelationship
   }

@@ -1,6 +1,6 @@
 {
   "appId": "com.atlas.client",
-  "appName": "@atlas/client",
+  "appName": "@atlasfoundation/client",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

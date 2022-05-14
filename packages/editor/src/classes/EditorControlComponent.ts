@@ -1,4 +1,4 @@
-import { createMappedComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
+import { createMappedComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 
 export type EditorControlComponentType = {}
 

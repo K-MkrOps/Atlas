@@ -2,9 +2,9 @@ import { HookContext } from '@feathersjs/feathers'
 import dauria from 'dauria'
 import { iff, isProvider } from 'feathers-hooks-common'
 
-import collectAnalytics from '@atlas/server-core/src/hooks/collect-analytics'
-import replaceThumbnailLink from '@atlas/server-core/src/hooks/replace-thumbnail-link'
-import attachOwnerIdInQuery from '@atlas/server-core/src/hooks/set-loggedin-user-in-query'
+import collectAnalytics from '@atlasfoundation/server-core/src/hooks/collect-analytics'
+import replaceThumbnailLink from '@atlasfoundation/server-core/src/hooks/replace-thumbnail-link'
+import attachOwnerIdInQuery from '@atlasfoundation/server-core/src/hooks/set-loggedin-user-in-query'
 
 import authenticate from '../../hooks/authenticate'
 import restrictUserRole from '../../hooks/restrict-user-role'

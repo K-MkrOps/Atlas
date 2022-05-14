@@ -1,8 +1,8 @@
 import i18n from 'i18next'
 
-import { client } from '@atlas/client-core/src/feathers'
-import { SceneData } from '@atlas/common/src/interfaces/SceneInterface'
-import { serializeWorld } from '@atlas/engine/src/scene/functions/serializeWorld'
+import { client } from '@atlasfoundation/client-core/src/feathers'
+import { SceneData } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { serializeWorld } from '@atlasfoundation/engine/src/scene/functions/serializeWorld'
 
 /**
  * getScenes used to get list projects created by user.

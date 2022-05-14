@@ -4,7 +4,7 @@ import userRoleDocs from './user-role.docs'
 import hooks from './user-role.hooks'
 import createModel from './user-role.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'user-role': UserRole
   }

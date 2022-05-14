@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ModelFileTypes } from '@atlas/engine/src/assets/constants/fileTypes'
+import { ModelFileTypes } from '@atlasfoundation/engine/src/assets/constants/fileTypes'
 
 import { ItemTypes } from '../../constants/AssetTypes'
 import FileBrowserInput from './FileBrowserInput'

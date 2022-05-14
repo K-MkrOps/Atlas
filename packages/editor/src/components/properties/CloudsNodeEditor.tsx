@@ -1,10 +1,10 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useEngineState } from '@atlas/engine/src/ecs/classes/EngineService'
-import { getComponent, hasComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { CloudComponent } from '@atlas/engine/src/scene/components/CloudComponent'
-import { ErrorComponent } from '@atlas/engine/src/scene/components/ErrorComponent'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { getComponent, hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { CloudComponent } from '@atlasfoundation/engine/src/scene/components/CloudComponent'
+import { ErrorComponent } from '@atlasfoundation/engine/src/scene/components/ErrorComponent'
 
 import CloudIcon from '@mui/icons-material/Cloud'
 

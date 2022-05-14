@@ -4,7 +4,7 @@ import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import { Op } from 'sequelize'
 import { Sequelize } from 'sequelize'
 
-import { Party as PartyDataType } from '@atlas/common/src/interfaces/Party'
+import { Party as PartyDataType } from '@atlasfoundation/common/src/interfaces/Party'
 
 // import { Params, Id, NullableId } from '@feathersjs/feathers'
 import { Application } from '../../../declarations'

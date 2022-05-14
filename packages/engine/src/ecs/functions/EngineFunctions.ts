@@ -1,7 +1,7 @@
 /** Functions to provide engine level functionalities. */
 import { Color, Object3D } from 'three'
 
-import { dispatchAction } from '@atlas/hyperflux'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { AssetLoader, disposeDracoLoaderWorkers } from '../../assets/classes/AssetLoader'
 import { isClient } from '../../common/functions/isClient'

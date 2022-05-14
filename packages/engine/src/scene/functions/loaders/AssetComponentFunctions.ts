@@ -1,28 +1,28 @@
 import { Object3D } from 'three'
 
-import { ComponentJson } from '@atlas/common/src/interfaces/SceneInterface'
-import { AssetLoader } from '@atlas/engine/src/assets/classes/AssetLoader'
-import { AssetType } from '@atlas/engine/src/assets/enum/AssetType'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { AssetLoader } from '@atlasfoundation/engine/src/assets/classes/AssetLoader'
+import { AssetType } from '@atlasfoundation/engine/src/assets/enum/AssetType'
 import {
   ComponentDeserializeFunction,
   ComponentSerializeFunction
-} from '@atlas/engine/src/common/constants/PrefabFunctionType'
-import { Entity } from '@atlas/engine/src/ecs/classes/Entity'
-import { EntityTreeNode } from '@atlas/engine/src/ecs/classes/EntityTree'
+} from '@atlasfoundation/engine/src/common/constants/PrefabFunctionType'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
 import {
   addComponent,
   getComponent,
   hasComponent,
   removeComponent
-} from '@atlas/engine/src/ecs/functions/ComponentFunctions'
+} from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 import {
   AssetComponent,
   AssetComponentType,
   AssetLoadedComponent,
   LoadState
-} from '@atlas/engine/src/scene/components/AssetComponent'
-import { EntityNodeComponent } from '@atlas/engine/src/scene/components/EntityNodeComponent'
-import { Object3DComponent, Object3DWithEntity } from '@atlas/engine/src/scene/components/Object3DComponent'
+} from '@atlasfoundation/engine/src/scene/components/AssetComponent'
+import { EntityNodeComponent } from '@atlasfoundation/engine/src/scene/components/EntityNodeComponent'
+import { Object3DComponent, Object3DWithEntity } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
 
 import { sceneToGLTF } from '../GLTFConversion'
 

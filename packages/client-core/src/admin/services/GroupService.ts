@@ -1,7 +1,7 @@
 import { createState, useState } from '@speigg/hookstate'
 
-import { CreateGroup, Group } from '@atlas/common/src/interfaces/Group'
-import { GroupResult } from '@atlas/common/src/interfaces/GroupResult'
+import { CreateGroup, Group } from '@atlasfoundation/common/src/interfaces/Group'
+import { GroupResult } from '@atlasfoundation/common/src/interfaces/GroupResult'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'

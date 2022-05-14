@@ -1,8 +1,8 @@
 import { Paginated, Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { Invite as InviteType } from '@atlas/common/src/interfaces/Invite'
-import { UserId } from '@atlas/common/src/interfaces/UserId'
+import { Invite as InviteType } from '@atlasfoundation/common/src/interfaces/Invite'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 
 import { Application } from '../../../declarations'
 import { UserDataType } from '../../user/user/user.class'

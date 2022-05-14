@@ -4,7 +4,7 @@ import groupDocs from './group.docs'
 import hooks from './group.hooks'
 import createModel from './group.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     group: Group
   }

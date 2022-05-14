@@ -1,4 +1,4 @@
-import { updateAppConfig } from '@atlas/server-core/src/updateAppConfig'
+import { updateAppConfig } from '@atlasfoundation/server-core/src/updateAppConfig'
 
 const init = async () => {
   await updateAppConfig()

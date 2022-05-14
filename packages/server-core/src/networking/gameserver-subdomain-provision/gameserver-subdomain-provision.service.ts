@@ -6,7 +6,7 @@ import hooks from './gameserver-subdomain-provision.hooks'
 import createModel from './gameserver-subdomain-provision.model'
 
 // Add this service to the service type index
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'gameserver-subdomain-provision': GameserverSubdomainProvision
   }

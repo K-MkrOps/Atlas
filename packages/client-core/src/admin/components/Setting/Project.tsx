@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useHookEffect } from '@atlas/hyperflux'
-import { loadConfigForProject } from '@atlas/projects/loadConfigForProject'
+import { useHookEffect } from '@atlasfoundation/hyperflux'
+import { loadConfigForProject } from '@atlasfoundation/projects/loadConfigForProject'
 
 import { Button, Grid, InputBase, MenuItem, Paper, TextField, Typography } from '@mui/material'
 

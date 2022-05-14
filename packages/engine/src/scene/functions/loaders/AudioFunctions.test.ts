@@ -2,7 +2,7 @@ import assert from 'assert'
 import proxyquire from 'proxyquire'
 import { Object3D, Texture } from 'three'
 
-import { ComponentJson } from '@atlas/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { AssetLoader } from '../../../assets/classes/AssetLoader'
 import { AudioComponent, AudioComponentType } from '../../../audio/components/AudioComponent'

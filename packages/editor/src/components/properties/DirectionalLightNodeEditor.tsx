@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { EngineRenderer } from '@atlas/engine/src/renderer/WebGLRendererSystem'
-import { DirectionalLightComponent } from '@atlas/engine/src/scene/components/DirectionalLightComponent'
-import { Object3DComponent } from '@atlas/engine/src/scene/components/Object3DComponent'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { EngineRenderer } from '@atlasfoundation/engine/src/renderer/WebGLRendererSystem'
+import { DirectionalLightComponent } from '@atlasfoundation/engine/src/scene/components/DirectionalLightComponent'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
 
 import BoltIcon from '@mui/icons-material/Bolt'
 

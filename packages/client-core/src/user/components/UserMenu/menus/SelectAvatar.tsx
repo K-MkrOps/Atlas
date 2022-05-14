@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-import { UserAvatar } from '@atlas/common/src/interfaces/UserAvatar'
-import { AvatarEffectComponent } from '@atlas/engine/src/avatar/components/AvatarEffectComponent'
-import { hasComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { useWorld } from '@atlas/engine/src/ecs/functions/SystemHooks'
+import { UserAvatar } from '@atlasfoundation/common/src/interfaces/UserAvatar'
+import { AvatarEffectComponent } from '@atlasfoundation/engine/src/avatar/components/AvatarEffectComponent'
+import { hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
 
 import { ArrowBackIos, ArrowForwardIos, Check, PersonAdd } from '@mui/icons-material'
 import Grid from '@mui/material/Grid'

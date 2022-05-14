@@ -3,11 +3,11 @@ import { useState } from '@speigg/hookstate'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { WorldState } from '@atlas/engine/src/networking/interfaces/WorldState'
-import { createXRUI } from '@atlas/engine/src/xrui/functions/createXRUI'
-import { useXRUIState } from '@atlas/engine/src/xrui/functions/useXRUIState'
-import { getState } from '@atlas/hyperflux'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { WorldState } from '@atlasfoundation/engine/src/networking/interfaces/WorldState'
+import { createXRUI } from '@atlasfoundation/engine/src/xrui/functions/createXRUI'
+import { useXRUIState } from '@atlasfoundation/engine/src/xrui/functions/useXRUIState'
+import { getState } from '@atlasfoundation/hyperflux'
 
 import { useUserState } from '../../user/services/UserService'
 

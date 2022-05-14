@@ -1,8 +1,8 @@
-import { EntityTreeNode } from '@atlas/engine/src/ecs/classes/EntityTree'
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { useWorld } from '@atlas/engine/src/ecs/functions/SystemHooks'
-import { EntityNodeComponent } from '@atlas/engine/src/scene/components/EntityNodeComponent'
-import { ScenePrefabTypes } from '@atlas/engine/src/scene/functions/registerPrefabs'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { EntityNodeComponent } from '@atlasfoundation/engine/src/scene/components/EntityNodeComponent'
+import { ScenePrefabTypes } from '@atlasfoundation/engine/src/scene/functions/registerPrefabs'
 
 export const shouldNodeDeserialize = (node: EntityTreeNode, world = useWorld()): boolean => {
   const entityNode = getComponent(node.entity, EntityNodeComponent)

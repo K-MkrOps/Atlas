@@ -3,7 +3,7 @@ import { Sms } from './sms.class'
 import smsDocs from './sms.docs'
 import hooks from './sms.hooks'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     sms: Sms
   }

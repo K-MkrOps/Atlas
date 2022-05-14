@@ -1,4 +1,4 @@
-import { Action } from '@atlas/hyperflux/functions/ActionFunctions'
+import { Action } from '@atlasfoundation/hyperflux/functions/ActionFunctions'
 
 /** Interface for the Transport. */
 export interface NetworkTransport {

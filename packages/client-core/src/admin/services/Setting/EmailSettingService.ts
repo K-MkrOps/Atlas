@@ -1,7 +1,7 @@
 import { Paginated } from '@feathersjs/feathers'
 import { createState, useState } from '@speigg/hookstate'
 
-import { EmailSetting, PatchEmailSetting } from '@atlas/common/src/interfaces/EmailSetting'
+import { EmailSetting, PatchEmailSetting } from '@atlasfoundation/common/src/interfaces/EmailSetting'
 
 import { AlertService } from '../../../common/services/AlertService'
 import { client } from '../../../feathers'

@@ -1,18 +1,18 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useDispatch } from '@atlas/client-core/src/store'
-import { UserSetting } from '@atlas/common/src/interfaces/User'
-import { AvatarSettings, updateMap } from '@atlas/engine/src/avatar/AvatarControllerSystem'
+import { useDispatch } from '@atlasfoundation/client-core/src/store'
+import { UserSetting } from '@atlasfoundation/common/src/interfaces/User'
+import { AvatarSettings, updateMap } from '@atlasfoundation/engine/src/avatar/AvatarControllerSystem'
 import {
   AvatarInputSettingsAction,
   useAvatarInputSettingsState
-} from '@atlas/engine/src/avatar/state/AvatarInputSettingsState'
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { EngineActions, useEngineState } from '@atlas/engine/src/ecs/classes/EngineService'
-import { AvatarControllerType, AvatarMovementScheme } from '@atlas/engine/src/input/enums/InputEnums'
-import { EngineRendererAction, useEngineRendererState } from '@atlas/engine/src/renderer/EngineRendererState'
-import { addActionReceptor, dispatchAction } from '@atlas/hyperflux'
+} from '@atlasfoundation/engine/src/avatar/state/AvatarInputSettingsState'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { EngineActions, useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { AvatarControllerType, AvatarMovementScheme } from '@atlasfoundation/engine/src/input/enums/InputEnums'
+import { EngineRendererAction, useEngineRendererState } from '@atlasfoundation/engine/src/renderer/EngineRendererState'
+import { addActionReceptor, dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { BlurLinear, Mic, VolumeUp } from '@mui/icons-material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'

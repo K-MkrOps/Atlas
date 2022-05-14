@@ -3,7 +3,7 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 import { HookReturn } from 'sequelize/types/lib/hooks'
 
-import { GameserverSubdomainProvisionInterface } from '@atlas/common/src/dbmodels/GameserverSubdomainProvision'
+import { GameserverSubdomainProvisionInterface } from '@atlasfoundation/common/src/dbmodels/GameserverSubdomainProvision'
 
 import { Application } from '../../../declarations'
 

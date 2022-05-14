@@ -1,8 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 
-import { ServicesSeedConfig } from '@atlas/common/src/interfaces/ServicesSeedConfig'
-import { ProjectConfigInterface } from '@atlas/projects/ProjectConfigInterface'
+import { ServicesSeedConfig } from '@atlasfoundation/common/src/interfaces/ServicesSeedConfig'
+import { ProjectConfigInterface } from '@atlasfoundation/projects/ProjectConfigInterface'
 
 import { analyticsSeeds } from './analytics/seeder-config'
 import { mediaSeeds } from './media/seeder-config'

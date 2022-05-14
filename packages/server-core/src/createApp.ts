@@ -10,13 +10,13 @@ import sync from 'feathers-sync'
 import helmet from 'helmet'
 import path from 'path'
 
-import { pipe } from '@atlas/common/src/utils/pipe'
-import { Application } from '@atlas/server-core/declarations'
-import config from '@atlas/server-core/src/appconfig'
-import logger from '@atlas/server-core/src/logger'
-import sequelize from '@atlas/server-core/src/sequelize'
-import services from '@atlas/server-core/src/services'
-import authentication from '@atlas/server-core/src/user/authentication'
+import { pipe } from '@atlasfoundation/common/src/utils/pipe'
+import { Application } from '@atlasfoundation/server-core/declarations'
+import config from '@atlasfoundation/server-core/src/appconfig'
+import logger from '@atlasfoundation/server-core/src/logger'
+import sequelize from '@atlasfoundation/server-core/src/sequelize'
+import services from '@atlasfoundation/server-core/src/services'
+import authentication from '@atlasfoundation/server-core/src/user/authentication'
 
 export const configureOpenAPI = () => (app: Application) => {
   app.configure(

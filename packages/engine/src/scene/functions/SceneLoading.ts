@@ -1,8 +1,8 @@
 import { MathUtils } from 'three'
 
-import { ComponentJson, EntityJson, SceneJson } from '@atlas/common/src/interfaces/SceneInterface'
-import { precacheSupport } from '@atlas/engine/src/assets/enum/AssetType'
-import { dispatchAction } from '@atlas/hyperflux'
+import { ComponentJson, EntityJson, SceneJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { precacheSupport } from '@atlasfoundation/engine/src/assets/enum/AssetType'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { AssetLoader } from '../../assets/classes/AssetLoader'
 import { Engine } from '../../ecs/classes/Engine'

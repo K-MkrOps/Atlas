@@ -2,12 +2,12 @@ import { Paginated } from '@feathersjs/feathers/lib'
 import '@feathersjs/transport-commons'
 import { decode } from 'jsonwebtoken'
 
-import { IdentityProviderInterface } from '@atlas/common/src/dbmodels/IdentityProvider'
-import { InstanceInterface } from '@atlas/common/src/dbmodels/Instance'
-import { UserId } from '@atlas/common/src/interfaces/UserId'
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { accessEngineState, EngineActions } from '@atlas/engine/src/ecs/classes/EngineService'
-import { initSystems } from '@atlas/engine/src/ecs/functions/SystemFunctions'
+import { IdentityProviderInterface } from '@atlasfoundation/common/src/dbmodels/IdentityProvider'
+import { InstanceInterface } from '@atlasfoundation/common/src/dbmodels/Instance'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { accessEngineState, EngineActions } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { initSystems } from '@atlasfoundation/engine/src/ecs/functions/SystemFunctions'
 import {
   createEngine,
   initializeCoreSystems,
@@ -15,18 +15,18 @@ import {
   initializeNode,
   initializeRealtimeSystems,
   initializeSceneSystems
-} from '@atlas/engine/src/initializeEngine'
-import { Network } from '@atlas/engine/src/networking/classes/Network'
-import { loadSceneFromJSON } from '@atlas/engine/src/scene/functions/SceneLoading'
-import { dispatchAction } from '@atlas/hyperflux'
-import { loadEngineInjection } from '@atlas/projects/loadEngineInjection'
-// import { getPortalByEntityId } from '@atlas/server-core/src/entities/component/portal.controller'
-// import { setRemoteLocationDetail } from '@atlas/engine/src/scene/functions/createPortal'
-import { getSystemsFromSceneData } from '@atlas/projects/loadSystemInjection'
-import { Application } from '@atlas/server-core/declarations'
-import config from '@atlas/server-core/src/appconfig'
-import logger from '@atlas/server-core/src/logger'
-import getLocalServerIp from '@atlas/server-core/src/util/get-local-server-ip'
+} from '@atlasfoundation/engine/src/initializeEngine'
+import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
+import { loadSceneFromJSON } from '@atlasfoundation/engine/src/scene/functions/SceneLoading'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
+import { loadEngineInjection } from '@atlasfoundation/projects/loadEngineInjection'
+// import { getPortalByEntityId } from '@atlasfoundation/server-core/src/entities/component/portal.controller'
+// import { setRemoteLocationDetail } from '@atlasfoundation/engine/src/scene/functions/createPortal'
+import { getSystemsFromSceneData } from '@atlasfoundation/projects/loadSystemInjection'
+import { Application } from '@atlasfoundation/server-core/declarations'
+import config from '@atlasfoundation/server-core/src/appconfig'
+import logger from '@atlasfoundation/server-core/src/logger'
+import getLocalServerIp from '@atlasfoundation/server-core/src/util/get-local-server-ip'
 
 interface SocketIOConnectionType {
   provider: string

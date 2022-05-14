@@ -1,7 +1,7 @@
-import { useDispatch } from '@atlas/client-core/src/store'
-import { corsProxyPath } from '@atlas/client-core/src/util/config'
-import { SceneAction } from '@atlas/client-core/src/world/services/SceneService'
-import { SceneJson } from '@atlas/common/src/interfaces/SceneInterface'
+import { useDispatch } from '@atlasfoundation/client-core/src/store'
+import { corsProxyPath } from '@atlasfoundation/client-core/src/util/config'
+import { SceneAction } from '@atlasfoundation/client-core/src/world/services/SceneService'
+import { SceneJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 const sceneRelativePathIdentifier = '__$project$__'
 const sceneCorsPathIdentifier = '__$cors-proxy$__'

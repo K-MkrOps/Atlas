@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { getComponent, hasComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { traverseEntityNode } from '@atlas/engine/src/ecs/functions/EntityTreeFunctions'
-import { useWorld } from '@atlas/engine/src/ecs/functions/SystemHooks'
-import { NameComponent } from '@atlas/engine/src/scene/components/NameComponent'
-import { Object3DComponent } from '@atlas/engine/src/scene/components/Object3DComponent'
-import { TriggerVolumeComponent } from '@atlas/engine/src/scene/components/TriggerVolumeComponent'
+import { getComponent, hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { traverseEntityNode } from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { NameComponent } from '@atlasfoundation/engine/src/scene/components/NameComponent'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
+import { TriggerVolumeComponent } from '@atlasfoundation/engine/src/scene/components/TriggerVolumeComponent'
 
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun'
 

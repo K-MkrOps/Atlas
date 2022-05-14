@@ -2,7 +2,7 @@
 // for more of what you can do here.
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { InviteTypeInterface } from '@atlas/common/src/dbmodels/InviteType'
+import { InviteTypeInterface } from '@atlasfoundation/common/src/dbmodels/InviteType'
 
 import { Application } from '../../../declarations'
 

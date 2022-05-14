@@ -1,7 +1,7 @@
 import { Paginated } from '@feathersjs/feathers'
 import { createState, useState } from '@speigg/hookstate'
 
-import { AdminRedisSetting } from '@atlas/common/src/interfaces/AdminRedisSetting'
+import { AdminRedisSetting } from '@atlasfoundation/common/src/interfaces/AdminRedisSetting'
 
 //Action
 import { AlertService } from '../../../common/services/AlertService'

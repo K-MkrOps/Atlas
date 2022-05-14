@@ -1,4 +1,4 @@
-import { download } from "@atlas/server-core/src/projects/project/downloadProjects";
+import { download } from "@atlasfoundation/server-core/src/projects/project/downloadProjects";
 import dotenv from 'dotenv';
 import Sequelize from 'sequelize';
 import path from "path";

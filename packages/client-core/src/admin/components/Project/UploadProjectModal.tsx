@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { GithubAppInterface } from '@atlas/common/src/interfaces/GithubAppInterface'
+import { GithubAppInterface } from '@atlasfoundation/common/src/interfaces/GithubAppInterface'
 
 import GitHubIcon from '@mui/icons-material/GitHub'
 import GroupIcon from '@mui/icons-material/Group'

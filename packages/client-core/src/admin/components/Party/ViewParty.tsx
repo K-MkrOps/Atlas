@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Instance } from '@atlas/common/src/interfaces/Instance'
-import { Party, PatchParty } from '@atlas/common/src/interfaces/Party'
+import { Instance } from '@atlasfoundation/common/src/interfaces/Instance'
+import { Party, PatchParty } from '@atlasfoundation/common/src/interfaces/Party'
 
 import { Save } from '@mui/icons-material'
 import Button from '@mui/material/Button'

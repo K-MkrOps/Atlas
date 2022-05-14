@@ -1,6 +1,6 @@
 import matches from 'ts-matches'
 
-import { defineState } from '@atlas/hyperflux'
+import { defineState } from '@atlasfoundation/hyperflux'
 
 export const matchesAvatarProps = matches.shape({
   avatarURL: matches.string,

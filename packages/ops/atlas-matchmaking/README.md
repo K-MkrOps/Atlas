@@ -5,7 +5,7 @@
 ## TL;DR
 
 ```console
-helm repo add atlas https://helm.atlasfoundation.io
+helm repo add atlas https://helm.atlas.io
 helm install my-release atlas/atlas
 ```
 
@@ -26,7 +26,7 @@ This chart creates a [Atlas](https://atlasfoundation.io/) deployment on a [Kuber
 To install the chart with the release name `my-release`:
 
 ``` bash
-helm repo add atlas https://helm.atlasfoundation.io
+helm repo add atlas https://helm.atlas.io
 helm repo update
 helm install my-release atlas/atlas            # Helm 3
 helm install --name my-release atlas/atlas     # Helm 2
@@ -138,7 +138,7 @@ This section lists configuration specific for server, client components.
 | server.extraEnv.GOOGLE_CALLBACK_URL | string | `"http://127.0.0.1:3000/oauth/google"` |  |
 | server.extraEnv.GOOGLE_CLIENT_ID | string | `nil` |  |
 | server.extraEnv.GOOGLE_CLIENT_SECRET | string | `nil` |  |
-| server.extraEnv.MAIL_FROM | string | `"noreply@atlas.local"` |  |
+| server.extraEnv.MAIL_FROM | string | `"noreply@atlasfoundation.local"` |  |
 | server.extraEnv.MYSQL_DATABASE | string | `"atlas"` |  |
 | server.extraEnv.MYSQL_PASSWORD | string | `"password"` |  |
 | server.extraEnv.MYSQL_PORT | int | `3306` |  |

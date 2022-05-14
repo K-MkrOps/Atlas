@@ -1,4 +1,4 @@
-import { clearOutgoingActions, dispatchAction } from '@atlas/hyperflux'
+import { clearOutgoingActions, dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { World } from '../../ecs/classes/World'
 import { Network } from '../classes/Network'

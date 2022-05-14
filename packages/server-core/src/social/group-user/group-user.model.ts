@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { GroupUserInterface } from '@atlas/common/src/dbmodels/GroupUser'
+import { GroupUserInterface } from '@atlasfoundation/common/src/dbmodels/GroupUser'
 
 import { Application } from '../../../declarations'
 

@@ -1,13 +1,13 @@
 import { PerspectiveCamera, Vector2 } from 'three'
 
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { defineQuery, getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { createEntity } from '@atlas/engine/src/ecs/functions/EntityFunctions'
-import { EngineRenderer } from '@atlas/engine/src/renderer/WebGLRendererSystem'
-import { Object3DComponent } from '@atlas/engine/src/scene/components/Object3DComponent'
-import { ScenePreviewCameraTagComponent } from '@atlas/engine/src/scene/components/ScenePreviewCamera'
-import { ObjectLayers } from '@atlas/engine/src/scene/constants/ObjectLayers'
-import { deserializeScenePreviewCamera } from '@atlas/engine/src/scene/functions/loaders/ScenePreviewCameraFunctions'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { defineQuery, getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { createEntity } from '@atlasfoundation/engine/src/ecs/functions/EntityFunctions'
+import { EngineRenderer } from '@atlasfoundation/engine/src/renderer/WebGLRendererSystem'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
+import { ScenePreviewCameraTagComponent } from '@atlasfoundation/engine/src/scene/components/ScenePreviewCamera'
+import { ObjectLayers } from '@atlasfoundation/engine/src/scene/constants/ObjectLayers'
+import { deserializeScenePreviewCamera } from '@atlasfoundation/engine/src/scene/functions/loaders/ScenePreviewCameraFunctions'
 
 import { getCanvasBlob } from './thumbnails'
 

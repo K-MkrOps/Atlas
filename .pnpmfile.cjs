@@ -4,7 +4,7 @@ function readPackage(pkg) {
     const externalDeps = {};
     
     Object.entries(pkg.peerDependencies).forEach(([key, value]) => {
-        if(key.startsWith('@atlas')){
+        if(key.startsWith('@atlasfoundation')){
             internalDeps[key] = value;
         }else{
             externalDeps[key] = value;

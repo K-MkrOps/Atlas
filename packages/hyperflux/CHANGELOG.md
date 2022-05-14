@@ -5,4 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-**Note:** Version bump only for package @atlas/hyperflux
+**Note:** Version bump only for package @atlasfoundation/hyperflux

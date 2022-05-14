@@ -1,9 +1,9 @@
 import { disallow, iff, isProvider } from 'feathers-hooks-common'
 
-import matchmakingRemoveTicket from '@atlas/server-core/src/hooks/matchmaking-remove-ticket'
-import matchmakingRestrictMultipleQueueing from '@atlas/server-core/src/hooks/matchmaking-restrict-multiple-queueing'
-import matchmakingSaveTicket from '@atlas/server-core/src/hooks/matchmaking-save-ticket'
-import setLoggedInUser from '@atlas/server-core/src/hooks/set-loggedin-user-in-body'
+import matchmakingRemoveTicket from '@atlasfoundation/server-core/src/hooks/matchmaking-remove-ticket'
+import matchmakingRestrictMultipleQueueing from '@atlasfoundation/server-core/src/hooks/matchmaking-restrict-multiple-queueing'
+import matchmakingSaveTicket from '@atlasfoundation/server-core/src/hooks/matchmaking-save-ticket'
+import setLoggedInUser from '@atlasfoundation/server-core/src/hooks/set-loggedin-user-in-body'
 
 import authenticate from '../../hooks/authenticate'
 import createInstance from '../../hooks/matchmaking-create-instance'

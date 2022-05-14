@@ -2,7 +2,7 @@ import { useHookstate } from '@speigg/hookstate'
 import React, { ReactNode, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 
-import { clamp } from '@atlas/engine/src/common/functions/MathLerpFunctions'
+import { clamp } from '@atlasfoundation/engine/src/common/functions/MathLerpFunctions'
 
 import MultipleStopIcon from '@mui/icons-material/MultipleStop'
 

@@ -1,7 +1,7 @@
-// import { WorldScene } from '@atlas/engine/src/scene/functions/SceneLoading'
-// import { Application } from '@atlas/server-core/declarations'
-// import config from '@atlas/server-core/src/appconfig'
-// import getLocalServerIp from '@atlas/server-core/src/util/get-local-server-ip'
+// import { WorldScene } from '@atlasfoundation/engine/src/scene/functions/SceneLoading'
+// import { Application } from '@atlasfoundation/server-core/declarations'
+// import config from '@atlasfoundation/server-core/src/appconfig'
+// import getLocalServerIp from '@atlasfoundation/server-core/src/util/get-local-server-ip'
 
 // TODO: fix this file - currently unused (but nice to have)
 

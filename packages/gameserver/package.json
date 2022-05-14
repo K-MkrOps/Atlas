@@ -1,5 +1,5 @@
 {
-  "name": "@atlas/gameserver",
+  "name": "@atlasfoundation/gameserver",
   "description": "Multiplayer Gameserver for Atlas",
   "version": "0.5.3",
   "private": true,
@@ -18,7 +18,7 @@
     "vr"
   ],
   "author": {
-    "name": "AtlasFoundation Collective",
+    "name": "Atlas Foundation",
     "email": "hello@atlasfoundation.io"
   },
   "contributors": [],
@@ -48,9 +48,9 @@
     "@feathersjs/transport-commons": "5.0.0-pre.10",
     "@google-cloud/agones-sdk": "1.22.0",
     "@kubernetes/client-node": "0.16.3",
-    "@atlas/engine": "^0.5.3",
-    "@atlas/projects": "^0.5.3",
-    "@atlas/server-core": "^0.5.3",
+    "@atlasfoundation/engine": "^0.5.3",
+    "@atlasfoundation/projects": "^0.5.3",
+    "@atlasfoundation/server-core": "^0.5.3",
     "aws-sdk": "2.1113.0",
     "compression": "1.7.4",
     "cors": "2.8.5",

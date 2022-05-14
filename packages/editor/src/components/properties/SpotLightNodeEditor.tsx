@@ -1,8 +1,8 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { SpotLightComponent } from '@atlas/engine/src/scene/components/SpotLightComponent'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { SpotLightComponent } from '@atlasfoundation/engine/src/scene/components/SpotLightComponent'
 
 import AdjustIcon from '@mui/icons-material/Adjust'
 

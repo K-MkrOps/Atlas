@@ -5,26 +5,26 @@ import path from 'path'
 import rewire from 'rewire'
 import Sinon from 'sinon'
 
-import { ComponentJson } from '@atlas/common/src/interfaces/SceneInterface'
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { Entity } from '@atlas/engine/src/ecs/classes/Entity'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
 import {
   addComponent,
   getAllComponentsOfType,
   getComponent,
   hasComponent
-} from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { createEntity, removeEntity } from '@atlas/engine/src/ecs/functions/EntityFunctions'
+} from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { createEntity, removeEntity } from '@atlasfoundation/engine/src/ecs/functions/EntityFunctions'
 import {
   addEntityNodeInTree,
   createEntityNode,
   removeEntityNodeFromParent
-} from '@atlas/engine/src/ecs/functions/EntityTreeFunctions'
-import { createEngine, initializeCoreSystems } from '@atlas/engine/src/initializeEngine'
-import '@atlas/engine/src/patchEngineNode'
-import { AssetComponent, AssetLoadedComponent, LoadState } from '@atlas/engine/src/scene/components/AssetComponent'
-import { ModelComponent } from '@atlas/engine/src/scene/components/ModelComponent'
-import { gltfToSceneJson, handleScenePaths } from '@atlas/engine/src/scene/functions/GLTFConversion'
+} from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { createEngine, initializeCoreSystems } from '@atlasfoundation/engine/src/initializeEngine'
+import '@atlasfoundation/engine/src/patchEngineNode'
+import { AssetComponent, AssetLoadedComponent, LoadState } from '@atlasfoundation/engine/src/scene/components/AssetComponent'
+import { ModelComponent } from '@atlasfoundation/engine/src/scene/components/ModelComponent'
+import { gltfToSceneJson, handleScenePaths } from '@atlasfoundation/engine/src/scene/functions/GLTFConversion'
 import {
   deserializeAsset,
   loadAsset,
@@ -32,8 +32,8 @@ import {
   SCENE_COMPONENT_ASSET_DEFAULT_VALUES,
   serializeAsset,
   unloadAsset
-} from '@atlas/engine/src/scene/functions/loaders/AssetComponentFunctions'
-import { loadECSData } from '@atlas/engine/src/scene/functions/SceneLoading'
+} from '@atlasfoundation/engine/src/scene/functions/loaders/AssetComponentFunctions'
+import { loadECSData } from '@atlasfoundation/engine/src/scene/functions/SceneLoading'
 
 import { AssetLoader } from '../../../assets/classes/AssetLoader'
 import { XRELoader } from '../../../assets/classes/XRELoader'

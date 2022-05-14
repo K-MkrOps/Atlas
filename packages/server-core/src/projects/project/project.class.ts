@@ -4,9 +4,9 @@ import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import fs from 'fs'
 import path from 'path'
 
-import { ProjectInterface } from '@atlas/common/src/interfaces/ProjectInterface'
-import { isDev } from '@atlas/common/src/utils/isDev'
-import templateProjectJson from '@atlas/projects/template-project/package.json'
+import { ProjectInterface } from '@atlasfoundation/common/src/interfaces/ProjectInterface'
+import { isDev } from '@atlasfoundation/common/src/utils/isDev'
+import templateProjectJson from '@atlasfoundation/projects/template-project/package.json'
 
 import { Application } from '../../../declarations'
 import config from '../../appconfig'

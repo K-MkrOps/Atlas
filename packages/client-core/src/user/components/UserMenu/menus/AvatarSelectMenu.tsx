@@ -10,14 +10,14 @@ import {
   THUMBNAIL_FILE_ALLOWED_EXTENSIONS,
   THUMBNAIL_HEIGHT,
   THUMBNAIL_WIDTH
-} from '@atlas/common/src/constants/AvatarConstants'
-import { AvatarInterface } from '@atlas/common/src/interfaces/AvatarInterface'
-import { AssetLoader } from '@atlas/engine/src/assets/classes/AssetLoader'
-import { loadAvatarForPreview } from '@atlas/engine/src/avatar/functions/avatarFunctions'
-import { Entity } from '@atlas/engine/src/ecs/classes/Entity'
-import { createEntity, removeEntity } from '@atlas/engine/src/ecs/functions/EntityFunctions'
-import { useWorld } from '@atlas/engine/src/ecs/functions/SystemHooks'
-import { getOrbitControls } from '@atlas/engine/src/input/functions/loadOrbitControl'
+} from '@atlasfoundation/common/src/constants/AvatarConstants'
+import { AvatarInterface } from '@atlasfoundation/common/src/interfaces/AvatarInterface'
+import { AssetLoader } from '@atlasfoundation/engine/src/assets/classes/AssetLoader'
+import { loadAvatarForPreview } from '@atlasfoundation/engine/src/avatar/functions/avatarFunctions'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { createEntity, removeEntity } from '@atlasfoundation/engine/src/ecs/functions/EntityFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { getOrbitControls } from '@atlasfoundation/engine/src/input/functions/loadOrbitControl'
 
 import { AccountCircle, ArrowBack, CloudUpload, Help, SystemUpdateAlt } from '@mui/icons-material'
 import Button from '@mui/material/Button'

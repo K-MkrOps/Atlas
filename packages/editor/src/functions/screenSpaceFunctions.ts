@@ -1,8 +1,8 @@
 import { Intersection, Object3D, Raycaster, Vector2, Vector3 } from 'three'
 
-import { useWorld } from '@atlas/engine/src/ecs/functions/SystemHooks'
-import { EngineRenderer } from '@atlas/engine/src/renderer/WebGLRendererSystem'
-import { SnapMode } from '@atlas/engine/src/scene/constants/transformConstants'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { EngineRenderer } from '@atlasfoundation/engine/src/renderer/WebGLRendererSystem'
+import { SnapMode } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import { executeCommand } from '../classes/History'
 import EditorCommands from '../constants/EditorCommands'

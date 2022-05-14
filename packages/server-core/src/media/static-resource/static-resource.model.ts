@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { StaticResourceInterface } from '@atlas/common/src/dbmodels/StaticResource'
+import { StaticResourceInterface } from '@atlasfoundation/common/src/dbmodels/StaticResource'
 
 import { Application } from '../../../declarations'
 import generateShortId from '../../util/generate-short-id'

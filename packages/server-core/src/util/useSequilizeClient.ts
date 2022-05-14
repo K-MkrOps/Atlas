@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize/types'
 
-import { Models } from '@atlas/common/declarations'
+import { Models } from '@atlasfoundation/common/declarations'
 
 import { Application } from '../../declarations'
 

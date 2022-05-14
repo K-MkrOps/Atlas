@@ -1,7 +1,7 @@
 import { Color, Mesh, Raycaster } from 'three'
 
-import { UserId } from '@atlas/common/src/interfaces/UserId'
-import { dispatchAction } from '@atlas/hyperflux'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { AvatarComponent } from '../../avatar/components/AvatarComponent'
 import { Engine } from '../../ecs/classes/Engine'

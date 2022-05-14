@@ -6,7 +6,7 @@ import {
   MAX_THUMBNAIL_FILE_SIZE,
   MIN_AVATAR_FILE_SIZE,
   MIN_THUMBNAIL_FILE_SIZE
-} from '@atlas/common/src/constants/AvatarConstants'
+} from '@atlasfoundation/common/src/constants/AvatarConstants'
 
 export const validateGet = async (context: HookContext): Promise<HookContext> => {
   const q = context.params.query!

@@ -1,6 +1,6 @@
 import { iff, isProvider } from 'feathers-hooks-common'
 
-import attachOwnerIdInQuery from '@atlas/server-core/src/hooks/set-loggedin-user-in-query'
+import attachOwnerIdInQuery from '@atlasfoundation/server-core/src/hooks/set-loggedin-user-in-query'
 
 import authenticate from '../../hooks/authenticate'
 

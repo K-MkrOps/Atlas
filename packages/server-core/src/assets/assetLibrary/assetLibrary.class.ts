@@ -4,7 +4,7 @@ import extract from 'extract-zip'
 import fs from 'fs'
 import path from 'path'
 
-import { Application } from '@atlas/server-core/declarations'
+import { Application } from '@atlasfoundation/server-core/declarations'
 
 import config from '../../appconfig'
 

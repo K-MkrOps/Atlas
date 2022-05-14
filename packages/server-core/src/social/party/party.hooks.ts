@@ -1,9 +1,9 @@
 import { HookContext } from '@feathersjs/feathers'
 import { disallow, iff, isProvider } from 'feathers-hooks-common'
 
-import createPartyOwner from '@atlas/server-core/src/hooks/create-party-owner'
-import partyPermissionAuthenticate from '@atlas/server-core/src/hooks/party-permission-authenticate'
-import removePartyUsers from '@atlas/server-core/src/hooks/remove-party-users'
+import createPartyOwner from '@atlasfoundation/server-core/src/hooks/create-party-owner'
+import partyPermissionAuthenticate from '@atlasfoundation/server-core/src/hooks/party-permission-authenticate'
+import removePartyUsers from '@atlasfoundation/server-core/src/hooks/remove-party-users'
 
 import addAssociations from '../../hooks/add-associations'
 import authenticate from '../../hooks/authenticate'

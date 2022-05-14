@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { TransformPivot } from '@atlas/engine/src/scene/constants/transformConstants'
+import { TransformPivot } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import AdjustIcon from '@mui/icons-material/Adjust'
 

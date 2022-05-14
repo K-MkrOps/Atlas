@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react'
 
-import FormDialog from '@atlas/client-core/src/admin/common/SubmitDialog'
-import { userHasAccessHook } from '@atlas/client-core/src/user/userHasAccess'
-import ProjectEditor from '@atlas/editor/src/pages/editor'
+import FormDialog from '@atlasfoundation/client-core/src/admin/common/SubmitDialog'
+import { userHasAccessHook } from '@atlasfoundation/client-core/src/user/userHasAccess'
+import ProjectEditor from '@atlasfoundation/editor/src/pages/editor'
 
 import CircularProgress from '@mui/material/CircularProgress'
 

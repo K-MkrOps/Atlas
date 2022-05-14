@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ConfirmEmail from '@atlas/client-core/src/user/components/Auth/ConfirmEmail'
+import ConfirmEmail from '@atlasfoundation/client-core/src/user/components/Auth/ConfirmEmail'
 
 export const ConfirmEmailPage = () => <ConfirmEmail />
 

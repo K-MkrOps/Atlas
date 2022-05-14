@@ -1,7 +1,7 @@
 import { createState, useState } from '@speigg/hookstate'
 
-import { NearbyUser } from '@atlas/engine/src/networking/functions/getNearbyUsers'
-import { MediaStreams } from '@atlas/engine/src/networking/systems/MediaStreamSystem'
+import { NearbyUser } from '@atlasfoundation/engine/src/networking/functions/getNearbyUsers'
+import { MediaStreams } from '@atlasfoundation/engine/src/networking/systems/MediaStreamSystem'
 
 import { store } from '../../store'
 

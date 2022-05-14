@@ -1,7 +1,7 @@
 import type SocketIO from 'socket.io'
 
-import { NetworkId } from '@atlas/common/src/interfaces/NetworkId'
-import { UserId } from '@atlas/common/src/interfaces/UserId'
+import { NetworkId } from '@atlasfoundation/common/src/interfaces/NetworkId'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 
 import type { AvatarProps } from './WorldState'
 

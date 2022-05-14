@@ -1,4 +1,4 @@
-import { UserId } from '@atlas/common/src/interfaces/UserId'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 
 import { RingBuffer } from '../../common/classes/RingBuffer'
 import { NetworkTransport } from '../interfaces/NetworkTransport'

@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { ChannelInterface } from '@atlas/common/src/dbmodels/Channel'
+import { ChannelInterface } from '@atlasfoundation/common/src/dbmodels/Channel'
 
 import { Application } from '../../../declarations'
 

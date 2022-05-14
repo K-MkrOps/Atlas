@@ -1,4 +1,4 @@
-import { UserId } from '@atlas/common/src/interfaces/UserId'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 
 import { Engine } from '../../ecs/classes/Engine'
 import { getComponent } from '../../ecs/functions/ComponentFunctions'

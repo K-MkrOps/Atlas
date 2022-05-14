@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { RedisSettingInterface } from '@atlas/common/src/dbmodels/RedisSetting'
+import { RedisSettingInterface } from '@atlasfoundation/common/src/dbmodels/RedisSetting'
 
 import { Application } from '../../../declarations'
 

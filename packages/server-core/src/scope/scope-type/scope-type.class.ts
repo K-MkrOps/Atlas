@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { AdminScopeType as ScopeTypeInterface } from '@atlas/common/src/interfaces/AdminScopeType'
+import { AdminScopeType as ScopeTypeInterface } from '@atlasfoundation/common/src/interfaces/AdminScopeType'
 
 import { Application } from '../../../declarations'
 

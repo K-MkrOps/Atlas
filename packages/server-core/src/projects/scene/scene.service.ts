@@ -1,6 +1,6 @@
 import { Params } from '@feathersjs/feathers'
 
-import { SceneData } from '@atlas/common/src/interfaces/SceneInterface'
+import { SceneData } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { Application } from '../../../declarations'
 import logger from '../../logger'
@@ -12,7 +12,7 @@ import hooks from './scene.hooks'
 
 const storageProvider = useStorageProvider()
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     scene: Scene
   }

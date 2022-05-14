@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { GroupUserRankInterface } from '@atlas/common/src/dbmodels/GroupUserRank'
+import { GroupUserRankInterface } from '@atlasfoundation/common/src/dbmodels/GroupUserRank'
 
 import { Application } from '../../../declarations'
 

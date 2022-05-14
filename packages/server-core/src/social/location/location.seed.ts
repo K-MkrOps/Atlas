@@ -1,4 +1,4 @@
-import { Location } from '@atlas/common/src/interfaces/Location'
+import { Location } from '@atlasfoundation/common/src/interfaces/Location'
 
 import { locationSettingsSeed } from '../location-settings/location-settings.seed'
 

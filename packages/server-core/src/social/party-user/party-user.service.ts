@@ -7,7 +7,7 @@ import partyUserDocs from './party-user.docs'
 import hooks from './party-user.hooks'
 import createModel from './party-user.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'party-user': PartyUser
   }

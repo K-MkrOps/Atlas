@@ -2,10 +2,10 @@ import { createState } from '@speigg/hookstate'
 import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { UserId } from '@atlas/common/src/interfaces/UserId'
-import { useEngineState } from '@atlas/engine/src/ecs/classes/EngineService'
-import { createXRUI } from '@atlas/engine/src/xrui/functions/createXRUI'
-import { useXRUIState } from '@atlas/engine/src/xrui/functions/useXRUIState'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { createXRUI } from '@atlasfoundation/engine/src/xrui/functions/createXRUI'
+import { useXRUIState } from '@atlasfoundation/engine/src/xrui/functions/useXRUIState'
 
 import Button from '@mui/material/Button'
 

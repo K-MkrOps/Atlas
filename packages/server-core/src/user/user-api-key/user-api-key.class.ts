@@ -2,7 +2,7 @@ import { NullableId, Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import { v1 } from 'uuid'
 
-import { UserApiKeyInterface } from '@atlas/common/src/dbmodels/UserApiKey'
+import { UserApiKeyInterface } from '@atlasfoundation/common/src/dbmodels/UserApiKey'
 
 import { Application } from '../../../declarations'
 import { UserDataType } from '../user/user.class'

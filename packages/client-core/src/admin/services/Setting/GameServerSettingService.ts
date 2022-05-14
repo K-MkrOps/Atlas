@@ -1,7 +1,7 @@
 import { Paginated } from '@feathersjs/feathers'
 import { createState, useState } from '@speigg/hookstate'
 
-import { GameServerSetting } from '@atlas/common/src/interfaces/GameServerSetting'
+import { GameServerSetting } from '@atlasfoundation/common/src/interfaces/GameServerSetting'
 
 import { AlertService } from '../../../common/services/AlertService'
 import { client } from '../../../feathers'

@@ -1,6 +1,6 @@
 import { Params, ServiceMethods, ServiceOptions } from '@feathersjs/feathers'
 
-import { AvatarProps } from '@atlas/common/src/interfaces/AvatarInterface'
+import { AvatarProps } from '@atlasfoundation/common/src/interfaces/AvatarInterface'
 
 import { Application } from '../../../declarations'
 import { AvatarUploadArguments, getAvatarFromStaticResources, uploadAvatarStaticResource } from './avatar-helper'

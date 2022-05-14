@@ -1,12 +1,12 @@
 import { Socket } from 'socket.io'
 
-import { UserId } from '@atlas/common/src/interfaces/UserId'
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { accessEngineState, EngineActions } from '@atlas/engine/src/ecs/classes/EngineService'
-import { MessageTypes } from '@atlas/engine/src/networking/enums/MessageTypes'
-import { matchActionOnce } from '@atlas/engine/src/networking/functions/matchActionOnce'
-import logger from '@atlas/server-core/src/logger'
-import { WebRtcTransportParams } from '@atlas/server-core/src/types/WebRtcTransportParams'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { accessEngineState, EngineActions } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { MessageTypes } from '@atlasfoundation/engine/src/networking/enums/MessageTypes'
+import { matchActionOnce } from '@atlasfoundation/engine/src/networking/functions/matchActionOnce'
+import logger from '@atlasfoundation/server-core/src/logger'
+import { WebRtcTransportParams } from '@atlasfoundation/server-core/src/types/WebRtcTransportParams'
 
 import {
   handleConnectToWorld,

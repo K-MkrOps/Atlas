@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ThemeOptions } from '@atlas/common/src/interfaces/ClientSetting'
+import { ThemeOptions } from '@atlasfoundation/common/src/interfaces/ClientSetting'
 
 import { Divider, FormControlLabel, Grid, styled, Switch } from '@mui/material'
 

@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { MessageStatus as MessageStatusDataType } from '@atlas/common/src/interfaces/MessageStatus'
+import { MessageStatus as MessageStatusDataType } from '@atlasfoundation/common/src/interfaces/MessageStatus'
 
 import { Application } from '../../../declarations'
 

@@ -1,8 +1,8 @@
 // spawnPose is temporary - just so portals work for now - will be removed in favor of gameserver-gameserver communication
 import { Quaternion, Vector3 } from 'three'
 
-import { dispatchAction } from '@atlas/hyperflux'
-import { Action } from '@atlas/hyperflux/functions/ActionFunctions'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
+import { Action } from '@atlasfoundation/hyperflux/functions/ActionFunctions'
 
 import { Engine } from '../../ecs/classes/Engine'
 import { accessEngineState, EngineActions } from '../../ecs/classes/EngineService'

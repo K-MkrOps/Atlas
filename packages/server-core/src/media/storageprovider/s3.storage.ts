@@ -3,7 +3,7 @@ import { ObjectIdentifierList, PresignedPost } from 'aws-sdk/clients/s3'
 import path from 'path/posix'
 import S3BlobStore from 's3-blob-store'
 
-import { FileContentType } from '@atlas/common/src/interfaces/FileContentType'
+import { FileContentType } from '@atlasfoundation/common/src/interfaces/FileContentType'
 
 import config from '../../appconfig'
 import {

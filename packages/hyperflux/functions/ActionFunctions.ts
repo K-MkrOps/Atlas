@@ -1,8 +1,8 @@
 import { MathUtils } from 'three'
 import { matches, Validator } from 'ts-matches'
 
-import { UserId } from '@atlas/common/src/interfaces/UserId'
-import { deepEqual } from '@atlas/engine/src/common/functions/deepEqual'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { deepEqual } from '@atlasfoundation/engine/src/common/functions/deepEqual'
 
 import { HyperStore } from './StoreFunctions'
 

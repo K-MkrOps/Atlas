@@ -1,11 +1,11 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import * as EasingFunctions from '@atlas/engine/src/common/functions/EasingFunctions'
-import { useEngineState } from '@atlas/engine/src/ecs/classes/EngineService'
-import { getComponent, hasComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { ParticleEmitterComponent } from '@atlas/engine/src/particles/components/ParticleEmitter'
-import { ErrorComponent } from '@atlas/engine/src/scene/components/ErrorComponent'
+import * as EasingFunctions from '@atlasfoundation/engine/src/common/functions/EasingFunctions'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { getComponent, hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { ParticleEmitterComponent } from '@atlasfoundation/engine/src/particles/components/ParticleEmitter'
+import { ErrorComponent } from '@atlasfoundation/engine/src/scene/components/ErrorComponent'
 
 import GrainIcon from '@mui/icons-material/Grain'
 

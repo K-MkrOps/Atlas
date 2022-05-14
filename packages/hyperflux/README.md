@@ -31,7 +31,7 @@ createHyperStore({
     defaultDispatchDelay: 1
 })
 // IncomingActionSystem
-import { applyIncomingActions } from '@atlas/hyperflux'
+import { applyIncomingActions } from '@atlasfoundation/hyperflux'
 export default async function IncomingActionSystem(world) {
   return () => {
     applyIncomingActions(world.store)

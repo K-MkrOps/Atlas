@@ -7,7 +7,7 @@ import { Email } from './email.class'
 import emailDocs from './email.docs'
 import hooks from './email.hooks'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     email: Email
   }

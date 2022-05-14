@@ -11,7 +11,7 @@ import LinkedInStrategy from './strategies/linkedin'
 import { MyLocalStrategy } from './strategies/local'
 import TwitterStrategy from './strategies/twitter'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     authentication: AuthenticationService
   }

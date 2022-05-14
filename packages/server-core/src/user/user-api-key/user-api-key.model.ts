@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { UserApiKeyInterface } from '@atlas/common/src/dbmodels/UserApiKey'
+import { UserApiKeyInterface } from '@atlasfoundation/common/src/dbmodels/UserApiKey'
 
 import { Application } from '../../../declarations'
 

@@ -1,14 +1,14 @@
-import { store } from '@atlas/client-core/src/store'
-import { SceneJson } from '@atlas/common/src/interfaces/SceneInterface'
-import { EntityTreeNode } from '@atlas/engine/src/ecs/classes/EntityTree'
-import { removeEntity } from '@atlas/engine/src/ecs/functions/EntityFunctions'
+import { store } from '@atlasfoundation/client-core/src/store'
+import { SceneJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { removeEntity } from '@atlasfoundation/engine/src/ecs/functions/EntityFunctions'
 import {
   getEntityNodeArrayFromEntities,
   removeEntityNodeFromParent,
   traverseEntityNode
-} from '@atlas/engine/src/ecs/functions/EntityTreeFunctions'
-import { useWorld } from '@atlas/engine/src/ecs/functions/SystemHooks'
-import { serializeWorld } from '@atlas/engine/src/scene/functions/serializeWorld'
+} from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { serializeWorld } from '@atlasfoundation/engine/src/scene/functions/serializeWorld'
 
 import { executeCommand } from '../classes/History'
 import EditorCommands from '../constants/EditorCommands'

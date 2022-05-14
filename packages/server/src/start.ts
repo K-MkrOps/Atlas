@@ -4,10 +4,10 @@ import path from 'path'
 import psList from 'ps-list'
 import favicon from 'serve-favicon'
 
-import config from '@atlas/server-core/src/appconfig'
-import { createFeathersExpressApp } from '@atlas/server-core/src/createApp'
-import { StartCorsServer } from '@atlas/server-core/src/createCorsServer'
-import logger from '@atlas/server-core/src/logger'
+import config from '@atlasfoundation/server-core/src/appconfig'
+import { createFeathersExpressApp } from '@atlasfoundation/server-core/src/createApp'
+import { StartCorsServer } from '@atlasfoundation/server-core/src/createCorsServer'
+import logger from '@atlasfoundation/server-core/src/logger'
 
 import channels from './channels'
 

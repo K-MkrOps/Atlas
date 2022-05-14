@@ -1,7 +1,7 @@
-import { Entity } from '@atlas/engine/src/ecs/classes/Entity'
-import { hasComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { useWorld } from '@atlas/engine/src/ecs/functions/SystemHooks'
-import { DisableTransformTagComponent } from '@atlas/engine/src/transform/components/DisableTransformTagComponent'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { DisableTransformTagComponent } from '@atlasfoundation/engine/src/transform/components/DisableTransformTagComponent'
 
 /**
  * Filters the parent entities from the given entity list.

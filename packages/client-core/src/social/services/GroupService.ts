@@ -1,9 +1,9 @@
 import { createState, none, useState } from '@speigg/hookstate'
 import _ from 'lodash'
 
-import { CreateGroup, Group } from '@atlas/common/src/interfaces/Group'
-import { GroupResult } from '@atlas/common/src/interfaces/GroupResult'
-import { GroupUser } from '@atlas/common/src/interfaces/GroupUser'
+import { CreateGroup, Group } from '@atlasfoundation/common/src/interfaces/Group'
+import { GroupResult } from '@atlasfoundation/common/src/interfaces/GroupResult'
+import { GroupUser } from '@atlasfoundation/common/src/interfaces/GroupUser'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'

@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { BotCommands as BotCommandInterface } from '@atlas/common/src/interfaces/AdminBot'
+import { BotCommands as BotCommandInterface } from '@atlasfoundation/common/src/interfaces/AdminBot'
 
 import { Application } from '../../../declarations'
 

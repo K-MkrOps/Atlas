@@ -1,11 +1,11 @@
 import { FileLoader } from 'three'
 
-import { EntityTreeNode } from '@atlas/engine/src/ecs/classes/EntityTree'
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { useWorld } from '@atlas/engine/src/ecs/functions/SystemHooks'
-import { Object3DComponent } from '@atlas/engine/src/scene/components/Object3DComponent'
-import { gltfToSceneJson } from '@atlas/engine/src/scene/functions/GLTFConversion'
-import { loadECSData, loadSceneFromJSON, preCacheAssets } from '@atlas/engine/src/scene/functions/SceneLoading'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
+import { gltfToSceneJson } from '@atlasfoundation/engine/src/scene/functions/GLTFConversion'
+import { loadECSData, loadSceneFromJSON, preCacheAssets } from '@atlasfoundation/engine/src/scene/functions/SceneLoading'
 
 import { AssetLoader } from './AssetLoader'
 

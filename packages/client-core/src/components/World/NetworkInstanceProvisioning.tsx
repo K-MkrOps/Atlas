@@ -1,26 +1,26 @@
 import React from 'react'
 import { useHistory } from 'react-router'
 
-import { AppAction, GeneralStateList } from '@atlas/client-core/src/common/services/AppService'
+import { AppAction, GeneralStateList } from '@atlasfoundation/client-core/src/common/services/AppService'
 import {
   LocationInstanceConnectionService,
   useLocationInstanceConnectionState
-} from '@atlas/client-core/src/common/services/LocationInstanceConnectionService'
+} from '@atlasfoundation/client-core/src/common/services/LocationInstanceConnectionService'
 import {
   MediaInstanceConnectionService,
   useMediaInstanceConnectionState
-} from '@atlas/client-core/src/common/services/MediaInstanceConnectionService'
-import { MediaStreamService } from '@atlas/client-core/src/media/services/MediaStreamService'
-import { useChatState } from '@atlas/client-core/src/social/services/ChatService'
-import { useLocationState } from '@atlas/client-core/src/social/services/LocationService'
-import { useDispatch } from '@atlas/client-core/src/store'
-import { useAuthState } from '@atlas/client-core/src/user/services/AuthService'
-import { UserService, useUserState } from '@atlas/client-core/src/user/services/UserService'
-import { useEngineState } from '@atlas/engine/src/ecs/classes/EngineService'
-import { Network } from '@atlas/engine/src/networking/classes/Network'
-import { MessageTypes } from '@atlas/engine/src/networking/enums/MessageTypes'
-import { receiveJoinWorld } from '@atlas/engine/src/networking/functions/receiveJoinWorld'
-import { useHookEffect } from '@atlas/hyperflux'
+} from '@atlasfoundation/client-core/src/common/services/MediaInstanceConnectionService'
+import { MediaStreamService } from '@atlasfoundation/client-core/src/media/services/MediaStreamService'
+import { useChatState } from '@atlasfoundation/client-core/src/social/services/ChatService'
+import { useLocationState } from '@atlasfoundation/client-core/src/social/services/LocationService'
+import { useDispatch } from '@atlasfoundation/client-core/src/store'
+import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
+import { UserService, useUserState } from '@atlasfoundation/client-core/src/user/services/UserService'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
+import { MessageTypes } from '@atlasfoundation/engine/src/networking/enums/MessageTypes'
+import { receiveJoinWorld } from '@atlasfoundation/engine/src/networking/functions/receiveJoinWorld'
+import { useHookEffect } from '@atlasfoundation/hyperflux'
 
 import { getSearchParamFromURL } from '../../util/getSearchParamFromURL'
 import GameServerWarnings from './GameServerWarnings'

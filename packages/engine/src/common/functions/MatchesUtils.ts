@@ -1,8 +1,8 @@
 import { Quaternion, Vector3 } from 'three'
 import { matches, Validator } from 'ts-matches'
 
-import { NetworkId } from '@atlas/common/src/interfaces/NetworkId'
-import { UserId } from '@atlas/common/src/interfaces/UserId'
+import { NetworkId } from '@atlasfoundation/common/src/interfaces/NetworkId'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 
 import { Engine } from '../../ecs/classes/Engine'
 

@@ -1,6 +1,6 @@
 import { createState, useState } from '@speigg/hookstate'
 
-import { ProjectInterface } from '@atlas/common/src/interfaces/ProjectInterface'
+import { ProjectInterface } from '@atlasfoundation/common/src/interfaces/ProjectInterface'
 
 import { client } from '../../feathers'
 import { store, useDispatch } from '../../store'

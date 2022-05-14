@@ -1,7 +1,7 @@
 import { Paginated } from '@feathersjs/feathers'
 import { createState, useState } from '@speigg/hookstate'
 
-import { SceneMetadata } from '@atlas/common/src/interfaces/SceneInterface'
+import { SceneMetadata } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { client } from '../../feathers'
 import { store, useDispatch } from '../../store'

@@ -3,7 +3,7 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 import { HookReturn } from 'sequelize/types/lib/hooks'
 
-import { RtcPortsInterface } from '@atlas/common/src/dbmodels/RtcPorts'
+import { RtcPortsInterface } from '@atlasfoundation/common/src/dbmodels/RtcPorts'
 
 import { Application } from '../../../declarations'
 

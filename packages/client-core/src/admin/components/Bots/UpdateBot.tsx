@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { CreateBotAsAdmin } from '@atlas/common/src/interfaces/AdminBot'
-import { AdminBot } from '@atlas/common/src/interfaces/AdminBot'
-import { Instance } from '@atlas/common/src/interfaces/Instance'
+import { CreateBotAsAdmin } from '@atlasfoundation/common/src/interfaces/AdminBot'
+import { AdminBot } from '@atlasfoundation/common/src/interfaces/AdminBot'
+import { Instance } from '@atlasfoundation/common/src/interfaces/Instance'
 
 import { Autorenew, Save } from '@mui/icons-material'
 import Button from '@mui/material/Button'

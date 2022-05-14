@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom'
 
-import { LoadingCircle } from '@atlas/client-core/src/components/LoadingCircle'
+import { LoadingCircle } from '@atlasfoundation/client-core/src/components/LoadingCircle'
 
 import './env-config'
 import './hookstate_devtools.es'

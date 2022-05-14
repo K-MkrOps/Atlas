@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { Vector2 } from 'three'
 
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { TransformComponent } from '@atlas/engine/src/transform/components/TransformComponent'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { TransformComponent } from '@atlasfoundation/engine/src/transform/components/TransformComponent'
 
 import CloudUploadIcon from '@mui/icons-material/CloudUpload'
 

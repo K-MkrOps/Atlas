@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { Joystick } from 'react-joystick-component'
 
-import { GamepadAxis, GamepadButtons } from '@atlas/engine/src/input/enums/InputEnums'
+import { GamepadAxis, GamepadButtons } from '@atlasfoundation/engine/src/input/enums/InputEnums'
 
 import TouchAppIcon from '@mui/icons-material/TouchApp'
 

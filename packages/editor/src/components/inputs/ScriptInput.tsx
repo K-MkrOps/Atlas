@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CustomScriptFileTypes } from '@atlas/engine/src/assets/constants/fileTypes'
+import { CustomScriptFileTypes } from '@atlasfoundation/engine/src/assets/constants/fileTypes'
 
 import { ItemTypes } from '../../constants/AssetTypes'
 import FileBrowserInput from './FileBrowserInput'

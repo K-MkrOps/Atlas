@@ -1,4 +1,4 @@
-import type { ProjectConfigInterface } from '@atlas/projects/ProjectConfigInterface'
+import type { ProjectConfigInterface } from '@atlasfoundation/projects/ProjectConfigInterface'
 
 const config: ProjectConfigInterface = {
   onEvent: undefined,

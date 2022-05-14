@@ -1,7 +1,7 @@
 import { createState, State, useState } from '@speigg/hookstate'
 import React from 'react'
 
-import { useXRUIState } from '@atlas/engine/src/xrui/functions/useXRUIState'
+import { useXRUIState } from '@atlasfoundation/engine/src/xrui/functions/useXRUIState'
 
 import { Entity } from '../../ecs/classes/Entity'
 import { getComponent } from '../../ecs/functions/ComponentFunctions'

@@ -1,4 +1,4 @@
-import { Party as PartyDataType } from '@atlas/common/src/interfaces/Party'
+import { Party as PartyDataType } from '@atlasfoundation/common/src/interfaces/Party'
 
 import { Application } from '../../../declarations'
 import logger from '../../logger'
@@ -7,7 +7,7 @@ import partyDocs from './party.docs'
 import hooks from './party.hooks'
 import createModel from './party.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     party: Party
   }

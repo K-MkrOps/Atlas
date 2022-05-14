@@ -3,7 +3,7 @@ import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import _ from 'lodash'
 import { Op } from 'sequelize'
 
-import { AvatarInterface } from '@atlas/common/src/interfaces/AvatarInterface'
+import { AvatarInterface } from '@atlasfoundation/common/src/interfaces/AvatarInterface'
 
 import { Application } from '../../../declarations'
 

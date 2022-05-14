@@ -7,7 +7,7 @@ import {
   VideoDeletedResponse,
   VideoUpdatedResponse,
   VideoUpdateForm
-} from '@atlas/common/src/interfaces/AdminService'
+} from '@atlasfoundation/common/src/interfaces/AdminService'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'

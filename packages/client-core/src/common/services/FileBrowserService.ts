@@ -1,6 +1,6 @@
 import { createState, useState } from '@speigg/hookstate'
 
-import { FileContentType } from '@atlas/common/src/interfaces/FileContentType'
+import { FileContentType } from '@atlasfoundation/common/src/interfaces/FileContentType'
 
 import { client } from '../../feathers'
 import { store, useDispatch } from '../../store'

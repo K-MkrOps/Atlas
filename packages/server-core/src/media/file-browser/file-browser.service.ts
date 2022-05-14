@@ -6,7 +6,7 @@ import { Application } from '../../../declarations'
 import { FileBrowserService } from './file-browser.class'
 import hooks from './file-browser.hooks'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'file-browser': FileBrowserService
     'file-browser/upload': any

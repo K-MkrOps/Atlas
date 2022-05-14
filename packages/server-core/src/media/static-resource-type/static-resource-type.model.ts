@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { StaticResourceTypeInterface } from '@atlas/common/src/dbmodels/StaticResourceType'
+import { StaticResourceTypeInterface } from '@atlasfoundation/common/src/dbmodels/StaticResourceType'
 
 import { Application } from '../../../declarations'
 

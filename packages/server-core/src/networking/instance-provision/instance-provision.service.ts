@@ -6,7 +6,7 @@ import instanceProvisionDocs from './instance-provision.docs'
 import hooks from './instance-provision.hooks'
 
 // Add this service to the service type index
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'instance-provision': InstanceProvision
   }

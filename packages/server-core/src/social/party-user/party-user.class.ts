@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { PartyUser as PartyUserDataType } from '@atlas/common/src/interfaces/PartyUser'
+import { PartyUser as PartyUserDataType } from '@atlasfoundation/common/src/interfaces/PartyUser'
 
 import { Application } from '../../../declarations'
 

@@ -1,7 +1,7 @@
-import { store, useDispatch } from '@atlas/client-core/src/store'
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { EngineRenderer } from '@atlas/engine/src/renderer/WebGLRendererSystem'
-import { ObjectLayers } from '@atlas/engine/src/scene/constants/ObjectLayers'
+import { store, useDispatch } from '@atlasfoundation/client-core/src/store'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { EngineRenderer } from '@atlasfoundation/engine/src/renderer/WebGLRendererSystem'
+import { ObjectLayers } from '@atlasfoundation/engine/src/scene/constants/ObjectLayers'
 
 import { executeCommandWithHistory } from '../classes/History'
 import EditorCommands from '../constants/EditorCommands'

@@ -1,5 +1,5 @@
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { EngineRenderer } from '@atlas/engine/src/renderer/WebGLRendererSystem'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { EngineRenderer } from '@atlasfoundation/engine/src/renderer/WebGLRendererSystem'
 
 import { InputComponent, InputComponentType } from '../classes/InputComponent'
 import isInputSelected from '../functions/isInputSelected'

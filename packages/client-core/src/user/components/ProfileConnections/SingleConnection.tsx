@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { IdentityProviderSeed } from '@atlas/common/src/interfaces/IdentityProvider'
+import { IdentityProviderSeed } from '@atlasfoundation/common/src/interfaces/IdentityProvider'
 
 import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'

@@ -1,7 +1,7 @@
 import { createState, useState } from '@speigg/hookstate'
 
-import { DialogSeed } from '@atlas/common/src/interfaces/Dialog'
-import { Dialog } from '@atlas/common/src/interfaces/Dialog'
+import { DialogSeed } from '@atlasfoundation/common/src/interfaces/Dialog'
+import { Dialog } from '@atlasfoundation/common/src/interfaces/Dialog'
 
 import { store } from '../../store'
 

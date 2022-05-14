@@ -3,7 +3,7 @@ import { Analytics } from './analytics.class'
 import hooks from './analytics.hooks'
 import createModel from './analytics.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'analytics-setting': Analytics
   }

@@ -1,5 +1,5 @@
 {
-  "name": "@atlas/ops",
+  "name": "@atlasfoundation/ops",
   "version": "0.5.3",
   "private": true,
   "description": "Dev Ops tooling for Atlas",

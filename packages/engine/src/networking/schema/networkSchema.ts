@@ -1,5 +1,5 @@
-import { NetworkId } from '@atlas/common/src/interfaces/NetworkId'
-import { UserId } from '@atlas/common/src/interfaces/UserId'
+import { NetworkId } from '@atlasfoundation/common/src/interfaces/NetworkId'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 
 import { float32, Schema, string, uint32, uint64 } from '../../assets/superbuffer'
 import { Model } from '../../assets/superbuffer/model'

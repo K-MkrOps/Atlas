@@ -1,5 +1,5 @@
 {
-  "name": "@atlas/server-core",
+  "name": "@atlasfoundation/server-core",
   "description": "Shared components for Atlas server",
   "version": "0.5.3",
   "repository": {
@@ -26,7 +26,7 @@
     "vr"
   ],
   "author": {
-    "name": "AtlasFoundation Collective",
+    "name": "Atlas Foundation",
     "email": "hello@atlasfoundation.io"
   },
   "contributors": [],
@@ -50,9 +50,9 @@
     "@feathersjs/feathers": "5.0.0-pre.10",
     "@feathersjs/transport-commons": "5.0.0-pre.10",
     "@kubernetes/client-node": "^0.16.2",
-    "@atlas/common": "^0.5.3",
-    "@atlas/engine": "^0.5.3",
-    "@atlas/matchmaking": "^0.5.3",
+    "@atlasfoundation/common": "^0.5.3",
+    "@atlasfoundation/engine": "^0.5.3",
+    "@atlasfoundation/matchmaking": "^0.5.3",
     "app-root-path": "3.0.0",
     "aws-sdk": "2.1113.0",
     "bent": "^7.3.0",

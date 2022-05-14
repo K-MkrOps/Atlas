@@ -2,7 +2,7 @@ import { Paginated, Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import Sequelize, { Op } from 'sequelize'
 
-import { Instance as InstanceInterface } from '@atlas/common/src/interfaces/Instance'
+import { Instance as InstanceInterface } from '@atlasfoundation/common/src/interfaces/Instance'
 
 import { Application } from '../../../declarations'
 

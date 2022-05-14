@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { validatePath } from '@atlas/common/src/utils/validatePath'
-import { getComponent } from '@atlas/engine/src/ecs/functions/ComponentFunctions'
-import { SystemUpdateType } from '@atlas/engine/src/ecs/functions/SystemUpdateType'
-import { SystemComponent } from '@atlas/engine/src/scene/components/SystemComponent'
+import { validatePath } from '@atlasfoundation/common/src/utils/validatePath'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { SystemUpdateType } from '@atlasfoundation/engine/src/ecs/functions/SystemUpdateType'
+import { SystemComponent } from '@atlasfoundation/engine/src/scene/components/SystemComponent'
 
 import ExtensionIcon from '@mui/icons-material/Extension'
 

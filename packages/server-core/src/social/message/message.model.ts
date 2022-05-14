@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { MessageInterface } from '@atlas/common/src/dbmodels/Message'
+import { MessageInterface } from '@atlasfoundation/common/src/dbmodels/Message'
 
 import { Application } from '../../../declarations'
 

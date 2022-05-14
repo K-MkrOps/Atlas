@@ -1,7 +1,7 @@
 import matches, { Validator } from 'ts-matches'
 
-import { addActionReceptor, removeActionReceptor } from '@atlas/hyperflux'
-import { HyperStore } from '@atlas/hyperflux/functions/StoreFunctions'
+import { addActionReceptor, removeActionReceptor } from '@atlasfoundation/hyperflux'
+import { HyperStore } from '@atlasfoundation/hyperflux/functions/StoreFunctions'
 
 import { EngineActionType } from '../../ecs/classes/EngineService'
 

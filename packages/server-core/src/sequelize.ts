@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize'
 
-import { isDev } from '@atlas/common/src/utils/isDev'
-import config from '@atlas/server-core/src/appconfig'
+import { isDev } from '@atlasfoundation/common/src/utils/isDev'
+import config from '@atlasfoundation/server-core/src/appconfig'
 
 import { Application } from '../declarations'
 import logger from './logger'

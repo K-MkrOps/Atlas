@@ -2,7 +2,7 @@ import assert from 'assert'
 import proxyquire from 'proxyquire'
 import { Object3D } from 'three'
 
-import { ComponentJson } from '@atlas/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { AnimationComponent } from '../../../avatar/components/AnimationComponent'
 import { AvatarAnimationComponent } from '../../../avatar/components/AvatarAnimationComponent'

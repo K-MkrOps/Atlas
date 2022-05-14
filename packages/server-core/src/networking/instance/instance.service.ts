@@ -5,7 +5,7 @@ import instanceDocs from './instance.docs'
 import hooks from './instance.hooks'
 import createModel from './instance.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     instance: Instance
   }

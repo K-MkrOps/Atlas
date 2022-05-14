@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react'
 
-import { Engine } from '@atlas/engine/src/ecs/classes/Engine'
-import { RenderModesType } from '@atlas/engine/src/renderer/constants/RenderModes'
-import { RenderModes } from '@atlas/engine/src/renderer/constants/RenderModes'
-import { EngineRendererAction, useEngineRendererState } from '@atlas/engine/src/renderer/EngineRendererState'
-import { dispatchAction } from '@atlas/hyperflux'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { RenderModesType } from '@atlasfoundation/engine/src/renderer/constants/RenderModes'
+import { RenderModes } from '@atlasfoundation/engine/src/renderer/constants/RenderModes'
+import { EngineRendererAction, useEngineRendererState } from '@atlasfoundation/engine/src/renderer/EngineRendererState'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined'
 

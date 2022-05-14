@@ -3,7 +3,7 @@ import { ChargebeeSetting } from './chargebee-setting.class'
 import hooks from './chargebee-setting.hooks'
 import createModel from './chargebee-setting.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'chargebee-setting': ChargebeeSetting
   }

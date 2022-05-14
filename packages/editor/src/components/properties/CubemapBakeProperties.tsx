@@ -5,9 +5,9 @@ import React from 'react'
 import {
   CubemapBakeComponent,
   CubemapBakeComponentType
-} from '@atlas/engine/src/scene/components/CubemapBakeComponent'
-import { CubemapBakeRefreshTypes } from '@atlas/engine/src/scene/types/CubemapBakeRefreshTypes'
-import { CubemapBakeTypes } from '@atlas/engine/src/scene/types/CubemapBakeTypes'
+} from '@atlasfoundation/engine/src/scene/components/CubemapBakeComponent'
+import { CubemapBakeRefreshTypes } from '@atlasfoundation/engine/src/scene/types/CubemapBakeRefreshTypes'
+import { CubemapBakeTypes } from '@atlasfoundation/engine/src/scene/types/CubemapBakeTypes'
 
 import BooleanInput from '../inputs/BooleanInput'
 import InputGroup from '../inputs/InputGroup'

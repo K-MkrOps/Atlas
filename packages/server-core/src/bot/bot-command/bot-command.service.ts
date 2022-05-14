@@ -4,7 +4,7 @@ import docs from './bot-command.docs'
 import hooks from './Bot-command.hooks'
 import createModel from './bot-command.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'bot-command': BotCommand
   }

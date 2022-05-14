@@ -3,7 +3,7 @@ import { MatchTicket } from './match-ticket.class'
 import matchTicketDocs from './match-ticket.docs'
 import hooks from './match-ticket.hooks'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'match-ticket': MatchTicket
   }

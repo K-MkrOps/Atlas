@@ -1,14 +1,14 @@
-import { pipe } from '@atlas/common/src/utils/pipe'
-import { Application } from '@atlas/server-core/declarations'
-import config from '@atlas/server-core/src/appconfig'
+import { pipe } from '@atlasfoundation/common/src/utils/pipe'
+import { Application } from '@atlasfoundation/server-core/declarations'
+import config from '@atlasfoundation/server-core/src/appconfig'
 import {
   configureK8s,
   configureOpenAPI,
   configureRedis,
   configureSocketIO,
   createFeathersExpressApp
-} from '@atlas/server-core/src/createApp'
-import logger from '@atlas/server-core/src/logger'
+} from '@atlasfoundation/server-core/src/createApp'
+import logger from '@atlasfoundation/server-core/src/logger'
 
 import collectAnalytics from './collect-analytics'
 

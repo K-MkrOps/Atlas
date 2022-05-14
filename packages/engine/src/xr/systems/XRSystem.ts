@@ -1,6 +1,6 @@
 import { ArrayCamera } from 'three'
 
-import { addActionReceptor, dispatchAction } from '@atlas/hyperflux'
+import { addActionReceptor, dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { AssetLoader } from '../../assets/classes/AssetLoader'
 import { BinaryValue } from '../../common/enums/BinaryValue'

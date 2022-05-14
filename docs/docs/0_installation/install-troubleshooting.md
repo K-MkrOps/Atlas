@@ -101,7 +101,7 @@ Example
 
 Type in terminal
 
-     npm i <packagename> -w @atlas/editor
+     npm i <packagename> -w @atlasfoundation/editor
 
 ### To repopulate database
 

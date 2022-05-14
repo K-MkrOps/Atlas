@@ -1,7 +1,7 @@
 import { Paginated } from '@feathersjs/feathers/lib'
 import _ from 'lodash'
 
-import { User as UserInterface } from '@atlas/common/src/interfaces/User'
+import { User as UserInterface } from '@atlasfoundation/common/src/interfaces/User'
 
 import { Application } from '../../../declarations'
 import config from '../../appconfig'
@@ -11,7 +11,7 @@ import userDocs from './user.docs'
 import hooks from './user.hooks'
 import createModel from './user.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   /**
    * Interface for users input
    */

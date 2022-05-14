@@ -2,7 +2,7 @@ import { Application } from '../../../declarations'
 import { getTestbotPod, runTestbotJob } from './testbot-helper'
 import hooks from './testbot.hooks'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     testbot: any
   }

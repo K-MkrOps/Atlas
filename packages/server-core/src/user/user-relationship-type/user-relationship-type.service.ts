@@ -4,7 +4,7 @@ import userRelationshipTypeDocs from './user-relationship-type.docs'
 import hooks from './user-relationship-type.hooks'
 import createModel from './user-relationship-type.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'user-relationship-type': UserRelationshipType
   }

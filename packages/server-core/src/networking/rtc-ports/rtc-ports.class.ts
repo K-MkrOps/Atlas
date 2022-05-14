@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { RtcPortsInterface } from '@atlas/common/src/dbmodels/RtcPorts'
+import { RtcPortsInterface } from '@atlasfoundation/common/src/dbmodels/RtcPorts'
 
 import { Application } from '../../../declarations'
 

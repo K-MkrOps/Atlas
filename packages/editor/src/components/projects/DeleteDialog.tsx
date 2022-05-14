@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from 'react'
 
-import { isDev } from '@atlas/common/src/utils/isDev'
+import { isDev } from '@atlasfoundation/common/src/utils/isDev'
 
 import { Dialog, DialogContent, DialogTitle } from '@mui/material'
 import Fade from '@mui/material/Fade'

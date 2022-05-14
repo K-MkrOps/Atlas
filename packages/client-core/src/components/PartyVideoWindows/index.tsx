@@ -1,11 +1,11 @@
 import { useState } from '@speigg/hookstate'
 import React, { useEffect } from 'react'
 
-import { useMediaInstanceConnectionState } from '@atlas/client-core/src/common/services/MediaInstanceConnectionService'
-import { accessMediaStreamState } from '@atlas/client-core/src/media/services/MediaStreamService'
-import { accessAuthState } from '@atlas/client-core/src/user/services/AuthService'
-import { useUserState } from '@atlas/client-core/src/user/services/UserService'
-import { User } from '@atlas/common/src/interfaces/User'
+import { useMediaInstanceConnectionState } from '@atlasfoundation/client-core/src/common/services/MediaInstanceConnectionService'
+import { accessMediaStreamState } from '@atlasfoundation/client-core/src/media/services/MediaStreamService'
+import { accessAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
+import { useUserState } from '@atlasfoundation/client-core/src/user/services/UserService'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
 
 import PartyParticipantWindow from '../PartyParticipantWindow'
 

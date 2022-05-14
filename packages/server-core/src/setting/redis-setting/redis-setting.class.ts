@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { AdminRedisSetting as RedisSettingInterface } from '@atlas/common/src/interfaces/AdminRedisSetting'
+import { AdminRedisSetting as RedisSettingInterface } from '@atlasfoundation/common/src/interfaces/AdminRedisSetting'
 
 import { Application } from '../../../declarations'
 

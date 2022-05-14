@@ -1,5 +1,5 @@
 {
-  "name": "@atlas/common",
+  "name": "@atlasfoundation/common",
   "version": "0.5.3",
   "main": "lib/common.umd.js",
   "module": "lib/common.es.js",

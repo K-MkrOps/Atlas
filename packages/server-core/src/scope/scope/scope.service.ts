@@ -4,7 +4,7 @@ import scopeDocs from './scope.docs'
 import hooks from './scope.hooks'
 import createModel from './scope.model'
 
-declare module '@atlas/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     scope: Scope
   }

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Instance } from '@atlas/common/src/interfaces/Instance'
-import { Location } from '@atlas/common/src/interfaces/Location'
+import { Instance } from '@atlasfoundation/common/src/interfaces/Instance'
+import { Location } from '@atlasfoundation/common/src/interfaces/Location'
 
 import { useAuthState } from '../../../user/services/AuthService'
 import ConfirmModal from '../../common/ConfirmModal'

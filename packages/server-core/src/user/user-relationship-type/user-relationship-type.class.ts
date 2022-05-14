@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { UserRelationshipTypeInterface } from '@atlas/common/src/dbmodels/UserRelationshipType'
+import { UserRelationshipTypeInterface } from '@atlasfoundation/common/src/dbmodels/UserRelationshipType'
 
 import { Application } from '../../../declarations'
 

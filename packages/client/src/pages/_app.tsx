@@ -5,15 +5,15 @@ import { BrowserRouter } from 'react-router-dom'
 import {
   ClientSettingService,
   useClientSettingState
-} from '@atlas/client-core/src/admin/services/Setting/ClientSettingService'
-import { initGA, logPageView } from '@atlas/client-core/src/common/components/analytics'
-import { ProjectService, useProjectState } from '@atlas/client-core/src/common/services/ProjectService'
-import { useDispatch } from '@atlas/client-core/src/store'
-import { theme } from '@atlas/client-core/src/theme'
-import { useAuthState } from '@atlas/client-core/src/user/services/AuthService'
-import GlobalStyle from '@atlas/client-core/src/util/GlobalStyle'
-import { StoredLocalAction } from '@atlas/client-core/src/util/StoredLocalState'
-import { loadWebappInjection } from '@atlas/projects/loadWebappInjection'
+} from '@atlasfoundation/client-core/src/admin/services/Setting/ClientSettingService'
+import { initGA, logPageView } from '@atlasfoundation/client-core/src/common/components/analytics'
+import { ProjectService, useProjectState } from '@atlasfoundation/client-core/src/common/services/ProjectService'
+import { useDispatch } from '@atlasfoundation/client-core/src/store'
+import { theme } from '@atlasfoundation/client-core/src/theme'
+import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
+import GlobalStyle from '@atlasfoundation/client-core/src/util/GlobalStyle'
+import { StoredLocalAction } from '@atlasfoundation/client-core/src/util/StoredLocalState'
+import { loadWebappInjection } from '@atlasfoundation/projects/loadWebappInjection'
 
 import { StyledEngineProvider, Theme, ThemeProvider } from '@mui/material/styles'
 

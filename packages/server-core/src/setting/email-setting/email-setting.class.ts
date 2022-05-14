@@ -1,7 +1,7 @@
 import { NullableId, Paginated, Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { EmailSetting as EmailSettingInterface } from '@atlas/common/src/interfaces/EmailSetting'
+import { EmailSetting as EmailSettingInterface } from '@atlasfoundation/common/src/interfaces/EmailSetting'
 
 import { Application } from '../../../declarations'
 

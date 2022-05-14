@@ -1,6 +1,6 @@
 import { iff, isProvider } from 'feathers-hooks-common'
 
-import addAssociations from '@atlas/server-core/src/hooks/add-associations'
+import addAssociations from '@atlasfoundation/server-core/src/hooks/add-associations'
 
 import authenticate from '../../hooks/authenticate'
 import restrictUserRole from '../../hooks/restrict-user-role'

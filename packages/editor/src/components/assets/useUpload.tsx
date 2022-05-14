@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { AllFileTypes } from '@atlas/engine/src/assets/constants/fileTypes'
+import { AllFileTypes } from '@atlasfoundation/engine/src/assets/constants/fileTypes'
 
 import { getEntries, uploadProjectAssetsFromUpload } from '../../functions/assetFunctions'
 import { accessEditorState } from '../../services/EditorServices'

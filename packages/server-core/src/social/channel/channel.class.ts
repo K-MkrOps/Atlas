@@ -3,7 +3,7 @@ import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import _ from 'lodash'
 import { Op } from 'sequelize'
 
-import { Channel as ChannelInterface } from '@atlas/common/src/interfaces/Channel'
+import { Channel as ChannelInterface } from '@atlasfoundation/common/src/interfaces/Channel'
 
 import { Application } from '../../../declarations'
 import logger from '../../logger'
