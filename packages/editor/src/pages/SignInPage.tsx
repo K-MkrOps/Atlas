@@ -2,8 +2,8 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
-import SignIn from '@xrengine/client-core/src/user/components/Auth/Login'
-import { useAuthState } from '@xrengine/client-core/src/user/services/AuthService'
+import SignIn from '@atlasfoundation/client-core/src/user/components/Auth/Login'
+import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
 
 /**
  * Creating styled component using section.
@@ -59,7 +59,6 @@ export const StyledProjectsHeader = (styled as any).div`
 
 /**
  *
- * @author Robert Long
  */
 const ProjectGridContainer = styled.div`
   display: flex;
@@ -71,7 +70,6 @@ const ProjectGridContainer = styled.div`
 
 /**
  *
- * @author Robert Long
  */
 const ProjectGridContent = styled.div`
   display: flex;

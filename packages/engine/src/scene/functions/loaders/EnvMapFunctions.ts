@@ -11,7 +11,7 @@ import {
   Vector3
 } from 'three'
 
-import { ComponentJson } from '@xrengine/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { AssetLoader } from '../../../assets/classes/AssetLoader'
 import {
@@ -21,7 +21,7 @@ import {
 } from '../../../common/constants/PrefabFunctionType'
 import { isClient } from '../../../common/functions/isClient'
 import { Engine } from '../../../ecs/classes/Engine'
-import { EngineActions } from '../../../ecs/classes/EngineState'
+import { EngineActions } from '../../../ecs/classes/EngineService'
 import { Entity } from '../../../ecs/classes/Entity'
 import { addComponent, getComponent } from '../../../ecs/functions/ComponentFunctions'
 import { matchActionOnce } from '../../../networking/functions/matchActionOnce'
@@ -29,7 +29,17 @@ import { EntityNodeComponent } from '../../components/EntityNodeComponent'
 import { EnvmapComponent, EnvmapComponentType } from '../../components/EnvmapComponent'
 import { Object3DComponent } from '../../components/Object3DComponent'
 import { EnvMapSourceType, EnvMapTextureType } from '../../constants/EnvMapEnum'
-import { getPmremGenerator, loadCubeMapTexture, textureLoader } from '../../constants/Util'
+import {
+  cubeTextureLoader,
+  getPmremGenerator,
+  negx,
+  negy,
+  negz,
+  posx,
+  posy,
+  posz,
+  textureLoader
+} from '../../constants/Util'
 import { SceneOptions } from '../../systems/SceneObjectSystem'
 import { CubemapBakeTypes } from '../../types/CubemapBakeTypes'
 import { addError, removeError } from '../ErrorFunctions'
@@ -99,16 +109,21 @@ export const updateEnvMap: ComponentUpdateFunction = (entity: Entity, properties
       case EnvMapSourceType.Texture:
         switch (component.envMapTextureType) {
           case EnvMapTextureType.Cubemap:
-            loadCubeMapTexture(
-              component.envMapSourceURL,
+            cubeTextureLoader.setPath(component.envMapSourceURL).load(
+              [posx, negx, posy, negy, posz, negz],
               (texture) => {
                 const EnvMap = getPmremGenerator().fromCubemap(texture).texture
                 EnvMap.encoding = sRGBEncoding
                 applyEnvMap(obj3d, EnvMap)
                 removeError(entity, 'envmapError')
+                texture.dispose()
               },
-              undefined,
-              (_) => addError(entity, 'envmapError', 'Skybox texture could not be found!')
+              (_res) => {
+                /* console.log(_res) */
+              },
+              (_) => {
+                addError(entity, 'envmapError', 'Skybox texture could not be found!')
+              }
             )
             break
 

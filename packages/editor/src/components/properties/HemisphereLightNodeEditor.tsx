@@ -1,8 +1,8 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { HemisphereLightComponent } from '@xrengine/engine/src/scene/components/HemisphereLightComponent'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { HemisphereLightComponent } from '@atlasfoundation/engine/src/scene/components/HemisphereLightComponent'
 
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser'
 
@@ -15,7 +15,6 @@ import { EditorComponentType, updateProperty } from './Util'
 /**
  * HemisphereLightNodeEditor used to provide property customization view for Hemisphere Light.
  *
- * @author Robert Long
  */
 export const HemisphereLightNodeEditor: EditorComponentType = (props) => {
   const { t } = useTranslation()

@@ -2,19 +2,22 @@ import { Params } from '@feathersjs/feathers'
 import express from 'express'
 import multer from 'multer'
 
-import { AdminAssetUploadArgumentsType, AssetUploadType } from '@xrengine/common/src/interfaces/UploadAssetInterface'
+import {
+  AdminAssetUploadArgumentsType,
+  AssetUploadType
+} from '@atlasfoundation/common/src/interfaces/UploadAssetInterface'
 
 import { Application } from '../../../declarations'
 import restrictUserRole from '../../hooks/restrict-user-role'
 import logger from '../../logger'
 import { AvatarUploadArguments } from '../../user/avatar/avatar-helper'
 import { getCachedAsset } from '../storageprovider/getCachedAsset'
-import { getStorageProvider } from '../storageprovider/storageprovider'
+import { useStorageProvider } from '../storageprovider/storageprovider'
 import hooks from './upload-asset.hooks'
 
 const multipartMiddleware = multer({ limits: { fieldSize: Infinity } })
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'upload-asset': any
   }
@@ -25,7 +28,7 @@ export const addGenericAssetToS3AndStaticResources = async (
   file: Buffer,
   args: AdminAssetUploadArgumentsType
 ) => {
-  const provider = getStorageProvider()
+  const provider = useStorageProvider()
   // make userId optional and safe for feathers create
   const userIdQuery = args.userId ? { userId: args.userId } : {}
   const key = args.key
@@ -44,19 +47,19 @@ export const addGenericAssetToS3AndStaticResources = async (
     new Promise<void>(async (resolve) => {
       try {
         await provider.createInvalidation([key])
+        await provider.putObject(
+          {
+            Key: key,
+            Body: file,
+            ContentType: args.contentType
+          },
+          {
+            isDirectory: false
+          }
+        )
       } catch (e) {
-        logger.info(`[ERROR addGenericAssetToS3AndStaticResources while invalidating ${key}]:`, e)
+        logger.info('[ERROR addGenericAssetToS3AndStaticResources while uploading to storage provider]:', e)
       }
-      await provider.putObject(
-        {
-          Key: key,
-          Body: file,
-          ContentType: args.contentType
-        },
-        {
-          isDirectory: false
-        }
-      )
       resolve()
     })
   )
@@ -91,11 +94,10 @@ export const addGenericAssetToS3AndStaticResources = async (
         )
       )
     }
-    await Promise.all(promises)
   } catch (e) {
     logger.info('[ERROR addGenericAssetToS3AndStaticResources while adding to static resources]:', e)
-    return null!
   }
+  await Promise.all(promises)
   return assetURL
 }
 

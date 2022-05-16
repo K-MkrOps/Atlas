@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import ProfileMenu from '@xrengine/client-core/src/user/components/UserMenu/menus/ProfileMenu'
+import ProfileMenu from '@atlasfoundation/client-core/src/user/components/UserMenu/menus/ProfileMenu'
 
 import { ChevronLeft, ChevronRight, Menu } from '@mui/icons-material'
 import { Person } from '@mui/icons-material'
@@ -27,7 +27,6 @@ interface Props {
  *
  * @param param0 children props
  * @returns @ReactDomElements
- * @author Kevin KIMENYI <kimenyikevin@gmail.com>
  */
 
 const Dashboard = ({ children }: Props) => {
@@ -103,7 +102,7 @@ const Dashboard = ({ children }: Props) => {
         onClose={handleDrawerOpen(false)}
       >
         <div className={styles.toolbar}>
-          <IconButton onClick={handleDrawerOpen(false)} style={{ color: 'var(--iconButtonColor)' }} size="large">
+          <IconButton onClick={handleDrawerOpen(false)} style={{ color: '#fff' }} size="large">
             {theme.direction === 'rtl' ? <ChevronRight /> : <ChevronLeft />}
           </IconButton>
         </div>

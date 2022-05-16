@@ -4,7 +4,6 @@ import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 
 /**
- * @author Robert Long
  */
 const SliderGlobalStyles = createGlobalStyle`
   .rc-slider {
@@ -76,7 +75,6 @@ const SliderGlobalStyles = createGlobalStyle`
 `
 /**
  *
- * @author Robert Long
  * @param props
  * @returns
  */

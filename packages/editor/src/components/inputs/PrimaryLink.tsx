@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 /**
- * @author Robert Long
  */
 const PrimaryLink = styled.a`
   font-size: 1.2em;
@@ -11,6 +10,5 @@ const PrimaryLink = styled.a`
 `
 
 /**
- * @author Robert Long
  */
 export default PrimaryLink

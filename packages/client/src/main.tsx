@@ -1,30 +1,13 @@
-// prettier-ignore
-import './env-config';
-
-import React, { Suspense, useEffect } from 'react'
+import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom'
 
-import { LoadingCircle } from '@xrengine/client-core/src/components/LoadingCircle'
-import { createNetworkTransports } from '@xrengine/client-core/src/transports/SocketWebRTCClientTransport'
-import { createEngine, initializeBrowser } from '@xrengine/engine/src/initializeEngine'
+import { LoadingCircle } from '@atlasfoundation/client-core/src/components/LoadingCircle'
+import { createNetworkTransports } from '@atlasfoundation/client-core/src/transports/SocketWebRTCClientTransport'
+import { createEngine, initializeBrowser } from '@atlasfoundation/engine/src/initializeEngine'
 
+import './env-config'
+import './hookstate_devtools.es'
 import { initialize } from './util'
-
-/**
- * Performance benchmark logging
- */
-
-// const log = console.log
-// console.log = (...args) => log(`${Math.round(performance.now()/100) / 10}s`, ...args)
-
-// const info = console.info
-// console.info = (...args) => info(`${Math.round(performance.now()/100) / 10}s`, ...args)
-
-// const warn = console.warn
-// console.warn = (...args) => warn(`${Math.round(performance.now()/100) / 10}s`, ...args)
-
-// const error = console.error
-// console.error = (...args) => error(`${Math.round(performance.now()/100) / 10}s`, ...args)
 
 const AppPage = React.lazy(() => import('./pages/_app'))
 
@@ -57,5 +40,10 @@ const Main = () => {
 initialize()
   // then load the app
   .then((_) => {
-    ReactDOM.render(<Main />, document.getElementById('root'))
+    ReactDOM.render(
+      <Suspense fallback={<LoadingCircle />}>
+        <AppPage />
+      </Suspense>,
+      document.getElementById('root')
+    )
   })

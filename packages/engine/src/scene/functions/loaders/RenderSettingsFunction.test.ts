@@ -1,6 +1,6 @@
 import assert from 'assert'
 
-import { ComponentJson } from '@xrengine/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { createEntity } from '../../../ecs/functions/EntityFunctions'
 import { createEngine } from '../../../initializeEngine'

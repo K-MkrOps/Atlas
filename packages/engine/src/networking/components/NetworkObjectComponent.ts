@@ -1,7 +1,7 @@
 import { Types } from 'bitecs'
 
-import { NetworkId } from '@xrengine/common/src/interfaces/NetworkId'
-import { UserId } from '@xrengine/common/src/interfaces/UserId'
+import { NetworkId } from '@atlasfoundation/common/src/interfaces/NetworkId'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 
 import { createMappedComponent } from '../../ecs/functions/ComponentFunctions'
 

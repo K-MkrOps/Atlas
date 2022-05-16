@@ -9,7 +9,7 @@ interface RouteData {
 
 export const loadRoute = async (project: string, route: string): Promise<RouteData | null> => {
   try {
-    const projectConfig = (await import(`./projects/${project}/xrengine.config.ts`)).default as ProjectConfigInterface
+    const projectConfig = (await import(`./projects/${project}/atlas.config.ts`)).default as ProjectConfigInterface
     if (!projectConfig.routes || !projectConfig.routes[route]) return null
     return {
       component: lazy(projectConfig.routes[route].component),

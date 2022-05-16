@@ -23,7 +23,7 @@ kind: Fleet
 # Fleet Metadata
 # https://v1-14.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.14/#objectmeta-v1-meta
 metadata:
-  name: {{ include "xrengine.gameserver.fullname" . }}
+  name: {{ include "atlas.gameserver.fullname" . }}
 spec:
   # the number of GameServers to keep Ready or Allocated in this Fleet. Defaults to 0
   replicas: {{ .Values.gameserver.replicaCount }}
@@ -52,7 +52,7 @@ spec:
     # GameServer metadata
     metadata:
       labels:
-        {{- include "xrengine.gameserver.labels" . | nindent 8 }}
+        {{- include "atlas.gameserver.labels" . | nindent 8 }}
     # GameServer specification
     spec:
       ports:
@@ -873,13 +873,13 @@ spec:
       # The GameServer's Pod template
       template:
         spec:
-          serviceAccountName: {{ include "xrengine.gameserver.serviceAccountName" . }}
+          serviceAccountName: {{ include "atlas.gameserver.serviceAccountName" . }}
           {{- $releaseName := .Release.Name }}
           {{ if not (empty .Values.release) }}
             {{- $releaseName = .Values.release.name | default .Release.Name }}
           {{ end }}
           containers:
-            - name: {{ include "xrengine.gameserver.fullname" . }}
+            - name: {{ include "atlas.gameserver.fullname" . }}
               image: "{{ .Values.gameserver.image.repository }}:{{ .Values.gameserver.image.tag }}"
               imagePullPolicy: {{ .Values.gameserver.image.pullPolicy }}
 
@@ -889,7 +889,7 @@ spec:
             {{- end }}
               envFrom:
                 - configMapRef:
-                    name: {{ include "xrengine.gameserver.fullname" . }}
+                    name: {{ include "atlas.gameserver.fullname" . }}
                     optional: true
 
               env:
@@ -922,7 +922,7 @@ spec:
                       {{- if .Values.mariadb.existingSecret }}
                       name: {{ .Values.mariadb.existingSecret }}
                       {{- else }}
-                      name: {{ template "xrengine.mariadb.fullname" . }}
+                      name: {{ template "atlas.mariadb.fullname" . }}
                       {{- end }}
                       key: mariadb-password
                   {{- end }}
@@ -934,7 +934,7 @@ spec:
                 - name: MYSQL_USER
                   value: server
                 - name: MYSQL_DATABASE
-                  value: xrengine
+                  value: atlas
                 - name: MYSQL_PASSWORD
                   value: password
                 - name: MYSQL_HOST

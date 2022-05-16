@@ -1,9 +1,9 @@
 version: '2.3'
 services:
-  rts:    #xrengine-realtime-server
+  rts:    #atlas-realtime-server
     build: 
       context: ../xrsocial-realtime-server
-    image: xrengine/realtime-server
+    image: atlas/realtime-server
     restart: always
     environment:
       NAF_LISTEN_PORT: 8081
@@ -14,12 +14,12 @@ services:
   server:
     build: 
       context: ../xrsocial
-    image: xrengine/server
+    image: atlas/server
     restart: always
     environment:
       PORT: 3030
       # take care, db not 127.0.0.1, because compose uses an intenal DNS
-      MYSQL_URL: mysql://server:password@db:3306/xrengine 
+      MYSQL_URL: mysql://server:password@db:3306/atlas 
     ports:
       - '3030:3030'
     depends_on: 
@@ -28,10 +28,10 @@ services:
   client:
     build: 
       context: ../xrsocial-client
-    image: xrengine/client
+    image: atlas/client
     environment:
         API_SERVER: https://127.0.0.1:3030
-        SITE_TITLE: XREngine
+        SITE_TITLE: Atlas
         SITE_DESC: Connected Worlds for Everyone
         APP_ENV: dev
     restart: always
@@ -43,8 +43,8 @@ services:
     image: mariadb:10.7
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: xrengine-root-pa$$w0rd
-      MYSQL_DATABASE: xrengine
+      MYSQL_ROOT_PASSWORD: atlas-root-pa$$w0rd
+      MYSQL_DATABASE: atlas
       MYSQL_USER: server
       MYSQL_PASSWORD: password
     ports:

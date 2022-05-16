@@ -1,5 +1,4 @@
 /**
- * @author Abhishek Pathak <abhi.pathak401@gmail.com>
  */
 import React from 'react'
 

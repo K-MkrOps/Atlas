@@ -1,10 +1,10 @@
 // === SETUP WEBXR === //
 import { Quaternion, Vector3 } from 'three'
 
-import { dispatchAction } from '@xrengine/hyperflux'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { Engine } from '../../ecs/classes/Engine'
-import { EngineActions } from '../../ecs/classes/EngineState'
+import { EngineActions } from '../../ecs/classes/EngineService'
 import { getComponent } from '../../ecs/functions/ComponentFunctions'
 import { useWorld } from '../../ecs/functions/SystemHooks'
 import { EngineRenderer } from '../../renderer/WebGLRendererSystem'
@@ -15,8 +15,8 @@ export async function overrideXR() {
   // inject the webxr polyfill from the webxr emulator source - this is a script added by the bot
   // globalThis.WebXRPolyfillInjection()
 
-  const { XREngineWebXRPolyfill } = await import('../webxr-emulator/CustomWebXRPolyfill')
-  new XREngineWebXRPolyfill()
+  const { AtlasWebXRPolyfill } = await import('../webxr-emulator/CustomWebXRPolyfill')
+  new AtlasWebXRPolyfill()
   // override session supported request, it hangs indefinitely for some reason
   ;(navigator as any).xr.isSessionSupported = () => {
     return true

@@ -1,25 +1,25 @@
 {
-  "name": "@xrengine/engine",
+  "name": "@atlasfoundation/engine",
   "author": {
-    "name": "XRFoundation Collective",
-    "email": "hello@xrfoundation.io",
-    "url": "http://github.com/XRFoundation"
+    "name": "Atlas Foundation",
+    "email": "hello@atlasfoundation.io",
+    "url": "http://github.com/AtlasFoundation"
   },
   "bugs": {
-    "url": "https://github.com/XRFoundation/XREngine/issues"
+    "url": "https://github.com/AtlasFoundation/Atlas/issues"
   },
   "publishConfig": {
     "access": "public"
   },
   "description": "A declarative way to build 3D/VR/AR/XR apps that scale. Built with tooling web developers will love, using conventions that game developers and creative coders will find straightforward familiar.",
-  "homepage": "https://github.com/XRFoundation/XREngine#readme",
+  "homepage": "https://github.com/AtlasFoundation/Atlas#readme",
   "license": "MIT",
   "main": "lib/engine.umd.js",
   "module": "lib/engine.es.js",
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/XRFoundation/XREngine.git"
+    "url": "git+https://github.com/AtlasFoundation/Atlas.git"
   },
   "scripts": {
     "check-errors": "tsc --noemit",
@@ -40,8 +40,8 @@
     "@tweenjs/tween.js": "^18.6.4",
     "@types/react-reconciler": "^0.26.4",
     "@vladmandic/face-api": "^1.6.1",
-    "@xrengine/common": "^0.5.3",
-    "@xrengine/hyperflux": "^0.5.3",
+    "@atlasfoundation/common": "^0.5.3",
+    "@atlasfoundation/hyperflux": "^0.5.3",
     "bitecs": "^0.3.36",
     "browserfs": "^1.4.3",
     "comlink": "4.3.1",
@@ -64,7 +64,7 @@
     "twitch-m3u8": "^1.1.4",
     "typescript": "4.6.2",
     "vite": "2.9.4",
-    "@xrfoundation/volumetric": "1.0.0",
+    "volumetric": "^0.6.3",
     "web-worker": "1.2.0",
     "yuka": "0.7.7"
   },

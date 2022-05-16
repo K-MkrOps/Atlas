@@ -8,7 +8,6 @@ import PreviewDialog from './PreviewDialog'
 /**
  * PublishDialog used to show the dialog when we are going to publish scene.
  *
- * @author Robert Long
  * @type {class component}
  */
 export const PublishDialog = (props: any) => {

@@ -1,8 +1,8 @@
-import { useHookstate } from '@speigg/hookstate'
+import { useHookstate } from '@hoostate/core'
 import React, { ReactNode, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 
-import { clamp } from '@xrengine/engine/src/common/functions/MathLerpFunctions'
+import { clamp } from '@atlasfoundation/engine/src/common/functions/MathLerpFunctions'
 
 import MultipleStopIcon from '@mui/icons-material/MultipleStop'
 
@@ -12,7 +12,6 @@ import Portal from '../layout/Portal'
 
 /**
  *
- * @author Robert Long
  */
 const ScrubberContainer = (styled as any).div`
   cursor: ew-resize;
@@ -21,7 +20,6 @@ const ScrubberContainer = (styled as any).div`
 
 /**
  *
- * @author Robert Long
  */
 const Cursor = (styled as any)(MultipleStopIcon).attrs(({ x, y }) => ({
   style: {
@@ -57,7 +55,6 @@ type ScrubberProp = {
 
 /**
  *
- * @author Robert Long
  */
 const Scrubber = (props: ScrubberProp) => {
   const state = useHookstate({
@@ -178,6 +175,5 @@ Scrubber.defaultProps = {
 
 /**
  *
- * @author Robert Long
  */
 export default React.memo(Scrubber)

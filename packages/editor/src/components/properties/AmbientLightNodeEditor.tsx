@@ -1,8 +1,8 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { AmbientLightComponent } from '@xrengine/engine/src/scene/components/AmbientLightComponent'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { AmbientLightComponent } from '@atlasfoundation/engine/src/scene/components/AmbientLightComponent'
 
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 
@@ -17,7 +17,6 @@ import { EditorComponentType, updateProperty } from './Util'
  * AmbientLightNodeEditor component used to customize the ambient light element on the scene
  * ambient light is basically used to illuminates all the objects present inside the scene.
  *
- * @author Robert Long
  * @type {[component class]}
  */
 export const AmbientLightNodeEditor: EditorComponentType = (props) => {

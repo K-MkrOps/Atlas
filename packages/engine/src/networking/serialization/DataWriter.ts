@@ -1,4 +1,4 @@
-import { NetworkId } from '@xrengine/common/src/interfaces/NetworkId'
+import { NetworkId } from '@atlasfoundation/common/src/interfaces/NetworkId'
 
 import { Engine } from '../../ecs/classes/Engine'
 import { Entity } from '../../ecs/classes/Entity'

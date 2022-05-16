@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 /**
  *
- *  @author Robert Long
  */
 const Overlay = (styled as any).div`
   position: fixed;

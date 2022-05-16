@@ -1,14 +1,14 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { AssetLoader } from '@xrengine/engine/src/assets/classes/AssetLoader'
-import { AudioComponent } from '@xrengine/engine/src/audio/components/AudioComponent'
-import { useEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { getComponent, hasComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { ErrorComponent } from '@xrengine/engine/src/scene/components/ErrorComponent'
-import { VideoComponent } from '@xrengine/engine/src/scene/components/VideoComponent'
-import { VolumetricComponent } from '@xrengine/engine/src/scene/components/VolumetricComponent'
-import { toggleAudio } from '@xrengine/engine/src/scene/functions/loaders/AudioFunctions'
+import { AssetLoader } from '@atlasfoundation/engine/src/assets/classes/AssetLoader'
+import { AudioComponent } from '@atlasfoundation/engine/src/audio/components/AudioComponent'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { getComponent, hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { ErrorComponent } from '@atlasfoundation/engine/src/scene/components/ErrorComponent'
+import { VideoComponent } from '@atlasfoundation/engine/src/scene/components/VideoComponent'
+import { VolumetricComponent } from '@atlasfoundation/engine/src/scene/components/VolumetricComponent'
+import { toggleAudio } from '@atlasfoundation/engine/src/scene/functions/loaders/AudioFunctions'
 
 import VolumeUpIcon from '@mui/icons-material/VolumeUp'
 
@@ -23,7 +23,6 @@ import { EditorComponentType, updateProperty } from './Util'
 /**
  * AudioNodeEditor used to customize audio element on the scene.
  *
- * @author Robert Long
  * @param       {Object} props
  * @constructor
  */

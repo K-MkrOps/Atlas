@@ -1,4 +1,4 @@
-import { applyIncomingActions } from '@xrengine/hyperflux'
+import { applyIncomingActions } from '@atlasfoundation/hyperflux'
 
 export default async function IncomingActionSystem(world) {
   return () => {

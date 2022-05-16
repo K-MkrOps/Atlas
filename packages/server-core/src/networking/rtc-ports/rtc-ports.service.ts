@@ -6,7 +6,7 @@ import hooks from './rtc-ports.hooks'
 import createModel from './rtc-ports.model'
 
 // Add this service to the service type index
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'rtc-ports': RtcPorts
   }
@@ -21,7 +21,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new RtcPorts(options, app)
   event.docs = rtcPortsDocs
@@ -30,7 +29,6 @@ export default (app: Application) => {
   /**
    * Get our initialized service so that we can register hooks
    *
-   * @author Vyacheslav Solovjov
    */
   const service = app.service('rtc-ports')
 

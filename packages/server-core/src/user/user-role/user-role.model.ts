@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { UserRole as UserRoleInterface } from '@xrengine/common/src/interfaces/UserRole'
+import { UserRole as UserRoleInterface } from '@atlasfoundation/common/src/interfaces/UserRole'
 
 import { Application } from '../../../declarations'
 

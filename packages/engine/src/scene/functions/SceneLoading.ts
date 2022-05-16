@@ -1,32 +1,23 @@
 import { MathUtils } from 'three'
 
-import { ComponentJson, EntityJson, SceneJson } from '@xrengine/common/src/interfaces/SceneInterface'
-import { precacheSupport } from '@xrengine/engine/src/assets/enum/AssetType'
-import { dispatchAction } from '@xrengine/hyperflux'
+import { ComponentJson, EntityJson, SceneJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { precacheSupport } from '@atlasfoundation/engine/src/assets/enum/AssetType'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { AssetLoader } from '../../assets/classes/AssetLoader'
 import { Engine } from '../../ecs/classes/Engine'
-import { EngineActions, getEngineState } from '../../ecs/classes/EngineState'
+import { accessEngineState, EngineActions } from '../../ecs/classes/EngineService'
 import { Entity } from '../../ecs/classes/Entity'
 import { EntityTreeNode } from '../../ecs/classes/EntityTree'
-import {
-  addComponent,
-  getComponent,
-  getComponentCountOfType,
-  hasComponent
-} from '../../ecs/functions/ComponentFunctions'
-import { unloadScene } from '../../ecs/functions/EngineFunctions'
+import { addComponent, getComponent, hasComponent } from '../../ecs/functions/ComponentFunctions'
 import { createEntity } from '../../ecs/functions/EntityFunctions'
 import { addEntityNodeInTree, createEntityNode } from '../../ecs/functions/EntityTreeFunctions'
-import { initSystems, SystemModuleType } from '../../ecs/functions/SystemFunctions'
 import { useWorld } from '../../ecs/functions/SystemHooks'
-import { EngineRendererAction } from '../../renderer/EngineRendererState'
 import { DisableTransformTagComponent } from '../../transform/components/DisableTransformTagComponent'
 import { TransformComponent } from '../../transform/components/TransformComponent'
 import { EntityNodeComponent } from '../components/EntityNodeComponent'
 import { NameComponent } from '../components/NameComponent'
 import { Object3DComponent } from '../components/Object3DComponent'
-import { PostprocessingComponent } from '../components/PostprocessingComponent'
 import { SCENE_COMPONENT_SCENE_TAG, SceneTagComponent } from '../components/SceneTagComponent'
 import { VisibleComponent } from '../components/VisibleComponent'
 import { ObjectLayers } from '../constants/ObjectLayers'
@@ -139,13 +130,7 @@ export const loadECSData = async (
  * Loads a scene from scene json
  * @param sceneData
  */
-export const loadSceneFromJSON = async (
-  sceneData: SceneJson,
-  sceneSystems: SystemModuleType<any>[],
-  world = useWorld()
-) => {
-  unloadScene(world)
-
+export const loadSceneFromJSON = async (sceneData: SceneJson, world = useWorld()) => {
   dispatchAction(Engine.instance.store, EngineActions.sceneLoading())
 
   let promisesCompleted = 0
@@ -169,8 +154,6 @@ export const loadSceneFromJSON = async (
 
   promises.forEach((promise) => promise.then(onComplete))
   await Promise.all(promises)
-
-  initSystems(world, sceneSystems)
 
   const entityMap = {} as { [key: string]: EntityTreeNode }
 

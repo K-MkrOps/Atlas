@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import ProfileMenu from '@xrengine/client-core/src/user/components/UserMenu/menus/ProfileMenu'
-import { useAuthState } from '@xrengine/client-core/src/user/services/AuthService'
+import ProfileMenu from '@atlasfoundation/client-core/src/user/components/UserMenu/menus/ProfileMenu'
+import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
 
 import { Person } from '@mui/icons-material'
 import { ClickAwayListener, IconButton } from '@mui/material'
@@ -18,7 +18,7 @@ export const EditorNavbar = () => {
       <div className={styles.navContainer}>
         <div
           className={styles.logoBlock}
-          style={{ backgroundImage: 'url(/static/xrengine.png)', filter: 'invert()' }}
+          style={{ backgroundImage: 'url(/static/atlas.png)', filter: 'invert()' }}
         ></div>
         <IconButton onClick={() => setProfileMenuOpen(true)} className={styles.profileButton} disableRipple>
           <span>{user.name.value}</span>

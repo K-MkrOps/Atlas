@@ -1,9 +1,9 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { Invite, SendInvite } from '@xrengine/common/src/interfaces/Invite'
-import { InviteResult } from '@xrengine/common/src/interfaces/InviteResult'
-import { User } from '@xrengine/common/src/interfaces/User'
+import { Invite, SendInvite } from '@atlasfoundation/common/src/interfaces/Invite'
+import { InviteResult } from '@atlasfoundation/common/src/interfaces/InviteResult'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'

@@ -2,18 +2,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "xrengine.api.fullname" . }}
+  name: {{ include "atlas.api.fullname" . }}
   labels:
-    {{- include "xrengine.api.labels" . | nindent 4 }}
+    {{- include "atlas.api.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.api.replicaCount }}
   selector:
     matchLabels:
-      {{- include "xrengine.api.selectorLabels" . | nindent 6 }}
+      {{- include "atlas.api.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{- include "xrengine.api.selectorLabels" . | nindent 8 }}
+        {{- include "atlas.api.selectorLabels" . | nindent 8 }}
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/api-server-configmap.yaml") . | sha256sum }}
     spec:
@@ -21,7 +21,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
     {{- end }}
-      serviceAccountName: {{ include "xrengine.api.serviceAccountName" . }}
+      serviceAccountName: {{ include "atlas.api.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.api.podSecurityContext | nindent 8 }}
       {{- $releaseName := .Release.Name }}
@@ -36,7 +36,7 @@ spec:
           imagePullPolicy: {{ .Values.api.image.pullPolicy }}
           envFrom:
             - configMapRef:
-                name: {{ include "xrengine.api.fullname" . }}
+                name: {{ include "atlas.api.fullname" . }}
                 optional: true
           env:
             - name: SERVER_MODE
@@ -68,7 +68,7 @@ spec:
                   {{- if .Values.mariadb.existingSecret }}
                   name: {{ .Values.mariadb.existingSecret }}
                   {{- else }}
-                  name: {{ template "xrengine.mariadb.fullname" . }}
+                  name: {{ template "atlas.mariadb.fullname" . }}
                   {{- end }}
                   key: mariadb-password
               {{- end }}
@@ -80,7 +80,7 @@ spec:
             - name: MYSQL_USER
               value: server
             - name: MYSQL_DATABASE
-              value: xrengine
+              value: atlas
             - name: MYSQL_PASSWORD
               value: password
             - name: MYSQL_HOST

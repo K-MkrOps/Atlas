@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom'
 
 /**
  *
- * @author Robert Long
  */
 export const Portal = (props) => {
   let el = document.createElement('div')

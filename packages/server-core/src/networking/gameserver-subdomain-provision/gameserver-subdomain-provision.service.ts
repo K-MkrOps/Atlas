@@ -6,7 +6,7 @@ import hooks from './gameserver-subdomain-provision.hooks'
 import createModel from './gameserver-subdomain-provision.model'
 
 // Add this service to the service type index
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'gameserver-subdomain-provision': GameserverSubdomainProvision
   }
@@ -22,7 +22,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new GameserverSubdomainProvision(options, app)
   event.docs = gameServerSubdomainProvisionDocs
@@ -31,7 +30,6 @@ export default (app: Application) => {
   /**
    * Get our initialized service so that we can register hooks
    *
-   * @author Vyacheslav Solovjov
    */
   const service = app.service('gameserver-subdomain-provision')
 

@@ -3,7 +3,7 @@ import type { FeathersApplication } from '@feathersjs/feathers'
 import type SocketIO from 'socket.io'
 import io from 'socket.io-client'
 
-import type { ServiceTypes } from '@xrengine/common/declarations'
+import type { ServiceTypes } from '@atlasfoundation/common/declarations'
 
 import { serverHost } from './util/config'
 

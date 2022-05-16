@@ -5,28 +5,30 @@ import path from 'path'
 import rewire from 'rewire'
 import Sinon from 'sinon'
 
-import { ComponentJson } from '@xrengine/common/src/interfaces/SceneInterface'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { Entity } from '@xrengine/engine/src/ecs/classes/Entity'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
 import {
   addComponent,
   getAllComponentsOfType,
   getComponent,
   hasComponent
-} from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { createEntity, removeEntity } from '@xrengine/engine/src/ecs/functions/EntityFunctions'
+} from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { createEntity, removeEntity } from '@atlasfoundation/engine/src/ecs/functions/EntityFunctions'
 import {
   addEntityNodeInTree,
   createEntityNode,
   removeEntityNodeFromParent
-} from '@xrengine/engine/src/ecs/functions/EntityTreeFunctions'
-import { createEngine, initializeCoreSystems } from '@xrengine/engine/src/initializeEngine'
-
-import '@xrengine/engine/src/patchEngineNode'
-
-import { AssetComponent, AssetLoadedComponent, LoadState } from '@xrengine/engine/src/scene/components/AssetComponent'
-import { ModelComponent } from '@xrengine/engine/src/scene/components/ModelComponent'
-import { gltfToSceneJson, handleScenePaths } from '@xrengine/engine/src/scene/functions/GLTFConversion'
+} from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { createEngine, initializeCoreSystems } from '@atlasfoundation/engine/src/initializeEngine'
+import '@atlasfoundation/engine/src/patchEngineNode'
+import {
+  AssetComponent,
+  AssetLoadedComponent,
+  LoadState
+} from '@atlasfoundation/engine/src/scene/components/AssetComponent'
+import { ModelComponent } from '@atlasfoundation/engine/src/scene/components/ModelComponent'
+import { gltfToSceneJson, handleScenePaths } from '@atlasfoundation/engine/src/scene/functions/GLTFConversion'
 import {
   deserializeAsset,
   loadAsset,
@@ -34,21 +36,19 @@ import {
   SCENE_COMPONENT_ASSET_DEFAULT_VALUES,
   serializeAsset,
   unloadAsset
-} from '@xrengine/engine/src/scene/functions/loaders/AssetComponentFunctions'
-import { loadECSData } from '@xrengine/engine/src/scene/functions/SceneLoading'
+} from '@atlasfoundation/engine/src/scene/functions/loaders/AssetComponentFunctions'
+import { loadECSData } from '@atlasfoundation/engine/src/scene/functions/SceneLoading'
 
 import { AssetLoader } from '../../../assets/classes/AssetLoader'
 import { XRELoader } from '../../../assets/classes/XRELoader'
 import { EntityTreeNode } from '../../../ecs/classes/EntityTree'
 import { World } from '../../../ecs/classes/World'
-import { initSystems } from '../../../ecs/functions/SystemFunctions'
 
 describe('AssetComponentFunctions', async () => {
   let entity: Entity
   let node: EntityTreeNode
   let world: World
   let sandbox: Sinon.SinonSandbox
-  let nextFixedStep: Promise<void>
   const initEntity = () => {
     entity = createEntity()
     node = createEntityNode(entity)
@@ -60,26 +60,9 @@ describe('AssetComponentFunctions', async () => {
   beforeEach(async () => {
     sandbox = Sinon.createSandbox()
     createEngine()
-    initEntity()
-
     Engine.instance.publicPath = ''
     await initializeCoreSystems()
-
-    await initSystems(world, [
-      {
-        type: 'FIXED_LATE',
-        systemModulePromise: Promise.resolve({
-          default: async () => {
-            let resolve: () => void
-            nextFixedStep = new Promise<void>((r) => (resolve = r))
-            return () => {
-              resolve()
-              nextFixedStep = new Promise<void>((r) => (resolve = r))
-            }
-          }
-        })
-      }
-    ])
+    initEntity()
   })
 
   afterEach(() => {
@@ -134,11 +117,8 @@ describe('AssetComponentFunctions', async () => {
       //load asset from example repo
       const emptyScene = loadXRE('empty.xre.gltf')
       await loadAsset(entity, setContent(emptyScene))
-
-      console.log('DEBUG EMPTY SCENE', entity, world.fixedTick)
-
-      //wait one fixed frame for system to reparent
-      await nextFixedStep
+      //wait one frame for system to reparent
+      world.execute(world.fixedDelta)
 
       //check that AssetLoadedComponent is correctly configured
       const loadedComp = getComponent(entity, AssetLoadedComponent)
@@ -158,8 +138,8 @@ describe('AssetComponentFunctions', async () => {
       //load from asset path that does not exist
       try {
         await loadAsset(entity, noFile())
-        //wait one frame for system to reparent
-        await nextFixedStep
+        //wait one frame for system to reparent]
+        Engine.instance.currentWorld.execute(world.fixedDelta)
       } catch (e) {
         //check that AssetLoadedComponent does not exist
         assert(!hasComponent(entity, AssetLoadedComponent), 'no AssetLoadedComponent')
@@ -180,7 +160,7 @@ describe('AssetComponentFunctions', async () => {
       //load asset from example repo
       await loadAsset(entity, setContent(loadXRE('empty_model.xre.gltf')))
       //wait one frame for system to reparent
-      await nextFixedStep
+      world.execute(world.fixedDelta)
       //check that AssetLoadedComponent and AssetComponent are correctly configured
       const assetComp = getComponent(entity, AssetComponent)
       const loadedComp = getComponent(entity, AssetLoadedComponent)
@@ -205,8 +185,9 @@ describe('AssetComponentFunctions', async () => {
       const loader = setContent(loadXRE('empty.xre.gltf'))
       await Promise.all([loadAsset(entity, loader), loadAsset(entity, loader)]) //one of these should return a warning saying Asset is not unloaded
 
-      //wait one fixed frame for system to reparent
-      await nextFixedStep
+      //wait one frame for system to reparent
+      const world = Engine.instance.currentWorld
+      world.execute(world.fixedDelta)
       //check that second call is ignored by...
       //make sure that loaded state is identical to single load call
       const assetComp = getComponent(entity, AssetComponent)
@@ -226,8 +207,8 @@ describe('AssetComponentFunctions', async () => {
       //delete entity
       removeEntityNodeFromParent(node, world.entityTree)
       removeEntity(entity)
-      //wait one fixed frame
-      await nextFixedStep
+      //check that frame executes
+      world.execute(world.fixedDelta)
       assert.equal(getAllComponentsOfType(AssetComponent, world).length, 0, 'no Asset components in scene')
       assert.equal(getAllComponentsOfType(AssetLoadedComponent, world).length, 0, 'no AssetLoaded components in scene')
     })
@@ -242,12 +223,12 @@ describe('AssetComponentFunctions', async () => {
       })
       //call load
       await loadAsset(entity, setContent(loadXRE('empty.xre.gltf')))
-      //wait one fixed frame
-      await nextFixedStep
+      //execute frame
+      world.execute(world.fixedDelta)
       //unload asset
       unloadAsset(entity)
       //execute frame
-      await nextFixedStep
+      world.execute(world.fixedDelta)
       //ensure that asset system does not try to load asset
       assert(!hasComponent(entity, AssetLoadedComponent), 'AssetLoaded component does not exist')
       const assetComp = getComponent(entity, AssetComponent)
@@ -262,12 +243,12 @@ describe('AssetComponentFunctions', async () => {
       })
       //call load
       await loadAsset(entity, setContent(loadXRE('empty_model.xre.gltf')))
-      // wait for frame
-      await nextFixedStep
+      //execute frame
+      world.execute(world.fixedDelta)
       //unload asset
       unloadAsset(entity)
-      // wait for frame
-      await nextFixedStep
+      //execute frame
+      world.execute(world.fixedDelta)
       //ensure that asset system does not try to load asset
       assert(!hasComponent(entity, AssetLoadedComponent), 'AssetLoaded component does not exist')
       const assetComp = getComponent(entity, AssetComponent)
@@ -284,14 +265,14 @@ describe('AssetComponentFunctions', async () => {
       })
       //call load
       await loadAsset(entity, setContent(loadXRE('empty.xre.gltf')))
-      // wait for frame
-      await nextFixedStep
+      //execute frame
+      world.execute(world.fixedDelta)
       //unload asset
       unloadAsset(entity)
       //unload asset again
       unloadAsset(entity)
-      // wait for frame
-      await nextFixedStep
+      //execute frame
+      world.execute(world.fixedDelta)
       //ensure that asset system does not try to load asset
       assert(!hasComponent(entity, AssetLoadedComponent), 'AssetLoaded component does not exist')
       const assetComp = getComponent(entity, AssetComponent)

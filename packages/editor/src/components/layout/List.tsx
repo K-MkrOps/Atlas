@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 /**
- * @author Robert Long
  */
 export const ListItem = (styled as any).li`
   display: flex;
@@ -36,7 +35,6 @@ export const ListItem = (styled as any).li`
 
 /**
  *
- * @author Robert Long
  */
 const ListItemIcon = (styled as any).div`
   width: 12px;
@@ -46,7 +44,6 @@ const ListItemIcon = (styled as any).div`
 
 /**
  *
- * @author Robert Long
  * @param {any} iconComponent
  * @param {any} children
  * @param {any} rest

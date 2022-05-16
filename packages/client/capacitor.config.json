@@ -1,6 +1,6 @@
 {
-  "appId": "com.xrengine.client",
-  "appName": "@xrengine/client",
+  "appId": "com.atlas.client",
+  "appName": "@atlasfoundation/client",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

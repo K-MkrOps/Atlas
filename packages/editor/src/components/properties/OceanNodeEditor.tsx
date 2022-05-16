@@ -1,10 +1,10 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { ErrorComponent } from '@xrengine/engine/src/scene/components/ErrorComponent'
-import { OceanComponent } from '@xrengine/engine/src/scene/components/OceanComponent'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { ErrorComponent } from '@atlasfoundation/engine/src/scene/components/ErrorComponent'
+import { OceanComponent } from '@atlasfoundation/engine/src/scene/components/OceanComponent'
 
 import WaterIcon from '@mui/icons-material/Water'
 
@@ -19,7 +19,6 @@ import { EditorComponentType, updateProperty } from './Util'
 /**
  * Ocean Editor provides the editor to customize properties.
  *
- * @author Robert Long
  * @type {class component}
  */
 export const OceanNodeEditor: EditorComponentType = (props) => {

@@ -1,3 +1,3 @@
-### XREngine Project
+### Atlas Project
 
-This is the xrengine default project. It contains some basic starter assets, avatars and scenes.
+This is the atlas default project. It contains some basic starter assets, avatars and scenes.

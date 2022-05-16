@@ -1,5 +1,5 @@
 {
-  "name": "@xrengine/projects",
+  "name": "@atlasfoundation/projects",
   "version": "0.5.3",
   "main": "index.ts",
   "description": "",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/XRFoundation/XREngine.git"
+    "url": "git://github.com/AtlasFoundation/Atlas.git"
   },
   "publishConfig": {
     "access": "public"
@@ -16,10 +16,10 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/XRFoundation/XREngine/issues"
+    "url": "https://github.com/AtlasFoundation/Atlas/issues"
   },
-  "homepage": "https://github.com/XRFoundation/XREngine#readme",
+  "homepage": "https://github.com/AtlasFoundation/Atlas#readme",
   "dependencies": {
-    "@xrengine/engine": "^0.5.3"
+    "@atlasfoundation/engine": "^0.5.3"
   }
 }

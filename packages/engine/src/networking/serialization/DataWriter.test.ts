@@ -1,8 +1,8 @@
 import { strictEqual } from 'assert'
 import { Quaternion, Vector3 } from 'three'
 
-import { NetworkId } from '@xrengine/common/src/interfaces/NetworkId'
-import { UserId } from '@xrengine/common/src/interfaces/UserId'
+import { NetworkId } from '@atlasfoundation/common/src/interfaces/NetworkId'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 
 import { createQuaternionProxy, createVector3Proxy } from '../../common/proxies/three'
 import { Engine } from '../../ecs/classes/Engine'

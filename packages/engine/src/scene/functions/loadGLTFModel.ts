@@ -1,14 +1,14 @@
 import { AnimationMixer, BufferGeometry, Mesh, Object3D, Quaternion, Vector3 } from 'three'
 import { NavMesh, Polygon } from 'yuka'
 
-import { dispatchAction } from '@xrengine/hyperflux'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { AnimationComponent } from '../../avatar/components/AnimationComponent'
 import { parseGeometry } from '../../common/functions/parseGeometry'
 import { createQuaternionProxy, createVector3Proxy } from '../../common/proxies/three'
 import { DebugNavMeshComponent } from '../../debug/DebugNavMeshComponent'
 import { Engine } from '../../ecs/classes/Engine'
-import { EngineActions, getEngineState } from '../../ecs/classes/EngineState'
+import { accessEngineState, EngineActions } from '../../ecs/classes/EngineService'
 import { Entity } from '../../ecs/classes/Entity'
 import { addComponent, ComponentMap, getComponent, removeComponent } from '../../ecs/functions/ComponentFunctions'
 import { createEntity } from '../../ecs/functions/EntityFunctions'
@@ -34,8 +34,8 @@ export const createObjectEntityFromGLTF = (entity: Entity, obj3d: Object3D): voi
   for (const [key, value] of data) {
     const parts = key.split('.')
     if (parts.length > 1) {
-      // TODO: deprecate xrengine
-      if (parts[0] === 'realitypack' || parts[0] === 'xrengine') {
+      // TODO: deprecate atlas
+      if (parts[0] === 'realitypack' || parts[0] === 'atlas') {
         const componentExists = ComponentMap.has(parts[1])
         const _toLoad = componentExists ? components : prefabs
         if (typeof _toLoad[parts[1]] === 'undefined') {
@@ -71,7 +71,7 @@ export const parseObjectComponentsFromGLTF = (entity: Entity, object3d?: Object3
   const meshesToProcess: Mesh[] = []
 
   obj3d.traverse((mesh: Mesh) => {
-    if ('xrengine.entity' in mesh.userData || 'realitypack.entity' in mesh.userData) {
+    if ('atlas.entity' in mesh.userData || 'realitypack.entity' in mesh.userData) {
       meshesToProcess.push(mesh)
     }
   })
@@ -84,10 +84,10 @@ export const parseObjectComponentsFromGLTF = (entity: Entity, object3d?: Object3
   for (const mesh of meshesToProcess) {
     const e = createEntity()
     addComponent(e, NameComponent, {
-      name: mesh.userData['xrengine.entity'] ?? mesh.userData['realitypack.entity'] ?? mesh.uuid
+      name: mesh.userData['atlas.entity'] ?? mesh.userData['realitypack.entity'] ?? mesh.uuid
     })
 
-    delete mesh.userData['xrengine.entity']
+    delete mesh.userData['atlas.entity']
     delete mesh.userData['realitypack.entity']
     delete mesh.userData.name
 
@@ -153,7 +153,7 @@ export const loadNavmesh = (entity: Entity, object3d?: Object3D): void => {
 }
 
 export const overrideTexture = (entity: Entity, object3d?: Object3D, world = Engine.instance.currentWorld): void => {
-  const state = getEngineState()
+  const state = accessEngineState()
 
   if (state.sceneLoaded.value) {
     const modelComponent = getComponent(entity, ModelComponent)

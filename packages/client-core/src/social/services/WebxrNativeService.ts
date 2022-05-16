@@ -1,7 +1,4 @@
-/**
- * @author Gleb Ordinsky <glebordinskijj@gmail.com>
- */
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
 import { AlertService } from '../../common/services/AlertService'
 import { useDispatch } from '../../store'

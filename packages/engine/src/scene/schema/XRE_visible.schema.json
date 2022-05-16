@@ -3,7 +3,7 @@
   "$id": "XRE_visible.schema.json",
   "title": "XRE_visible glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine visible components",
+  "description": "serialization extension for Atlas visible components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {},
   "extensions": {},

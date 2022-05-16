@@ -6,7 +6,7 @@ import hooks from './location-admin.hooks'
 import createModel from './location-admin.model'
 
 // Add this service to the service type index
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'location-admin': LocationAdmin
   }
@@ -21,7 +21,6 @@ export default function (app: Application): void {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new LocationAdmin(options, app)
   event.docs = locationAdminDocs
@@ -30,7 +29,6 @@ export default function (app: Application): void {
   /**
    * Get our initialized service so that we can register hooks
    *
-   * @author Vyacheslav Solovjov
    */
   const service = app.service('location-admin')
 

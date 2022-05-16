@@ -17,7 +17,7 @@
 start it again with:
 
 ```
-docker container start xrengine_db
+docker container start atlas_db
 ```
 
 8. Check your WSL Config for any incorrect networking settings.

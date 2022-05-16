@@ -6,7 +6,6 @@ type BrowserPromptProps = {
 }
 /**
  *
- * @author Robert Long
  */
 export const BrowserPrompt = (props: BrowserPromptProps) => {
   const onBeforeUnload = (e) => {

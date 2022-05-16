@@ -1,7 +1,7 @@
-# Setting up XREngine on AWS
+# Setting up Atlas on AWS
 
 ## Create EKS cluster
-You first need to set up an EKS cluster for XREngine to run on.
+You first need to set up an EKS cluster for Atlas to run on.
 While this can be done via AWS' web interface, the ```eksctl``` CLI 
 will automatically provision more of the services you need automatically,
 and is thus recommended.
@@ -31,7 +31,7 @@ As of this writing, the API and client are configured to run on a nodegroup name
 If you name it something else, be sure to change the NodeAffinity in the configuration file.
 
 Make sure to increase the maximum node limit, as by default target, minimum, and maximum are
-set to 2, and XREngine's setup will definitely need more than two nodes if you've configured
+set to 2, and Atlas's setup will definitely need more than two nodes if you've configured
 them to use relatively small instance types such as t3a.medium.
 
 
@@ -52,7 +52,7 @@ the appropriate Docker image has been installed onto them, and they are ready to
 the recent high traffic picking up again.
 
 #### Create launch template
-Go to EC2 -> Launch Templates and make a new one. Name it something like 'xrengine-production-gameserver'.
+Go to EC2 -> Launch Templates and make a new one. Name it something like 'atlas-production-gameserver'.
 Most settings can be left as-is, except for the following:
 * Storage -> Add a volume, set the size to ~20GB, and for Device name select '/dev/xvda'.
 * Network Interfaces -> Add one, and under 'Auto-assign public IP' select 'Enable'
@@ -87,8 +87,8 @@ The default subnets should be fine, so hit Next, review everything, and click Cr
 
 ### Create nodegroup for builder
 
-The full XREngine stack needs a builder server within the cluster in order to bundle and build
-XREngine projects into the codebase that will be deployed. This should run on its own nodegroup
+The full Atlas stack needs a builder server within the cluster in order to bundle and build
+Atlas projects into the codebase that will be deployed. This should run on its own nodegroup
 that has a single node - only one copy of the builder should ever be running at a time, and
 due to the high memory needs of building the client service, a box with >8 GB of RAM is needed.
 
@@ -100,7 +100,7 @@ for this nodegroup. Click Next.
 On the second page, you can change the Capacity Type to `Spot` if you want to in order to save money; the builder
 service will likely not be running very often or for too long, so the odds of it getting interrupted by Spot instance
 outages are low, and it can always re-build if that does happen. Set the Disk Size to 50 GB; it takes a good deal of
-disk space to install and build the XREngine codebase, and the default 20 GB will almost certainly not be enough.
+disk space to install and build the Atlas codebase, and the default 20 GB will almost certainly not be enough.
 
 For Instance Types, you need to only select types that have more than 8 GB; t3a.xlarge are the cheapest that fit
 this criteria. If you were to pick something with 8GB, it's highly likely that most builds would crash the node,
@@ -111,36 +111,36 @@ at any given time, and running multiple powerful boxes can get pricey. Click Nex
 You can leave the subnets on the next page alone and click Next. On the last page, click Create.
 
 ## Create ECR repositories for built images.
-The XREngine deployment process will be building multiple Docker images, and those need to be stored somewhere.
+The deployment process will be building multiple Docker images, and those need to be stored somewhere.
 In AWS, that somewhere is [Elastic Container Registry](https://us-west-1.console.aws.amazon.com/ecr/get-started).
 You need to make those repositories in the same AWS region where the EKS cluster is running.
 
 Go to the ECR link above and click Get Started under Create a Repository. If you're very concerned about any of your
-XREngine project codebase(s) getting out, you can choose Private for Visibility Settings, but normally Public is fine.
+Atlas project codebase(s) getting out, you can choose Private for Visibility Settings, but normally Public is fine.
 You'll be needing to create multiple repositories for each deployment, e.g. several repos for a `dev` deployment,
 several more for a `prod` deployment, etc.
 
-Assuming you're first doing a `dev` deployment, name the first repo `xrengine-<deployment_name>-builder` under Repository
-Name, e.g. `xrengine-dev-builder`. You shouldn't need to change any other settings, though if you're using a Private 
+Assuming you're first doing a `dev` deployment, name the first repo `atlas-<deployment_name>-builder` under Repository
+Name, e.g. `atlas-dev-builder`. You shouldn't need to change any other settings, though if you're using a Private 
 repo and want to turn on Tag Immutability, that's fine. The image tags that are generated should never collide, but it
 will prevent any manual overwriting of a tag. Click Create Repository.
 
-You will need to make four more repos for each of the services that are deployed as part of the XREngine stack -
-`api`, `analytics`, `client`, and `gameserver`, which are also in the form `xrengine-<deployment_name>-<service_name>`.
-e.g. `xrengine-dev-api`, `xrengine-dev-analytics`, `xrengine-dev-client`, and `xrengine-dev-gameserver`.
+You will need to make four more repos for each of the services that are deployed as part of the Atlas stack -
+`api`, `analytics`, `client`, and `gameserver`, which are also in the form `atlas-<deployment_name>-<service_name>`.
+e.g. `atlas-dev-api`, `atlas-dev-analytics`, `atlas-dev-client`, and `atlas-dev-gameserver`.
 Everything else can be left alone for those, too.
 
 On the [repositories page](https://us-west-1.console.aws.amazon.com/ecr/repositories), you should see both of 
 the repositories you made. If you don't see any, you may be on the wrong tab up top - click Private or Public to switch
 between them. Also check that you're in the right AWS region. You'll see a column 'URI'. If you made public repos,
-the URIs should be in the form `public.ecr.aws/<identifier>/xrengine-<deployment_name>(-builder)`; if you made private 
-repos, the URIs should be in the form `<AWS_account_id>.dkr.ecr.<AWS_region>.amazonaws.com/xrengine-<deployment>(-builder)`. 
-Take note of everything before the `/xrengine-<deployment_name>` - you'll need to add that as a variable in later steps.
+the URIs should be in the form `public.ecr.aws/<identifier>/atlas-<deployment_name>(-builder)`; if you made private 
+repos, the URIs should be in the form `<AWS_account_id>.dkr.ecr.<AWS_region>.amazonaws.com/atlas-<deployment>(-builder)`. 
+Take note of everything before the `/atlas-<deployment_name>` - you'll need to add that as a variable in later steps.
 It will be called `ECR_URL` there.
 
 ## Create IAM Roles for S3/SES/SNS/Route53 (or a single admin role)
 
-XREngine interfaces with several AWS services and requires credentials for these purposes. You could make
+Atlas interfaces with several AWS services and requires credentials for these purposes. You could make
 one admin role with full access to all AWS services, but we recommend making separate, scoped roles for
 each individual service. To create a role, do the following:
 
@@ -180,7 +180,7 @@ the Helm config file.
 
 ## Create RDS box
 
-XREngine is backed by a SQL server. We use MariaDB in development, but it has also been run on AWS with
+Atlas is backed by a SQL server. We use MariaDB in development, but it has also been run on AWS with
 Aurora without issue. Most other versions of SQL should work but have not been explicitly tested.
 
 
@@ -246,7 +246,7 @@ workflow to register a domain name.
 
 ### Create Route 53 Hosted Zone
 In the AWS web client, go to Route 53. Make a hosted zone for the domain you plan to use for
-your setup of XREngine. You'll be coming back here later to create DNS records.
+your setup of Atlas. You'll be coming back here later to create DNS records.
 
 #### Point external registrar subdomains to use Route53 Nameservers (only if your domain is registered outside Route53)
 If you already have a domain registered with another registrar service, you'll need to add some DNS records
@@ -270,8 +270,8 @@ Go to Amazon Certificate Manager. If there are no certs in that region, click on
 otherwise click on Request a Certificate.
 
 You should select Request a Public Certificate, then select Request a Certificate. The next page
-should be headed Add Domain Names. You should add both the top-level domain, such as ```xrengine.io```, 
-as well as a wildcard for all subdomains e.g. ```*.xrengine.io```, then click Next.
+should be headed Add Domain Names. You should add both the top-level domain, such as ```atlasfoundation.io```, 
+as well as a wildcard for all subdomains e.g. ```*.atlasfoundation.io```, then click Next.
 
 Choose DNS Validation on the next page and click Next. You can skip adding tags and just click Review,
 then Confirm on the final page.
@@ -302,7 +302,7 @@ If that isn't present, you'll have to edit the configuration to make the appropr
 
 You next need to add the Agones, ingress-nginx, and redis Helm charts to helm by running 
 ```helm repo add agones https://agones.dev/chart/stable```, ```helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx```, and ```helm repo add redis https://charts.bitnami.com/bitnami```.
-You should also at this time add XREngine's repo via ```helm repo add xrengine https://helm.xrengine.io```.
+You should also at this time add Atlas's repo via ```helm repo add atlas https://helm.atlasfoundation.io```.
 
 If you ever suspect that a chart is out-of-date, run ```helm repo update``` to update all of them to the latest.
 
@@ -313,9 +313,9 @@ a file found at /packages/ops/configs/agones-default-values.yaml.
 
 ### Install redis for each deployment
 
-Each deployment of XREngine uses a redis cluster for coordinating the 'feathers-sync' library.
+Each deployment of Atlas uses a redis cluster for coordinating the 'feathers-sync' library.
 Each redis deployment needs to be named the same as the deployment that will use it; for an
-XREngine deployment named 'dev', the corresponding redis deployment would need to be named
+Atlas deployment named 'dev', the corresponding redis deployment would need to be named
 'dev-redis'.
 
 Run ```helm install  -f packages/ops/configs/redis-values.yaml <deployment_name>-redis redis/redis``` to install, e.g.
@@ -325,10 +325,10 @@ packages/ops/configs/redis-values.yaml in two places to your redis nodegroup nam
 If you didn't create a nodegroup just for redis, you must omit the ` -f packages/ops/configs/redis-values.yaml `,
 as that config makes redis pods run on a specific nodegroup.
 
-#### Installing redis as part of XREngine chart (not recommended for production)
-redis can be installed as part of the XREngine chart so long as the config file for the XREngine installation has 'redis.enabled' set to true.
+#### Installing redis as part of Atlas chart (not recommended for production)
+redis can be installed as part of the Atlas chart so long as the config file for the Atlas installation has 'redis.enabled' set to true.
 In that case, you should skip the above step of installing redis separately. This is not recommended for production
-environments, though, since upgrades to an XREngine installation will usually reboot the redis servers,
+environments, though, since upgrades to an Atlas installation will usually reboot the redis servers,
 leading all of the gameservers to crash due to their redis connections being severed.
 
 This breaks Agones' normal behavior of keeping Allocated gameservers running until every user has left and slowly replacing
@@ -418,7 +418,7 @@ receive an email with a link to verify it (it may go to your Spam folder). Once 
 you can log in with that address.
 
 ## Set up Simple Notification service
-SNS is used to send text messages from the XREngine platform.
+SNS is used to send text messages from the Atlas platform.
 
 In the AWS web client, go to SNS -> Topics and Create a new topic.
 Give it a name, and selected 'Standard' as the type, then click Create Topic.
@@ -429,7 +429,7 @@ Various static files are stored in S3 behind a Cloudfront distribution.
 
 ### Create S3 bucket
 In the AWS web client, go to S3 -> Buckets and click Create Bucket.
-Name the bucket <name>-static-resources, e.g. ```xrengine-static-resources```, and have it be in Region us-east-1.
+Name the bucket <name>-static-resources, e.g. ```atlas-static-resources```, and have it be in Region us-east-1.
 Under Object Ownership, select 'ACLs enabled', and under that select 'Object Writer'.
 Under Block Public Access Settings For The Bucket, uncheck the checkbox Block *all* Public Access; 
 you need the bucket to be publicly accessible.
@@ -470,7 +470,7 @@ Cache and origin request settings should be left on 'Use a cache policy and orig
 For Origin Request Policy, select 'Managed-CORS-S3Origin'
 
 Under Distribution Settings, you can change Price Class to 'Use Only U.S. Canada and Europe' to save some money.
-For Alternate Domain Names, enter 'resources.<domain>', e.g. ```resources.xrengine.io```.
+For Alternate Domain Names, enter 'resources.<domain>', e.g. ```resources.atlasfoundation.io```.
 For SSL Certificate, select Custom SSL Certificate, then when you click on the box, choose
 the 'resources.<domain>' certificate you made earlier.
 
@@ -485,7 +485,7 @@ Click on Create Record. If it starts you under Quick Create Record, click the li
 
 Under Routing Policy, leave it on Simple Routing and click Next. Then click Define Simple Record.
 
-The first record should be for the top-level domain, e.g. ```xrengine.io```, so leave the Record Name
+The first record should be for the top-level domain, e.g. ```atlasfoundation.io```, so leave the Record Name
 text field blank. Under Value/Route Traffic To, click on the dropdown and select
 Alias to Application and Classic Load Balancer. Select the region that your cluster is in.
 Where it says Choose Load Balancer, click the dropdown, and select the Application loadbalancer - make
@@ -497,25 +497,25 @@ Define Simple Record.
 You can keep clicking Define Simple Record to make more records in one batch. When you're
 done, click Create Records.
 
-You should make the following 'A' records to the loadbalancer, substituting your domain for 'xrengine.io':
+You should make the following 'A' records to the loadbalancer, substituting your domain for 'atlasfoundation.io':
 
-* xrengine.io
-* *.xrengine.io
-* @.xrengine.io
-* api-dev.xrengine.io
-* api.xrengine.io
-* dev.xrengine.io
-* gameserver.xrengine.io
-* gameserver-dev.xrengine.io
+* atlasfoundation.io
+* *.atlasfoundation.io
+* @.atlasfoundation.io
+* api-dev.atlasfoundation.io
+* api.atlasfoundation.io
+* dev.atlasfoundation.io
+* gameserver.atlasfoundation.io
+* gameserver-dev.atlasfoundation.io
 
-You also need to make an 'A' record pointing 'resources.xrengine.io' to the CloudFront distribution you made earlier.
+You also need to make an 'A' record pointing 'resources.atlasfoundation.io' to the CloudFront distribution you made earlier.
 
-## Create GitHub fork of XREngine repository.
-The XREngine codebase is most easily deployed by forking it and configuring some Secrets so that the included GitHub
+## Create GitHub fork of Atlas repository.
+The codebase is most easily deployed by forking it and configuring some Secrets so that the included GitHub
 Actions can run the deployment for you. You can run all of the commands that the <dev/prod>-deploy action runs manually
 if you so choose, and in that case, you don't need to fork the GH repo.
 
-Go to https://github.com/XRFoundation/XREngine. In the upper right-hand corner, there's a button 'Fork'. Click that,
+Go to https://github.com/AtlasFoundation/Atlas. In the upper right-hand corner, there's a button 'Fork'. Click that,
 then click the account/organization you wish to fork it to. You should be taken to your fork in a short time.
 
 You'll need to set several Secrets (runtime variables) for GitHub Actions. By default GitHub Actions should be fully
@@ -530,9 +530,9 @@ this page to make a new one. You will need to make several Secrets with the foll
 * AWS_SECRET -> The secret key of the Github-Actions-User IAM user
 * CLUSTER_NAME -> The name of the EKS cluster
 * DEPLOYMENTS_ENABLED -> Set to `true`
-* DEV_REPO_NAME -> The base name of the dev ECR repository, e.g. `xrengine-dev` (all references to the builder and service repos will append `-builder`/`-<service>` to this value)
-* DOCKER_LABEL -> This can be almost anything, but you can use `lagunalabs/xrengine`
-* ECR_URL -> The root ECR_URL for your repos, i.e. everything before the `/xrengine-dev-builder`, e.g. `11111111111.dkr.ecr.us-west-1.amazonaws.com` or `public.ecr.aws/a1b2c3d4`
+* DEV_REPO_NAME -> The base name of the dev ECR repository, e.g. `atlas-dev` (all references to the builder and service repos will append `-builder`/`-<service>` to this value)
+* DOCKER_LABEL -> This can be almost anything, but you can use `lagunalabs/atlas`
+* ECR_URL -> The root ECR_URL for your repos, i.e. everything before the `/atlas-dev-builder`, e.g. `11111111111.dkr.ecr.us-west-1.amazonaws.com` or `public.ecr.aws/a1b2c3d4`
 * PRIVATE_ECR -> Set this to `true` if your ECR repos are private, if they're public you don't need to set this at all
 
 If you go to the Actions Tab, you might see a few workflow runs with green checkmarks. If so, you'll be re-running the
@@ -616,12 +616,12 @@ initial nodegroup.
 If you're using a private ECR repo, set this to "true" in the builder config file.
 
 #### (everything).image.repository
-You'll need to replace every <repository_name> with the full ECR_URL of your non-builder repos, e.g. `abcd1234efgh.dkr.ecr.us-west-1.amazonaws.com/xrengine-dev-api`.
+You'll need to replace every <repository_name> with the full ECR_URL of your non-builder repos, e.g. `abcd1234efgh.dkr.ecr.us-west-1.amazonaws.com/atlas-dev-api`.
 Each services has to have the proper `-<service>` suffix on it, e.g. `-api`, `-client`, etc.
 
 ### Run Helm install
-Run ```helm install -f </path/to/*.values.yaml> <stage_name>-builder xrengine/xrengine-builder```
-and the run ```helm install -f </path/to/*.values.yaml> <stage_name> xrengine/xrengine```
+Run ```helm install -f </path/to/*.values.yaml> <stage_name>-builder atlas/atlas-builder```
+and the run ```helm install -f </path/to/*.values.yaml> <stage_name> atlas/atlas```
 
 This will spin up the main and builder deployments using the Helm config file, <dev/prod>.values.yaml.
 Neither will fully work yet, since there's no valid image in the repos yet. The GitHub
@@ -638,16 +638,16 @@ attempt to build and deploy the builder.
 
 ### Overview of the build process
 The full build and deployment process works like this:
-1. GitHub Actions builds just enough of the XREngine monorepo to fetch any installed XREngine projects.
-2. GitHub Actions pushes this builder Docker image to the repo `xrengine-<release>-builder` in ECR
+1. GitHub Actions builds just enough of the Atlas monorepo to fetch any installed Atlas projects.
+2. GitHub Actions pushes this builder Docker image to the repo `atlas-<release>-builder` in ECR
 3. GitHub Actions updates the builder deployment to point to the builder image it just created.
 4. The builder deployment spins up the builder Docker image on its single node
 5. The builder connects to the deployment's database and checks if there is a table `user`. This is a proxy
-    for the database being seeded; if it does not exist, it seeds the database with the basic XREngine schema,
+    for the database being seeded; if it does not exist, it seeds the database with the basic Atlas schema,
     seeds the default project into the database and storage provider, and seeds various types.
-6. The builder downloads any XREngine projects that the deployment has added.
+6. The builder downloads any Atlas projects that the deployment has added.
 7. The builder builds the Docker image for each service concurrently using these projects, building them into the client files as well as copying them so that the api and gameservers have access to them.
-8. The builder pushes these final Docker images to the repos `xrengine-<release>-<service>` in ECR
+8. The builder pushes these final Docker images to the repos `atlas-<release>-<service>` in ECR
 9. The builder updates the main deployment to point to the final images it just created.
 10. The main deployment spins up the final Docker images for the api, analytics, client, and gameserver services.
 
@@ -655,7 +655,7 @@ The full build and deployment process works like this:
 One of the features of Helm is being able to easily upgrade deployments with new values. The command to
 do this is very similar to the install command:
 
-```helm upgrade --reuse-values -f </path/to/*.values.yaml> --set api.image.tag=<latest_github_commit_SHA>,client.image.tag=<latest_github_commit_SHA>,gameserver.image.tag=<latest_github_commit_SHA> <stage_name> xrengine/xrengine```
+```helm upgrade --reuse-values -f </path/to/*.values.yaml> --set api.image.tag=<latest_github_commit_SHA>,client.image.tag=<latest_github_commit_SHA>,gameserver.image.tag=<latest_github_commit_SHA> <stage_name> atlas/atlas```
 
 ```--reuse-values``` says to carry over all configuration values from the previous deployment. This is most important
 for tags, since they're usually set inline with the `helm install/upgrade` command, not a Helm config.

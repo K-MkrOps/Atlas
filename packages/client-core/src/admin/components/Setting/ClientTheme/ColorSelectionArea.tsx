@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ThemeOptions } from '@xrengine/common/src/interfaces/ClientSetting'
+import { ThemeOptions } from '@atlasfoundation/common/src/interfaces/ClientSetting'
 
 import { Divider, FormControlLabel, Grid, styled, Switch } from '@mui/material'
 
@@ -226,15 +226,7 @@ const ColorSelectionArea = (props: ColorSelectionAreaProps) => {
           onChange={(color) => handleChangeColor('iconButtonBackground', color)}
         />
       </Grid>
-      <Grid item sm={12} md={6} className={styles.colorGridContainer}>
-        <label>Icon Button Hover Background/Color:</label>
-        <SketchColorPicker
-          name="iconButtonHoverColor"
-          value={theme.iconButtonHoverColor}
-          onChange={(color) => handleChangeColor('iconButtonHoverColor', color)}
-        />
-      </Grid>
-      <Grid item sm={12} md={6} className={styles.colorGridContainer}>
+      <Grid item sm={12} md={12} className={styles.colorGridContainer}>
         <label>Icon Button Selected Background:</label>
         <SketchColorPicker
           name="iconButtonSelectedBackground"
@@ -350,14 +342,6 @@ const ColorSelectionArea = (props: ColorSelectionAreaProps) => {
           name="dropdownMenuHoverBackground"
           value={theme.dropdownMenuHoverBackground}
           onChange={(color) => handleChangeColor('dropdownMenuHoverBackground', color)}
-        />
-      </Grid>
-      <Grid item sm={12} md={6} className={styles.colorGridContainer}>
-        <label>Dropdown Menu Selected Background:</label>
-        <SketchColorPicker
-          name="dropdownMenuSelectedBackground"
-          value={theme.dropdownMenuSelectedBackground}
-          onChange={(color) => handleChangeColor('dropdownMenuSelectedBackground', color)}
         />
       </Grid>
       <Grid item sm={12} md={6} className={styles.colorGridContainer}>

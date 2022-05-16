@@ -4,7 +4,7 @@ import { Application } from '../../../declarations'
 import { patchGameserverLocation } from './gameserver-provision-helper'
 import hooks from './gameserver-provision.hooks'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'gameserver-provision': any
   }

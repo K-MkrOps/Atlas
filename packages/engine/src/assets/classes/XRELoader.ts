@@ -1,11 +1,15 @@
 import { FileLoader } from 'three'
 
-import { EntityTreeNode } from '@xrengine/engine/src/ecs/classes/EntityTree'
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
-import { Object3DComponent } from '@xrengine/engine/src/scene/components/Object3DComponent'
-import { gltfToSceneJson } from '@xrengine/engine/src/scene/functions/GLTFConversion'
-import { loadECSData, loadSceneFromJSON, preCacheAssets } from '@xrengine/engine/src/scene/functions/SceneLoading'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
+import { gltfToSceneJson } from '@atlasfoundation/engine/src/scene/functions/GLTFConversion'
+import {
+  loadECSData,
+  loadSceneFromJSON,
+  preCacheAssets
+} from '@atlasfoundation/engine/src/scene/functions/SceneLoading'
 
 import { AssetLoader } from './AssetLoader'
 

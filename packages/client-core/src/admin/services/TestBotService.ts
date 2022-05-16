@@ -1,6 +1,6 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { SpawnTestBot, TestBot } from '@xrengine/common/src/interfaces/TestBot'
+import { SpawnTestBot, TestBot } from '@atlasfoundation/common/src/interfaces/TestBot'
 
 import { client } from '../../feathers'
 import { useDispatch } from '../../store'

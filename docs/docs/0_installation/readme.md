@@ -22,7 +22,7 @@ A lot has changed during development, and our monorepo has gotten quite large.
 To avoid cloning the entire thing, use this command:
 
 ```
-git clone https://github.com/XRFoundation/XREngine --depth 1
+git clone https://github.com/AtlasFoundation/Atlas --depth 1
 ```
 
 ### Ensure you are on Node 16 or above
@@ -42,7 +42,7 @@ getting dependency errors.
 You don't need to use [Docker]((https://docs.docker.com/)), but it will make 
 your life much easier.
 If you don't wish to use Docker, you will need to setup mariadb and redis on 
-your machine. You can find credentials in `xrengine/scripts/docker-compose.yml`
+your machine. You can find credentials in `atlas/scripts/docker-compose.yml`
 
 ## Quick Start
 
@@ -50,7 +50,7 @@ If you are lucky, this will just work. However, you may encounter some
 issues. Make sure you are running Node 16, and check your dependencies.
 
 ```
-cd path/to/xrengine
+cd path/to/atlas
 npm install
 npm run dev-docker
 npm run dev-reinit
@@ -64,14 +64,14 @@ Elastic Search and Grafana will be automatically launched with `npm run dev`.
 Elasticsearch & Grafana will be running on localhost port 9200 & 5601 respectively.
 
 This will automatically set up and run Redis/MariaDB docker
-containers, and XRengine client/server/game-server instances.
+containers, and client/server/game-server instances.
 
 In a browser, navigate to https://127.0.0.1:3000/location/default
 
 The database seeding process creates a test empty location called 'test'.
 It can be navigated to by going to 'https://127.0.0.1:3000/location/default'
 
-As of this writing, the cert provided in the xrengine package for local use is
+As of this writing, the cert provided in the atlas package for local use is
 not adequately signed. Browsers will throw up warnings about going to insecure
 pages. You should be able to tell the browser to ignore it, usually by clicking
 on some sort of 'advanced options' button or link and then something along the

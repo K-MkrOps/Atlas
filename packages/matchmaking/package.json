@@ -1,9 +1,9 @@
 {
-  "name": "@xrengine/matchmaking",
+  "name": "@atlasfoundation/matchmaking",
   "version": "0.5.3",
   "author": {
-    "name": "XRFoundation Collective",
-    "email": "hello@xrfoundation.io"
+    "name": "Atlas Foundation",
+    "email": "hello@atlasfoundation.io"
   },
   "publishConfig": {
     "access": "public"
@@ -16,7 +16,7 @@
   "npmClient": "npm",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/XRFoundation/XREngine.git"
+    "url": "git+https://github.com/AtlasFoundation/Atlas.git"
   },
   "scripts": {
     "check-errors": "tsc --noemit",

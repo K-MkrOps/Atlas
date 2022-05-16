@@ -29,12 +29,9 @@ const newVelocity = new Vector3()
 const onGroundVelocity = new Vector3()
 export const avatarCameraOffset = new Vector3(0, 0.14, 0.1)
 
-/**
- * @author HydraFire <github.com/HydraFire>
- */
 export const moveAvatar = (world: World, entity: Entity, camera: PerspectiveCamera | OrthographicCamera): any => {
   const {
-    fixedDeltaSeconds: fixedDelta,
+    fixedDelta,
     physics: { timeScale }
   } = world
 
@@ -258,7 +255,7 @@ export const alignXRCameraRotationWithAvatar = (entity: Entity, camera: Perspect
 
 const moveAvatarController = (world: World, entity: Entity, displacement: any) => {
   const {
-    fixedDeltaSeconds: fixedDelta,
+    fixedDelta,
     physics: { timeScale }
   } = world
 

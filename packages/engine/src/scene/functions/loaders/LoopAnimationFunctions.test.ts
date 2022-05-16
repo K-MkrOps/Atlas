@@ -2,7 +2,7 @@ import assert from 'assert'
 import proxyquire from 'proxyquire'
 import { Object3D } from 'three'
 
-import { ComponentJson } from '@xrengine/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { AnimationComponent } from '../../../avatar/components/AnimationComponent'
 import { AvatarAnimationComponent } from '../../../avatar/components/AvatarAnimationComponent'
@@ -66,8 +66,8 @@ describe('LoopAnimationFunctions', () => {
   let entity: Entity
   let loopAnimationFunctions = proxyquire('./LoopAnimationFunctions', {
     '../../../common/functions/isClient': { isClient: true },
-    '../../../ecs/classes/EngineState': {
-      getEngineState: () => {
+    '../../../ecs/classes/EngineService': {
+      accessEngineState: () => {
         return {
           sceneLoaded: {
             value: true

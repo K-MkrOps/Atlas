@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { v4 as uuidv4 } from 'uuid'
 
-import { BotCommands, CreateBotAsAdmin } from '@xrengine/common/src/interfaces/AdminBot'
-import { Instance } from '@xrengine/common/src/interfaces/Instance'
+import { BotCommands, CreateBotAsAdmin } from '@atlasfoundation/common/src/interfaces/AdminBot'
+import { Instance } from '@atlasfoundation/common/src/interfaces/Instance'
 
 import { Autorenew, Face, Save } from '@mui/icons-material'
 import Button from '@mui/material/Button'
@@ -224,7 +224,7 @@ const CreateBot = () => {
             <Grid item xs={2} style={{ display: 'flex' }}>
               <div style={{ marginLeft: 'auto' }}>
                 <IconButton onClick={fetchAdminLocations} size="large">
-                  <Autorenew style={{ color: 'var(--iconButtonColor)' }} />
+                  <Autorenew style={{ color: '#fff' }} />
                 </IconButton>
               </div>
             </Grid>
@@ -244,7 +244,7 @@ const CreateBot = () => {
             <Grid item xs={2} style={{ display: 'flex' }}>
               <div style={{ marginLeft: 'auto' }}>
                 <IconButton onClick={fetchAdminInstances} size="large">
-                  <Autorenew style={{ color: 'var(--iconButtonColor)' }} />
+                  <Autorenew style={{ color: '#fff' }} />
                 </IconButton>
               </div>
             </Grid>

@@ -1,13 +1,13 @@
 import { ArrayCamera } from 'three'
 
-import { addActionReceptor, dispatchAction } from '@xrengine/hyperflux'
+import { addActionReceptor, dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { AssetLoader } from '../../assets/classes/AssetLoader'
 import { BinaryValue } from '../../common/enums/BinaryValue'
 import { LifecycleValue } from '../../common/enums/LifecycleValue'
 import { matches } from '../../common/functions/MatchesUtils'
 import { Engine } from '../../ecs/classes/Engine'
-import { EngineActions, EngineActionType, getEngineState } from '../../ecs/classes/EngineState'
+import { accessEngineState, EngineActions, EngineActionType } from '../../ecs/classes/EngineService'
 import { World } from '../../ecs/classes/World'
 import { defineQuery, getComponent } from '../../ecs/functions/ComponentFunctions'
 import { InputComponent } from '../../input/components/InputComponent'
@@ -44,7 +44,6 @@ const startXRSession = async () => {
 
 /**
  * System for XR session and input handling
- * @author Josh Field <github.com/hexafield>
  */
 
 export default async function XRSystem(world: World) {
@@ -83,7 +82,7 @@ export default async function XRSystem(world: World) {
   addActionReceptor(Engine.instance.store, (a: EngineActionType) => {
     matches(a)
       .when(EngineActions.xrStart.matches, (action) => {
-        if (getEngineState().joinedWorld.value && !EngineRenderer.instance.xrSession) startXRSession()
+        if (accessEngineState().joinedWorld.value && !EngineRenderer.instance.xrSession) startXRSession()
       })
       .when(EngineActions.xrEnd.matches, (action) => {
         for (const entity of xrControllerQuery()) {

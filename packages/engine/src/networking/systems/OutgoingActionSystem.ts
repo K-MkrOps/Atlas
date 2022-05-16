@@ -1,4 +1,4 @@
-import { clearOutgoingActions } from '@xrengine/hyperflux'
+import { clearOutgoingActions } from '@atlasfoundation/hyperflux'
 
 import { World } from '../../ecs/classes/World'
 import { Network } from '../classes/Network'
@@ -19,7 +19,12 @@ const sendOutgoingActions = (world: World) => {
 }
 
 export default async function OutgoingActionSystem(world: World) {
+  let lastTickSync = 0
   return () => {
+    if (world.isHosting && world.fixedTick - lastTickSync > 60 * 60 * 2) {
+      dispatchAction(world.store, NetworkWorldAction.timeSync({}))
+      lastTickSync = world.fixedTick
+    }
     sendOutgoingActions(world)
   }
 }

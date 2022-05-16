@@ -1,13 +1,12 @@
 import fs from 'fs'
 import path from 'path'
 
-import { ServicesSeedConfig } from '@xrengine/common/src/interfaces/ServicesSeedConfig'
-import { ProjectConfigInterface } from '@xrengine/projects/ProjectConfigInterface'
+import { ServicesSeedConfig } from '@atlasfoundation/common/src/interfaces/ServicesSeedConfig'
+import { ProjectConfigInterface } from '@atlasfoundation/projects/ProjectConfigInterface'
 
 import { analyticsSeeds } from './analytics/seeder-config'
 import { mediaSeeds } from './media/seeder-config'
 import { networkingSeeds } from './networking/seeder-config'
-import { paymentSeeds } from './payments/seeder-config'
 import { routeSeeds } from './route/seeder-config'
 import { scopeSeeds } from './scope/seeder-config'
 import { settingSeeds } from './setting/seeder-config'
@@ -21,7 +20,7 @@ const installedProjects = fs.existsSync(path.resolve(__dirname, '../../projects/
       .map((dirent) => {
         try {
           const config: ProjectConfigInterface =
-            require(`../../projects/projects/${dirent.name}/xrengine.config.ts`).default
+            require(`../../projects/projects/${dirent.name}/atlas.config.ts`).default
           if (!config.databaseSeed) return null
           return path.join(dirent.name, config.databaseSeed)
         } catch (e) {
@@ -36,7 +35,6 @@ const installedProjects = fs.existsSync(path.resolve(__dirname, '../../projects/
 export const seeds: Array<ServicesSeedConfig> = [
   ...mediaSeeds,
   ...networkingSeeds,
-  ...paymentSeeds,
   ...socialSeeds,
   ...userSeeds,
   ...scopeSeeds,

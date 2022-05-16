@@ -1,6 +1,6 @@
 import { MathUtils } from 'three'
 
-import { ComponentJson, EntityJson, SceneJson } from '@xrengine/common/src/interfaces/SceneInterface'
+import { ComponentJson, EntityJson, SceneJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { EntityTreeNode } from '../../ecs/classes/EntityTree'
 import { getComponent, hasComponent } from '../../ecs/functions/ComponentFunctions'

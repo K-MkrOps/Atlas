@@ -12,14 +12,14 @@ import {
   Vector3
 } from 'three'
 
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { Entity } from '@xrengine/engine/src/ecs/classes/Entity'
-import { World } from '@xrengine/engine/src/ecs/classes/World'
-import { defineQuery, getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { getEntityNodeArrayFromEntities } from '@xrengine/engine/src/ecs/functions/EntityTreeFunctions'
-import InfiniteGridHelper from '@xrengine/engine/src/scene/classes/InfiniteGridHelper'
-import TransformGizmo from '@xrengine/engine/src/scene/classes/TransformGizmo'
-import { Object3DComponent } from '@xrengine/engine/src/scene/components/Object3DComponent'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import { defineQuery, getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { getEntityNodeArrayFromEntities } from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import InfiniteGridHelper from '@atlasfoundation/engine/src/scene/classes/InfiniteGridHelper'
+import TransformGizmo from '@atlasfoundation/engine/src/scene/classes/TransformGizmo'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
 import {
   SnapMode,
   TransformAxis,
@@ -28,8 +28,8 @@ import {
   TransformModeType,
   TransformPivot,
   TransformPivotType
-} from '@xrengine/engine/src/scene/constants/transformConstants'
-import { TransformSpace } from '@xrengine/engine/src/scene/constants/transformConstants'
+} from '@atlasfoundation/engine/src/scene/constants/transformConstants'
+import { TransformSpace } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import { EditorCameraComponent, EditorCameraComponentType } from '../classes/EditorCameraComponent'
 import { EditorControlComponent } from '../classes/EditorControlComponent'
@@ -59,7 +59,6 @@ import { accessSelectionState } from '../services/SelectionServices'
 const SELECT_SENSITIVITY = 0.001
 
 /**
- * @author Nayankumar Patel <github.com/NPatel10>
  */
 export default async function EditorControlSystem(_: World) {
   const editorControlQuery = defineQuery([EditorControlComponent])

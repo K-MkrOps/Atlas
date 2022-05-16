@@ -1,12 +1,11 @@
 /**
- * @author Abhishek Pathak <abhi.pathak401@gmail.com>
  */
 import React from 'react'
 import styled from 'styled-components'
 
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { CubemapBakeComponent } from '@xrengine/engine/src/scene/components/CubemapBakeComponent'
-import { CubemapBakeTypes } from '@xrengine/engine/src/scene/types/CubemapBakeTypes'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { CubemapBakeComponent } from '@atlasfoundation/engine/src/scene/components/CubemapBakeComponent'
+import { CubemapBakeTypes } from '@atlasfoundation/engine/src/scene/types/CubemapBakeTypes'
 
 import SportsGolfIcon from '@mui/icons-material/SportsGolf'
 

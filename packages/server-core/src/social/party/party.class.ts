@@ -4,7 +4,7 @@ import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import { Op } from 'sequelize'
 import { Sequelize } from 'sequelize'
 
-import { Party as PartyDataType } from '@xrengine/common/src/interfaces/Party'
+import { Party as PartyDataType } from '@atlasfoundation/common/src/interfaces/Party'
 
 // import { Params, Id, NullableId } from '@feathersjs/feathers'
 import { Application } from '../../../declarations'
@@ -15,7 +15,6 @@ import { UserDataType } from '../../user/user/user.class'
 /**
  * A class for Party service
  *
- * @author Vyacheslav Solovjov
  */
 export class Party<T = PartyDataType> extends Service<T> {
   app: Application
@@ -103,7 +102,6 @@ export class Party<T = PartyDataType> extends Service<T> {
    * @param id of specific party
    * @param params contains user info
    * @returns {@Object} of single party
-   * @author Vyacheslav Solovjov
    */
   async get(id: string, params?: Params): Promise<T> {
     if (id == null || id == '') {

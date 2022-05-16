@@ -1,11 +1,14 @@
-import { Downgraded } from '@speigg/hookstate'
+import { Downgraded } from '@hoostate/core'
 import React, { memo, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import InfiniteScroll from 'react-infinite-scroller'
 
-import ConfirmModal from '@xrengine/client-core/src/admin/common/ConfirmModal'
-import { FileBrowserService, useFileBrowserState } from '@xrengine/client-core/src/common/services/FileBrowserService'
-import { ScenePrefabs } from '@xrengine/engine/src/scene/functions/registerPrefabs'
+import ConfirmModal from '@atlasfoundation/client-core/src/admin/common/ConfirmModal'
+import {
+  FileBrowserService,
+  useFileBrowserState
+} from '@atlasfoundation/client-core/src/common/services/FileBrowserService'
+import { ScenePrefabs } from '@atlasfoundation/engine/src/scene/functions/registerPrefabs'
 
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import AutorenewIcon from '@mui/icons-material/Autorenew'
@@ -26,7 +29,6 @@ import { FileDataType } from './FileDataType'
 import styles from './styles.module.scss'
 
 /**
- * @author Abhishek Pathak
  */
 export const PrefabFileType = {
   gltf: ScenePrefabs.model,
@@ -69,7 +71,6 @@ export function isFileDataType(value: any): value is FileDataType {
 
 /**
  * FileBrowserPanel used to render view for AssetsPanel.
- * @author Abhishek Pathak
  * @constructor
  */
 const FileBrowserContentPanel: React.FC<FileBrowserContentPanelProps> = (props) => {
@@ -93,7 +94,7 @@ const FileBrowserContentPanel: React.FC<FileBrowserContentPanelProps> = (props) 
     .map((file, index, arr) => {
       if (arr.length - 1 == index) {
         return (
-          <Typography key={file} style={{ fontSize: '0.9rem' }}>
+          <Typography key={file} style={{ color: '#fff', fontSize: '0.9rem' }}>
             {file}
           </Typography>
         )
@@ -276,12 +277,7 @@ const FileBrowserContentPanel: React.FC<FileBrowserContentPanelProps> = (props) 
     <>
       <div style={headGrid}>
         <ToolButton icon={ArrowBackIcon} onClick={onBackDirectory} id="backDir" />
-        <Breadcrumbs
-          maxItems={3}
-          classes={{ separator: styles.separator, li: styles.breadcrumb }}
-          separator="›"
-          aria-label="breadcrumb"
-        >
+        <Breadcrumbs maxItems={3} classes={{ separator: styles.separator }} separator="›" aria-label="breadcrumb">
           {breadcrumbs}
         </Breadcrumbs>
         <ToolButton icon={AutorenewIcon} onClick={onRefreshDirectory} id="refreshDir" />

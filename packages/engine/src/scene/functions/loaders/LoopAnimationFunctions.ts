@@ -1,6 +1,6 @@
 import { AnimationClip, AnimationMixer, Group, Vector3 } from 'three'
 
-import { ComponentJson } from '@xrengine/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { AnimationState } from '../../../avatar/animation/AnimationState'
 import { AvatarAnimationGraph } from '../../../avatar/animation/AvatarAnimationGraph'
@@ -17,7 +17,7 @@ import {
 } from '../../../common/constants/PrefabFunctionType'
 import { isClient } from '../../../common/functions/isClient'
 import { Engine } from '../../../ecs/classes/Engine'
-import { EngineActions, getEngineState } from '../../../ecs/classes/EngineState'
+import { accessEngineState, EngineActions } from '../../../ecs/classes/EngineService'
 import { Entity } from '../../../ecs/classes/Entity'
 import { addComponent, getComponent, hasComponent, removeComponent } from '../../../ecs/functions/ComponentFunctions'
 import { matchActionOnce } from '../../../networking/functions/matchActionOnce'

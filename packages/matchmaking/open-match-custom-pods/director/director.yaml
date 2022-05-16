@@ -15,11 +15,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: xrengine-matchmaking-director
-  namespace: xrengine-matchmaking
+  name: atlas-matchmaking-director
+  namespace: atlas-matchmaking
 spec:
   containers:
-  - name: xrengine-matchmaking-director
-    image: REGISTRY_PLACEHOLDER/xrengine-matchmaking-director:latest
+  - name: atlas-matchmaking-director
+    image: REGISTRY_PLACEHOLDER/atlas-matchmaking-director:latest
     imagePullPolicy: Always
-  hostname: xrengine-matchmaking-director
+  hostname: atlas-matchmaking-director

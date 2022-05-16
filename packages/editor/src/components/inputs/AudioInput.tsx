@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AudioFileTypes } from '@xrengine/engine/src/assets/constants/fileTypes'
+import { AudioFileTypes } from '@atlasfoundation/engine/src/assets/constants/fileTypes'
 
 import { ItemTypes } from '../../constants/AssetTypes'
 import FileBrowserInput from './FileBrowserInput'
@@ -8,8 +8,6 @@ import FileBrowserInput from './FileBrowserInput'
 /**
  * AudioInput used to render component view for audio inputs.
  *
- * @author Robert Long
- * @author Hanzla Mateen
  * @param       {function} onChange
  * @param       {any} rest
  * @constructor

@@ -1,5 +1,5 @@
-import { EntityTreeNode } from '@xrengine/engine/src/ecs/classes/EntityTree'
-import { ComponentConstructor, ComponentType } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { ComponentConstructor, ComponentType } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 
 import { setPropertyOnSelectionEntities } from '../../classes/History'
 

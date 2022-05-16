@@ -6,8 +6,8 @@ import { Redirect } from 'react-router-dom'
 import {
   ClientSettingService,
   useClientSettingState
-} from '@xrengine/client-core/src/admin/services/Setting/ClientSettingService'
-import ProfileMenu from '@xrengine/client-core/src/user/components/UserMenu/menus/ProfileMenu'
+} from '@atlasfoundation/client-core/src/admin/services/Setting/ClientSettingService'
+import ProfileMenu from '@atlasfoundation/client-core/src/user/components/UserMenu/menus/ProfileMenu'
 
 const ROOT_REDIRECT: any = globalThis.process.env['VITE_ROOT_REDIRECT']
 

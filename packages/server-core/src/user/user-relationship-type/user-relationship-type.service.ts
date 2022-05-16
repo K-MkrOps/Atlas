@@ -4,7 +4,7 @@ import userRelationshipTypeDocs from './user-relationship-type.docs'
 import hooks from './user-relationship-type.hooks'
 import createModel from './user-relationship-type.model'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'user-relationship-type': UserRelationshipType
   }
@@ -20,7 +20,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new UserRelationshipType(options, app)
   event.docs = userRelationshipTypeDocs

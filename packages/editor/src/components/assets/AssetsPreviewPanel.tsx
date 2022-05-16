@@ -1,7 +1,7 @@
 import React, { useImperativeHandle, useState } from 'react'
 import styled from 'styled-components'
 
-import { onWindowResize } from '@xrengine/client-core/src/user/components/UserMenu/menus/helperFunctions'
+import { onWindowResize } from '@atlasfoundation/client-core/src/user/components/UserMenu/menus/helperFunctions'
 
 import { AudioPreviewPanel } from './AssetPreviewPanels/AudioPreviewPanel'
 import { ImagePreviewPanel } from './AssetPreviewPanels/ImagePreviewPanel'
@@ -14,7 +14,6 @@ import { VedioPreviewPanel } from './AssetPreviewPanels/VedioPreviewPanel'
 
 /**
  *
- * @author Abhishek Pathak
  */
 
 const AssetHeading = styled.div`
@@ -33,7 +32,6 @@ export type AssetSelectionChangePropsType = {
 /**
  * Used to see the Preview of the Asset in the FileBrowser Panel
  *
- * @author Abhishek Pathak <abhi.pathak401@gmail.com>
  */
 
 export const AssetsPreviewPanel = React.forwardRef((props, ref) => {

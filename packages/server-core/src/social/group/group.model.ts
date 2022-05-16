@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { GroupInterface } from '@xrengine/common/src/dbmodels/Group'
+import { GroupInterface } from '@atlasfoundation/common/src/dbmodels/Group'
 
 import { Application } from '../../../declarations'
 

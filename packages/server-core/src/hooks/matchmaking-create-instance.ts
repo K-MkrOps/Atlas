@@ -1,7 +1,7 @@
 import { Hook, HookContext, Paginated } from '@feathersjs/feathers'
 
-import { Instance } from '@xrengine/common/src/interfaces/Instance'
-import { Location as LocationType } from '@xrengine/common/src/interfaces/Location'
+import { Instance } from '@atlasfoundation/common/src/interfaces/Instance'
+import { Location as LocationType } from '@atlasfoundation/common/src/interfaces/Location'
 
 import { Application } from '../../declarations'
 import logger from '../logger'

@@ -16,10 +16,6 @@ import { CollisionGroups, DefaultCollisionMask } from '../enums/CollisionGroups'
 import { BodyType, ColliderTypes, ObstacleConfig } from '../types/PhysicsTypes'
 import { vectorToArray } from './physxHelpers'
 
-/**
- * @author Josh Field <github.com/HexaField>
- */
-
 const quat1 = new Quaternion()
 const quat2 = new Quaternion()
 const xVec = new Vector3(1, 0, 0)
@@ -286,10 +282,7 @@ export const getAllShapesFromObject3D = (entity: Entity, asset: Object3D, data: 
     shapes.push(shape)
   })
 
-  shapeObjs.forEach((mesh) => {
-    mesh.parent?.removeFromParent()
-    mesh.removeFromParent()
-  })
+  shapeObjs.forEach((mesh) => mesh.removeFromParent())
 
   return shapes.filter((val) => {
     return !!val

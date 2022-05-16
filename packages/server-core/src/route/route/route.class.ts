@@ -1,7 +1,7 @@
 import { Paginated, Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { ActiveRoutesInterface } from '@xrengine/common/src/interfaces/Route'
+import { ActiveRoutesInterface } from '@atlasfoundation/common/src/interfaces/Route'
 
 import { Application } from '../../../declarations'
 

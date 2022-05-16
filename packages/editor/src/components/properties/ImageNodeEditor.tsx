@@ -1,12 +1,12 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { AssetLoader } from '@xrengine/engine/src/assets/classes/AssetLoader'
-import { useEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { getComponent, hasComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { ErrorComponent } from '@xrengine/engine/src/scene/components/ErrorComponent'
-import { ImageComponent } from '@xrengine/engine/src/scene/components/ImageComponent'
-import { VideoComponent } from '@xrengine/engine/src/scene/components/VideoComponent'
+import { AssetLoader } from '@atlasfoundation/engine/src/assets/classes/AssetLoader'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { getComponent, hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { ErrorComponent } from '@atlasfoundation/engine/src/scene/components/ErrorComponent'
+import { ImageComponent } from '@atlasfoundation/engine/src/scene/components/ImageComponent'
+import { VideoComponent } from '@atlasfoundation/engine/src/scene/components/VideoComponent'
 
 import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual'
 

@@ -3,7 +3,7 @@
 // https://github.com/exokitxr/avatars
 import { Bone, Object3D, Quaternion, Skeleton, SkinnedMesh, Vector3 } from 'three'
 
-import { Object3DUtils } from '../common/functions/Object3DUtils'
+import { traverse } from '../common/functions/traverse'
 
 export type BoneNames =
   | 'Root'
@@ -143,7 +143,7 @@ const _countCharacters = (name, regex) => {
 }
 const _findHips = (root: Bone) => {
   let hips
-  Object3DUtils.traverse(root, (bone: Bone) => {
+  traverse(root, (bone: Bone) => {
     if (/hip|pelvis/i.test(bone.name)) {
       hips = bone
       return true
@@ -447,7 +447,7 @@ function findHandBones(handBone: Object3D) {
     const re = new RegExp(name, 'i')
     let result = null
 
-    Object3DUtils.traverse(parent, (bone) => {
+    traverse(parent, (bone) => {
       if (re.test(bone.name) && bone.name.includes(index)) {
         result = bone
         return true
@@ -509,36 +509,11 @@ export function findSkinnedMeshes(model: Object3D) {
  * @returns Skeleton
  */
 export function createSkeletonFromBone(bone: Bone): Skeleton {
-  const bones: Bone[] = []
+  let bones: Bone[] = []
   bone.traverse((b: Bone) => {
     if (b.isBone) bones.push(b)
   })
-
-  const meshes = findSkinnedMeshes(Object3DUtils.findRoot(bone)!)
-  const skeleton = new Skeleton(bones)
-
-  // Calculated inverse matrixes by Skeleton class might not work
-  // Copy from the source
-  for (let i = 0; i < bones.length; i++) {
-    const bone = bones[i]
-    let found = false
-
-    for (let j = 0; j < meshes.length; j++) {
-      const mesh = meshes[j]
-      const { bones: meshBones, boneInverses } = mesh.skeleton
-      const k = meshBones.findIndex((b) => b === bone)
-      if (k < 0) continue
-      skeleton.boneInverses[i].copy(boneInverses[k])
-      found = true
-      break
-    }
-
-    if (!found) {
-      console.warn('Could not find the bone inverse', i)
-    }
-  }
-
-  return skeleton
+  return new Skeleton(bones)
 }
 
 function findRootBone(bone: Bone): Bone {

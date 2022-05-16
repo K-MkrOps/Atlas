@@ -7,7 +7,6 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight'
 /**
  * CollapsibleContainer used to provide styles for Collapsible div.
  *
- * @author Robert Long
  * @type {styled component}
  */
 const CollapsibleContainer = (styled as any).div`
@@ -19,7 +18,6 @@ const CollapsibleContainer = (styled as any).div`
 /**
  * CollapsibleLabel used to provide styles for Collapsible label.
  *
- * @author Robert Long
  * @type {styled container}
  */
 const CollapsibleLabel = (styled as any).div`
@@ -35,7 +33,6 @@ const CollapsibleLabel = (styled as any).div`
 /**
  * CollapsibleContent used to provides styles to Collapsible content.
  *
- * @author Robert Long
  * @type {styled component}
  */
 const CollapsibleContent = (styled as any).div`
@@ -47,7 +44,6 @@ const CollapsibleContent = (styled as any).div`
 /**
  * CollapseIcon used to provide styles to icon.
  *
- * @author Robert Long
  * @type  {styled component}
  */
 const CollapseIcon = (styled as any).div``
@@ -55,7 +51,6 @@ const CollapseIcon = (styled as any).div``
 /**
  * Collapsible used to render the view of component.
  *
- * @author Robert Long
  * @param       {string} label
  * @param       {boolean} open
  * @param       {node} children
@@ -67,7 +62,6 @@ export function Collapsible({ label, open, children }) {
   /**
    * toggleCollapsed callback function used to handle toggle on collapse.
    *
-   * @author Robert Long
    * @type {styled component}
    */
   const toggleCollapsed = useCallback(() => {

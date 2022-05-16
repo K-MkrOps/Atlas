@@ -2,15 +2,15 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: {{ include "xrengine.testbot.fullname" . }}
+  name: {{ include "atlas.testbot.fullname" . }}
   labels:
-    {{- include "xrengine.testbot.labels" . | nindent 4 }}
+    {{- include "atlas.testbot.labels" . | nindent 4 }}
 subjects:
   - kind: ServiceAccount
-    name: {{ include "xrengine.testbot.serviceAccountName" . }}
+    name: {{ include "atlas.testbot.serviceAccountName" . }}
     namespace: default
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: {{ include "xrengine.testbot.fullname" . }}
+  name: {{ include "atlas.testbot.fullname" . }}
 {{- end -}}

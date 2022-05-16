@@ -1,7 +1,7 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { NearbyUser } from '@xrengine/engine/src/networking/functions/getNearbyUsers'
-import { MediaStreams } from '@xrengine/engine/src/networking/systems/MediaStreamSystem'
+import { NearbyUser } from '@atlasfoundation/engine/src/networking/functions/getNearbyUsers'
+import { MediaStreams } from '@atlasfoundation/engine/src/networking/systems/MediaStreamSystem'
 
 import { store } from '../../store'
 
@@ -37,8 +37,6 @@ store.receptors.push((action: MediaStreamActionType): any => {
 export const accessMediaStreamState = () => state
 export const useMediaStreamState = () => useState(state)
 
-let updateConsumerTimeout
-
 //Service
 export const MediaStreamService = {
   updateCamVideoState: () => {
@@ -46,13 +44,8 @@ export const MediaStreamService = {
     store.dispatch(MediaStreamAction.setCamVideoState(ms != null && ms.camVideoProducer != null && !ms.videoPaused))
   },
   triggerUpdateConsumers: () => {
-    if (!updateConsumerTimeout) {
-      updateConsumerTimeout = setTimeout(() => {
-        const ms = MediaStreams.instance
-        store.dispatch(MediaStreamAction.setConsumers(ms != null ? ms.consumers : []))
-        updateConsumerTimeout = null
-      }, 1000)
-    }
+    const ms = MediaStreams.instance
+    store.dispatch(MediaStreamAction.setConsumers(ms != null ? ms.consumers : []))
   },
   triggerUpdateNearbyLayerUsers: () => {
     const ms = MediaStreams.instance

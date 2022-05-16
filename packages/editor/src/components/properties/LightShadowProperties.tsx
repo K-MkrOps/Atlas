@@ -2,11 +2,11 @@ import React, { Fragment } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Vector2 } from 'three'
 
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { EntityTreeNode } from '@xrengine/engine/src/ecs/classes/EntityTree'
-import { ComponentConstructor, getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { EngineRenderer } from '@xrengine/engine/src/renderer/WebGLRendererSystem'
-import { DirectionalLightComponent } from '@xrengine/engine/src/scene/components/DirectionalLightComponent'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { ComponentConstructor, getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { EngineRenderer } from '@atlasfoundation/engine/src/renderer/WebGLRendererSystem'
+import { DirectionalLightComponent } from '@atlasfoundation/engine/src/scene/components/DirectionalLightComponent'
 
 import { setPropertyOnSelectionEntities } from '../../classes/History'
 import BooleanInput from '../inputs/BooleanInput'
@@ -18,7 +18,6 @@ import { updateProperty } from './Util'
 /**
  *  Array containing options for shadow resolution
  *
- * @author Robert Long
  */
 const ShadowMapResolutionOptions = [
   {
@@ -53,7 +52,6 @@ type LightShadowPropertiesProps = {
  * OnChangeShadowMapResolution used to customize properties of LightShadowProperties
  * Used with LightNodeEditors.
  *
- * @author Robert Long
  * @type {[class component]}
  */
 export const LightShadowProperties = (props: LightShadowPropertiesProps) => {

@@ -12,15 +12,15 @@ import {
   VSMShadowMap
 } from 'three'
 
-import { DistanceModel, DistanceModelOptions } from '@xrengine/engine/src/audio/constants/AudioConstants'
-import { getComponent, hasComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { PositionalAudioSettingsComponent } from '@xrengine/engine/src/scene/components/AudioSettingsComponent'
-import { FogComponent } from '@xrengine/engine/src/scene/components/FogComponent'
-import { MetaDataComponent } from '@xrengine/engine/src/scene/components/MetaDataComponent'
-import { RenderSettingComponent } from '@xrengine/engine/src/scene/components/RenderSettingComponent'
-import { SimpleMaterialTagComponent } from '@xrengine/engine/src/scene/components/SimpleMaterialTagComponent'
-import { FogType } from '@xrengine/engine/src/scene/constants/FogType'
-import { SCENE_COMPONENT_SIMPLE_MATERIALS } from '@xrengine/engine/src/scene/functions/loaders/SimpleMaterialFunctions'
+import { DistanceModel, DistanceModelOptions } from '@atlasfoundation/engine/src/audio/constants/AudioConstants'
+import { getComponent, hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { PositionalAudioSettingsComponent } from '@atlasfoundation/engine/src/scene/components/AudioSettingsComponent'
+import { FogComponent } from '@atlasfoundation/engine/src/scene/components/FogComponent'
+import { MetaDataComponent } from '@atlasfoundation/engine/src/scene/components/MetaDataComponent'
+import { RenderSettingComponent } from '@atlasfoundation/engine/src/scene/components/RenderSettingComponent'
+import { SimpleMaterialTagComponent } from '@atlasfoundation/engine/src/scene/components/SimpleMaterialTagComponent'
+import { FogType } from '@atlasfoundation/engine/src/scene/constants/FogType'
+import { SCENE_COMPONENT_SIMPLE_MATERIALS } from '@atlasfoundation/engine/src/scene/functions/loaders/SimpleMaterialFunctions'
 
 import LanguageIcon from '@mui/icons-material/Language'
 
@@ -42,7 +42,6 @@ import { EditorComponentType, updateProperty } from './Util'
 /**
  * FogTypeOptions array containing fogType options.
  *
- * @author Robert Long
  * @type {Array}
  */
 const FogTypeOptions = [
@@ -63,7 +62,6 @@ const FogTypeOptions = [
 /**
  * ToneMappingOptions array containing tone mapping type options.
  *
- * @author Josh Field
  * @type {Array}
  */
 const ToneMappingOptions = [
@@ -92,13 +90,12 @@ const ToneMappingOptions = [
 /**
  * ShadowTypeOptions array containing shadow type options.
  *
- * @author Josh Field
  * @type {Array}
  */
 const ShadowTypeOptions = [
   {
     label: 'No Shadow Map',
-    value: -1
+    value: undefined
   },
   {
     label: 'Basic Shadow Map',
@@ -121,7 +118,6 @@ const ShadowTypeOptions = [
 /**
  * SceneNodeEditor provides the editor view for property customization.
  *
- * @author Robert Long
  * @param       props
  * @constructor
  */
@@ -451,13 +447,13 @@ export const SceneNodeEditor: EditorComponentType = (props) => {
             />
           </InputGroup>
           <InputGroup
-            name="Shadow Map Type"
+            name="Tone Mapping Exposure"
             label={t('editor:properties.scene.lbl-shadowMapType')}
             info={t('editor:properties.scene.info-shadowMapType')}
           >
             <SelectInput
               options={ShadowTypeOptions}
-              value={renderSettingComponent.shadowMapType ?? -1}
+              value={renderSettingComponent.shadowMapType}
               onChange={updateProperty(RenderSettingComponent, 'shadowMapType')}
             />
           </InputGroup>

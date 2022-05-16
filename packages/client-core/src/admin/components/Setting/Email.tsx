@@ -111,6 +111,7 @@ const Email = (props: emailProps) => {
                   name="host"
                   className={styles.input}
                   value={smtp?.host || ''}
+                  style={{ color: '#fff' }}
                   onChange={(e) => handleUpdateSmtp(e, 'host')}
                 />
               </Paper>
@@ -120,6 +121,7 @@ const Email = (props: emailProps) => {
                   name="port"
                   value={smtp?.port || ''}
                   className={styles.input}
+                  style={{ color: '#fff' }}
                   onChange={(e) => handleUpdateSmtp(e, 'port')}
                 />
               </Paper>
@@ -143,6 +145,7 @@ const Email = (props: emailProps) => {
                   name="user"
                   className={styles.input}
                   value={auth?.user || ''}
+                  style={{ color: '#fff' }}
                   onChange={(e) => handleUpdateAuth(e, 'user')}
                 />
               </Paper>
@@ -153,6 +156,7 @@ const Email = (props: emailProps) => {
                   className={styles.input}
                   type={showPassword ? 'text' : 'password'}
                   value={auth?.pass || ''}
+                  style={{ color: '#fff' }}
                   onChange={(e) => handleUpdateAuth(e, 'pass')}
                 />
                 <IconButton size="large" onClick={() => setShowPassword(!showPassword)}>
@@ -169,6 +173,7 @@ const Email = (props: emailProps) => {
                 <InputBase
                   name="from"
                   className={styles.input}
+                  style={{ color: '#fff' }}
                   value={from || ''}
                   onChange={(e) => setFrom(e.target.value)}
                 />
@@ -183,6 +188,7 @@ const Email = (props: emailProps) => {
                   name="login"
                   value={subject?.login || ''}
                   className={styles.input}
+                  style={{ color: '#fff' }}
                   onChange={(e) => handleUpdateSubject(e, 'login')}
                 />
               </Paper>
@@ -192,6 +198,7 @@ const Email = (props: emailProps) => {
                   name="friend"
                   value={subject?.friend || ''}
                   className={styles.input}
+                  style={{ color: '#fff' }}
                   onChange={(e) => handleUpdateSubject(e, 'friend')}
                 />
               </Paper>
@@ -201,6 +208,7 @@ const Email = (props: emailProps) => {
                   name=" group"
                   value={subject?.group || ''}
                   className={styles.input}
+                  style={{ color: '#fff' }}
                   onChange={(e) => handleUpdateSubject(e, 'group')}
                 />
               </Paper>
@@ -210,6 +218,7 @@ const Email = (props: emailProps) => {
                   name=" party"
                   value={subject?.party || ''}
                   className={styles.input}
+                  style={{ color: '#fff' }}
                   onChange={(e) => handleUpdateSubject(e, 'party')}
                 />
               </Paper>
@@ -220,6 +229,7 @@ const Email = (props: emailProps) => {
                   name=" smsNameCharacterLimit"
                   className={styles.input}
                   value={emailSetting?.smsNameCharacterLimit}
+                  style={{ color: '#fff' }}
                 />
               </Paper>
             </Paper>
@@ -228,8 +238,8 @@ const Email = (props: emailProps) => {
         <Button
           sx={{ maxWidth: '100%' }}
           variant="outlined"
-          className={styles.cancelButton}
           type="submit"
+          style={{ color: '#fff' }}
           onClick={handleCancel}
         >
           {t('admin:components.setting.cancel')}

@@ -2,15 +2,15 @@
 {{/*
 Expand the name of the chart.
 */}}
-# {{- define "xrengine.name" -}}
+# {{- define "atlas.name" -}}
 # {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 # {{- end -}}
 
-{{- define "xrengine.director.name" -}}
+{{- define "atlas.director.name" -}}
 {{- default .Chart.Name .Values.director.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
-{{- define "xrengine.matchfunction.name" -}}
+{{- define "atlas.matchfunction.name" -}}
 {{- default .Chart.Name .Values.matchfunction.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
@@ -20,11 +20,11 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "xrengine.matchmaking-namespace" -}}
+{{- define "atlas.matchmaking-namespace" -}}
 {{- printf "%s-%s" .Values.release.name .Chart.Name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
-{{- define "xrengine.fullname" -}}
+{{- define "atlas.fullname" -}}
 {{- if .Values.fullnameOverride -}}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -37,7 +37,7 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 {{- end -}}
 
-{{- define "xrengine.director.fullname" -}}
+{{- define "atlas.director.fullname" -}}
 {{- if .Values.director.fullnameOverride -}}
 {{- .Values.director.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -45,7 +45,7 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 {{- end -}}
 
-{{- define "xrengine.matchfunction.fullname" -}}
+{{- define "atlas.matchfunction.fullname" -}}
 {{- if .Values.matchfunction.fullnameOverride -}}
 {{- .Values.matchfunction.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -57,25 +57,25 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "xrengine.chart" -}}
+{{- define "atlas.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{/*
 Common labels
 */}}
-{{- define "xrengine.director.labels" -}}
-helm.sh/chart: {{ include "xrengine.chart" . }}
-{{ include "xrengine.director.selectorLabels" . }}
+{{- define "atlas.director.labels" -}}
+helm.sh/chart: {{ include "atlas.chart" . }}
+{{ include "atlas.director.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end -}}
 
-{{- define "xrengine.matchfunction.labels" -}}
-helm.sh/chart: {{ include "xrengine.chart" . }}
-{{ include "xrengine.matchfunction.selectorLabels" . }}
+{{- define "atlas.matchfunction.labels" -}}
+helm.sh/chart: {{ include "atlas.chart" . }}
+{{ include "atlas.matchfunction.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -85,15 +85,15 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "xrengine.director.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "xrengine.director.name" . }}
+{{- define "atlas.director.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "atlas.director.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/component: director
 {{- end -}}
 
 
-{{- define "xrengine.matchfunction.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "xrengine.matchfunction.name" . }}
+{{- define "atlas.matchfunction.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "atlas.matchfunction.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/component: matchfunction
 {{- end -}}
@@ -102,17 +102,17 @@ app.kubernetes.io/component: matchfunction
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "xrengine.director.serviceAccountName" -}}
+{{- define "atlas.director.serviceAccountName" -}}
 {{- if .Values.director.serviceAccount.create -}}
-    {{ default (include "xrengine.director.fullname" .) .Values.director.serviceAccount.name }}
+    {{ default (include "atlas.director.fullname" .) .Values.director.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.director.serviceAccount.name }}
 {{- end -}}
 {{- end -}}
 
-{{- define "xrengine.matchfunction.serviceAccountName" -}}
+{{- define "atlas.matchfunction.serviceAccountName" -}}
 {{- if .Values.matchfunction.serviceAccount.create -}}
-    {{ default (include "xrengine.matchfunction.fullname" .) .Values.matchfunction.serviceAccount.name }}
+    {{ default (include "atlas.matchfunction.fullname" .) .Values.matchfunction.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.matchfunction.serviceAccount.name }}
 {{- end -}}

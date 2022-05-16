@@ -34,9 +34,9 @@ describe('loadGLTFModel', () => {
     const scene = new Scene()
     const mesh = new Mesh()
     mesh.userData = {
-      'xrengine.entity': entityName,
-      // 'xrengine.spawn-point': '',
-      'xrengine.CustomComponent.value': number
+      'atlas.entity': entityName,
+      // 'atlas.spawn-point': '',
+      'atlas.CustomComponent.value': number
     }
     scene.add(mesh)
     const modelQuery = defineQuery([TransformComponent, Object3DComponent])
@@ -75,8 +75,8 @@ describe('loadGLTFModel', () => {
     const entityName = 'physics test entity'
     const parentGroup = new Group()
     parentGroup.userData = {
-      'xrengine.entity': entityName,
-      'xrengine.collider.bodyType': 0
+      'atlas.entity': entityName,
+      'atlas.collider.bodyType': 0
     }
 
     const mesh = new Mesh()

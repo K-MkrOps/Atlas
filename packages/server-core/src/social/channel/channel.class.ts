@@ -3,7 +3,7 @@ import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import _ from 'lodash'
 import { Op } from 'sequelize'
 
-import { Channel as ChannelInterface } from '@xrengine/common/src/interfaces/Channel'
+import { Channel as ChannelInterface } from '@atlasfoundation/common/src/interfaces/Channel'
 
 import { Application } from '../../../declarations'
 import logger from '../../logger'
@@ -24,7 +24,6 @@ export class Channel<T = ChannelDataType> extends Service<T> {
    *
    * @param params of query which contains items limit and numberr skip
    * @returns {@Array} which contains list of channel
-   * @author Vyacheslav Solovjov
    */
 
   async find(params?: Params): Promise<T[] | Paginated<T>> {

@@ -1,12 +1,12 @@
 # Advanced Setup
 
-If you want to setup XREngine docker instances, client, server, and/or
+If you want to setup Atlas docker instances, client, server, and/or
 game-server manually, follow these directions. The advanced setup is recommended
 for all users, in order to understand more about everything that going on.
 
 ### 1.  Install your dependencies
 ```
-cd path/to/xrengine
+cd path/to/atlas
 npm install
 npm run dev-docker
 npm run dev-reinit
@@ -24,13 +24,13 @@ We've provided a docker container for easy setup:
 cd scripts && sudo bash start-db.sh
 ```
 
-This creates a Docker container of mariadb named xrengine_db. You must have
+This creates a Docker container of mariadb named atlas_db. You must have
 docker installed on your machine for this script to work.
 If you do not have Docker installed and do not wish to install it, you'll have
 to manually create a MariaDB server.
 
 The default username is 'server', the default password is 'password', the
-default database name is 'xrengine', the default hostname is '127.0.0.1', and
+default database name is 'atlas', the default hostname is '127.0.0.1', and
 the default port is `3306`.
 
 Seeing errors connecting to the local DB? **Try shutting off your local firewall.**
@@ -90,7 +90,7 @@ If you are on windows you need to use ```npm run dev-windows``` instead of ```np
 ### 7. In a browser, navigate to https://127.0.0.1:3000/location/default
 The database seeding process creates a default empty location called 'default'.
 It can be navigated to by going to 'https://127.0.0.1:3000/location/default'.
-As of this writing, the cert provided in the XREngine package for local use is
+As of this writing, the cert provided in the Atlas package for local use is
 not adequately signed. You can create signed certificates and replace the
 default ones, but most developers just ignore the warnings. Browsers will throw
 up warnings about going to insecure pages. You should be able to tell the browser

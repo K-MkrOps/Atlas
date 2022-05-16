@@ -1,10 +1,10 @@
 import { Vector3 } from 'three'
 
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { Entity } from '@xrengine/engine/src/ecs/classes/Entity'
-import { addComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { createEntity } from '@xrengine/engine/src/ecs/functions/EntityFunctions'
-import { Object3DComponent } from '@xrengine/engine/src/scene/components/Object3DComponent'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { addComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { createEntity } from '@atlasfoundation/engine/src/ecs/functions/EntityFunctions'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
 
 import { EditorCameraComponent } from '../classes/EditorCameraComponent'
 

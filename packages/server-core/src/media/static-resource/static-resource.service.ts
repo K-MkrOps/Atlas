@@ -1,4 +1,4 @@
-import { StaticResourceInterface } from '@xrengine/common/src/dbmodels/StaticResource'
+import { StaticResourceInterface } from '@atlasfoundation/common/src/dbmodels/StaticResource'
 
 import { Application } from '../../../declarations'
 import { StaticResource } from './static-resource.class'
@@ -6,7 +6,7 @@ import staticResourceDocs from './static-resource.docs'
 import hooks from './static-resource.hooks'
 import createModel from './static-resource.model'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'static-resource': StaticResource
   }
@@ -25,7 +25,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new StaticResource(options, app)
   event.docs = staticResourceDocs
@@ -35,7 +34,6 @@ export default (app: Application) => {
   /**
    * Get our initialized service so that we can register hooks
    *
-   * @author Vyacheslav Solovjov
    */
   const service = app.service('static-resource')
 

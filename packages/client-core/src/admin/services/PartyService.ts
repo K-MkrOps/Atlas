@@ -1,7 +1,7 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { Party, PatchParty } from '@xrengine/common/src/interfaces/Party'
+import { Party, PatchParty } from '@atlasfoundation/common/src/interfaces/Party'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'

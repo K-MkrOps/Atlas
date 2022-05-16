@@ -3,13 +3,16 @@ import assert from 'assert'
 import _ from 'lodash'
 import path from 'path'
 
-import defaultSceneSeed from '@xrengine/projects/default-project/default.scene.json'
+import defaultSceneSeed from '@atlasfoundation/projects/default-project/default.scene.json'
 
 import { Application } from '../../../declarations'
 import { createFeathersExpressApp } from '../../createApp'
-import { getStorageProvider } from '../../media/storageprovider/storageprovider'
+import { useStorageProvider } from '../../media/storageprovider/storageprovider'
 import { deleteFolderRecursive } from '../../util/fsHelperFunctions'
 import { parseSceneDataCacheURLs } from './scene-parser'
+
+const storageProvider = useStorageProvider()
+const parsedData = parseSceneDataCacheURLs(_.cloneDeep(defaultSceneSeed) as any, storageProvider.cacheDomain)
 
 const defaultProjectName = 'default-project'
 const defaultSceneName = 'default'
@@ -22,14 +25,10 @@ const params = { isInternal: true }
 
 describe('scene.test', () => {
   let app: Application
-  let parsedData
-
   before(() => {
     const projectDir = path.resolve(appRootPath.path, `packages/projects/projects/${newProjectName}/`)
     deleteFolderRecursive(projectDir)
     app = createFeathersExpressApp()
-    const storageProvider = getStorageProvider()
-    parsedData = parseSceneDataCacheURLs(_.cloneDeep(defaultSceneSeed) as any, storageProvider.cacheDomain)
   })
 
   // wait for initial project loading to occur in CI/CD

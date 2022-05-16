@@ -1,4 +1,4 @@
-import { State } from '@speigg/hookstate'
+import { State } from '@hoostate/core'
 
 import { Action, ActionReceptor } from './ActionFunctions'
 

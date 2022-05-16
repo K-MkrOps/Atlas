@@ -1,10 +1,10 @@
 {
-  "name": "@xrengine/client",
+  "name": "@atlasfoundation/client",
   "version": "0.5.3",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/XRFoundation/XREngine.git"
+    "url": "git://github.com/AtlasFoundation/Atlas.git"
   },
   "engines": {
     "node": ">= 16.3.0"
@@ -37,15 +37,15 @@
     "@mui/styled-engine-sc": "5.6.1",
     "@mui/styles": "5.6.1",
     "@rollup/plugin-inject": "4.0.4",
-    "@speigg/hookstate": "3.0.13-stable-state",
+    "@hookstate/core": "^3.0.13",
     "@types/react": "17.0.44",
-    "@xrengine/client-core": "^0.5.3",
-    "@xrengine/common": "^0.5.3",
-    "@xrengine/editor": "^0.5.3",
-    "@xrengine/engine": "^0.5.3",
-    "@xrengine/hyperflux": "^0.5.3",
-    "@xrengine/matchmaking": "^0.5.3",
-    "@xrengine/projects": "^0.5.3",
+    "@atlasfoundation/client-core": "^0.5.3",
+    "@atlasfoundation/common": "^0.5.3",
+    "@atlasfoundation/editor": "^0.5.3",
+    "@atlasfoundation/engine": "^0.5.3",
+    "@atlasfoundation/hyperflux": "^0.5.3",
+    "@atlasfoundation/matchmaking": "^0.5.3",
+    "@atlasfoundation/projects": "^0.5.3",
     "app-root-path": "3.0.0",
     "classnames": "2.3.1",
     "cli": "1.0.1",

@@ -1,7 +1,4 @@
-/** Types of System Update
- *
- * @author Josh Field, Gheric Speiginer
- */
+/** Types of System Update */
 
 export const SystemUpdateType = {
   UPDATE: 'UPDATE' as const,

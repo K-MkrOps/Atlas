@@ -61,7 +61,6 @@ interface Vector3InputProp {
 
 /**
  *
- * @author Robert Long
  */
 export const Vector3Input = (props: Vector3InputProp) => {
   const id = uniqueId++

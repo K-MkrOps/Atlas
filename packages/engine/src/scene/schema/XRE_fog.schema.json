@@ -3,7 +3,7 @@
   "title": "XRE_fog glTF extension",
   "$id": "XRE_fog.schema.json",
   "type": "object",
-  "description": "serialization extension for XREngine fog components",
+  "description": "serialization extension for Atlas fog components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "type": {

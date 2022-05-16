@@ -1,13 +1,13 @@
 import { t } from 'i18next'
 import React from 'react'
 
-import { CameraMode } from '@xrengine/engine/src/camera/types/CameraMode'
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
+import { CameraMode } from '@atlasfoundation/engine/src/camera/types/CameraMode'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 import {
   CameraPropertiesComponent,
   CameraPropertiesComponentType,
   RaycastPropsType
-} from '@xrengine/engine/src/scene/components/CameraPropertiesComponent'
+} from '@atlasfoundation/engine/src/scene/components/CameraPropertiesComponent'
 
 import CameraAltIcon from '@mui/icons-material/CameraAlt'
 

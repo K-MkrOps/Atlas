@@ -3,24 +3,24 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import JSONTree from 'react-json-tree'
 
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
 import {
   addComponent,
   getComponent,
   hasComponent,
   MappedComponent,
   removeComponent
-} from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { Network } from '@xrengine/engine/src/networking/classes/Network'
+} from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
 import {
   accessEngineRendererState,
   EngineRendererAction,
   useEngineRendererState
-} from '@xrengine/engine/src/renderer/EngineRendererState'
-import { NameComponent } from '@xrengine/engine/src/scene/components/NameComponent'
-import { SimpleMaterialTagComponent } from '@xrengine/engine/src/scene/components/SimpleMaterialTagComponent'
-import { ObjectLayers } from '@xrengine/engine/src/scene/constants/ObjectLayers'
-import { dispatchAction } from '@xrengine/hyperflux'
+} from '@atlasfoundation/engine/src/renderer/EngineRendererState'
+import { NameComponent } from '@atlasfoundation/engine/src/scene/components/NameComponent'
+import { SimpleMaterialTagComponent } from '@atlasfoundation/engine/src/scene/components/SimpleMaterialTagComponent'
+import { ObjectLayers } from '@atlasfoundation/engine/src/scene/constants/ObjectLayers'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import BlurOffIcon from '@mui/icons-material/BlurOff'
 import GridOnIcon from '@mui/icons-material/GridOn'

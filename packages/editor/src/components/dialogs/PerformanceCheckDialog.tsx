@@ -9,7 +9,6 @@ import Dialog from './Dialog'
 /**
  * ColoredText used to provide color property Dynamically.
  *
- * @author Robert Long
  * @type {Styled component}
  */
 const ColoredText = (styled as any).span`
@@ -19,7 +18,6 @@ const ColoredText = (styled as any).span`
 /**
  * PerformanceItemContainer used as wrapper element for Performance score.
  *
- * @author Robert Long
  * @type {Styled component}
  */
 const PerformanceItemContainer = (styled as any).li`
@@ -69,7 +67,6 @@ const PerformanceItemContainer = (styled as any).li`
 /**
  * PerformanceCheckItem used to render view for PerformanceCheckDialog.
  *
- * @author Robert Long
  * @param       {String} score
  * @param       {String} scoreColor
  * @param       {String} title
@@ -105,7 +102,6 @@ function PerformanceCheckItem({ score, scoreColor, title, description, learnMore
 /**
  * initializing scoreToValue with object containing Low Medium High.
  *
- * @author Robert Long
  * @type {Object}
  */
 const scoreToValue = {
@@ -117,7 +113,6 @@ const scoreToValue = {
 /**
  * PerformanceCheckDialog used render view containing Performance scores.
  *
- * @author Robert Long
  * @param       {String} scores
  * @param       {any} rest
  * @constructor
@@ -146,7 +141,7 @@ export function PerformanceCheckDialog({ scores, ...rest }) {
         <PerformanceCheckItem
           title={t('editor:dialog.performance.lbl-polycount')}
           description={t('editor:dialog.performance.info-polycount')}
-          learnMoreUrl="htts://xrengine.dev/docs/editor-optimization.html"
+          learnMoreUrl="htts://atlas.dev/docs/editor-optimization.html"
           score={scores.polygons.score}
           scoreColor={scoreToColor[scores.polygons.score]}
         >
@@ -157,7 +152,7 @@ export function PerformanceCheckDialog({ scores, ...rest }) {
         <PerformanceCheckItem
           title={t('editor:dialog.performance.lbl-material')}
           description={t('editor:dialog.performance.info-material')}
-          learnMoreUrl="htts://xrengine.dev/docs/editor-optimization.html"
+          learnMoreUrl="htts://atlas.dev/docs/editor-optimization.html"
           score={scores.materials.score}
           scoreColor={scoreToColor[scores.materials.score]}
         >
@@ -168,7 +163,7 @@ export function PerformanceCheckDialog({ scores, ...rest }) {
         <PerformanceCheckItem
           title={t('editor:dialog.performance.lbl-texture')}
           description={t('editor:dialog.performance.info-texture')}
-          learnMoreUrl="htts://xrengine.dev/docs/editor-optimization.html"
+          learnMoreUrl="htts://atlas.dev/docs/editor-optimization.html"
           score={texturesScore}
           scoreColor={scoreToColor[texturesScore]}
         >
@@ -183,7 +178,7 @@ export function PerformanceCheckDialog({ scores, ...rest }) {
         <PerformanceCheckItem
           title={t('editor:dialog.performance.lbl-lights')}
           description={t('editor:dialog.performance.info-lights')}
-          learnMoreUrl="htts://xrengine.dev/docs/editor-optimization.html"
+          learnMoreUrl="htts://atlas.dev/docs/editor-optimization.html"
           score={scores.lights.score}
           scoreColor={scoreToColor[scores.lights.score]}
         >
@@ -194,7 +189,7 @@ export function PerformanceCheckDialog({ scores, ...rest }) {
         <PerformanceCheckItem
           title={t('editor:dialog.performance.lbl-fileSize')}
           description={t('editor:dialog.performance.info-fileSize')}
-          learnMoreUrl="htts://xrengine.dev/docs/editor-optimization.html"
+          learnMoreUrl="htts://atlas.dev/docs/editor-optimization.html"
           score={scores.fileSize.score}
           scoreColor={scoreToColor[scores.fileSize.score]}
         >

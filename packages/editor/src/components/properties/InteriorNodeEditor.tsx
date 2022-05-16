@@ -1,10 +1,10 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { getComponent, hasComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { ErrorComponent } from '@xrengine/engine/src/scene/components/ErrorComponent'
-import { InteriorComponent } from '@xrengine/engine/src/scene/components/InteriorComponent'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { getComponent, hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { ErrorComponent } from '@atlasfoundation/engine/src/scene/components/ErrorComponent'
+import { InteriorComponent } from '@atlasfoundation/engine/src/scene/components/InteriorComponent'
 
 import LocationCityIcon from '@mui/icons-material/LocationCity'
 
@@ -18,7 +18,6 @@ import { EditorComponentType, updateProperty } from './Util'
 /**
  * Interior Editor provides the editor to customize properties.
  *
- * @author Robert Long
  * @type {class component}
  */
 export const InteriorNodeEditor: EditorComponentType = (props) => {

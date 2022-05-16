@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AuthMagicLink from '@xrengine/client-core/src/user/components/MagicLink/AuthMagicLink'
+import AuthMagicLink from '@atlasfoundation/client-core/src/user/components/MagicLink/AuthMagicLink'
 
 export const AuthMagicLinkPage = () => <AuthMagicLink />
 

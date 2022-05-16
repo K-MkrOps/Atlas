@@ -5,7 +5,7 @@ export const loadWebappInjection = async (props: any, projects: string[]) => {
     projects
       .map(async (project) => {
         try {
-          const projectConfig = (await import(`./projects/${project}/xrengine.config.ts`))
+          const projectConfig = (await import(`./projects/${project}/atlas.config.ts`))
             .default as ProjectConfigInterface
           if (typeof projectConfig.webappInjection !== 'function') return null!
           return (await projectConfig.webappInjection()).default(props)

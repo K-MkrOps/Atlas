@@ -3,7 +3,7 @@
   "$id": "XRE_image.schema.json",
   "title": "XRE_image glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine image components",
+  "description": "serialization extension for Atlas image components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "imageSource": {

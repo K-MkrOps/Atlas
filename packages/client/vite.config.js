@@ -78,13 +78,13 @@ export default defineConfig(async (command) => {
       OptimizationPersist(),
         injectHtml({
           data: {
-            title: clientSetting.title || 'XRENGINE',
-            appleTouchIcon: clientSetting.appleTouchIcon || '/apple-touch-icon.png',
-            favicon32px: clientSetting.favicon32px || '/favicon-32x32.png',
-            favicon16px: clientSetting.favicon16px || '/favicon-16x16.png',
-            icon192px: clientSetting.icon192px || '/android-chrome-192x192.png',
-            icon512px: clientSetting.icon512px || '/android-chrome-512x512.png',
-            webmanifestLink: clientSetting.webmanifestLink || '/site.webmanifest'
+            title: clientSetting?.title || 'ATLAS',
+            appleTouchIcon: clientSetting?.appleTouchIcon || '/apple-touch-icon.png',
+            favicon32px: clientSetting?.favicon32px || '/favicon-32x32.png',
+            favicon16px: clientSetting?.favicon16px || '/favicon-16x16.png',
+            icon192px: clientSetting?.icon192px || '/android-chrome-192x192.png',
+            icon512px: clientSetting?.icon512px || '/android-chrome-512x512.png',
+            webmanifestLink: clientSetting?.webmanifestLink || '/site.webmanifest'
           }
         })
     ],

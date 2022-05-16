@@ -2,9 +2,9 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { BackSide, DoubleSide, FrontSide } from 'three'
 
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { ImageAlphaMode, ImageProjection } from '@xrengine/engine/src/scene/classes/ImageUtils'
-import { ImageComponent } from '@xrengine/engine/src/scene/components/ImageComponent'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { ImageAlphaMode, ImageProjection } from '@atlasfoundation/engine/src/scene/classes/ImageUtils'
+import { ImageComponent } from '@atlasfoundation/engine/src/scene/components/ImageComponent'
 
 import InputGroup from '../inputs/InputGroup'
 import NumericInputGroup from '../inputs/NumericInputGroup'

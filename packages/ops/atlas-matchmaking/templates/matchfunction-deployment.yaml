@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "xrengine.matchfunction.fullname" . }}
-  namespace: {{ include "xrengine.matchmaking-namespace" . }}
+  name: {{ include "atlas.matchfunction.fullname" . }}
+  namespace: {{ include "atlas.matchmaking-namespace" . }}
   labels:
-    {{- include "xrengine.matchfunction.labels" . | nindent 4 }}
+    {{- include "atlas.matchfunction.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.matchfunction.replicaCount }}
   selector:
     matchLabels:
-      {{- include "xrengine.matchfunction.selectorLabels" . | nindent 6 }}
+      {{- include "atlas.matchfunction.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{- include "xrengine.matchfunction.selectorLabels" . | nindent 8 }}
+        {{- include "atlas.matchfunction.selectorLabels" . | nindent 8 }}
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/matchfunction-configmap.yaml") . | sha256sum }}
     spec:
@@ -22,7 +22,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
     {{- end }}
-      serviceAccountName: {{ include "xrengine.matchfunction.serviceAccountName" . }}
+      serviceAccountName: {{ include "atlas.matchfunction.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.matchfunction.podSecurityContext | nindent 8 }}
       {{- $releaseName := .Release.Name }}
@@ -37,7 +37,7 @@ spec:
           imagePullPolicy: {{ .Values.matchfunction.image.pullPolicy }}
           envFrom:
             - configMapRef:
-                name: {{ include "xrengine.matchfunction.fullname" . }}
+                name: {{ include "atlas.matchfunction.fullname" . }}
                 optional: true
           env:
             - name: KUBERNETES
@@ -49,9 +49,9 @@ spec:
             - name: MATCHFUNCTION_PORT
               value: {{ quote .Values.matchfunction.service.port }}
             - name: RELEASE_FULLNAME
-              value: {{ include "xrengine.matchfunction.fullname" . }}
+              value: {{ include "atlas.matchfunction.fullname" . }}
             - name: NAMESPACE
-              value : {{ include "xrengine.matchmaking-namespace" . }}
+              value : {{ include "atlas.matchmaking-namespace" . }}
           ports:
             - name: http
               containerPort: {{ .Values.matchfunction.service.port }}

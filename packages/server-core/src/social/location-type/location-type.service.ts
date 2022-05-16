@@ -6,7 +6,7 @@ import hooks from './location-type.hooks'
 import createModel from './location-type.model'
 
 // Add this service to the service type index
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'location-type': LocationType
   }
@@ -22,7 +22,6 @@ export default function (app: Application): void {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new LocationType(options, app)
   event.docs = locationTypeDocs
@@ -31,7 +30,6 @@ export default function (app: Application): void {
   /**
    * Get our initialized service so that we can register hooks
    *
-   * @author Vyacheslav Solovjov
    */
   const service = app.service('location-type')
 

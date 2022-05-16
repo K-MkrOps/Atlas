@@ -1,8 +1,8 @@
 import { Intersection, Object3D, Raycaster, Vector2, Vector3 } from 'three'
 
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
-import { EngineRenderer } from '@xrengine/engine/src/renderer/WebGLRendererSystem'
-import { SnapMode } from '@xrengine/engine/src/scene/constants/transformConstants'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { EngineRenderer } from '@atlasfoundation/engine/src/renderer/WebGLRendererSystem'
+import { SnapMode } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import { executeCommand } from '../classes/History'
 import EditorCommands from '../constants/EditorCommands'
@@ -12,7 +12,6 @@ import { getIntersectingNodeOnScreen } from './getIntersectingNode'
 /**
  * Function provides the screen space position.
  *
- * @author Robert Long
  * @param screenSpacePosition
  * @param target
  */
@@ -48,7 +47,6 @@ export const getScreenSpacePosition = (() => {
 /**
  * Function provides the postion of object at the center of the scene .
  *
- * @author Robert Long
  * @param target
  * @return {any}        [Spwan position]
  */
@@ -62,7 +60,6 @@ export const getSpawnPositionAtCenter = (() => {
 /**
  * Function provides the cursor spawn position.
  *
- * @author Robert Long
  * @param mousePos
  * @param target
  * @returns
@@ -78,7 +75,6 @@ export function getCursorSpawnPosition(mousePos: Vector2, target = new Vector3()
 /**
  * Function reparentToSceneAtCursorPosition used to reparent scene at cursor position.
  *
- * @author Robert Long
  * @param objects
  * @param mousePos
  */

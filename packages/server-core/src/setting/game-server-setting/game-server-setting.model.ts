@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { GameServerSettingInterface } from '@xrengine/common/src/dbmodels/GameServerSetting'
+import { GameServerSettingInterface } from '@atlasfoundation/common/src/dbmodels/GameServerSetting'
 
 import { Application } from '../../../declarations'
 

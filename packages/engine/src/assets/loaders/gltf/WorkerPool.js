@@ -1,7 +1,3 @@
-/**
- * @author Deepkolos / https://github.com/deepkolos
- */
-
 export class WorkerPool {
   constructor(pool = 4) {
     this.pool = pool

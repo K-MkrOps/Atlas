@@ -1,8 +1,8 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { SpotLightComponent } from '@xrengine/engine/src/scene/components/SpotLightComponent'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { SpotLightComponent } from '@atlasfoundation/engine/src/scene/components/SpotLightComponent'
 
 import AdjustIcon from '@mui/icons-material/Adjust'
 
@@ -17,7 +17,6 @@ import { EditorComponentType, updateProperty } from './Util'
 /**
  * SpotLightNodeEditor component class used to provide editor view for property customization.
  *
- *  @author Robert Long
  *  @type {class component}
  */
 export const SpotLightNodeEditor: EditorComponentType = (props) => {

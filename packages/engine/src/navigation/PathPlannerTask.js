@@ -1,9 +1,4 @@
-/**
- * @author robp94 / https://github.com/robp94
- */
-
 import { Task } from 'yuka';
-
 class PathPlannerTask extends Task {
 
 	constructor( planner, vehicle, from, to, callback ) {

@@ -1,7 +1,7 @@
-package com.xrengine.client;
+package com.atlas.client;
 
 import android.os.Bundle;
-import com.xrengine.xr.XRPlugin;
+import com.atlas.xr.XRPlugin;
 
 import com.getcapacitor.BridgeActivity;
 import com.getcapacitor.Plugin;

@@ -1,10 +1,10 @@
 import { Matrix3, Matrix4, Quaternion, Vector3 } from 'three'
 
-import { useDispatch } from '@xrengine/client-core/src/store'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { World } from '@xrengine/engine/src/ecs/classes/World'
-import { defineQuery, getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { Object3DComponent } from '@xrengine/engine/src/scene/components/Object3DComponent'
+import { useDispatch } from '@atlasfoundation/client-core/src/store'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import { defineQuery, getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
 
 import { EditorCameraComponent } from '../classes/EditorCameraComponent'
 import { FlyControlComponent } from '../classes/FlyControlComponent'
@@ -17,7 +17,6 @@ const UP = new Vector3(0, 1, 0)
 const IDENTITY = new Matrix4().identity()
 
 /**
- * @author Nayankumar Patel <github.com/NPatel10>
  */
 export default async function FlyControlSystem(world: World) {
   const flyControlQuery = defineQuery([FlyControlComponent])

@@ -30,22 +30,22 @@
   }
 
   &.rootNode {
-    background: var(--dropdownMenuSelectedBackground);
+    background: var(--dropdownMenuHoverBackground);
   }
 
   &.selected {
-    background: var(--dropdownMenuSelectedBackground);
+    background: var(--dropdownMenuHoverBackground);
     color: var(--textColor);
 
     &:hover,
     &:focus {
-      background-color: var(--dropdownMenuSelectedBackground);
+      background-color: var(--dropdownMenuHoverBackground);
     }
   }
 
   &:active,
   &.active {
-    background: var(--dropdownMenuSelectedBackground);
+    background: var(--dropdownMenuHoverBackground);
   }
 }
 

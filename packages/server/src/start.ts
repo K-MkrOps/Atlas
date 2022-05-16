@@ -4,17 +4,15 @@ import path from 'path'
 import psList from 'ps-list'
 import favicon from 'serve-favicon'
 
-import config from '@xrengine/server-core/src/appconfig'
-import { createFeathersExpressApp } from '@xrengine/server-core/src/createApp'
-import { StartCorsServer } from '@xrengine/server-core/src/createCorsServer'
-import multiLogger from '@xrengine/server-core/src/logger'
+import config from '@atlasfoundation/server-core/src/appconfig'
+import { createFeathersExpressApp } from '@atlasfoundation/server-core/src/createApp'
+import { StartCorsServer } from '@atlasfoundation/server-core/src/createCorsServer'
+import logger from '@atlasfoundation/server-core/src/logger'
 
 import channels from './channels'
 
-const logger = multiLogger.child({ component: 'server-core:user' })
-
 process.on('unhandledRejection', (error, promise) => {
-  logger.error(error, 'UNHANDLED REJECTION - Promise: %o', promise)
+  console.error('UNHANDLED REJECTION - Promise: ', promise, ', Error: ', error, ').')
 })
 
 export const start = async (): Promise<void> => {
@@ -46,7 +44,7 @@ export const start = async (): Promise<void> => {
       // Check for child process with mac OSX
       // exec("docker ps | grep mariadb", (err, stdout, stderr) => {
       //   if(!stdout.includes("mariadb")){
-      //     throw new Error('\x1b[33mError: DB proccess is not running or Docker is not running!. If you are in local development, please run xrengine/scripts/start-db.sh and restart server\x1b[0m');
+      //     throw new Error('\x1b[33mError: DB proccess is not running or Docker is not running!. If you are in local development, please run atlas/scripts/start-db.sh and restart server\x1b[0m');
       //   }
       // });
     }
@@ -63,11 +61,8 @@ export const start = async (): Promise<void> => {
     cert: useSSL ? fs.readFileSync(certPath) : null
   }
 
-  if (useSSL) {
-    logger.info('Starting server with HTTPS')
-  } else {
-    logger.info("Starting server with NO HTTPS, if you meant to use HTTPS try 'sudo bash generate-certs'")
-  }
+  if (useSSL) console.log('Starting server with HTTPS')
+  else console.log("Starting server with NO HTTPS, if you meant to use HTTPS try 'sudo bash generate-certs'")
   const port = config.server.port
 
   // http redirects for development
@@ -85,18 +80,12 @@ export const start = async (): Promise<void> => {
 
   const server = useSSL ? https.createServer(certOptions as any, app as any).listen(port) : await app.listen(port)
 
-  if (useSSL) {
-    app.setup(server)
-  }
+  if (useSSL === true) app.setup(server)
 
-  process.on('unhandledRejection', (error, promise) => {
-    logger.error(error, 'UNHANDLED REJECTION - Promise: %o', promise)
-  })
+  process.on('unhandledRejection', (reason, p) => logger.error('Unhandled Rejection at: Promise ', p, reason))
   server.on('listening', () =>
     logger.info('Feathers application started on %s://%s:%d', useSSL ? 'https' : 'http', config.server.hostname, port)
   )
 
-  if (!config.kubernetes.enabled) {
-    StartCorsServer(useSSL, certOptions)
-  }
+  if (!config.kubernetes.enabled) StartCorsServer(useSSL, certOptions)
 }

@@ -2,11 +2,11 @@
 {{/*
 Expand the name of the chart.
 */}}
-# {{- define "xrengine.name" -}}
+# {{- define "atlas.name" -}}
 # {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 # {{- end -}}
 
-{{- define "xrengine.builder.name" -}}
+{{- define "atlas.builder.name" -}}
 {{- default .Chart.Name .Values.builder.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
@@ -16,7 +16,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "xrengine.fullname" -}}
+{{- define "atlas.fullname" -}}
 {{- if .Values.fullnameOverride -}}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -29,7 +29,7 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 {{- end -}}
 
-{{- define "xrengine.builder.fullname" -}}
+{{- define "atlas.builder.fullname" -}}
 {{- if .Values.builder.fullnameOverride -}}
 {{- .Values.builder.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -41,16 +41,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "xrengine.chart" -}}
+{{- define "atlas.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{/*
 Common labels
 */}}
-{{- define "xrengine.builder.labels" -}}
-helm.sh/chart: {{ include "xrengine.chart" . }}
-{{ include "xrengine.builder.selectorLabels" . }}
+{{- define "atlas.builder.labels" -}}
+helm.sh/chart: {{ include "atlas.chart" . }}
+{{ include "atlas.builder.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -60,8 +60,8 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "xrengine.builder.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "xrengine.builder.name" . }}
+{{- define "atlas.builder.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "atlas.builder.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/component: builder
 {{- end -}}
@@ -69,9 +69,9 @@ app.kubernetes.io/component: builder
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "xrengine.builder.serviceAccountName" -}}
+{{- define "atlas.builder.serviceAccountName" -}}
 {{- if .Values.builder.serviceAccount.create -}}
-    {{ default (include "xrengine.builder.fullname" .) .Values.builder.serviceAccount.name }}
+    {{ default (include "atlas.builder.fullname" .) .Values.builder.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.builder.serviceAccount.name }}
 {{- end -}}

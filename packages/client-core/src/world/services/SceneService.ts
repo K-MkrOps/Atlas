@@ -1,6 +1,6 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { SceneData } from '@xrengine/common/src/interfaces/SceneInterface'
+import { SceneData } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { client } from '../../feathers'
 import { store, useDispatch } from '../../store'

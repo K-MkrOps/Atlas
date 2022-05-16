@@ -1,9 +1,9 @@
 {
-  "name": "@xrengine/client-core",
+  "name": "@atlasfoundation/client-core",
   "version": "0.5.3",
   "repository": {
     "type": "git",
-    "url": "git://github.com/XRFoundation/XREngine.git"
+    "url": "git://github.com/AtlasFoundation/Atlas.git"
   },
   "engines": {
     "node": ">= 16.3.0"
@@ -43,12 +43,12 @@
     "@mui/material": "5.6.1",
     "@mui/styled-engine-sc": "5.6.1",
     "@mui/styles": "5.6.1",
-    "@speigg/hookstate": "3.0.13-stable-state",
+    "@hookstate/core": "^3.0.13",
     "@types/react-router-dom": "5.3.3",
     "@types/styled-components": "5.1.24",
-    "@xrengine/common": "^0.5.3",
-    "@xrengine/engine": "^0.5.3",
-    "@xrengine/hyperflux": "^0.5.3",
+    "@atlasfoundation/common": "^0.5.3",
+    "@atlasfoundation/engine": "^0.5.3",
+    "@atlasfoundation/hyperflux": "^0.5.3",
     "apexcharts": "^3.28.3",
     "axios": "0.26.1",
     "classnames": "2.3.1",

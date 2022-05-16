@@ -13,13 +13,13 @@ import {
 import os from 'os'
 import SocketIO from 'socket.io'
 
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { MessageTypes } from '@xrengine/engine/src/networking/enums/MessageTypes'
-import { getNearbyUsers } from '@xrengine/engine/src/networking/functions/getNearbyUsers'
-import { MediaStreams } from '@xrengine/engine/src/networking/systems/MediaStreamSystem'
-import config from '@xrengine/server-core/src/appconfig'
-import { localConfig, sctpParameters } from '@xrengine/server-core/src/config'
-import { WebRtcTransportParams } from '@xrengine/server-core/src/types/WebRtcTransportParams'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { MessageTypes } from '@atlasfoundation/engine/src/networking/enums/MessageTypes'
+import { getNearbyUsers } from '@atlasfoundation/engine/src/networking/functions/getNearbyUsers'
+import { MediaStreams } from '@atlasfoundation/engine/src/networking/systems/MediaStreamSystem'
+import config from '@atlasfoundation/server-core/src/appconfig'
+import { localConfig, sctpParameters } from '@atlasfoundation/server-core/src/config'
+import { WebRtcTransportParams } from '@atlasfoundation/server-core/src/types/WebRtcTransportParams'
 
 import { getUserIdFromSocketId } from './NetworkFunctions'
 import { SocketWebRTCServerTransport } from './SocketWebRTCServerTransport'
@@ -597,6 +597,12 @@ export async function handleWebRtcReceiveTrack(
         ? p.appData.channelType === channelType
         : p.appData.channelType === channelType && p.appData.channelId === channelId)
   )
+  let router = networkTransport.routers[`${channelType}:${channelId}`][0]
+  if (producer == null || !router.canConsume({ producerId: producer.id, rtpCapabilities })) {
+    const msg = `client cannot consume ${mediaPeerId}:${mediaTag}`
+    console.error(`recv-track: ${userId} ${msg}`)
+    return callback({ error: msg })
+  }
 
   const transport = Object.values(networkTransport.mediasoupTransports).find(
     (t) =>
@@ -608,9 +614,9 @@ export async function handleWebRtcReceiveTrack(
       (t as any).closed === false
   )!
   // @todo: the 'any' cast here is because WebRtcTransport.internal is protected - we should see if this is the proper accessor
-  const router = networkTransport.routers[`${channelType}:${channelId}`].find(
+  router = networkTransport.routers[`${channelType}:${channelId}`].find(
     (router) => router.id === (transport as any).internal.routerId
-  )
+  ) as Router
   if (producer == null || router == null || !router.canConsume({ producerId: producer.id, rtpCapabilities })) {
     const msg = `client cannot consume ${mediaPeerId}:${mediaTag}, ${producer}`
     console.error(`recv-track: ${userId} ${msg}`)

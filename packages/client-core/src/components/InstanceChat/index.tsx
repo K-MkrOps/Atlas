@@ -1,16 +1,19 @@
-import { useState } from '@speigg/hookstate'
+import { useState } from '@hoostate/core'
 import React, { useEffect } from 'react'
 
-import { useLocationInstanceConnectionState } from '@xrengine/client-core/src/common/services/LocationInstanceConnectionService'
-import { ChatService, useChatState } from '@xrengine/client-core/src/social/services/ChatService'
-import { getChatMessageSystem, removeMessageSystem } from '@xrengine/client-core/src/social/services/utils/chatSystem'
-import { useAuthState } from '@xrengine/client-core/src/user/services/AuthService'
-import { Channel } from '@xrengine/common/src/interfaces/Channel'
-import { isCommand } from '@xrengine/engine/src/common/functions/commandHandler'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { NetworkWorldAction } from '@xrengine/engine/src/networking/functions/NetworkWorldAction'
-import { WorldState } from '@xrengine/engine/src/networking/interfaces/WorldState'
-import { dispatchAction, getState } from '@xrengine/hyperflux'
+import { useLocationInstanceConnectionState } from '@atlasfoundation/client-core/src/common/services/LocationInstanceConnectionService'
+import { ChatService, useChatState } from '@atlasfoundation/client-core/src/social/services/ChatService'
+import {
+  getChatMessageSystem,
+  removeMessageSystem
+} from '@atlasfoundation/client-core/src/social/services/utils/chatSystem'
+import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
+import { Channel } from '@atlasfoundation/common/src/interfaces/Channel'
+import { isCommand } from '@atlasfoundation/engine/src/common/functions/commandHandler'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { NetworkWorldAction } from '@atlasfoundation/engine/src/networking/functions/NetworkWorldAction'
+import { WorldState } from '@atlasfoundation/engine/src/networking/interfaces/WorldState'
+import { dispatchAction, getState } from '@atlasfoundation/hyperflux'
 
 import { Cancel as CancelIcon, Message as MessageIcon, Send } from '@mui/icons-material'
 import Avatar from '@mui/material/Avatar'

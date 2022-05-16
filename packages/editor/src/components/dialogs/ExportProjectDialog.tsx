@@ -9,7 +9,6 @@ import Dialog from './Dialog'
 /**
  * FormContainer used as a wrapper element for FormFields.
  *
- * @author Robert Long
  * @type {Styled Component}
  */
 const FormContainer = (styled as any).div`
@@ -21,7 +20,6 @@ const FormContainer = (styled as any).div`
 /**
  * ExportProjectDialog used to provide view containing FormFields.
  *
- * @author Robert Long
  * @param       {Object} defaultOptions
  * @param       {function} onConfirm
  * @param       {function} onCancel

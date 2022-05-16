@@ -10,15 +10,13 @@ import sync from 'feathers-sync'
 import helmet from 'helmet'
 import path from 'path'
 
-import { pipe } from '@xrengine/common/src/utils/pipe'
-import { Application } from '@xrengine/server-core/declarations'
-import config from '@xrengine/server-core/src/appconfig'
-import logger from '@xrengine/server-core/src/logger'
-import sequelize from '@xrengine/server-core/src/sequelize'
-import services from '@xrengine/server-core/src/services'
-import authentication from '@xrengine/server-core/src/user/authentication'
-
-import { createDefaultStorageProvider } from './media/storageprovider/storageprovider'
+import { pipe } from '@atlasfoundation/common/src/utils/pipe'
+import { Application } from '@atlasfoundation/server-core/declarations'
+import config from '@atlasfoundation/server-core/src/appconfig'
+import logger from '@atlasfoundation/server-core/src/logger'
+import sequelize from '@atlasfoundation/server-core/src/sequelize'
+import services from '@atlasfoundation/server-core/src/services'
+import authentication from '@atlasfoundation/server-core/src/user/authentication'
 
 export const configureOpenAPI = () => (app: Application) => {
   app.configure(
@@ -29,8 +27,8 @@ export const configureOpenAPI = () => (app: Application) => {
       // TODO: Relate to server config, don't hardcode this here
       specs: {
         info: {
-          title: 'XREngine API Surface',
-          description: 'APIs for the XREngine application',
+          title: 'Atlas API Surface',
+          description: 'APIs for the Atlas application',
           version: '1.0.0'
         },
         schemes: ['https'],
@@ -117,8 +115,6 @@ export const serverPipe = pipe(configureOpenAPI(), configureSocketIO(), configur
 ) => Application
 
 export const createFeathersExpressApp = (configurationPipe = serverPipe): Application => {
-  createDefaultStorageProvider()
-
   const app = express(feathers()) as Application
   app.set('nextReadyEmitter', new EventEmitter())
 

@@ -28,15 +28,12 @@
 
   THE SOFTWARE.
 
+  This is a 3D implementation of the Quick Hull algorithm.
+  It is a fast way of computing a convex hull with average complexity
+  of O(n log(n)).
+  It uses depends on three.js and is supposed to create THREE.Geometry.
 
-    @author mark lundin / http://mark-lundin.com
-
-    This is a 3D implementation of the Quick Hull algorithm.
-    It is a fast way of computing a convex hull with average complexity
-    of O(n log(n)).
-    It uses depends on three.js and is supposed to create THREE.Geometry.
-
-    It's also very messy
+  It's also very messy
 
  */
 import * as THREE from 'three'

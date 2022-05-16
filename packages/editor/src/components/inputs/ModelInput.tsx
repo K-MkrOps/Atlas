@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ModelFileTypes } from '@xrengine/engine/src/assets/constants/fileTypes'
+import { ModelFileTypes } from '@atlasfoundation/engine/src/assets/constants/fileTypes'
 
 import { ItemTypes } from '../../constants/AssetTypes'
 import FileBrowserInput from './FileBrowserInput'
@@ -8,7 +8,6 @@ import FileBrowserInput from './FileBrowserInput'
 /**
  * ModelInput used to render component view for script inputs.
  *
- * @author Hanzla Mateen
  * @param       {function} onChange
  * @param       {any} rest
  * @constructor

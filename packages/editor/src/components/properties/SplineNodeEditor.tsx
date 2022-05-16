@@ -1,8 +1,8 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { Object3DComponent } from '@xrengine/engine/src/scene/components/Object3DComponent'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
 
 import TimelineIcon from '@mui/icons-material/Timeline'
 
@@ -13,7 +13,6 @@ import { EditorComponentType } from './Util'
 /**
  * SplineNodeEditor used to create and customize splines in the scene.
  *
- * @author Hamza Mushtaq
  * @param       {Object} props
  * @constructor
  */

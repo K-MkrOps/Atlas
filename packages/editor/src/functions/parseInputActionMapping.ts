@@ -1,6 +1,6 @@
 import Mousetrap from 'mousetrap'
 
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 
 import { InputComponent } from '../classes/InputComponent'
 import { ActionKey, ActionSets, ActionState, InputActionMapping, InputMapping } from '../controls/input-mappings'

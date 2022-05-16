@@ -1,7 +1,4 @@
-import config from '@xrengine/server-core/src/appconfig'
-import multiLogger from '@xrengine/server-core/src/logger'
-
-const logger = multiLogger.child({ component: 'analytics' })
+import config from '@atlasfoundation/server-core/src/appconfig'
 
 const DEFAULT_INTERVAL_SECONDS = 1800
 const configInterval = parseInt(config.analytics.processInterval)
@@ -9,7 +6,7 @@ const interval = (configInterval || DEFAULT_INTERVAL_SECONDS) * 1000
 
 export default (app): void => {
   setInterval(async () => {
-    logger.info('Collecting analytics at %s.', new Date().toString())
+    console.log('Collecting analytics at ', new Date().toString())
     const activeLocations: any[] = []
     const activeScenes: any[] = []
     const activeParties = await app.service('party').find({

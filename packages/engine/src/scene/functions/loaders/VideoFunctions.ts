@@ -1,7 +1,7 @@
 import Hls from 'hls.js'
 import { LinearFilter, Mesh, MeshStandardMaterial, Object3D, sRGBEncoding, VideoTexture } from 'three'
 
-import { ComponentJson } from '@xrengine/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { AssetLoader } from '../../../assets/classes/AssetLoader'
 import {
@@ -12,7 +12,7 @@ import {
 } from '../../../common/constants/PrefabFunctionType'
 import { isClient } from '../../../common/functions/isClient'
 import { Engine } from '../../../ecs/classes/Engine'
-import { EngineActions, getEngineState } from '../../../ecs/classes/EngineState'
+import { accessEngineState, EngineActions } from '../../../ecs/classes/EngineService'
 import { Entity } from '../../../ecs/classes/Entity'
 import { addComponent, getComponent } from '../../../ecs/functions/ComponentFunctions'
 import { matchActionOnce } from '../../../networking/functions/matchActionOnce'
@@ -130,7 +130,7 @@ export const updateVideo: ComponentUpdateFunction = (entity: Entity, properties:
           obj3d.userData.videoEl.muted = false
 
           if (obj3d.userData.videoEl.autoplay) {
-            if (getEngineState().userHasInteracted.value) {
+            if (accessEngineState().userHasInteracted.value) {
               obj3d.userData.videoEl.play()
             } else {
               matchActionOnce(Engine.instance.store, EngineActions.setUserHasInteracted.matches, () => {

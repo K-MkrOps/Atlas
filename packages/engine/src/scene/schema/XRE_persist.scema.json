@@ -3,7 +3,7 @@
   "$id": "XRE_persist.schema.json",
   "title": "XRE_persist glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine persist components",
+  "description": "serialization extension for Atlas persist components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {},
   "extensions": {},

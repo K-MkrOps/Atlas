@@ -1,8 +1,8 @@
 import { HookContext } from '@feathersjs/feathers'
 import { iff, isProvider } from 'feathers-hooks-common'
 
-import groupPermissionAuthenticate from '@xrengine/server-core/src/hooks/group-permission-authenticate'
-import groupUserPermissionAuthenticate from '@xrengine/server-core/src/hooks/group-user-permission-authenticate'
+import groupPermissionAuthenticate from '@atlasfoundation/server-core/src/hooks/group-permission-authenticate'
+import groupUserPermissionAuthenticate from '@atlasfoundation/server-core/src/hooks/group-user-permission-authenticate'
 
 import authenticate from '../../hooks/authenticate'
 import restrictUserRole from '../../hooks/restrict-user-role'

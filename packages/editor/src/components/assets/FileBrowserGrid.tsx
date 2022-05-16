@@ -3,10 +3,10 @@ import { useDrag, useDrop } from 'react-dnd'
 import { getEmptyImage } from 'react-dnd-html5-backend'
 import { useTranslation } from 'react-i18next'
 
-import { AssetLoader } from '@xrengine/engine/src/assets/classes/AssetLoader'
-import { AssetType } from '@xrengine/engine/src/assets/enum/AssetType'
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { TransformComponent } from '@xrengine/engine/src/transform/components/TransformComponent'
+import { AssetLoader } from '@atlasfoundation/engine/src/assets/classes/AssetLoader'
+import { AssetType } from '@atlasfoundation/engine/src/assets/enum/AssetType'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { TransformComponent } from '@atlasfoundation/engine/src/transform/components/TransformComponent'
 
 import DescriptionIcon from '@mui/icons-material/Description'
 import FolderIcon from '@mui/icons-material/Folder'
@@ -57,6 +57,7 @@ export const FileListItem: React.FC<FileListItemProps> = (props) => {
       <InputBase
         className={styles.input}
         name="name"
+        style={{ color: '#fff' }}
         autoComplete="off"
         value={newFileName}
         onChange={(e) => handleChange(e)}

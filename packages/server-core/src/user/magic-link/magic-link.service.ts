@@ -3,7 +3,7 @@ import { Magiclink } from './magic-link.class'
 import magicLinkDocs from './magic-link.docs'
 import hooks from './magic-link.hooks'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'magic-link': Magiclink
   }
@@ -18,7 +18,6 @@ export default (app: Application): void => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new Magiclink(options, app)
   event.docs = magicLinkDocs
@@ -27,7 +26,6 @@ export default (app: Application): void => {
   /**
    * Get our initialized service so that we can register hooks
    *
-   * @author Vyacheslav Solovjov
    */
   const service = app.service('magic-link')
 

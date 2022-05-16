@@ -1,7 +1,7 @@
-import { dispatchAction } from '@xrengine/hyperflux'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { Engine } from '../../ecs/classes/Engine'
-import { EngineActions } from '../../ecs/classes/EngineState'
+import { EngineActions } from '../../ecs/classes/EngineService'
 import { World } from '../../ecs/classes/World'
 import { defineQuery, getComponent, removeComponent } from '../../ecs/functions/ComponentFunctions'
 import { BackgroundMusic } from '../components/BackgroundMusic'

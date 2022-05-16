@@ -1,7 +1,3 @@
-/**
- * @author robp94 / https://github.com/robp94
- */
-
 import { TaskQueue } from 'yuka';
 import { PathPlannerTask } from './PathPlannerTask';
 

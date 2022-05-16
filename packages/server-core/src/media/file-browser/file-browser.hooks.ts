@@ -4,7 +4,6 @@ import authenticate from '../../hooks/authenticate'
 import verifyScope from '../../hooks/verify-scope'
 
 /**
- * @author Abhishek Pathak
  */
 
 export default {

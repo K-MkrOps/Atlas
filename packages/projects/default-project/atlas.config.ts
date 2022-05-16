@@ -1,26 +1,26 @@
-import type { ProjectConfigInterface } from '@xrengine/projects/ProjectConfigInterface'
+import type { ProjectConfigInterface } from '@atlasfoundation/projects/ProjectConfigInterface'
 
 const config: ProjectConfigInterface = {
   onEvent: './projectEventHooks.ts',
   thumbnail: '/static/xrengine_thumbnail.jpg',
   routes: {
     '/': {
-      component: () => import('@xrengine/client/src/pages/index'),
+      component: () => import('@atlasfoundation/client/src/pages/index'),
       props: {
         exact: true
       }
     },
     '/admin': {
-      component: () => import('@xrengine/client-core/src/admin/adminRoutes')
+      component: () => import('@atlasfoundation/client-core/src/admin/adminRoutes')
     },
     '/location': {
-      component: () => import('@xrengine/client/src/pages/location/location')
+      component: () => import('@atlasfoundation/client/src/pages/location/location')
     },
     '/auth': {
-      component: () => import('@xrengine/client/src/pages/auth/authRoutes')
+      component: () => import('@atlasfoundation/client/src/pages/auth/authRoutes')
     },
     '/editor': {
-      component: () => import('@xrengine/client/src/pages/editor/editor')
+      component: () => import('@atlasfoundation/client/src/pages/editor/editor')
     }
   },
   services: undefined,

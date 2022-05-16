@@ -11,6 +11,5 @@ Center.displayName = 'Center'
 
 /**
  *
- * @author Robert Long
  */
 export default Center

@@ -8,7 +8,7 @@ import hooks from './accept-invite.hooks'
 /**
  * accept invite service
  */
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'a-i': AcceptInvite
   }
@@ -21,7 +21,6 @@ declare module '@xrengine/common/declarations' {
  * @param res response to the client
  * @param next
  * @returns redirect url to the client
- * @author Vyacheslav Solovjov
  */
 
 function redirect(req, res, next): any {
@@ -43,14 +42,12 @@ export default (app: Application) => {
 
   /**
    * Initialize our service with any options it requires
-   * @author  Vyacheslav Solovjov
    */
   const event = new AcceptInvite(options, app)
   app.use('a-i', event, redirect)
 
   /**
    * Get our initialized service so that we can register hooks
-   * @author Vyacheslav Solovjov
    */
   const service = app.service('a-i')
 

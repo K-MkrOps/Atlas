@@ -1,19 +1,17 @@
 import { DockLayout, DockMode, LayoutData, TabData } from 'rc-dock'
-
 import 'rc-dock/dist/rc-dock.css'
-
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { useDispatch } from '@xrengine/client-core/src/store'
-import { SceneJson } from '@xrengine/common/src/interfaces/SceneInterface'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { getEngineState, useEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
-import { gltfToSceneJson, sceneToGLTF } from '@xrengine/engine/src/scene/functions/GLTFConversion'
-import { useHookEffect } from '@xrengine/hyperflux'
+import { useDispatch } from '@atlasfoundation/client-core/src/store'
+import { SceneJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { accessEngineState, useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { gltfToSceneJson, sceneToGLTF } from '@atlasfoundation/engine/src/scene/functions/GLTFConversion'
+import { useHookEffect } from '@atlasfoundation/hyperflux'
 
 import AccountTreeIcon from '@mui/icons-material/AccountTree'
 import Inventory2Icon from '@mui/icons-material/Inventory2'
@@ -52,8 +50,6 @@ import ToolBar from './toolbar/ToolBar'
 /**
  *Styled component used as dock container.
  *
- * @author Hanzla Mateen
- * @author Abhishek Pathak
  * @type {type}
  */
 export const DockContainer = (styled as any).div`
@@ -94,17 +90,13 @@ export const DockContainer = (styled as any).div`
   .dock-tab:hover div, .dock-tab:hover svg { color: var(--textColor); }
   .dock-tab > div { padding: 2px 12px; }
   .dock-tab-active {
-    color: var(--textColor);
+    color: var(--buttonOutlined);
   }
   .dock-ink-bar {
-    background-color: var(--textColor);
-  }
-  .dock-panel-max-btn:before {
-    border-color: var(--iconButtonColor);
+    background-color: var(--buttonOutlined);
   }
 `
 /**
- * @author Abhishek Pathak
  */
 DockContainer.defaultProps = {
   dividerAlpha: 0
@@ -113,7 +105,6 @@ DockContainer.defaultProps = {
 /**
  * EditorContainer class used for creating container for Editor
  *
- *  @author Robert Long
  */
 const EditorContainer = () => {
   const editorState = useEditorState()
@@ -248,7 +239,7 @@ const EditorContainer = () => {
   }
 
   const onSaveAs = async () => {
-    const sceneLoaded = getEngineState().sceneLoaded.value
+    const sceneLoaded = accessEngineState().sceneLoaded.value
 
     // Do not save scene if scene is not loaded or some error occured while loading the scene to prevent data lose
     if (!sceneLoaded) {
@@ -357,7 +348,7 @@ const EditorContainer = () => {
   }
 
   const onSaveScene = async () => {
-    const sceneLoaded = getEngineState().sceneLoaded.value
+    const sceneLoaded = accessEngineState().sceneLoaded.value
 
     // Do not save scene if scene is not loaded or some error occured while loading the scene to prevent data lose
     if (!sceneLoaded) {
@@ -500,7 +491,7 @@ const EditorContainer = () => {
   const viewPortPanelContent = useCallback((shouldDisplay) => {
     return shouldDisplay ? (
       <div className={styles.bgImageBlock}>
-        <img src="/static/xrengine.png" />
+        <img src="/static/atlas.png" />
         <h2>{t('editor:selectSceneMsg')}</h2>
       </div>
     ) : (

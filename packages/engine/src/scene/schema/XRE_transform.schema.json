@@ -3,7 +3,7 @@
   "$id": "XRE_transform.schema.json",
   "title": "XRE_transform glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine transform components",
+  "description": "serialization extension for Atlas transform components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "position": {

@@ -3,7 +3,7 @@
   "title": "XRE_groundPlane glTF extension",
   "$id": "XRE_groundPlane.schema.json",
   "type": "object",
-  "description": "serialization extension for XREngine ground plane components",
+  "description": "serialization extension for Atlas ground plane components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "color": {

@@ -4,25 +4,21 @@ import fs from 'fs'
 import https from 'https'
 import psList from 'ps-list'
 
-import { pipe } from '@xrengine/common/src/utils/pipe'
-
-import '@xrengine/engine/src/patchEngineNode'
-
-import { Application } from '@xrengine/server-core/declarations'
-import config from '@xrengine/server-core/src/appconfig'
+import { pipe } from '@atlasfoundation/common/src/utils/pipe'
+import '@atlasfoundation/engine/src/patchEngineNode'
+import { Application } from '@atlasfoundation/server-core/declarations'
+import config from '@atlasfoundation/server-core/src/appconfig'
 import {
   configureK8s,
   configureOpenAPI,
   configureRedis,
   configureSocketIO,
   createFeathersExpressApp
-} from '@xrengine/server-core/src/createApp'
-import multiLogger from '@xrengine/server-core/src/logger'
+} from '@atlasfoundation/server-core/src/createApp'
+import multiLogger from '@atlasfoundation/server-core/src/logger'
 
 import channels from './channels'
 import { SocketWebRTCServerTransport } from './SocketWebRTCServerTransport'
-
-const logger = multiLogger.child({ component: 'gameserver' })
 
 // import preloadLocation from './preload-location'
 
@@ -31,7 +27,7 @@ const logger = multiLogger.child({ component: 'gameserver' })
  */
 
 process.on('unhandledRejection', (error, promise) => {
-  logger.error(error, 'UNHANDLED REJECTION - Promise: %o', promise)
+  console.error('UNHANDLED REJECTION - Promise: ', promise, ', Error: ', error, ').')
 })
 
 const onSocketIO = (app: Application) => {
@@ -53,9 +49,9 @@ export const start = async (): Promise<Application> => {
 
   agonesSDK.connect()
   agonesSDK.ready().catch((err) => {
-    logger.error(err)
+    console.log(err)
     throw new Error(
-      '\x1b[33mError: Agones is not running!. If you are in local development, please run xrengine/scripts/sh start-agones.sh and restart server\x1b[0m'
+      '\x1b[33mError: Agones is not running!. If you are in local development, please run atlas/scripts/sh start-agones.sh and restart server\x1b[0m'
     )
   })
   app.agonesSDK = agonesSDK
@@ -95,7 +91,7 @@ export const start = async (): Promise<Application> => {
       // exec('docker ps | grep mariadb', (err, stdout, stderr) => {
       //   if (!stdout.includes('mariadb')) {
       //     throw new Error(
-      //       '\x1b[33mError: DB proccess is not running or Docker is not running!. If you are in local development, please run xrengine/scripts/start-db.sh and restart server\x1b[0m'
+      //       '\x1b[33mError: DB proccess is not running or Docker is not running!. If you are in local development, please run atlas/scripts/start-db.sh and restart server\x1b[0m'
       //     )
       //   }
       // })
@@ -112,13 +108,11 @@ export const start = async (): Promise<Application> => {
     cert: useSSL ? fs.readFileSync(certPath) : null
   } as any
   const port = config.gameserver.port
-  if (useSSL) {
-    logger.info(`Starting gameserver with HTTPS on port ${port}.`)
-  } else {
-    logger.info(
+  if (useSSL) console.log('Starting gameserver with HTTPS on', port)
+  else
+    console.log(
       `Starting gameserver with NO HTTPS on ${port}, if you meant to use HTTPS try 'sudo bash generate-certs'`
     )
-  }
 
   // http redirects for development
   if (useSSL) {
@@ -139,29 +133,26 @@ export const start = async (): Promise<Application> => {
 
   const server = useSSL ? https.createServer(certOptions, app as any).listen(port) : await app.listen(port)
 
-  if (useSSL) {
-    app.setup(server)
-  }
+  if (useSSL === true) app.setup(server)
 
   // if (config.gameserver.locationName != null) {
-  //   logger.info('PRELOADING WORLD WITH LOCATION NAME %s', config.gameserver.locationName)
+  //   console.log('PRELOADING WORLD WITH LOCATION NAME', config.gameserver.locationName)
   //   preloadLocation(config.gameserver.locationName, app)
   // }
 
-  process.on('unhandledRejection', (error, promise) => {
-    logger.error(error, 'UNHANDLED REJECTION - Promise: %o', promise)
-  })
+  process.on('unhandledRejection', (reason, p) => logger.error('Unhandled Rejection at: Promise ', p, reason))
   // if (process.env.APP_ENV === 'production' && fs.existsSync('/var/log')) {
   //   try {
-  //     logger.info("Writing access log to '/var/log/api.access.log'");
+  //     console.log("Writing access log to ", '/var/log/api.access.log');
   //     const access = fs.createWriteStream('/var/log/api.access.log');
   //     process.stdout.write = process.stderr.write = access.write.bind(access);
-  //     logger.info('Log file write setup successfully');
+  //     console.log('Log file write setup successfully');
   //   } catch(err) {
-  //     logger.error(err, 'Access log write error');
+  //     console.log('access log write error');
+  //     console.log(err);
   //   }
   // } else {
-  //   logger.warn("Directory /var/log not found, not writing access log");
+  //   console.warn("Directory /var/log not found, not writing access log");
   // }
   server.on('listening', () =>
     logger.info('Feathers application started on %s://%s:%d', useSSL ? 'https' : 'http', config.server.hostname, port)

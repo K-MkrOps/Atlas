@@ -1,7 +1,7 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { UserSeed } from '@xrengine/common/src/interfaces/User'
-import { User } from '@xrengine/common/src/interfaces/User'
+import { UserSeed } from '@atlasfoundation/common/src/interfaces/User'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'

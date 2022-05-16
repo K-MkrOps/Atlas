@@ -168,6 +168,7 @@ const CreateLocation = (props: Props) => {
               className={styles.input}
               name="name"
               placeholder={t('admin:components.locationModal.enterName')}
+              style={{ color: '#fff' }}
               autoComplete="off"
               value={state.name}
               onChange={handleChange}
@@ -182,6 +183,7 @@ const CreateLocation = (props: Props) => {
               className={styles.input}
               name="maxUsers"
               placeholder="Enter max users"
+              style={{ color: '#fff' }}
               autoComplete="off"
               type="number"
               value={state.maxUsers}

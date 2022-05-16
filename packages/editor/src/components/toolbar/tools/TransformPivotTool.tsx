@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { TransformPivot } from '@xrengine/engine/src/scene/constants/transformConstants'
+import { TransformPivot } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import AdjustIcon from '@mui/icons-material/Adjust'
 
@@ -12,7 +12,6 @@ import * as styles from '../styles.module.scss'
 
 /**
  *
- * @author Robert Long
  */
 const transformPivotOptions = [
   { label: 'Selection', value: TransformPivot.Selection },

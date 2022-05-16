@@ -1,6 +1,6 @@
 import { BoxBufferGeometry, Mesh, MeshBasicMaterial, Object3D } from 'three'
 
-import { ComponentJson } from '@xrengine/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import {
   ComponentDeserializeFunction,

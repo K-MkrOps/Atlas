@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { CreateBotAsAdmin } from '@xrengine/common/src/interfaces/AdminBot'
-import { AdminBot } from '@xrengine/common/src/interfaces/AdminBot'
-import { Instance } from '@xrengine/common/src/interfaces/Instance'
+import { CreateBotAsAdmin } from '@atlasfoundation/common/src/interfaces/AdminBot'
+import { AdminBot } from '@atlasfoundation/common/src/interfaces/AdminBot'
+import { Instance } from '@atlasfoundation/common/src/interfaces/Instance'
 
 import { Autorenew, Save } from '@mui/icons-material'
 import Button from '@mui/material/Button'
@@ -165,6 +165,7 @@ const UpdateBot = (props: Props) => {
               name="name"
               className={styles.input}
               placeholder="Enter name"
+              style={{ color: '#fff' }}
               value={state.name}
               onChange={handleInputChange}
             />
@@ -175,6 +176,7 @@ const UpdateBot = (props: Props) => {
               className={styles.input}
               name="description"
               placeholder={t('admin:components.bot.enterDescription')}
+              style={{ color: '#fff' }}
               value={state.description}
               onChange={handleInputChange}
             />
@@ -196,23 +198,11 @@ const UpdateBot = (props: Props) => {
                     className={styles.select}
                     MenuProps={{ classes: { paper: styles.selectPaper } }}
                   >
-                    <MenuItem
-                      value=""
-                      disabled
-                      classes={{
-                        root: styles.menuItem
-                      }}
-                    >
+                    <MenuItem value="" disabled>
                       <em>{t('admin:components.bot.selectLocation')}</em>
                     </MenuItem>
                     {locationData.value.map((el) => (
-                      <MenuItem
-                        value={el.id}
-                        key={el.id}
-                        classes={{
-                          root: styles.menuItem
-                        }}
-                      >
+                      <MenuItem value={el.id} key={el.id}>
                         {el.name}
                       </MenuItem>
                     ))}
@@ -223,7 +213,7 @@ const UpdateBot = (props: Props) => {
             <Grid item xs={2} style={{ display: 'flex' }}>
               <div style={{ marginLeft: 'auto' }}>
                 <IconButton onClick={fetchAdminLocations} size="large">
-                  <Autorenew style={{ color: 'var(--iconButtonColor)' }} />
+                  <Autorenew style={{ color: '#fff' }} />
                 </IconButton>
               </div>
             </Grid>
@@ -249,23 +239,11 @@ const UpdateBot = (props: Props) => {
                     name="instance"
                     MenuProps={{ classes: { paper: styles.selectPaper } }}
                   >
-                    <MenuItem
-                      value=""
-                      disabled
-                      classes={{
-                        root: styles.menuItem
-                      }}
-                    >
+                    <MenuItem value="" disabled>
                       <em>{t('admin:components.bot.selectInstance')}</em>
                     </MenuItem>
                     {currentInstance.map((el) => (
-                      <MenuItem
-                        value={el.id}
-                        key={el.id}
-                        classes={{
-                          root: styles.menuItem
-                        }}
-                      >
+                      <MenuItem value={el.id} key={el.id}>
                         {el.ipAddress}
                       </MenuItem>
                     ))}
@@ -276,7 +254,7 @@ const UpdateBot = (props: Props) => {
             <Grid item xs={2} style={{ display: 'flex' }}>
               <div style={{ marginLeft: 'auto' }}>
                 <IconButton onClick={fetchAdminInstances} size="large">
-                  <Autorenew style={{ color: 'var(--iconButtonColor)' }} />
+                  <Autorenew style={{ color: '#fff' }} />
                 </IconButton>
               </div>
             </Grid>
@@ -285,6 +263,7 @@ const UpdateBot = (props: Props) => {
         <DialogActions style={{ marginRight: '15px' }}>
           <Button
             variant="outlined"
+            style={{ color: '#fff' }}
             disableElevation
             type="submit"
             onClick={() => {
@@ -292,7 +271,6 @@ const UpdateBot = (props: Props) => {
               setFormErrors({ name: '', description: '', location: '' })
               handleClose()
             }}
-            className={styles.submitButton}
           >
             {t('admin:components.bot.cancel')}
           </Button>

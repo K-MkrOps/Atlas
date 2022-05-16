@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ImageFileTypes } from '@xrengine/engine/src/assets/constants/fileTypes'
+import { ImageFileTypes } from '@atlasfoundation/engine/src/assets/constants/fileTypes'
 
 import { ItemTypes } from '../../constants/AssetTypes'
 import FileBrowserInput from './FileBrowserInput'
@@ -8,8 +8,6 @@ import FileBrowserInput from './FileBrowserInput'
 /**
  * ImageInput used to render component view for image inputs.
  *
- * @author Robert Long
- * @author Hanzla Mateen
  * @param       {function} onChange
  * @param       {any} rest
  * @constructor

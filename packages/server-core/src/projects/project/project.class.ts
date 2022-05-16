@@ -4,15 +4,15 @@ import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import fs from 'fs'
 import path from 'path'
 
-import { ProjectInterface } from '@xrengine/common/src/interfaces/ProjectInterface'
-import { isDev } from '@xrengine/common/src/utils/isDev'
-import templateProjectJson from '@xrengine/projects/template-project/package.json'
+import { ProjectInterface } from '@atlasfoundation/common/src/interfaces/ProjectInterface'
+import { isDev } from '@atlasfoundation/common/src/utils/isDev'
+import templateProjectJson from '@atlasfoundation/projects/template-project/package.json'
 
 import { Application } from '../../../declarations'
 import config from '../../appconfig'
 import logger from '../../logger'
 import { getCachedAsset } from '../../media/storageprovider/getCachedAsset'
-import { getStorageProvider } from '../../media/storageprovider/storageprovider'
+import { useStorageProvider } from '../../media/storageprovider/storageprovider'
 import { getFileKeysRecursive } from '../../media/storageprovider/storageProviderUtils'
 import { cleanString } from '../../util/cleanString'
 import { getContentType } from '../../util/fileUtils'
@@ -37,11 +37,11 @@ const getRemoteURLFromGitData = (project) => {
   return data.remote.origin.url
 }
 
+const storageProvider = useStorageProvider()
 export const getStorageProviderPath = (projectName: string) =>
-  `https://${getStorageProvider().cacheDomain}/projects/${projectName}/`
+  `https://${storageProvider.cacheDomain}/projects/${projectName}/`
 
 export const deleteProjectFilesInStorageProvider = async (projectName: string) => {
-  const storageProvider = getStorageProvider()
   try {
     const existingFiles = await getFileKeysRecursive(`projects/${projectName}`)
     if (existingFiles.length) {
@@ -60,7 +60,6 @@ export const deleteProjectFilesInStorageProvider = async (projectName: string) =
  * @param projectName
  */
 export const uploadLocalProjectToProvider = async (projectName, remove = true) => {
-  const storageProvider = getStorageProvider()
   // remove exiting storage provider files
   logger.info(`uploadLocalProjectToProvider for project "${projectName}" started at "${new Date()}".`)
   if (remove) {

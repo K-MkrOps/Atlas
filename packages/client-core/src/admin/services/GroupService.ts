@@ -1,18 +1,11 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { CreateGroup, Group } from '@xrengine/common/src/interfaces/Group'
-import { GroupResult } from '@xrengine/common/src/interfaces/GroupResult'
+import { CreateGroup, Group } from '@atlasfoundation/common/src/interfaces/Group'
+import { GroupResult } from '@atlasfoundation/common/src/interfaces/GroupResult'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'
 import { store, useDispatch } from '../../store'
-
-/**
- *
- * @param files FIle type
- * @returns URL
- * @author KIMENYI Kevin <kimenyikevin@gmail.com>
- */
 
 //State
 export const GROUP_PAGE_LIMIT = 100

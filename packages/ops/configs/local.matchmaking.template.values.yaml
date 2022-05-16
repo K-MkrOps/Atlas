@@ -1,17 +1,17 @@
 director:
   image:
-    repository: xrengine-matchmaking-director
+    repository: atlas-matchmaking-director
     pullPolicy: IfNotPresent
 
 matchfunction:
   labels:
-    app: xrengine-matchmaking
+    app: atlas-matchmaking
     component: matchfunction
   selectorLabels:
-    app: xrengine-matchmaking
+    app: atlas-matchmaking
     component: matchfunction
   image:
-    repository: xrengine-matchmaking-matchfunction
+    repository: atlas-matchmaking-matchfunction
     pullPolicy: IfNotPresent
 
 release:

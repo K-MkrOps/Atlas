@@ -1,12 +1,16 @@
 import React, { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { EnvmapComponent } from '@xrengine/engine/src/scene/components/EnvmapComponent'
-import { ErrorComponent } from '@xrengine/engine/src/scene/components/ErrorComponent'
-import { EnvMapSourceType, EnvMapTextureType } from '@xrengine/engine/src/scene/constants/EnvMapEnum'
-import { deserializeEnvMap, SCENE_COMPONENT_ENVMAP } from '@xrengine/engine/src/scene/functions/loaders/EnvMapFunctions'
+import { getDirectoryFromUrl } from '@atlasfoundation/common/src/utils/getDirectoryFromUrl'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { EnvmapComponent } from '@atlasfoundation/engine/src/scene/components/EnvmapComponent'
+import { ErrorComponent } from '@atlasfoundation/engine/src/scene/components/ErrorComponent'
+import { EnvMapSourceType, EnvMapTextureType } from '@atlasfoundation/engine/src/scene/constants/EnvMapEnum'
+import {
+  deserializeEnvMap,
+  SCENE_COMPONENT_ENVMAP
+} from '@atlasfoundation/engine/src/scene/functions/loaders/EnvMapFunctions'
 
 import { setPropertyOnSelectionEntities } from '../../classes/History'
 import ColorInput from '../inputs/ColorInput'
@@ -57,7 +61,6 @@ const EnvMapTextureOptions = [
 /**
  * EnvMapEditor provides the editor view for environment map property customization.
  *
- * @author Nayankumar Patel
  * @param       props
  * @constructor
  */
@@ -67,7 +70,7 @@ export const EnvMapEditor: EditorComponentType = (props) => {
   const engineState = useEngineState()
 
   const onChangeCubemapURLSource = useCallback((value) => {
-    const directory = value[value.length - 1] === '/' ? value.substring(0, value.length - 1) : value
+    const directory = getDirectoryFromUrl(value)
     if (directory !== envmapComponent.envMapSourceURL) {
       setPropertyOnSelectionEntities({
         component: EnvmapComponent,

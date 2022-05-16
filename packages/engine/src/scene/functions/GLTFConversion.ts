@@ -1,14 +1,18 @@
 import { Color, MathUtils, Object3D, Scene } from 'three'
 
-import { RethrownError } from '@xrengine/client-core/src/util/errors'
-import { ComponentJson, EntityJson, SceneJson } from '@xrengine/common/src/interfaces/SceneInterface'
-import { AssetLoader, getGLTFLoader } from '@xrengine/engine/src/assets/classes/AssetLoader'
-import { GLTFExporter } from '@xrengine/engine/src/assets/exporters/gltf/GLTFExporter'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { Entity } from '@xrengine/engine/src/ecs/classes/Entity'
-import { World } from '@xrengine/engine/src/ecs/classes/World'
-import { getAllComponents, getComponent, hasComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
+import { RethrownError } from '@atlasfoundation/client-core/src/util/errors'
+import { ComponentJson, EntityJson, SceneJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { AssetLoader, getGLTFLoader } from '@atlasfoundation/engine/src/assets/classes/AssetLoader'
+import { GLTFExporter } from '@atlasfoundation/engine/src/assets/exporters/gltf/GLTFExporter'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import {
+  getAllComponents,
+  getComponent,
+  hasComponent
+} from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
 
 import { AssetComponentType } from '../components/AssetComponent'
 import { EntityNodeComponent, EntityNodeComponentType } from '../components/EntityNodeComponent'
@@ -90,7 +94,7 @@ const serializeECS = (roots: Object3DWithEntity[], asset?: AssetComponentType, w
   const frontier: Object3DWithEntity[] = []
   const haveChildren = new Array()
   const result = {
-    asset: { version: '2.0', generator: 'XREngine glTF Scene Conversion' },
+    asset: { version: '2.0', generator: 'Atlas glTF Scene Conversion' },
     scenes: [{ nodes: new Array() }],
     scene: 0,
     nodes: new Array(),

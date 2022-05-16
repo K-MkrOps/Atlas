@@ -1,10 +1,10 @@
 import { HookContext } from '@feathersjs/feathers'
 import { disallow, iff, isProvider } from 'feathers-hooks-common'
 
-import checkPartyInstanceSize from '@xrengine/server-core/src/hooks/check-party-instance-size'
-import partyPermissionAuthenticate from '@xrengine/server-core/src/hooks/party-permission-authenticate'
-import partyUserPermissionAuthenticate from '@xrengine/server-core/src/hooks/party-user-permission-authenticate'
-import unsetSelfPartyOwner from '@xrengine/server-core/src/hooks/unset-self-party-owner'
+import checkPartyInstanceSize from '@atlasfoundation/server-core/src/hooks/check-party-instance-size'
+import partyPermissionAuthenticate from '@atlasfoundation/server-core/src/hooks/party-permission-authenticate'
+import partyUserPermissionAuthenticate from '@atlasfoundation/server-core/src/hooks/party-user-permission-authenticate'
+import unsetSelfPartyOwner from '@atlasfoundation/server-core/src/hooks/unset-self-party-owner'
 
 import authenticate from '../../hooks/authenticate'
 import logger from '../../logger'

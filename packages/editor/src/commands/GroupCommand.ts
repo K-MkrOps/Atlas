@@ -1,12 +1,12 @@
-import { store } from '@xrengine/client-core/src/store'
-import { EntityTreeNode } from '@xrengine/engine/src/ecs/classes/EntityTree'
-import { createEntity } from '@xrengine/engine/src/ecs/functions/EntityFunctions'
+import { store } from '@atlasfoundation/client-core/src/store'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { createEntity } from '@atlasfoundation/engine/src/ecs/functions/EntityFunctions'
 import {
   createEntityNode,
   getEntityNodeArrayFromEntities
-} from '@xrengine/engine/src/ecs/functions/EntityTreeFunctions'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
-import { ScenePrefabs } from '@xrengine/engine/src/scene/functions/registerPrefabs'
+} from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { ScenePrefabs } from '@atlasfoundation/engine/src/scene/functions/registerPrefabs'
 
 import { executeCommand } from '../classes/History'
 import EditorCommands from '../constants/EditorCommands'

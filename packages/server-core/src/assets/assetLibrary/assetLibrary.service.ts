@@ -2,7 +2,7 @@ import { Application } from '../../../declarations'
 import { AssetLibrary } from './assetLibrary.class'
 import hooks from './assetLibrary.hooks'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'asset-library': AssetLibrary
   }

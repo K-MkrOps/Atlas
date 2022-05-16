@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Party } from '@xrengine/common/src/interfaces/Party'
+import { Party } from '@atlasfoundation/common/src/interfaces/Party'
 
 import { useAuthState } from '../../../user/services/AuthService'
 import ConfirmModal from '../../common/ConfirmModal'

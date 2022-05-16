@@ -94,5 +94,5 @@ export const configureEffectComposer = (remove?: boolean): void => {
     )
   }
 
-  if (Engine.instance.isEditor) changeRenderMode(accessEngineRendererState().renderMode.value)
+  changeRenderMode(accessEngineRendererState().renderMode.value)
 }

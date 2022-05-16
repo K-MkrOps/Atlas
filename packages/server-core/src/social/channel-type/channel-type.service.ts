@@ -4,7 +4,7 @@ import channelTypeDocs from './channel-type.docs'
 import hooks from './channel-type.hooks'
 import createModel from './channel-type.model'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'channel-type': ChannelType
   }
@@ -20,7 +20,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new ChannelType(options, app)
   event.docs = channelTypeDocs

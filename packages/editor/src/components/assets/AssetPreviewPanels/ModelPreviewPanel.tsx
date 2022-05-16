@@ -6,16 +6,15 @@ import {
   initialize3D,
   onWindowResize,
   renderScene
-} from '@xrengine/client-core/src/user/components/UserMenu/menus/helperFunctions'
-import { loadAvatarModelAsset } from '@xrengine/engine/src/avatar/functions/avatarFunctions'
-import { getOrbitControls } from '@xrengine/engine/src/input/functions/loadOrbitControl'
+} from '@atlasfoundation/client-core/src/user/components/UserMenu/menus/helperFunctions'
+import { loadAvatarModelAsset } from '@atlasfoundation/engine/src/avatar/functions/avatarFunctions'
+import { getOrbitControls } from '@atlasfoundation/engine/src/input/functions/loadOrbitControl'
 
 import CircularProgress from '@mui/material/CircularProgress'
 
 import styles from '../styles.module.scss'
 
 /**
- * @author Abhishek Pathak
  */
 
 const ModelPreview = (styled as any).canvas`
@@ -28,7 +27,6 @@ const ModelPreview = (styled as any).canvas`
 `
 
 /**
- * @author Abhishek Pathak <abhi.pathak401@gmail.com>
  * @param props
  * @returns
  */

@@ -9,7 +9,7 @@ import {
   Texture
 } from 'three'
 
-import { ComponentJson } from '@xrengine/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { AssetLoader } from '../../../assets/classes/AssetLoader'
 import { AssetClass } from '../../../assets/enum/AssetClass'

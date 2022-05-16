@@ -1,8 +1,8 @@
 ## HyperFlux
 
-HyperFlux brings together various state management strategies in XREngine, in a way that makes it easy to introspect and test. 
+HyperFlux brings together various state management strategies in Atlas, in a way that makes it easy to introspect and test. 
 
-In XREngine, we define 3 different stores
+In Atlas, we define 3 different stores
 
 The ENGINE store is _non-networked_, meaning actions are dispatched directly on the _**incoming**_ queue, and run on the Engine timer. 
 
@@ -13,7 +13,8 @@ createHyperStore({
     getDispatchTime: () => Engine.instance.elapsedTime
 })
 // Engine timer callback:
-const executeWorlds = (elapsedTime) => {
+const executeWorlds = (delta, elapsedTime) => {
+  Engine.instance.elapsedTime = elapsedTime
   ActionFunctions.applyIncomingActions(Engine.instance.store)
   // ...
 }
@@ -30,7 +31,7 @@ createHyperStore({
     defaultDispatchDelay: 1
 })
 // IncomingActionSystem
-import { applyIncomingActions } from '@xrengine/hyperflux'
+import { applyIncomingActions } from '@atlasfoundation/hyperflux'
 export default async function IncomingActionSystem(world) {
   return () => {
     applyIncomingActions(world.store)

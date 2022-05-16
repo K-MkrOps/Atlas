@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import { useEngineRendererState } from '@xrengine/engine/src/renderer/EngineRendererState'
-import InfiniteGridHelper from '@xrengine/engine/src/scene/classes/InfiniteGridHelper'
+import { useEngineRendererState } from '@atlasfoundation/engine/src/renderer/EngineRendererState'
+import InfiniteGridHelper from '@atlasfoundation/engine/src/scene/classes/InfiniteGridHelper'
 
 import GridOnIcon from '@mui/icons-material/GridOn'
 

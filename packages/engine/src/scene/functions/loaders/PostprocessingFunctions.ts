@@ -1,7 +1,7 @@
 import { Object3D } from 'three'
 
-import { ComponentJson } from '@xrengine/common/src/interfaces/SceneInterface'
-import { isClient } from '@xrengine/engine/src/common/functions/isClient'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { isClient } from '@atlasfoundation/engine/src/common/functions/isClient'
 
 import {
   ComponentDeserializeFunction,

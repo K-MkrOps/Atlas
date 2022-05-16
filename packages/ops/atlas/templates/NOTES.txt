@@ -1,4 +1,4 @@
-Thank you for installing XREngine
+Thank you for installing Atlas
 
 1. Dashboard frontend is running on:
 {{- if .Values.client.ingress.enabled }}
@@ -89,5 +89,5 @@ Thank you for installing XREngine
 {{- end }}
 
 We would love to hear your feedback:
-- contact us on https://xrfoundation.io/
+- contact us on https://atlasfoundation.io/
 - join our Discord on https://discord.gg/xrf

@@ -3,12 +3,12 @@ import appRootPath from 'app-root-path'
 import fs from 'fs'
 import path from 'path/posix'
 
-import { FileContentType } from '@xrengine/common/src/interfaces/FileContentType'
+import { FileContentType } from '@atlasfoundation/common/src/interfaces/FileContentType'
 
 import { Application } from '../../../declarations'
 import { copyRecursiveSync, getIncrementalName } from '../FileUtil'
 import { getCachedAsset } from '../storageprovider/getCachedAsset'
-import { getStorageProvider } from '../storageprovider/storageprovider'
+import { useStorageProvider } from '../storageprovider/storageprovider'
 import { StorageObjectInterface, StorageProviderInterface } from '../storageprovider/storageprovider.interface'
 
 export const projectsRootFolder = path.join(appRootPath.path, 'packages/projects')
@@ -31,17 +31,20 @@ interface PatchParams {
 /**
  * A class for Managing files in FileBrowser
  *
- * @author Abhishek Pathak
  */
 
 export class FileBrowserService implements ServiceMethods<any> {
+  store: StorageProviderInterface
   app: Application
 
   constructor(app: Application) {
     this.app = app
   }
 
-  async setup(app: Application, path: string) {}
+  async setup(_app, _path: string): Promise<void> {
+    this.store = useStorageProvider()
+  }
+
   async find(_params?: Params) {}
 
   /**
@@ -51,9 +54,8 @@ export class FileBrowserService implements ServiceMethods<any> {
    * @returns
    */
   async get(directory: string, _params?: Params): Promise<FileContentType[]> {
-    const storageProvider = getStorageProvider()
     if (directory[0] === '/') directory = directory.slice(1) // remove leading slash
-    const result = await storageProvider.listFolderContent(directory)
+    const result = await this.store.listFolderContent(directory)
     return result
   }
 
@@ -64,13 +66,12 @@ export class FileBrowserService implements ServiceMethods<any> {
    * @returns
    */
   async create(directory) {
-    const storageProvider = getStorageProvider()
     if (directory[0] === '/') directory = directory.slice(1) // remove leading slash
 
     const parentPath = path.dirname(directory)
-    const key = await getIncrementalName(path.basename(directory), parentPath, storageProvider, true)
+    const key = await getIncrementalName(path.basename(directory), parentPath, this.store, true)
 
-    const result = await storageProvider.putObject({ Key: path.join(parentPath, key) } as StorageObjectInterface, {
+    const result = await this.store.putObject({ Key: path.join(parentPath, key) } as StorageObjectInterface, {
       isDirectory: true
     })
 
@@ -87,13 +88,12 @@ export class FileBrowserService implements ServiceMethods<any> {
    * @returns
    */
   async update(_id: NullableId, data: UpdateParamsType, _params?: Params) {
-    const storageProvider = getStorageProvider()
     const _oldPath = data.oldPath[0] === '/' ? data.oldPath.substring(1) : data.oldPath
     const _newPath = data.newPath[0] === '/' ? data.newPath.substring(1) : data.newPath
 
-    const isDirectory = await storageProvider.isDirectory(data.oldName, _oldPath)
-    const fileName = await getIncrementalName(data.newName, _newPath, storageProvider, isDirectory)
-    const result = await storageProvider.moveObject(data.oldName, fileName, _oldPath, _newPath, data.isCopy)
+    const isDirectory = await this.store.isDirectory(data.oldName, _oldPath)
+    const fileName = await getIncrementalName(data.newName, _newPath, this.store, isDirectory)
+    const result = await this.store.moveObject(data.oldName, fileName, _oldPath, _newPath, data.isCopy)
 
     const oldNamePath = path.join(projectsRootFolder, _oldPath, data.oldName)
     const newNamePath = path.join(projectsRootFolder, _newPath, fileName)
@@ -114,10 +114,9 @@ export class FileBrowserService implements ServiceMethods<any> {
    * @param params
    */
   async patch(_id: NullableId, data: PatchParams, params?: Params) {
-    const storageProvider = getStorageProvider()
     const key = path.join(data.path[0] === '/' ? data.path.substring(1) : data.path, data.fileName)
 
-    await storageProvider.putObject(
+    await this.store.putObject(
       {
         Key: key,
         Body: data.body,
@@ -130,7 +129,7 @@ export class FileBrowserService implements ServiceMethods<any> {
 
     fs.writeFileSync(path.join(projectsRootFolder, key), data.body)
 
-    return getCachedAsset(key, storageProvider.cacheDomain, params && params.provider == null)
+    return getCachedAsset(key, this.store.cacheDomain, params && params.provider == null)
   }
 
   /**
@@ -140,9 +139,8 @@ export class FileBrowserService implements ServiceMethods<any> {
    * @returns
    */
   async remove(key: string, _params?: Params) {
-    const storageProvider = getStorageProvider()
-    const dirs = await storageProvider.listObjects(key, true)
-    const result = await storageProvider.deleteResources([key, ...dirs.Contents.map((a) => a.Key)])
+    const dirs = await this.store.listObjects(key, true)
+    const result = await this.store.deleteResources([key, ...dirs.Contents.map((a) => a.Key)])
 
     const filePath = path.join(projectsRootFolder, key)
     if (fs.lstatSync(filePath).isDirectory()) {

@@ -132,6 +132,7 @@ const Client = (props: clientProps) => {
           <InputBase
             name="appTitle"
             className={styles.input}
+            style={{ color: '#fff' }}
             value={appTitle || ''}
             onChange={(e) => setAppTitle(e.target.value)}
           />
@@ -141,6 +142,7 @@ const Client = (props: clientProps) => {
           <InputBase
             name="appSubtitle"
             className={styles.input}
+            style={{ color: '#fff' }}
             value={appSubtitle || ''}
             onChange={(e) => setAppSubtitle(e.target.value)}
           />
@@ -150,6 +152,7 @@ const Client = (props: clientProps) => {
           <InputBase
             name="appDescription"
             className={styles.input}
+            style={{ color: '#fff' }}
             value={appDescription || ''}
             onChange={(e) => setAppDescription(e.target.value)}
           />
@@ -159,6 +162,7 @@ const Client = (props: clientProps) => {
           <InputBase
             name="appBackground"
             className={styles.input}
+            style={{ color: '#fff' }}
             value={appBackground || ''}
             onChange={(e) => setAppBackground(e.target.value)}
           />
@@ -174,6 +178,7 @@ const Client = (props: clientProps) => {
                     <InputBase
                       name="appBackground"
                       className={styles.input}
+                      style={{ color: '#fff' }}
                       value={socialLink.icon || ''}
                       onChange={(e) => handleUpdateSocialLinks(index, e.target.value, 'icon')}
                     />
@@ -183,23 +188,19 @@ const Client = (props: clientProps) => {
                     <InputBase
                       name="appBackground"
                       className={styles.input}
+                      style={{ color: '#fff' }}
                       value={socialLink.link || ''}
                       onChange={(e) => handleUpdateSocialLinks(index, e.target.value, 'link')}
                     />
                   </Paper>
-                  <Button
-                    variant="contained"
-                    size="small"
-                    className={styles.filledButton}
-                    onClick={() => handleRemoveSocialLinks(index)}
-                  >
+                  <Button variant="contained" size="small" onClick={() => handleRemoveSocialLinks(index)}>
                     <DeleteIcon /> Delete
                   </Button>
                 </Paper>
               )
           )}
         <Paper elevation={0} className={styles.Paper}>
-          <Button variant="contained" className={styles.filledButton} onClick={handleAddSocialLinks}>
+          <Button variant="contained" onClick={handleAddSocialLinks}>
             Add New Social Link
           </Button>
         </Paper>
@@ -208,6 +209,7 @@ const Client = (props: clientProps) => {
           <InputBase
             name="title"
             className={styles.input}
+            style={{ color: '#fff' }}
             value={title || ''}
             onChange={(e) => setTitle(e.target.value)}
           />
@@ -217,6 +219,7 @@ const Client = (props: clientProps) => {
           <InputBase
             name="title"
             className={styles.input}
+            style={{ color: '#fff' }}
             value={siteDescription || ''}
             onChange={(e) => setSiteDescription(e.target.value)}
           />
@@ -226,6 +229,7 @@ const Client = (props: clientProps) => {
           <InputBase
             name="logo"
             className={styles.input}
+            style={{ color: '#fff' }}
             value={logo || ''}
             onChange={(e) => setLogo(e.target.value)}
           />
@@ -235,6 +239,7 @@ const Client = (props: clientProps) => {
           <InputBase
             name="logo"
             className={styles.input}
+            style={{ color: '#fff' }}
             value={icon192px || ''}
             onChange={(e) => setIcon192px(e.target.value)}
           />
@@ -244,6 +249,7 @@ const Client = (props: clientProps) => {
           <InputBase
             name="logo"
             className={styles.input}
+            style={{ color: '#fff' }}
             value={icon512px || ''}
             onChange={(e) => setIcon512px(e.target.value)}
           />
@@ -253,6 +259,7 @@ const Client = (props: clientProps) => {
           <InputBase
             name="logo"
             className={styles.input}
+            style={{ color: '#fff' }}
             value={favicon16px || ''}
             onChange={(e) => setFavicon16px(e.target.value)}
           />
@@ -262,19 +269,32 @@ const Client = (props: clientProps) => {
           <InputBase
             name="logo"
             className={styles.input}
+            style={{ color: '#fff' }}
             value={favicon32px || ''}
             onChange={(e) => setFavicon32px(e.target.value)}
           />
         </Paper>
         <label>{t('admin:components.setting.url')}</label>
         <Paper component="div" className={styles.createInput}>
-          <InputBase name="url" className={styles.input} disabled value={clientSetting?.url || ''} />
+          <InputBase
+            name="url"
+            className={styles.input}
+            disabled
+            style={{ color: '#fff' }}
+            value={clientSetting?.url || ''}
+          />
         </Paper>
         <label>{t('admin:components.setting.releaseName')}</label>
         <Paper component="div" className={styles.createInput}>
-          <InputBase name="releaseName" className={styles.input} disabled value={clientSetting?.releaseName || ''} />
+          <InputBase
+            name="releaseName"
+            className={styles.input}
+            disabled
+            style={{ color: '#fff' }}
+            value={clientSetting?.releaseName || ''}
+          />
         </Paper>
-        <Button sx={{ maxWidth: '100%' }} variant="outlined" className={styles.cancelButton} onClick={handleCancel}>
+        <Button sx={{ maxWidth: '100%' }} variant="outlined" style={{ color: '#fff' }} onClick={handleCancel}>
           {t('admin:components.setting.cancel')}
         </Button>
         &nbsp;&nbsp;

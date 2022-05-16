@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { BotCommands } from '@xrengine/common/src/interfaces/AdminBot'
+import { BotCommands } from '@atlasfoundation/common/src/interfaces/AdminBot'
 
 import DeleteIcon from '@mui/icons-material/Delete'
 import Button from '@mui/material/Button'
@@ -35,6 +35,7 @@ const AddCommand = ({ command, handleChangeCommand, addCommandData, commandData,
             <InputBase
               className={styles.input}
               placeholder={t('admin:components.bot:enterCommand')}
+              style={{ color: '#fff' }}
               value={command.name}
               name="name"
               onChange={handleChangeCommand}
@@ -47,6 +48,7 @@ const AddCommand = ({ command, handleChangeCommand, addCommandData, commandData,
             <InputBase
               className={styles.input}
               placeholder={t('admin:components.bot.enterDescription')}
+              style={{ color: '#fff' }}
               value={command.description}
               name="description"
               onChange={handleChangeCommand}
@@ -73,7 +75,7 @@ const AddCommand = ({ command, handleChangeCommand, addCommandData, commandData,
                       el.id && removeCommand(el.id)
                     }}
                   >
-                    <DeleteIcon style={{ color: 'var(--iconButtonColor)' }} />
+                    <DeleteIcon style={{ color: '#fff' }} />
                   </IconButton>
                 </ListItemSecondaryAction>
               </ListItem>

@@ -1,12 +1,11 @@
 import * as bitecs from 'bitecs'
 import { AudioListener, Object3D, OrthographicCamera, PerspectiveCamera, Scene, XRFrame } from 'three'
 
-import { NetworkId } from '@xrengine/common/src/interfaces/NetworkId'
-import { ComponentJson } from '@xrengine/common/src/interfaces/SceneInterface'
-import { UserId } from '@xrengine/common/src/interfaces/UserId'
-import { createHyperStore, registerState } from '@xrengine/hyperflux'
+import { NetworkId } from '@atlasfoundation/common/src/interfaces/NetworkId'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { createHyperStore, registerState } from '@atlasfoundation/hyperflux'
 
-import { DEFAULT_LOD_DISTANCES } from '../../assets/constants/LoaderConstants'
 import { AvatarComponent } from '../../avatar/components/AvatarComponent'
 import { SceneLoaderType } from '../../common/constants/PrefabFunctionType'
 import { isClient } from '../../common/functions/isClient'
@@ -38,7 +37,7 @@ import { Entity } from './Entity'
 import EntityTree from './EntityTree'
 
 const TimerConfig = {
-  MAX_DELTA_SECONDS: 1 / 10
+  MAX_DELTA: 1 / 10
 }
 
 export const CreateWorld = Symbol('CreateWorld')
@@ -51,7 +50,6 @@ export class World {
     this.localClientEntity = isClient ? (createEntity(this) as Entity) : (NaN as Entity)
 
     addComponent(this.worldEntity, PersistTagComponent, {}, this)
-    if (this.localClientEntity) addComponent(this.localClientEntity, PersistTagComponent, {}, this)
 
     initializeEntityTree(this)
     this.scene.layers.set(ObjectLayers.Scene)
@@ -77,32 +75,23 @@ export class World {
   worldMetadata = {} as { [key: string]: string }
 
   /**
-   * The time origin for this world, relative to performance.timeOrigin
+   * The current delta time in seconds
    */
-  startTime = nowMilliseconds()
-
+  delta = 0
   /**
-   * The seconds since the last world execution
+   * The current elapsed time in seconds
    */
-  deltaSeconds = 0
-
+  elapsedTime = 0
   /**
-   * The elapsed seconds since `startTime`
+   * The current fixed delta in seconds (generally 1/60)
    */
-  elapsedSeconds = 0
-
+  fixedDelta = 0
   /**
-   * The seconds since the last fixed pipeline execution, in fixed time steps (generally 1/60)
+   * The current fixed time in seconds
    */
-  fixedDeltaSeconds = 0
-
+  fixedElapsedTime = 0
   /**
-   * The elapsed seconds since `startTime`, in fixed time steps.
-   */
-  fixedElapsedSeconds = 0
-
-  /**
-   * The current fixed tick (fixedElapsedSeconds / fixedDeltaSeconds)
+   * The current fixed tick (fixedElapsedTime / fixedDelta)
    */
   fixedTick = 0
 
@@ -269,14 +258,13 @@ export class World {
     return this.store.receptors
   }
 
-  LOD_DISTANCES = DEFAULT_LOD_DISTANCES
-
   /**
    * Execute systems on this world
    *
-   * @param frameTime the current frame time in milliseconds (DOMHighResTimeStamp) relative to performance.timeOrigin
+   * @param delta in seconds
+   * @param elapsedTime in seconds
    */
-  execute(frameTime: number) {
+  execute(delta: number) {
     const start = nowMilliseconds()
     const incomingActions = [...this.store.actions.incoming]
     const incomingBufferLength = Network.instance
@@ -297,7 +285,7 @@ export class World {
     const duration = end - start
     if (duration > 50) {
       console.warn(
-        `Long frame execution detected. Duration: ${duration}. \n Incoming Buffer Length: ${incomingBufferLength} \n Incoming actions: `,
+        `Long frame execution detected. Delta: ${delta} \n Duration: ${duration}. \n Incoming Buffer Length: ${incomingBufferLength} \n Incoming actions: `,
         incomingActions
       )
     }

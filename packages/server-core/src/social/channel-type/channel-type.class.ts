@@ -1,6 +1,6 @@
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { ChannelTypeInterface } from '@xrengine/common/src/dbmodels/ChannelType'
+import { ChannelTypeInterface } from '@atlasfoundation/common/src/dbmodels/ChannelType'
 
 import { Application } from '../../../declarations'
 
@@ -8,7 +8,6 @@ export type ChannelTypeDataType = ChannelTypeInterface
 /**
  * A class for channel type service
  *
- * @author Vyacheslav Solovjov
  */
 export class ChannelType<T = ChannelTypeDataType> extends Service<T> {
   public docs: any

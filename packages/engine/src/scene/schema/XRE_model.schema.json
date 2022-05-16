@@ -3,7 +3,7 @@
   "$id": "XRE_model.schema.json",
   "title": "XRE_model glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine model components",
+  "description": "serialization extension for Atlas model components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "src": { "$ref": "url.schema.json" },

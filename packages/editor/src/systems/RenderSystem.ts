@@ -1,5 +1,5 @@
-import { World } from '@xrengine/engine/src/ecs/classes/World'
-import { EngineRenderer } from '@xrengine/engine/src/renderer/WebGLRendererSystem'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import { EngineRenderer } from '@atlasfoundation/engine/src/renderer/WebGLRendererSystem'
 
 import { SceneState } from '../functions/sceneRenderFunctions'
 

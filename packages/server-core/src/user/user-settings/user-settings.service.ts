@@ -4,7 +4,7 @@ import userSettingsDocs from './user-settings.docs'
 import hooks from './user-settings.hooks'
 import createModel from './user-settings.model'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'user-settings': UserSettings
   }
@@ -18,7 +18,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new UserSettings(options, app)
   event.docs = userSettingsDocs

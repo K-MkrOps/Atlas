@@ -1,7 +1,7 @@
 import { NullableId, Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { UserSetting } from '@xrengine/common/src/interfaces/User'
+import { UserSetting } from '@atlasfoundation/common/src/interfaces/User'
 
 import { Application } from '../../../declarations'
 
@@ -9,7 +9,6 @@ export type UserSettingsDataType = UserSetting
 /**
  * A class for User Settings service
  *
- * @author Vyacheslav Solovjov
  */
 export class UserSettings<T = UserSettingsDataType> extends Service<T> {
   public docs: any

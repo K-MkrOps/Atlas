@@ -1,7 +1,7 @@
 import React, { ReactElement, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Location } from '@xrengine/common/src/interfaces/Location'
+import { Location } from '@atlasfoundation/common/src/interfaces/Location'
 
 import Avatar from '@mui/material/Avatar'
 import Chip from '@mui/material/Chip'

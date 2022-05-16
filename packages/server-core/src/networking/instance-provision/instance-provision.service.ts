@@ -6,7 +6,7 @@ import instanceProvisionDocs from './instance-provision.docs'
 import hooks from './instance-provision.hooks'
 
 // Add this service to the service type index
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'instance-provision': InstanceProvision
   }
@@ -20,7 +20,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new InstanceProvision(options, app)
   event.docs = instanceProvisionDocs
@@ -38,7 +37,6 @@ export default (app: Application) => {
    *
    * @param data which is parsed to create instance provinsion
    * @returns created instance provinsion
-   * @author Vyacheslav Solovjov
    */
   service.publish('created', async (data): Promise<any> => {
     try {

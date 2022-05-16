@@ -3,7 +3,7 @@
   "$id": "XRE_ambientLight.schema.json",
   "title": "XRE_ambientLight glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine ambient light components",
+  "description": "serialization extension for Atlas ambient light components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "color": {

@@ -1,9 +1,9 @@
 import React, { Suspense, useEffect, useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import ErrorBoundary from '@xrengine/client-core/src/common/components/ErrorBoundary'
-import { LoadingCircle } from '@xrengine/client-core/src/components/LoadingCircle'
-import { AuthService } from '@xrengine/client-core/src/user/services/AuthService'
+import ErrorBoundary from '@atlasfoundation/client-core/src/common/components/ErrorBoundary'
+import { LoadingCircle } from '@atlasfoundation/client-core/src/components/LoadingCircle'
+import { AuthService } from '@atlasfoundation/client-core/src/user/services/AuthService'
 
 import { CustomRoute, getCustomRoutes } from './getCustomRoutes'
 
@@ -11,9 +11,9 @@ if (typeof globalThis.process === 'undefined') {
   ;(globalThis as any).process = { env: {} }
 }
 
-const $admin = React.lazy(() => import('@xrengine/client-core/src/admin/adminRoutes'))
-const $auth = React.lazy(() => import('@xrengine/client/src/pages/auth/authRoutes'))
-const $offline = React.lazy(() => import('@xrengine/client/src/pages/offline/offline'))
+const $admin = React.lazy(() => import('@atlasfoundation/client-core/src/admin/adminRoutes'))
+const $auth = React.lazy(() => import('@atlasfoundation/client/src/pages/auth/authRoutes'))
+const $offline = React.lazy(() => import('@atlasfoundation/client/src/pages/offline/offline'))
 const $503 = React.lazy(() => import('../pages/503'))
 const $404 = React.lazy(() => import('../pages/404'))
 

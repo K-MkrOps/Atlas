@@ -1,10 +1,10 @@
-import { createState, Downgraded } from '@speigg/hookstate'
+import { createState, Downgraded } from '@hoostate/core'
 import assert from 'assert'
 
-import { AuthUserSeed } from '@xrengine/common/src/interfaces/AuthUser'
-import { IdentityProviderSeed } from '@xrengine/common/src/interfaces/IdentityProvider'
-import { UserSeed } from '@xrengine/common/src/interfaces/User'
-import { UserAvatar } from '@xrengine/common/src/interfaces/UserAvatar'
+import { AuthUserSeed } from '@atlasfoundation/common/src/interfaces/AuthUser'
+import { IdentityProviderSeed } from '@atlasfoundation/common/src/interfaces/IdentityProvider'
+import { UserSeed } from '@atlasfoundation/common/src/interfaces/User'
+import { UserAvatar } from '@atlasfoundation/common/src/interfaces/UserAvatar'
 
 import { AuthAction, avatarFetchedReceptor } from '../../src/user/services/AuthService' // make browser globals defined
 

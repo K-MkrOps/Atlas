@@ -3,7 +3,7 @@
   "$id": "XRE_interactable.schema.json",
   "title": "XRE_interactable glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine interactable components",
+  "description": "serialization extension for Atlas interactable components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "interactionType": {

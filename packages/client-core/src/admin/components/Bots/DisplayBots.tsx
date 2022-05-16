@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { AdminBot, BotCommands, CreateBotCammand } from '@xrengine/common/src/interfaces/AdminBot'
+import { AdminBot, BotCommands, CreateBotCammand } from '@atlasfoundation/common/src/interfaces/AdminBot'
 
 import { Edit } from '@mui/icons-material'
 import DeleteIcon from '@mui/icons-material/Delete'
@@ -152,7 +152,7 @@ const DisplayBots = () => {
                   <Grid item xs={4} style={{ display: 'flex' }}>
                     <div style={{ marginLeft: 'auto' }}>
                       <IconButton onClick={() => handleOpenModal(bot)} size="large">
-                        <Edit style={{ color: 'var(--iconButtonColor)' }} />
+                        <Edit style={{ color: '#fff' }} />
                       </IconButton>
                       <IconButton
                         onClick={() => {
@@ -162,7 +162,7 @@ const DisplayBots = () => {
                         }}
                         size="large"
                       >
-                        <DeleteIcon style={{ color: 'var(--iconButtonColor)' }} />
+                        <DeleteIcon style={{ color: '#fff' }} />
                       </IconButton>
                     </div>
                   </Grid>

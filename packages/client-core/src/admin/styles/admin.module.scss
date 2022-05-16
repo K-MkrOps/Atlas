@@ -1,4 +1,4 @@
-@import "@xrengine/client-core/src/styles/imports.module.scss";
+@import "@atlasfoundation/client-core/src/styles/imports.module.scss";
 
 .openModalBtn {
   height: 50px;
@@ -582,14 +582,14 @@
 
 .botRootRight {
   width: 100%;
-  color: var(--textColor);
+  color: #fff;
   margin-top: 15px;
   background: var(--panelBackground);
 }
 
 .botRootLeft {
   width: 100%;
-  color: var(--textColor);
+  color: #fff;
   background: var(--panelBackground);
 }
 
@@ -634,11 +634,11 @@
 
 .secondaryHeading {
   font-size: 1rem;
-  color: var(--textColor);
+  color: #c0c0c0;
 }
 
 .thirdHeading {
-  color: var(--textColor);
+  color: #c0c0c0;
   margin-top: 15px;
 }
 
@@ -651,22 +651,22 @@
 .summary {
   background: var(--panelCards);
   border-bottom: 1px solid var(--mainBackground);
-  color: var(--textColor);
+  color: #f1f1f1;
   border-radius: 0;
 
   svg {
-    color: var(--iconButtonColor);
+    color: white;
   }
 }
 
 .botDetails {
   background: var(--panelBackground);
-  color: var(--textColor);
+  color: #fff;
 }
 
 .alterContainer {
   background: var(--inputBackground);
-  border: 1px solid var(--inputOutline);
+  border: 1px solid #23282c;
   border-radius: 5px;
   width: 100%;
   margin-top: 10px;
@@ -713,10 +713,6 @@
 .selectPaper {
   background: var(--inputBackground);
   color: var(--textColor);
-
-  &:global(.Mui-selected) {
-    background: var(--dropdownMenuSelectedBackground);
-  }
 }
 
 .paperDialog {
@@ -735,7 +731,7 @@
 }
 
 .spanNone {
-  color: var(--textColor);
+  color: #808080;
 }
 
 .mgBottom {
@@ -755,7 +751,7 @@
 .textLink {
   margin-left: 5px;
   text-decoration: none;
-  color: var(--buttonOutlined);
+  color: #f96;
 }
 
 .paperDrawer {
@@ -962,7 +958,7 @@
 
 .scopeContainer {
   max-height: 200px;
-  width: 100%;
+  width: 460px;
   overflow-y: scroll;
 
   @media (max-width: 1200px) {
@@ -995,16 +991,12 @@
 
 .filterButton {
   svg {
-    color: var(--iconButtonColor);
+    color: var(--panelCards);
   }
 }
 
 .checkbox {
   color: var(--textColor);
-
-  .checkedCheckbox {
-    color: var(--iconButtonColor);
-  }
 }
 
 .menuPaper {
@@ -1014,20 +1006,6 @@
 
   @media (max-width: 900px) {
     height: 10vh;
-  }
-}
-
-.menuItem {
-  &:hover {
-    background: var(--dropdownMenuHoverBackground);
-  }
-
-  &:global(.Mui-selected) {
-    background: var(--dropdownMenuSelectedBackground);
-
-    &:hover {
-      background: var(--dropdownMenuSelectedBackground);
-    }
   }
 }
 
@@ -1048,6 +1026,61 @@
   background-color: var(--panelCards);
 }
 
+.thead {
+  .trow {
+    .tcell {
+      color: lighten(white, 0.8);
+      background-color: black;
+
+      .iconsContainer {
+        display: flex;
+
+        h3 {
+          margin-right: 5px;
+        }
+      }
+
+      &.actionCell {
+        display: flex;
+        flex-flow: wrap;
+        flex-direction: row;
+
+        :global(.MuiButtonBase-root) {
+          width: fit-content;
+          margin-right: 5px;
+        }
+      }
+
+      :global(.MuiButtonBase-root) {
+        color: lighten(white, 0.8);
+      }
+    }
+
+    .tcellSelectable {
+      .currentUser {
+        color: lighten(white, 0.8);
+        background-color: var(--facebookBlue);
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        &:hover {
+          background-color: #145cee;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .trowHover {
+    cursor: pointer;
+
+    .tcell {
+      color: lighten(white, 0.8);
+      background-color: black;
+    }
+  }
+}
+
 .root {
   flex-grow: 1;
 }
@@ -1062,8 +1095,8 @@
 }
 
 .btn {
-  color: var(--buttonOutlined);
-  border-color: var(--buttonOutlined);
+  color: white;
+  border-color: white;
   font-size: 0.875rem;
 
   @media (max-width: 900px) {
@@ -1072,8 +1105,8 @@
 }
 
 .btnSelected {
-  color: var(--textColor) !important;
-  border-color: var(--buttonOutlined);
+  color: white !important;
+  border-color: white;
   background-color: var(--buttonFilled) !important;
 }
 
@@ -1126,11 +1159,6 @@
 
 .checkboxContainer {
   padding: 0;
-  color: var(--textColor);
-}
-
-.routeCheckedCheckbox {
-  color: var(--iconButtonColor) !important;
 }
 
 .progress {

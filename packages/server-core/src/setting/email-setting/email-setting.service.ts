@@ -3,7 +3,7 @@ import { EmailSetting } from './email-setting.class'
 import hooks from './email-setting.hooks'
 import createModel from './email-setting.model'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'email-setting': EmailSetting
   }

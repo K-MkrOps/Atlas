@@ -1,9 +1,9 @@
 import { isEmpty } from 'lodash'
 
-import { dispatchAction } from '@xrengine/hyperflux'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { Engine } from '../../ecs/classes/Engine'
-import { EngineActions } from '../../ecs/classes/EngineState'
+import { EngineActions } from '../../ecs/classes/EngineService'
 import { Entity } from '../../ecs/classes/Entity'
 import { addComponent, getComponent, removeComponent } from '../../ecs/functions/ComponentFunctions'
 import { ErrorComponent } from '../components/ErrorComponent'

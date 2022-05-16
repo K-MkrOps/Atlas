@@ -2,7 +2,7 @@ import { Paginated, Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import Sequelize, { Op } from 'sequelize'
 
-import { Instance as InstanceInterface } from '@xrengine/common/src/interfaces/Instance'
+import { Instance as InstanceInterface } from '@atlasfoundation/common/src/interfaces/Instance'
 
 import { Application } from '../../../declarations'
 
@@ -11,7 +11,6 @@ export type InstanceDataType = InstanceInterface
 /**
  * A class for Intance service
  *
- * @author Vyacheslav Solovjov
  */
 export class Instance<T = InstanceDataType> extends Service<T> {
   app: Application

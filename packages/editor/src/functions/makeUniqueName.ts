@@ -1,8 +1,8 @@
-import { EntityTreeNode } from '@xrengine/engine/src/ecs/classes/EntityTree'
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { traverseEntityNode } from '@xrengine/engine/src/ecs/functions/EntityTreeFunctions'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
-import { NameComponent } from '@xrengine/engine/src/scene/components/NameComponent'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { traverseEntityNode } from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { NameComponent } from '@atlasfoundation/engine/src/scene/components/NameComponent'
 
 const namePattern = new RegExp('(.*) \\d+$')
 

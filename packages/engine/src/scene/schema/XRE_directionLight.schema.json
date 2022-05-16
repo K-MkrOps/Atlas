@@ -3,7 +3,7 @@
   "title": "XRE_directionLight glTF extension",
   "$id": "XRE_directionLight.schema.json",
   "type": "object",
-  "description": "serialization extension for XREngine direction light components",
+  "description": "serialization extension for Atlas direction light components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "color": {

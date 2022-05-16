@@ -1,7 +1,7 @@
 {
     "info": {
-      "title": "XREngine API Surface",
-      "description": "APIs for the XREngine application",
+      "title": "Atlas API Surface",
+      "description": "APIs for the Atlas application",
       "version": "1.0.0"
     },
     "paths": {

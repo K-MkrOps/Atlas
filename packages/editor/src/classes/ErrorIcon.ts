@@ -1,7 +1,7 @@
 import { DoubleSide, Mesh, MeshBasicMaterial, PlaneBufferGeometry, Texture } from 'three'
 import { NearestFilter } from 'three'
 
-import { AssetLoader } from '@xrengine/engine/src/assets/classes/AssetLoader'
+import { AssetLoader } from '@atlasfoundation/engine/src/assets/classes/AssetLoader'
 
 let errorTexturePromise = null! as Promise<Texture | null>
 let errorTexture = null as Texture | null

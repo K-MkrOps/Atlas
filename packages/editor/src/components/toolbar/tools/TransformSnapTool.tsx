@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { useDispatch } from '@xrengine/client-core/src/store'
-import InfiniteGridHelper from '@xrengine/engine/src/scene/classes/InfiniteGridHelper'
-import { SnapMode } from '@xrengine/engine/src/scene/constants/transformConstants'
+import { useDispatch } from '@atlasfoundation/client-core/src/store'
+import InfiniteGridHelper from '@atlasfoundation/engine/src/scene/classes/InfiniteGridHelper'
+import { SnapMode } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import AttractionsIcon from '@mui/icons-material/Attractions'
 
@@ -14,7 +14,6 @@ import * as styles from '../styles.module.scss'
 
 /**
  *
- * @author Robert Long
  */
 const translationSnapOptions = [
   { label: '0.1m', value: 0.1 },
@@ -28,7 +27,6 @@ const translationSnapOptions = [
 
 /**
  *
- * @author Robert Long
  */
 const rotationSnapOptions = [
   { label: '1°', value: 1 },

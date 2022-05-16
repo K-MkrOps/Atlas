@@ -1,11 +1,11 @@
 import { Euler, Quaternion } from 'three'
 
-import { store } from '@xrengine/client-core/src/store'
-import { EntityTreeNode } from '@xrengine/engine/src/ecs/classes/EntityTree'
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { Object3DComponent } from '@xrengine/engine/src/scene/components/Object3DComponent'
-import { TransformSpace } from '@xrengine/engine/src/scene/constants/transformConstants'
-import { TransformComponent } from '@xrengine/engine/src/transform/components/TransformComponent'
+import { store } from '@atlasfoundation/client-core/src/store'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
+import { TransformSpace } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
+import { TransformComponent } from '@atlasfoundation/engine/src/transform/components/TransformComponent'
 
 import arrayShallowEqual from '../functions/arrayShallowEqual'
 import { serializeEuler, serializeObject3DArray } from '../functions/debug'

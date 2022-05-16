@@ -1,12 +1,12 @@
 import { Camera, Intersection, Object3D, Raycaster, Vector2 } from 'three'
 
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { EntityTreeNode } from '@xrengine/engine/src/ecs/classes/EntityTree'
-import { hasComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
-import { IgnoreRaycastTagComponent } from '@xrengine/engine/src/scene/components/IgnoreRaycastTagComponent'
-import { Object3DWithEntity } from '@xrengine/engine/src/scene/components/Object3DComponent'
-import { ObjectLayers } from '@xrengine/engine/src/scene/constants/ObjectLayers'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { IgnoreRaycastTagComponent } from '@atlasfoundation/engine/src/scene/components/IgnoreRaycastTagComponent'
+import { Object3DWithEntity } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
+import { ObjectLayers } from '@atlasfoundation/engine/src/scene/constants/ObjectLayers'
 
 type RaycastIntersectionNode = Intersection<Object3DWithEntity> & {
   obj3d: Object3DWithEntity

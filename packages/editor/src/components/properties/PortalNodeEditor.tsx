@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Euler, Quaternion } from 'three'
+import { Euler } from 'three'
 
-import { client } from '@xrengine/client-core/src/feathers'
-import { PortalDetail } from '@xrengine/common/src/interfaces/PortalInterface'
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { PortalComponent } from '@xrengine/engine/src/scene/components/PortalComponent'
+import { client } from '@atlasfoundation/client-core/src/feathers'
+import { PortalDetail } from '@atlasfoundation/common/src/interfaces/PortalInterface'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { PortalComponent } from '@atlasfoundation/engine/src/scene/components/PortalComponent'
 
 import MeetingRoomIcon from '@mui/icons-material/MeetingRoom'
 
-import { setPropertyOnSelectionEntities } from '../../classes/History'
 import BooleanInput from '../inputs/BooleanInput'
 import EulerInput from '../inputs/EulerInput'
 import InputGroup from '../inputs/InputGroup'
@@ -30,12 +29,11 @@ type PortalFilterOption = {
   data: PortalOptions
 }
 
-const rotation = new Quaternion()
+const euler = new Euler()
 
 /**
  * PortalNodeEditor provides the editor for properties of PortalNode.
  *
- * @author Josh Field <github.com/HexaField>
  * @type {class component}
  */
 export const PortalNodeEditor: EditorComponentType = (props) => {
@@ -72,16 +70,10 @@ export const PortalNodeEditor: EditorComponentType = (props) => {
     loadPortals()
   }, [])
 
-  const changeSpawnRotation = (value: Euler) => {
-    rotation.setFromEuler(value)
-
-    setPropertyOnSelectionEntities({
-      component: PortalComponent,
-      properties: { spawnRotation: rotation }
-    })
-  }
-
   const portalComponent = getComponent(props.node.entity, PortalComponent)
+
+  if (portalComponent.spawnRotation) euler.setFromQuaternion(portalComponent.spawnRotation)
+  else euler.set(0, 0, 0)
 
   return (
     <NodeEditor description={t('editor:properties.portal.description')} {...props}>
@@ -126,7 +118,7 @@ export const PortalNodeEditor: EditorComponentType = (props) => {
         />
       </InputGroup>
       <InputGroup name="Spawn Rotation" label={t('editor:properties.portal.lbl-spawnRotation')}>
-        <EulerInput quaternion={portalComponent.spawnRotation ?? rotation} onChange={changeSpawnRotation} />
+        <EulerInput value={euler} onChange={updateProperty(PortalComponent, 'spawnRotation')} />
       </InputGroup>
     </NodeEditor>
   )

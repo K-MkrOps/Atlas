@@ -1,4 +1,4 @@
-import { dispatchAction } from '@xrengine/hyperflux'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { Engine } from '../../ecs/classes/Engine'
 import { World } from '../../ecs/classes/World'

@@ -7,7 +7,7 @@ import loginDocs from './login.docs'
 import hooks from './login.hooks'
 
 // Add this service to the service type index
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     login: Login
   }
@@ -33,7 +33,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new Login(options, app)
   event.docs = loginDocs
@@ -42,7 +41,6 @@ export default (app: Application) => {
   /**
    * Get our initialized service so that we can register hooks
    *
-   * @author Vyacheslav Solovjov
    */
   const service = app.service('login')
 

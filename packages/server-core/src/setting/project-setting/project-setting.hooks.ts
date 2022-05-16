@@ -1,6 +1,6 @@
 import { disallow, iff, isProvider } from 'feathers-hooks-common'
 
-import restrictUserRole from '@xrengine/server-core/src/hooks/restrict-user-role'
+import restrictUserRole from '@atlasfoundation/server-core/src/hooks/restrict-user-role'
 
 import authenticate from '../../hooks/authenticate'
 import verifyScope from '../../hooks/verify-scope'

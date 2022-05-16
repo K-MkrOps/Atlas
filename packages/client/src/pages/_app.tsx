@@ -5,20 +5,19 @@ import { BrowserRouter } from 'react-router-dom'
 import {
   ClientSettingService,
   useClientSettingState
-} from '@xrengine/client-core/src/admin/services/Setting/ClientSettingService'
-import { initGA, logPageView } from '@xrengine/client-core/src/common/components/analytics'
-import { ProjectService, useProjectState } from '@xrengine/client-core/src/common/services/ProjectService'
-import { useDispatch } from '@xrengine/client-core/src/store'
-import { theme } from '@xrengine/client-core/src/theme'
-import { useAuthState } from '@xrengine/client-core/src/user/services/AuthService'
-import GlobalStyle from '@xrengine/client-core/src/util/GlobalStyle'
-import { StoredLocalAction } from '@xrengine/client-core/src/util/StoredLocalState'
-import { loadWebappInjection } from '@xrengine/projects/loadWebappInjection'
+} from '@atlasfoundation/client-core/src/admin/services/Setting/ClientSettingService'
+import { initGA, logPageView } from '@atlasfoundation/client-core/src/common/components/analytics'
+import { ProjectService, useProjectState } from '@atlasfoundation/client-core/src/common/services/ProjectService'
+import { useDispatch } from '@atlasfoundation/client-core/src/store'
+import { theme } from '@atlasfoundation/client-core/src/theme'
+import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
+import GlobalStyle from '@atlasfoundation/client-core/src/util/GlobalStyle'
+import { StoredLocalAction } from '@atlasfoundation/client-core/src/util/StoredLocalState'
+import { loadWebappInjection } from '@atlasfoundation/projects/loadWebappInjection'
 
 import { StyledEngineProvider, Theme, ThemeProvider } from '@mui/material/styles'
 
 import RouterComp from '../route/public'
-
 import './styles.scss'
 
 declare module '@mui/styles/defaultTheme' {

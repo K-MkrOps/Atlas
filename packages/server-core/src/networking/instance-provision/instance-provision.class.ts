@@ -23,7 +23,6 @@ const pressureThresholdPercent = 0.8
 
 /**
  * An method which start server for instance
- * @author Vyacheslav Solovjov
  */
 export async function getFreeGameserver(
   app: Application,
@@ -156,7 +155,6 @@ export async function checkForDuplicatedAssignments(
 /**
  * @class for InstanceProvision service
  *
- * @author Vyacheslav Solovjov
  */
 export class InstanceProvision implements ServiceMethods<Data> {
   app: Application
@@ -175,7 +173,6 @@ export class InstanceProvision implements ServiceMethods<Data> {
    * @param locationId
    * @param channelId
    * @returns id, ipAddress and port
-   * @author Vyacheslav Solovjov
    */
 
   async getGSInService(availableLocationInstances, locationId: string, channelId: string): Promise<any> {
@@ -227,7 +224,6 @@ export class InstanceProvision implements ServiceMethods<Data> {
    *
    * @param instance of ipaddress and port
    * @returns {@Boolean}
-   * @author Vyacheslav Solovjov
    */
 
   async gsCleanup(instance): Promise<boolean> {
@@ -283,7 +279,6 @@ export class InstanceProvision implements ServiceMethods<Data> {
    *
    * @param params of query of locationId and instanceId
    * @returns {@function} getFreeGameserver and getGSInService
-   * @author Vyacheslav Solovjov
    */
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

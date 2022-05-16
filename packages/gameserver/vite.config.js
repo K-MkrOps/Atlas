@@ -55,7 +55,7 @@ export default defineConfig(() => {
     build: {
       lib: {
         entry: path.resolve(dirname(import.meta), 'src/index.ts'),
-        name: 'xrengine-gameserver'
+        name: 'atlas-gameserver'
       },
       target: 'esnext',
       sourcemap: 'inline',

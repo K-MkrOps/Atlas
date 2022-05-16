@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ThemeOptions } from '@xrengine/common/src/interfaces/ClientSetting'
+import { ThemeOptions } from '@atlasfoundation/common/src/interfaces/ClientSetting'
 
 interface DemoStyleProps {
   theme: ThemeOptions
@@ -122,7 +122,7 @@ const DemoStyle = (props: DemoStyleProps) => {
         width: 100%;
         height: 125px;
         background-size: cover;
-        background-image: url(/static/xrengine_thumbnail.jpg);
+        background-image: url(/static/atlas_thumbnail.jpg);
       }
 
       .panelCard:hover {
@@ -241,10 +241,6 @@ const DemoStyle = (props: DemoStyleProps) => {
       .option:global(.Mui-focused){
         background-color: ${theme.dropdownMenuHoverBackground};
       }
-
-      .optionSelected{
-        background-color: ${theme.dropdownMenuSelectedBackground} !important;
-      }
       
       .option:hover {
         background-color: ${theme.dropdownMenuHoverBackground};
@@ -298,7 +294,7 @@ const DemoStyle = (props: DemoStyleProps) => {
         color: var(--orange) !important;
       }
 
-      .popupMainBackground {
+      .drawer {
         background: unset;
       }
 

@@ -1,7 +1,6 @@
 /**
  * Read configs from meta tags if available, otherwise use the process.env injected from build.
  *
- * @author Robert Long
  * @param  (Object) Provides applcation configs.
  */
 const configs = {

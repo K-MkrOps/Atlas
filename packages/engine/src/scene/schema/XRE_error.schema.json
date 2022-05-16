@@ -3,7 +3,7 @@
   "title": "XRE_error glTF extension",
   "$id": "XRE_error.schema.json",
   "type": "object",
-  "description": "serialization extension for XREngine error components",
+  "description": "serialization extension for Atlas error components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {},
   "extensions": {},

@@ -1,8 +1,8 @@
-import type { ProjectConfigInterface } from '@xrengine/projects/ProjectConfigInterface'
+import type { ProjectConfigInterface } from '@atlasfoundation/projects/ProjectConfigInterface'
 
 const config: ProjectConfigInterface = {
   onEvent: undefined,
-  thumbnail: '/static/xrengine_thumbnail.jpg',
+  thumbnail: '/static/atlas_thumbnail.jpg',
   routes: {},
   services: undefined,
   databaseSeed: undefined

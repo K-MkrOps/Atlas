@@ -1,4 +1,4 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 import axios from 'axios'
 
 import {
@@ -7,7 +7,7 @@ import {
   VideoDeletedResponse,
   VideoUpdatedResponse,
   VideoUpdateForm
-} from '@xrengine/common/src/interfaces/AdminService'
+} from '@atlasfoundation/common/src/interfaces/AdminService'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'

@@ -12,19 +12,19 @@ import {
   WebGLRenderer
 } from 'three'
 
-import { MAX_ALLOWED_TRIANGLES } from '@xrengine/common/src/constants/AvatarConstants'
-import { AnimationState } from '@xrengine/engine/src/avatar/animation/AnimationState'
-import { AvatarAnimationGraph } from '@xrengine/engine/src/avatar/animation/AvatarAnimationGraph'
-import { BoneStructure } from '@xrengine/engine/src/avatar/AvatarBoneMatching'
-import { AnimationComponent } from '@xrengine/engine/src/avatar/components/AnimationComponent'
-import { AvatarAnimationComponent } from '@xrengine/engine/src/avatar/components/AvatarAnimationComponent'
-import { LoopAnimationComponent } from '@xrengine/engine/src/avatar/components/LoopAnimationComponent'
-import { Entity } from '@xrengine/engine/src/ecs/classes/Entity'
-import { World } from '@xrengine/engine/src/ecs/classes/World'
-import { addComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { initSystems } from '@xrengine/engine/src/ecs/functions/SystemFunctions'
-import { SystemUpdateType } from '@xrengine/engine/src/ecs/functions/SystemUpdateType'
-import { VelocityComponent } from '@xrengine/engine/src/physics/components/VelocityComponent'
+import { MAX_ALLOWED_TRIANGLES } from '@atlasfoundation/common/src/constants/AvatarConstants'
+import { AnimationState } from '@atlasfoundation/engine/src/avatar/animation/AnimationState'
+import { AvatarAnimationGraph } from '@atlasfoundation/engine/src/avatar/animation/AvatarAnimationGraph'
+import { BoneStructure } from '@atlasfoundation/engine/src/avatar/AvatarBoneMatching'
+import { AnimationComponent } from '@atlasfoundation/engine/src/avatar/components/AnimationComponent'
+import { AvatarAnimationComponent } from '@atlasfoundation/engine/src/avatar/components/AvatarAnimationComponent'
+import { LoopAnimationComponent } from '@atlasfoundation/engine/src/avatar/components/LoopAnimationComponent'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import { addComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { initSystems } from '@atlasfoundation/engine/src/ecs/functions/SystemFunctions'
+import { SystemUpdateType } from '@atlasfoundation/engine/src/ecs/functions/SystemUpdateType'
+import { VelocityComponent } from '@atlasfoundation/engine/src/physics/components/VelocityComponent'
 
 const t = i18next.t
 interface SceneProps {

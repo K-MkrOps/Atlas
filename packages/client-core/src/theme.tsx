@@ -1,7 +1,6 @@
 import { useTheme as styledUseTheme } from 'styled-components'
 
 import { createTheme } from '@mui/material/styles'
-import { borderColor } from '@mui/system'
 
 const theme = createTheme({
   palette: {
@@ -177,21 +176,14 @@ const theme = createTheme({
     //     }
     //   }
     // },
-    MuiMenuItem: {
-      styleOverrides: {
-        root: {
-          '&:hover': {
-            backgroundColor: 'var(--dropdownMenuHoverBackground)'
-          },
-          '&.Mui-selected': {
-            backgroundColor: 'var(--dropdownMenuSelectedBackground)',
-            '&:hover': {
-              backgroundColor: 'var(--dropdownMenuSelectedBackground)'
-            }
-          }
-        }
-      }
-    },
+    // MuiMenuItem: {
+    //   styleOverrides: {
+    //     root: {
+    //       padding: '5px',
+    //       borderRadius: '8px'
+    //     }
+    //   }
+    // },
     // MuiSnackbar: {
     //   styleOverrides: {
     //     root: {
@@ -296,21 +288,15 @@ const theme = createTheme({
     //     }
     //   }
     // },
-    MuiListItem: {
-      styleOverrides: {
-        root: {
-          '&:hover': {
-            backgroundColor: 'var(--dropdownMenuHoverBackground)'
-          },
-          '&.Mui-selected': {
-            backgroundColor: 'var(--dropdownMenuSelectedBackground)',
-            '&:hover': {
-              backgroundColor: 'var(--dropdownMenuSelectedBackground)'
-            }
-          }
-        }
-      }
-    },
+    // MuiListItem: {
+    //   styleOverrides: {
+    //     root: {
+    //       padding: '0px',
+    //       paddingTop: '0px',
+    //       margin: '2px 0'
+    //     }
+    //   }
+    // },
     // MuiListItemText: {
     //   styleOverrides: {
     //     root: {
@@ -362,37 +348,23 @@ const theme = createTheme({
           width: '220px',
           margin: '10px auto',
           cursor: 'pointer',
-          fontSize: 16,
-          color: 'var(--textColor)'
+          fontSize: 16
         },
         //@ts-ignore // TODO
         label: {
           textTransform: 'capitalize'
         },
         outlined: {
-          backgroundColor: 'transparent',
-          borderColor: 'var(--buttonOutlined)',
-          '&:hover': {
-            backgroundColor: 'transparent',
-            borderColor: 'var(--buttonOutlined)'
-          }
-        },
-        contained: {
-          backgroundColor: 'var(--buttonFilled)',
-
-          '&:hover': {
-            opacity: 0.8,
-            backgroundColor: 'var(--buttonFilled)'
-          }
+          background: 'transparent'
         },
         outlinedPrimary: {
           '&:hover': {
-            boxShadow: '0 0 10px var(--buttonOutlined)'
+            boxShadow: '0 0 10px #5151FF'
           }
         },
         outlinedSecondary: {
           '&:hover': {
-            boxShadow: '0 0 10px var(--buttonOutlined)'
+            boxShadow: '0 0 10px #FFFFFF'
           }
         }
       }

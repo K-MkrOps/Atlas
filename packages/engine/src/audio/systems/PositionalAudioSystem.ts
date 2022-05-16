@@ -1,11 +1,11 @@
 import { Audio as AudioObject } from 'three'
 
-import { addActionReceptor } from '@xrengine/hyperflux'
+import { addActionReceptor } from '@atlasfoundation/hyperflux'
 
 import { AvatarComponent } from '../../avatar/components/AvatarComponent'
 import { matches } from '../../common/functions/MatchesUtils'
 import { Engine } from '../../ecs/classes/Engine'
-import { EngineActions, EngineActionType } from '../../ecs/classes/EngineState'
+import { EngineActions, EngineActionType } from '../../ecs/classes/EngineService'
 import { Entity } from '../../ecs/classes/Entity'
 import { World } from '../../ecs/classes/World'
 import { addComponent, defineQuery, getComponent, hasComponent } from '../../ecs/functions/ComponentFunctions'

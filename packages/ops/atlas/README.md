@@ -1,17 +1,17 @@
-# XREngine
+# Atlas
 
-[XREngine](https://xrfoundation.io/) Social Gatherings on the Web.
+[Atlas](https://atlasfoundation.io/) Social Gatherings on the Web.
 
 ## TL;DR
 
 ```console
-helm repo add xrengine https://helm.xrengine.io
-helm install my-release xrengine/xrengine
+helm repo add atlas https://helm.atlas.io
+helm install my-release atlas/atlas
 ```
 
 ## Introduction
 
-This chart creates a [XREngine](https://xrfoundation.io/) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart creates a [Atlas](https://atlasfoundation.io/) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 [***In Progress***] This chart has been tested to work with NGINX Ingress, cert-manager, fluentd and Prometheus on top of AWS EKS.
 
@@ -26,14 +26,14 @@ This chart creates a [XREngine](https://xrfoundation.io/) deployment on a [Kuber
 To install the chart with the release name `my-release`:
 
 ``` bash
-helm repo add xrengine https://helm.xrengine.io
+helm repo add atlas https://helm.atlas.io
 helm repo update
-helm install my-release xrengine/xrengine            # Helm 3
-helm install --name my-release xrengine/xrengine     # Helm 2
+helm install my-release atlas/atlas            # Helm 3
+helm install --name my-release atlas/atlas     # Helm 2
 ```
 
-XREngine
-The command deploys XREngine on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
+Atlas
+The command deploys Atlas on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
 
 > **Tip**: List all releases using `helm list`
 
@@ -49,21 +49,21 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ## Configuration
 
-The following table lists the configurable parameters of the XREngine chart and their default values.
+The following table lists the configurable parameters of the Atlas chart and their default values.
 
 | Key                              | Type | Default                                    | Description                                                                                      |
 |----------------------------------|------|--------------------------------------------|--------------------------------------------------------------------------------------------------|
 | agones.enabled                   | bool | `false`                                    | Install Agones included with chart, set `false` if you have it installed already on your cluster |
 | client.affinity                  | object | `{}`                                       | Node affinity for the client service                                                             |
 | client.enabled                   | bool | `true`                                     | Install xrsocial-client service                                                                  |
-| **client.extraEnv**              | object | `{}`                                       | [Additional Configuration](#xrengine-additional-configurations) for the client service           |
+| **client.extraEnv**              | object | `{}`                                       | [Additional Configuration](#atlas-additional-configurations) for the client service           |
 | client.image.pullPolicy          | string | `"Always"`                                 | Image pull policy                                                                                |
 | client.image.repository          | string | `"xrsocial/client"`                        | repo to pull client image from                                                                   |
 | client.image.tag                 | string | `"latest"`                                 | client version to pull                                                                           |
 | client.imagePullSecrets          | list | `[]`                                       | if using a private repo, specify a pull secret                                                   |
 | client.ingress.annotations       | object | `{"kubernetes.io/ingress.class": "nginx"}` | if using a different ingress controller, specify it                                              |
 | client.ingress.enabled           | bool | `true`                                     | disable ingress definitions                                                                      |
-| **client.ingress.hosts[0].host** | string | `"my.xrengine.com"`                        | hostname for the client                                                                          |
+| **client.ingress.hosts[0].host** | string | `"my.atlas.com"`                        | hostname for the client                                                                          |
 | client.ingress.hosts[0].paths[0] | string | `"/"`                                      | default path for client                                                                          |
 | client.name                      | string | `"xrsocial-client"`                        | client service name                                                                              |
 | client.nameOverride              | string | `""`                                       | changes the client service name                                                                  |
@@ -73,13 +73,13 @@ The following table lists the configurable parameters of the XREngine chart and 
 | client.service.type              | string | `"ClusterIP"`                              | override client service type                                                                     |
 | client.serviceAccount            | object | `{}`                                       | override client service account                                                                  |
 | client.tolerations               | list | `[]`                                       |                                                                                                  |
-| domain                           | string | `"xrengine.dev"`                           | domain root for all services, services will be subdomain from it                                 |
+| domain                           | string | `"atlas.dev"`                           | domain root for all services, services will be subdomain from it                                 |
 | server.affinity                  | object | `{}`                                       |                                                                                                  |
 | server.enabled                   | bool | `true`                                     | Install the xrsocial service                                                                     |
-| **server.extraEnv**              | object | `{}`                                       | [Additional Configuration](#xrengine-additional-configurations) for xrsocial service             |
+| **server.extraEnv**              | object | `{}`                                       | [Additional Configuration](#atlas-additional-configurations) for xrsocial service             |
 | server.fullnameOverride          | string | `""`                                       | override server fullname template                                                                |
 | server.image.pullPolicy          | string | `"Always"`                                 | Server pull policy                                                                               |
-| server.image.repository          | string | `"xrengine/xrsocial"`                      | server image repo                                                                                |
+| server.image.repository          | string | `"atlas/xrsocial"`                      | server image repo                                                                                |
 | server.image.tag                 | string | `"latest"`                                 | server image version                                                                             |
 | server.imagePullSecrets          | list | `[]`                                       | server image pull secret                                                                         |
 | server.ingress.annotations       | object | `{"kubernetes.io/ingress.class": "nginx"}` | server ingress class                                                                             |
@@ -95,9 +95,9 @@ The following table lists the configurable parameters of the XREngine chart and 
 | server.securityContext           | object | `{}`                                       | overrides server security context                                                                |
 | server.service.port              | int | `3030`                                     | service http port                                                                                |
 | server.service.type              | string | `"ClusterIP"`                              | Kubernetes service type                                                                          |
-| sql.database                     | string | `"xrengine"`                               | Database name within SQL server to connect to                                                    |
+| sql.database                     | string | `"atlas"`                               | Database name within SQL server to connect to                                                    |
 | sql.password                     | string | `"password"`                               | Password for the SQL user.                                                                       |
-| sql.user                         | string | `"xrengine"`                               | Username to connect to SQL database                                                              |
+| sql.user                         | string | `"atlas"`                               | Username to connect to SQL database                                                              |
 | sql.host                         | string | `nil`                                      | hostname of SQL server                                                                           |
 | sql.port                         | int | `3306`                                     | host port of SQL server                                                                          |
 
@@ -106,29 +106,29 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```console
 $ helm install --name my-release \
   --set persistence.enabled=false,email.host=email \
-    xrengine/xrengine
+    atlas/atlas
 ```
 
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
 ```console
-helm install --name my-release -f values.yaml xrengine/xrengine
+helm install --name my-release -f values.yaml atlas/atlas
 ```
 
 > **Tip**: You can use the default <values.yaml>
 
-## XREngine Additional Configurations
+## Atlas Additional Configurations
 
 This section lists configuration specific for server, client components.
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| client.extraEnv.API_SERVER | string | `"http://xrengine.local"` |  |
+| client.extraEnv.API_SERVER | string | `"http://atlas.local"` |  |
 | client.extraEnv.APP_ENV | string | `"development"` |  |
 | client.extraEnv.SITE_DESC | string | `"Connected Worlds for Everyone"` |  |
 | client.extraEnv.SITE_TITLE | string | `"MyXR"` |  |
 | rts.extraEnv.NAF_LISTEN_PORT | string | `"8081"` |  |
-| server.extraEnv.APP_HOST | string | `"http://api.xrengine.local/"` |  |
+| server.extraEnv.APP_HOST | string | `"http://api.atlas.local/"` |  |
 | server.extraEnv.FACEBOOK_CALLBACK_URL | string | `"http://127.0.0.1:3000/oauth/facebook"` |  |
 | server.extraEnv.FACEBOOK_CLIENT_ID | string | `nil` |  |
 | server.extraEnv.FACEBOOK_CLIENT_SECRET | string | `nil` |  |
@@ -138,8 +138,8 @@ This section lists configuration specific for server, client components.
 | server.extraEnv.GOOGLE_CALLBACK_URL | string | `"http://127.0.0.1:3000/oauth/google"` |  |
 | server.extraEnv.GOOGLE_CLIENT_ID | string | `nil` |  |
 | server.extraEnv.GOOGLE_CLIENT_SECRET | string | `nil` |  |
-| server.extraEnv.MAIL_FROM | string | `"noreply@xrengine.local"` |  |
-| server.extraEnv.MYSQL_DATABASE | string | `"xrengine"` |  |
+| server.extraEnv.MAIL_FROM | string | `"noreply@atlasfoundation.local"` |  |
+| server.extraEnv.MYSQL_DATABASE | string | `"atlas"` |  |
 | server.extraEnv.MYSQL_PASSWORD | string | `"password"` |  |
 | server.extraEnv.MYSQL_PORT | int | `3306` |  |
 | server.extraEnv.MYSQL_USER | string | `"server"` |  |
@@ -151,9 +151,9 @@ This section lists configuration specific for server, client components.
 | server.extraEnv.STORAGE_AWS_ACCESS_KEY_ID | string | `"<AWS ACCESS KEYS>"` |  |
 | server.extraEnv.STORAGE_AWS_ACCESS_KEY_SECRET | string | `"<AWS SECRET>"` |  |
 | server.extraEnv.STORAGE_PROVIDER | string | `"local"` |  |
-| server.extraEnv.STORAGE_S3_BUCKET_NAME | string | `"xrengine-storage"` |  |
+| server.extraEnv.STORAGE_S3_BUCKET_NAME | string | `"atlas-storage"` |  |
 | server.extraEnv.STORAGE_S3_CLOUDFRONT_DOMAIN | string | `"https://<MyCdnDistribution>.s3.amazonaws.com"` |  |
-| server.extraEnv.STORAGE_S3_PUBLIC_VIDEO_BUCKET | string | `"xrengine-video"` |  |
+| server.extraEnv.STORAGE_S3_PUBLIC_VIDEO_BUCKET | string | `"atlas-video"` |  |
 | server.extraEnv.STORAGE_S3_PUBLIC_VIDEO_PATH | string | `"/"` |  |
 | server.extraEnv.STORAGE_S3_REGION | string | `"<S3 Region>"` |  |
 

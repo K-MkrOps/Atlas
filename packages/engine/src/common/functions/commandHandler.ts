@@ -1,6 +1,6 @@
 import { Vector2, Vector3 } from 'three'
 
-import { UserId } from '@xrengine/common/src/interfaces/UserId'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 
 import { Entity } from '../../ecs/classes/Entity'
 import { addComponent, getComponent } from '../../ecs/functions/ComponentFunctions'
@@ -25,7 +25,6 @@ export function isCommand(text: string): boolean {
  * The return value is boolean (true/false), if it returns true the caller function will terminate, otherwise it will continue
  * First it is called in the server and then in the client
  * The entity in the server is the UserId, while in the client is the EntityId
- * @author Alex Titonis
  */
 export function handleCommand(cmd: string, entity: Entity, userId: UserId): boolean {
   //It checks for all messages, the default

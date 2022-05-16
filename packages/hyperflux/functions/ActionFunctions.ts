@@ -1,8 +1,8 @@
 import { MathUtils } from 'three'
 import { matches, Validator } from 'ts-matches'
 
-import { UserId } from '@xrengine/common/src/interfaces/UserId'
-import { deepEqual } from '@xrengine/engine/src/common/functions/deepEqual'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { deepEqual } from '@atlasfoundation/engine/src/common/functions/deepEqual'
 
 import { HyperStore } from './StoreFunctions'
 
@@ -253,12 +253,12 @@ const dispatchAction = <StoreName extends string, A extends Action<StoreName>>(
   action.$cache = action.$cache ?? false
   action.$uuid = action.$uuid ?? MathUtils.generateUUID()
 
-  if (process.env.APP_ENV === 'development' && !action.$stack) {
+  if (process.env.APP_ENV === 'development') {
     const trace = { stack: '' }
     Error.captureStackTrace?.(trace, dispatchAction) // In firefox captureStackTrace is undefined
     const stack = trace.stack.split('\n')
     stack.shift()
-    action.$stack = stack
+    action['$stack'] = stack
   }
 
   const mode = store.getDispatchMode()

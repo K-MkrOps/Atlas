@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { getEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { accessEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
 
 import PauseIcon from '@mui/icons-material/Pause'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
@@ -22,7 +22,7 @@ const PlayModeTool = () => {
     }
   }
 
-  const sceneLoaded = getEngineState().sceneLoaded.value
+  const sceneLoaded = accessEngineState().sceneLoaded.value
 
   return (
     <div className={styles.toolbarInputGroup + ' ' + styles.playButtonContainer} id="preview">

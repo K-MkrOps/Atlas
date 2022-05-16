@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useHistory } from 'react-router-dom'
 
-import { useDispatch } from '@xrengine/client-core/src/store'
-import { SceneData } from '@xrengine/common/src/interfaces/SceneInterface'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { EngineActions } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { dispatchAction } from '@xrengine/hyperflux'
+import { useDispatch } from '@atlasfoundation/client-core/src/store'
+import { SceneData } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { EngineActions } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { MoreVert } from '@mui/icons-material'
 import { ClickAwayListener } from '@mui/material'
@@ -24,7 +24,6 @@ import styles from './styles.module.scss'
 
 /**
  * Displays the scenes that exist in the current project.
- * @author Josh Field
  */
 export default function ScenesPanel({ loadScene, newScene, toggleRefetchScenes }) {
   const { t } = useTranslation()
@@ -154,6 +153,7 @@ export default function ScenesPanel({ loadScene, newScene, toggleRefetchScenes }
                           <InputBase
                             className={styles.input}
                             name="name"
+                            style={{ color: '#fff' }}
                             autoComplete="off"
                             autoFocus
                             value={newName}

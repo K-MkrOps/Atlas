@@ -29,7 +29,6 @@ export interface NumericInputGroupProp {
 
 /**
  *
- * @author Robert Long
  * @param {any} name
  * @param {any} className
  * @param {any} rest

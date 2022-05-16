@@ -1,8 +1,8 @@
 import { HookContext } from '@feathersjs/feathers'
 import { iff, isProvider } from 'feathers-hooks-common'
 
-import addAssociations from '@xrengine/server-core/src/hooks/add-associations'
-import verifyScope from '@xrengine/server-core/src/hooks/verify-scope'
+import addAssociations from '@atlasfoundation/server-core/src/hooks/add-associations'
+import verifyScope from '@atlasfoundation/server-core/src/hooks/verify-scope'
 
 import authenticate from '../../hooks/authenticate'
 

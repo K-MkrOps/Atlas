@@ -1,15 +1,12 @@
 import appRootPath from 'app-root-path'
-import * as chargebeeInst from 'chargebee'
 import dotenv from 'dotenv-flow'
 import path from 'path'
 import url from 'url'
 
-import multiLogger from './logger'
+import logger from './logger'
 
 const { register } = require('trace-unhandled')
 register()
-
-const logger = multiLogger.child({ component: 'server-core:config' })
 
 const kubernetesEnabled = process.env.KUBERNETES === 'true'
 const testEnabled = process.env.TEST === 'true'
@@ -147,7 +144,7 @@ const gameserver = {
   rtc_port_block_size: parseInt(process.env.RTC_PORT_BLOCK_SIZE!),
   identifierDigits: 5,
   local: process.env.LOCAL === 'true',
-  domain: process.env.GAMESERVER_DOMAIN || 'gameserver.theoverlay.io',
+  domain: process.env.GAMESERVER_DOMAIN || 'gameserver.atlasfoundation.io',
   releaseName: process.env.RELEASE_NAME!,
   port: process.env.GAMESERVER_PORT!,
   locationName: process.env.PRELOAD_LOCATION_NAME!,
@@ -179,10 +176,10 @@ const email = {
   from: `${process.env.SMTP_FROM_NAME}` + ` <${process.env.SMTP_FROM_EMAIL}>`,
   subject: {
     // Subject of the Login Link email
-    login: 'XREngine login link',
-    friend: 'XREngine friend request',
-    group: 'XREngine group invitation',
-    party: 'XREngine party invitation'
+    login: 'Atlas login link',
+    friend: 'Atlas friend request',
+    group: 'Atlas group invitation',
+    party: 'Atlas party invitation'
   },
   smsNameCharacterLimit: 20
 }
@@ -291,11 +288,6 @@ const aws = {
   }
 }
 
-const chargebee = {
-  url: process.env.CHARGEBEE_SITE + '.chargebee.com' || 'dummy.not-chargebee.com',
-  apiKey: process.env.CHARGEBEE_API_KEY!
-}
-
 const redis = {
   enabled: process.env.REDIS_ENABLED === 'true',
   address: process.env.REDIS_ADDRESS!,
@@ -323,7 +315,6 @@ const config = {
   analytics,
   authentication,
   aws,
-  chargebee,
   client,
   db,
   email,
@@ -340,10 +331,5 @@ const config = {
   noSSL: process.env.NOSSL === 'true',
   localBuild: process.env.VITE_LOCAL_BUILD === 'true'
 }
-
-chargebeeInst.configure({
-  site: process.env.CHARGEBEE_SITE!,
-  api_key: config.chargebee.apiKey
-})
 
 export default config

@@ -2,7 +2,7 @@ import _ from 'lodash'
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { GroupScope } from '@xrengine/common/src/interfaces/Group'
+import { GroupScope } from '@atlasfoundation/common/src/interfaces/Group'
 
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
@@ -102,6 +102,7 @@ const CreateGroup = (props: Props) => {
                 className={styles.input}
                 name="name"
                 placeholder={t('admin:components.group.enterGroupName')}
+                style={{ color: '#fff' }}
                 autoComplete="off"
                 value={state.name}
                 onChange={handleChange}
@@ -116,6 +117,7 @@ const CreateGroup = (props: Props) => {
                 className={styles.input}
                 name="description"
                 placeholder={t('admin:components.group.enterGroupDescription')}
+                style={{ color: '#fff' }}
                 autoComplete="off"
                 value={state.description}
                 onChange={handleChange}

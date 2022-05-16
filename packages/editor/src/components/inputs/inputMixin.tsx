@@ -3,7 +3,6 @@ import { css } from 'styled-components'
 /**
  * Styled component containing  common css styles.
  *
- * @author Robert Long
  */
 export default css`
   background-color: var(--inputBackground);

@@ -1,8 +1,8 @@
 import i18n from 'i18next'
 
-import { client } from '@xrengine/client-core/src/feathers'
-import { SceneData } from '@xrengine/common/src/interfaces/SceneInterface'
-import { serializeWorld } from '@xrengine/engine/src/scene/functions/serializeWorld'
+import { client } from '@atlasfoundation/client-core/src/feathers'
+import { SceneData } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { serializeWorld } from '@atlasfoundation/engine/src/scene/functions/serializeWorld'
 
 /**
  * getScenes used to get list projects created by user.
@@ -38,7 +38,6 @@ export const getScene = async (projectName: string, sceneName: string, metadataO
 /**
  * deleteScene used to delete project using projectId.
  *
- * @author Robert Long
  * @param  {any}  sceneId
  * @return {Promise}
  */
@@ -65,8 +64,6 @@ export const renameScene = async (projectName: string, newSceneName: string, old
 /**
  * saveScene used to save changes in existing project.
  *
- * @author Robert Long
- * @author Abhishek Pathak
  * @param  {any}  sceneName
  * @param  {any}  signal
  * @return {Promise}

@@ -1,8 +1,8 @@
 import assert from 'assert'
 import nock from 'nock'
 
-import { FRONTEND_SERVICE_URL } from '@xrengine/matchmaking/src/functions'
-import type { OpenMatchTicket } from '@xrengine/matchmaking/src/interfaces'
+import { FRONTEND_SERVICE_URL } from '@atlasfoundation/matchmaking/src/functions'
+import type { OpenMatchTicket } from '@atlasfoundation/matchmaking/src/interfaces'
 
 import { Application } from '../../../declarations'
 import { createFeathersExpressApp } from '../../createApp'

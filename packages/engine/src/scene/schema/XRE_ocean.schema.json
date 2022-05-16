@@ -3,7 +3,7 @@
   "$id": "XRE_ocean.schema.json",
   "title": "XRE_ocean glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine ocean components",
+  "description": "serialization extension for Atlas ocean components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "normalMap": { "$ref": "url.schema.json" },

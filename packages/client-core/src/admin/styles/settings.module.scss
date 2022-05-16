@@ -14,16 +14,12 @@
 }
 
 .select {
-  color: var(--textColor) !important;
+  color: #f1f1f1 !important;
 }
 
 .selectPaper {
   background: var(--inputBackground);
   color: var(--textColor);
-
-  &:global(.Mui-selected) {
-    background: var(--dropdownMenuSelectedBackground);
-  }
 }
 
 .divider {
@@ -39,16 +35,18 @@
 }
 
 .saveBtn {
-  color: var(--textColor);
   background: linear-gradient(90deg, var(--buttonGradientStart), var(--buttonGradientEnd));
 }
 
-.cancelButton {
-  color: var(--textColor);
-}
-
-.filledButton {
-  color: var(--textColor);
+.settings {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: #43484f;
+  color: #fff;
+  max-width: 310px;
+  position: fixed;
+  padding: 2px 18px;
 }
 
 .hoverSettings {
@@ -83,7 +81,7 @@
 }
 
 .settingContainer {
-  background: var(--panelBackground);
+  background: #343b41;
   width: 370px;
   height: 150px;
   padding: 60px;
@@ -108,7 +106,7 @@
   margin-top: 10px;
   margin-bottom: 15px;
   background: var(--inputBackground);
-  border: 1px solid var(--inputOutline);
+  border: 1px solid #23282c;
   color: var(--textColor) !important;
 }
 
@@ -120,7 +118,7 @@
   margin-top: 10px;
   margin-bottom: 15px;
   background: var(--inputBackground);
-  border: 1px solid var(--inputOutline);
+  border: 1px solid #23282c;
   color: var(--textColor) !important;
 }
 
@@ -128,6 +126,10 @@
   padding: 3px;
   display: flex;
   flex-direction: column;
+}
+
+.loginBtn {
+  background: #f0fff0;
 }
 
 .nested {
@@ -189,9 +191,17 @@
 }
 
 .spanDange {
-  color: var(--orange) !important;
+  color: #ff8c00 !important;
   margin-bottom: 0.8rem;
   position: fixed;
+}
+
+.clearMenuBg {
+  background: #43484f;
+  border: 1px solid #43484f;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 3;
 }
 
 .invisible {

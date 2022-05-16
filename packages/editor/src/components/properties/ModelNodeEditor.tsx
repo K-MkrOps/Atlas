@@ -2,25 +2,29 @@ import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { AnimationClip, Object3D } from 'three'
 
-import { AssetLoader } from '@xrengine/engine/src/assets/classes/AssetLoader'
-import { AnimationManager } from '@xrengine/engine/src/avatar/AnimationManager'
-import { AnimationComponent } from '@xrengine/engine/src/avatar/components/AnimationComponent'
-import { LoopAnimationComponent } from '@xrengine/engine/src/avatar/components/LoopAnimationComponent'
-import { useEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { getComponent, hasComponent, removeComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { traverseEntityNode } from '@xrengine/engine/src/ecs/functions/EntityTreeFunctions'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
-import { InteractableComponent } from '@xrengine/engine/src/interaction/components/InteractableComponent'
-import { EntityNodeComponent } from '@xrengine/engine/src/scene/components/EntityNodeComponent'
-import { ErrorComponent } from '@xrengine/engine/src/scene/components/ErrorComponent'
-import { ModelComponent } from '@xrengine/engine/src/scene/components/ModelComponent'
-import { NameComponent } from '@xrengine/engine/src/scene/components/NameComponent'
-import { Object3DComponent } from '@xrengine/engine/src/scene/components/Object3DComponent'
+import { AssetLoader } from '@atlasfoundation/engine/src/assets/classes/AssetLoader'
+import { AnimationManager } from '@atlasfoundation/engine/src/avatar/AnimationManager'
+import { AnimationComponent } from '@atlasfoundation/engine/src/avatar/components/AnimationComponent'
+import { LoopAnimationComponent } from '@atlasfoundation/engine/src/avatar/components/LoopAnimationComponent'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import {
+  getComponent,
+  hasComponent,
+  removeComponent
+} from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { traverseEntityNode } from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { InteractableComponent } from '@atlasfoundation/engine/src/interaction/components/InteractableComponent'
+import { EntityNodeComponent } from '@atlasfoundation/engine/src/scene/components/EntityNodeComponent'
+import { ErrorComponent } from '@atlasfoundation/engine/src/scene/components/ErrorComponent'
+import { ModelComponent } from '@atlasfoundation/engine/src/scene/components/ModelComponent'
+import { NameComponent } from '@atlasfoundation/engine/src/scene/components/NameComponent'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
 import {
   deserializeInteractable,
   SCENE_COMPONENT_INTERACTABLE,
   SCENE_COMPONENT_INTERACTABLE_DEFAULT_VALUES
-} from '@xrengine/engine/src/scene/functions/loaders/InteractableFunctions'
+} from '@atlasfoundation/engine/src/scene/functions/loaders/InteractableFunctions'
 
 import ViewInArIcon from '@mui/icons-material/ViewInAr'
 
@@ -38,7 +42,6 @@ import { EditorComponentType, updateProperty } from './Util'
 /**
  * ModelNodeEditor used to create editor view for the properties of ModelNode.
  *
- * @author Robert Long
  * @type {class component}
  */
 export const ModelNodeEditor: EditorComponentType = (props) => {

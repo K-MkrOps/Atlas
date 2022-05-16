@@ -1,10 +1,13 @@
-import { Downgraded } from '@speigg/hookstate'
+import { Downgraded } from '@hoostate/core'
 import classNames from 'classnames'
 import React, { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { MediaStreamService, useMediaStreamState } from '@xrengine/client-core/src/media/services/MediaStreamService'
-import { useLocationState } from '@xrengine/client-core/src/social/services/LocationService'
+import {
+  MediaStreamService,
+  useMediaStreamState
+} from '@atlasfoundation/client-core/src/media/services/MediaStreamService'
+import { useLocationState } from '@atlasfoundation/client-core/src/social/services/LocationService'
 import {
   globalMuteProducer,
   globalUnmuteProducer,
@@ -12,14 +15,14 @@ import {
   pauseProducer,
   resumeConsumer,
   resumeProducer
-} from '@xrengine/client-core/src/transports/SocketWebRTCClientFunctions'
-import { getAvatarURLForUser } from '@xrengine/client-core/src/user/components/UserMenu/util'
-import { useAuthState } from '@xrengine/client-core/src/user/services/AuthService'
-import { useUserState } from '@xrengine/client-core/src/user/services/UserService'
-import { useEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { Network } from '@xrengine/engine/src/networking/classes/Network'
-import { MessageTypes } from '@xrengine/engine/src/networking/enums/MessageTypes'
-import { MediaStreams } from '@xrengine/engine/src/networking/systems/MediaStreamSystem'
+} from '@atlasfoundation/client-core/src/transports/SocketWebRTCClientFunctions'
+import { getAvatarURLForUser } from '@atlasfoundation/client-core/src/user/components/UserMenu/util'
+import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
+import { useUserState } from '@atlasfoundation/client-core/src/user/services/UserService'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineState'
+import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
+import { MessageTypes } from '@atlasfoundation/engine/src/networking/enums/MessageTypes'
+import { MediaStreams } from '@atlasfoundation/engine/src/networking/systems/MediaStreamSystem'
 
 import {
   Launch,
@@ -354,13 +357,9 @@ const PartyParticipantWindow = (props: Props): JSX.Element => {
       else await resumeProducer(mediaTransport, MediaStreams.instance.screenVideoProducer)
       setVideoStreamPaused(videoPaused)
     } else {
-      if (videoStream.paused === false) {
-        await pauseConsumer(mediaTransport, videoStream)
-        setVideoStreamPaused(true)
-      } else {
-        await resumeConsumer(mediaTransport, videoStream)
-        setVideoStreamPaused(false)
-      }
+      if (videoStream.paused === false) await pauseConsumer(mediaTransport, videoStream)
+      else await resumeConsumer(mediaTransport, videoStream)
+      setVideoStreamPaused(videoStream.paused)
     }
   }
 
@@ -378,13 +377,9 @@ const PartyParticipantWindow = (props: Props): JSX.Element => {
       else await resumeProducer(mediaTransport, MediaStreams.instance.screenAudioProducer)
       setAudioStreamPaused(audioPaused)
     } else {
-      if (audioStream.paused === false) {
-        await pauseConsumer(mediaTransport, audioStream)
-        setAudioStreamPaused(true)
-      } else {
-        await resumeConsumer(mediaTransport, audioStream)
-        setAudioStreamPaused(false)
-      }
+      if (audioStream.paused === false) await pauseConsumer(mediaTransport, audioStream)
+      else await resumeConsumer(mediaTransport, audioStream)
+      setAudioStreamPaused(audioStream.paused)
     }
   }
 
@@ -502,7 +497,7 @@ const PartyParticipantWindow = (props: Props): JSX.Element => {
                 </Tooltip>
               }
             </div>
-            {audioProducerGlobalMute && <div className={styles['global-mute']}>Muted by Admin</div>}
+            {audioProducerGlobalMute === true && <div className={styles['global-mute']}>Muted by Admin</div>}
             {audioStream &&
               !audioProducerPaused &&
               !audioProducerGlobalMute &&

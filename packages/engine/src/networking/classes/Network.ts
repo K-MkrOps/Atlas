@@ -1,5 +1,5 @@
-import { UserId } from '@xrengine/common/src/interfaces/UserId'
-import { Action } from '@xrengine/hyperflux/functions/ActionFunctions'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { Action } from '@atlasfoundation/hyperflux/functions/ActionFunctions'
 
 import { RingBuffer } from '../../common/classes/RingBuffer'
 

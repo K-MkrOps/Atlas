@@ -1,27 +1,27 @@
 import { BoxGeometry, Mesh, MeshBasicMaterial, Object3D, SphereGeometry, Vector3 } from 'three'
 
-import { getColorForBodyType } from '@xrengine/engine/src/debug/systems/DebugRenderer'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { World } from '@xrengine/engine/src/ecs/classes/World'
-import { addComponent, getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { createEntity } from '@xrengine/engine/src/ecs/functions/EntityFunctions'
-import { addEntityNodeInTree, createEntityNode } from '@xrengine/engine/src/ecs/functions/EntityTreeFunctions'
-import { NetworkWorldAction } from '@xrengine/engine/src/networking/functions/NetworkWorldAction'
-import { ColliderComponent } from '@xrengine/engine/src/physics/components/ColliderComponent'
-import { CollisionGroups } from '@xrengine/engine/src/physics/enums/CollisionGroups'
-import { ShapeOptions } from '@xrengine/engine/src/physics/functions/createCollider'
-import { teleportRigidbody } from '@xrengine/engine/src/physics/functions/teleportRigidbody'
-import { BodyType, ColliderTypes } from '@xrengine/engine/src/physics/types/PhysicsTypes'
-import { ModelComponent } from '@xrengine/engine/src/scene/components/ModelComponent'
-import { NameComponent } from '@xrengine/engine/src/scene/components/NameComponent'
-import { Object3DComponent } from '@xrengine/engine/src/scene/components/Object3DComponent'
-import { parseGLTFModel } from '@xrengine/engine/src/scene/functions/loadGLTFModel'
-import { ScenePrefabs } from '@xrengine/engine/src/scene/functions/registerPrefabs'
-import { createNewEditorNode } from '@xrengine/engine/src/scene/functions/SceneLoading'
-import { TransformComponent } from '@xrengine/engine/src/transform/components/TransformComponent'
-import { dispatchAction } from '@xrengine/hyperflux'
+import { getColorForBodyType } from '@atlasfoundation/engine/src/debug/systems/DebugRenderer'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import { addComponent, getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { createEntity } from '@atlasfoundation/engine/src/ecs/functions/EntityFunctions'
+import { addEntityNodeInTree, createEntityNode } from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { NetworkWorldAction } from '@atlasfoundation/engine/src/networking/functions/NetworkWorldAction'
+import { ColliderComponent } from '@atlasfoundation/engine/src/physics/components/ColliderComponent'
+import { CollisionGroups } from '@atlasfoundation/engine/src/physics/enums/CollisionGroups'
+import { ShapeOptions } from '@atlasfoundation/engine/src/physics/functions/createCollider'
+import { teleportRigidbody } from '@atlasfoundation/engine/src/physics/functions/teleportRigidbody'
+import { BodyType, ColliderTypes } from '@atlasfoundation/engine/src/physics/types/PhysicsTypes'
+import { ModelComponent } from '@atlasfoundation/engine/src/scene/components/ModelComponent'
+import { NameComponent } from '@atlasfoundation/engine/src/scene/components/NameComponent'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
+import { parseGLTFModel } from '@atlasfoundation/engine/src/scene/functions/loadGLTFModel'
+import { ScenePrefabs } from '@atlasfoundation/engine/src/scene/functions/registerPrefabs'
+import { createNewEditorNode } from '@atlasfoundation/engine/src/scene/functions/SceneLoading'
+import { TransformComponent } from '@atlasfoundation/engine/src/transform/components/TransformComponent'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
-import { getEngineState } from '../../ecs/classes/EngineState'
+import { accessEngineState } from '../../ecs/classes/EngineService'
 
 /**
  * Returns a random number between min (inclusive) and max (exclusive)
@@ -53,7 +53,7 @@ function getUUID() {
 let simulationObjectsGenerated = false
 export default async function PhysicsSimulationTestSystem(world: World) {
   return () => {
-    const isInitialized = getEngineState().isEngineInitialized.value
+    const isInitialized = accessEngineState().isEngineInitialized.value
     if (!isInitialized || !world.physics.physics || simulationObjectsGenerated) return
     simulationObjectsGenerated = true
     generateSimulationData(0)
@@ -136,13 +136,13 @@ export const generatePhysicsObject = (
   const mesh = new Mesh(geometry, material)
   mesh.scale.set(2, 2, 2)
 
-  mesh.userData['xrengine.collider.type'] = config.type
-  mesh.userData['xrengine.collider.bodyType'] = config.bodyType
-  mesh.userData['xrengine.collider.collisionLayer'] = config.collisionLayer
-  mesh.userData['xrengine.collider.collisionMask'] = config.collisionMask
-  mesh.userData['xrengine.collider.staticFriction'] = config.staticFriction
-  mesh.userData['xrengine.collider.dynamicFriction'] = config.dynamicFriction
-  mesh.userData['xrengine.collider.restitution'] = config.restitution
+  mesh.userData['atlas.collider.type'] = config.type
+  mesh.userData['atlas.collider.bodyType'] = config.bodyType
+  mesh.userData['atlas.collider.collisionLayer'] = config.collisionLayer
+  mesh.userData['atlas.collider.collisionMask'] = config.collisionMask
+  mesh.userData['atlas.collider.staticFriction'] = config.staticFriction
+  mesh.userData['atlas.collider.dynamicFriction'] = config.dynamicFriction
+  mesh.userData['atlas.collider.restitution'] = config.restitution
 
   // Add empty model node
   const entity = createEntity()

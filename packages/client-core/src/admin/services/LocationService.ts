@@ -1,8 +1,8 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { Location } from '@xrengine/common/src/interfaces/Location'
-import { LocationType } from '@xrengine/common/src/interfaces/LocationType'
+import { Location } from '@atlasfoundation/common/src/interfaces/Location'
+import { LocationType } from '@atlasfoundation/common/src/interfaces/LocationType'
 
 import { AlertService } from '../../common/services/AlertService'
 import { ErrorAction } from '../../common/services/ErrorService'

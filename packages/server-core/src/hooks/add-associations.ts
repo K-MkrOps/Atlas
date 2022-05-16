@@ -1,6 +1,6 @@
 import { Hook, HookContext } from '@feathersjs/feathers'
 
-import { Application } from '@xrengine/server-core/declarations'
+import { Application } from '@atlasfoundation/server-core/declarations'
 
 import logger from '../logger'
 

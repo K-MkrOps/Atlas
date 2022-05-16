@@ -1,8 +1,8 @@
 import path from 'path'
 
-import { ProjectEventHooks } from '@xrengine/projects/ProjectConfigInterface'
-import { Application } from '@xrengine/server-core/declarations'
-import { installAvatarsFromProject } from '@xrengine/server-core/src/user/avatar/avatar-helper'
+import { ProjectEventHooks } from '@atlasfoundation/projects/ProjectConfigInterface'
+import { Application } from '@atlasfoundation/server-core/declarations'
+import { installAvatarsFromProject } from '@atlasfoundation/server-core/src/user/avatar/avatar-helper'
 
 const avatarsFolder = path.resolve(__dirname, 'public/avatars')
 

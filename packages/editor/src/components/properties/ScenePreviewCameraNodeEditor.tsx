@@ -2,8 +2,8 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Quaternion, Vector3 } from 'three'
 
-import { updateCameraTransform } from '@xrengine/engine/src/scene/functions/loaders/ScenePreviewCameraFunctions'
-import { TransformComponent } from '@xrengine/engine/src/transform/components/TransformComponent'
+import { updateCameraTransform } from '@atlasfoundation/engine/src/scene/functions/loaders/ScenePreviewCameraFunctions'
+import { TransformComponent } from '@atlasfoundation/engine/src/transform/components/TransformComponent'
 
 import CameraAltIcon from '@mui/icons-material/CameraAlt'
 
@@ -15,7 +15,6 @@ import { EditorComponentType } from './Util'
 /**
  * ScenePreviewCameraNodeEditor provides the editor view to customize properties.
  *
- * @author Robert Long
  * @type {Class component}
  */
 export const ScenePreviewCameraNodeEditor: EditorComponentType = (props) => {

@@ -3,7 +3,7 @@
   "$id": "XRE_volumetric.schema.json",
   "title": "XRE_volumetric glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine volumetric components",
+  "description": "serialization extension for Atlas volumetric components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {},
   "extensions": {},

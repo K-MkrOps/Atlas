@@ -3,7 +3,7 @@
   "$id": "XRE_cloud.schema.json",
   "title": "XRE_cloud glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine cloud components",
+  "description": "serialization extension for Atlas cloud components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "texture": {

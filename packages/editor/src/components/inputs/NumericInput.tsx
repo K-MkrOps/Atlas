@@ -4,14 +4,13 @@ import { useRef } from 'react'
 import { useState } from 'react'
 import styled from 'styled-components'
 
-import { clamp } from '@xrengine/engine/src/common/functions/MathLerpFunctions'
+import { clamp } from '@atlasfoundation/engine/src/common/functions/MathLerpFunctions'
 
 import { getStepSize, toPrecision } from '../../functions/utils'
 
 /**
  *
  *
- * @author Robert Long
  * @param value
  * @param precision
  * @returns
@@ -33,7 +32,6 @@ function toPrecisionString(value, precision) {
 }
 
 /**
- * @author Robert Long
  */
 const NumericInputContainer = (styled as any).div`
   position: relative;
@@ -60,7 +58,6 @@ const NumericInputContainer = (styled as any).div`
 `
 
 /**
- * @author Robert Long
  */
 const StyledNumericInput = (styled as any).input`
   color: var(--textColor);
@@ -81,7 +78,6 @@ const StyledNumericInput = (styled as any).input`
 `
 
 /**
- * @author Robert Long
  */
 const NumericInputUnit = (styled as any).div`
   color: var(--textColor);
@@ -112,7 +108,6 @@ interface NumericInputProp {
 }
 
 /**
- * @author Robert Long
  */
 const NumericInput = (props: NumericInputProp) => {
   const [tempValue, setTempValue] = useState<string | null>(null)

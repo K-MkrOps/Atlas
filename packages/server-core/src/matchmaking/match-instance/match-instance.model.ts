@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { MatchInstanceInterface } from '@xrengine/common/src/dbmodels/MatchInstance'
+import { MatchInstanceInterface } from '@atlasfoundation/common/src/dbmodels/MatchInstance'
 
 import { Application } from '../../../declarations'
 

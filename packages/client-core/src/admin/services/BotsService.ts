@@ -1,7 +1,7 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { AdminBot, CreateBotAsAdmin } from '@xrengine/common/src/interfaces/AdminBot'
+import { AdminBot, CreateBotAsAdmin } from '@atlasfoundation/common/src/interfaces/AdminBot'
 
 import { client } from '../../feathers'
 import { useDispatch } from '../../store'

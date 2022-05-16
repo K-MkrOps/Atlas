@@ -1,8 +1,8 @@
 import React, { Suspense, useEffect, useState } from 'react'
 import { Route, Switch, useHistory } from 'react-router-dom'
 
-import { useAuthState } from '@xrengine/client-core/src/user/services/AuthService'
-import { userHasAccess } from '@xrengine/client-core/src/user/userHasAccess'
+import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
+import { userHasAccess } from '@atlasfoundation/client-core/src/user/userHasAccess'
 
 import { EditorPage } from './EditorPage'
 import { ProjectPage } from './ProjectPage'

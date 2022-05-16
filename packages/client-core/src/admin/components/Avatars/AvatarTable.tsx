@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { AvatarInterface } from '@xrengine/common/src/interfaces/AvatarInterface'
+import { AvatarInterface } from '@atlasfoundation/common/src/interfaces/AvatarInterface'
 
 import Drawer from '@mui/material/Drawer'
 

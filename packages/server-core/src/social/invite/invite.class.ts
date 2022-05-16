@@ -1,8 +1,8 @@
 import { Paginated, Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { Invite as InviteType } from '@xrengine/common/src/interfaces/Invite'
-import { UserId } from '@xrengine/common/src/interfaces/UserId'
+import { Invite as InviteType } from '@atlasfoundation/common/src/interfaces/Invite'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 
 import { Application } from '../../../declarations'
 import { UserDataType } from '../../user/user/user.class'
@@ -12,7 +12,6 @@ export type InviteDataType = InviteType & { targetObjectId: UserId; passcode: st
 /**
  * A class for Invite service
  *
- * @author Vyacheslav Solovjov
  */
 export class Invite<T = InviteDataType> extends Service<T> {
   app: Application
@@ -32,7 +31,6 @@ export class Invite<T = InviteDataType> extends Service<T> {
    *
    * @param params of query with type and userId
    * @returns invite data
-   * @author Vyacheslav Solovjov
    */
   async find(params?: Params): Promise<T[] | Paginated<T>> {
     if (params && params.query) {

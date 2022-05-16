@@ -1,5 +1,5 @@
 charts:
-  - name: xrengine
+  - name: atlas
     repo:
-      git: xrengine/xrsocial-ops
-      published: https://helm.xrengine.io
+      git: atlas/xrsocial-ops
+      published: https://helm.atlasfoundation.io

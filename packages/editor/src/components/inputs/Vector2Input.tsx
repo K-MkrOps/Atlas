@@ -19,7 +19,6 @@ interface Vector2InputProp {
 
 /**
  *
- * @author Robert Long
  */
 export const Vector2Input = (props: Vector2InputProp) => {
   const id = uniqueId++

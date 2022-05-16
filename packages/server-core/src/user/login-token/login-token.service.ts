@@ -6,7 +6,7 @@ import hooks from './login-token.hooks'
 import createModel from './login-token.model'
 
 // Add this service to the service type index
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'login-token': LoginToken
   }
@@ -21,7 +21,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new LoginToken(options, app)
   event.docs = loginTokenDocs
@@ -30,7 +29,6 @@ export default (app: Application) => {
   /**
    * Get our initialized service so that we can register hooks
    *
-   * @author Vyacheslav Solovjov
    */
   const service = app.service('login-token')
 

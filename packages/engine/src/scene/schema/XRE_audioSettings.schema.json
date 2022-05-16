@@ -3,7 +3,7 @@
   "$id": "XRE_audioSettings.schema.json",
   "title": "XRE_audioSettings glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine audio settings components",
+  "description": "serialization extension for Atlas audio settings components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "usePositionalAudio": {

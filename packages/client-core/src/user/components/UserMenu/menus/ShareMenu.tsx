@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { isShareAvailable } from '@xrengine/engine/src/common/functions/DetectFeatures'
+import { isShareAvailable } from '@atlasfoundation/engine/src/common/functions/DetectFeatures'
 
 import { FileCopy, Send } from '@mui/icons-material'
 import Button from '@mui/material/Button'
@@ -20,7 +20,7 @@ const ShareMenu = (): JSX.Element => {
   const [email, setEmail] = React.useState('')
   const refLink = useRef() as React.MutableRefObject<HTMLInputElement>
   const postTitle = 'AR/VR world'
-  const siteTitle = 'XREngine'
+  const siteTitle = 'Atlas'
   const inviteState = useInviteState()
   const copyLinkToClipboard = () => {
     navigator.clipboard.writeText(refLink.current.value)
@@ -95,6 +95,7 @@ const ShareMenu = (): JSX.Element => {
         />
         <TextField
           className={styles.emailField}
+          style={{ color: '#fff' }}
           size="small"
           placeholder={t('user:usermenu.share.ph-phoneEmail')}
           variant="outlined"
@@ -102,13 +103,13 @@ const ShareMenu = (): JSX.Element => {
           onChange={(e) => handleChang(e)}
         />
         <div className={styles.sendInviteContainer}>
-          <Button className={styles.sendInvite} onClick={packageInvite}>
+          <Button className={styles.sendInvite} style={{ color: '#fff' }} onClick={packageInvite}>
             {t('user:usermenu.share.lbl-send-invite')}
           </Button>
         </div>
         {isShareAvailable ? (
           <div className={styles.shareBtnContainer}>
-            <Button className={styles.shareBtn} onClick={shareOnApps}>
+            <Button className={styles.shareBtn} style={{ color: '#fff' }} onClick={shareOnApps}>
               {t('user:usermenu.share.lbl-share')}
             </Button>
           </div>

@@ -1,6 +1,6 @@
 import matches from 'ts-matches'
 
-import { addActionReceptor } from '@xrengine/hyperflux'
+import { addActionReceptor } from '@atlasfoundation/hyperflux'
 
 import { Engine } from '../../ecs/classes/Engine'
 import { World } from '../../ecs/classes/World'
@@ -75,10 +75,6 @@ export function equippableQueryExit(entity) {
   removeComponent(equippedEntity, EquippedComponent)
 }
 
-/**
- * @author Josh Field <github.com/HexaField>
- * @author Hamza Mushtaq <github.com/hamzzam>
- */
 export default async function EquippableSystem(world: World) {
   addActionReceptor(world.store, equippableActionReceptor)
 

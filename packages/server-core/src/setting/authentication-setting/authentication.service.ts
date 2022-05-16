@@ -3,7 +3,7 @@ import { Authentication } from './authentication.class'
 import hooks from './authentication.hooks'
 import createModel from './authentication.model'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'authentication-setting': Authentication
   }

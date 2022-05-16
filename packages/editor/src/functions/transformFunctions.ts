@@ -1,7 +1,7 @@
-import { useDispatch } from '@xrengine/client-core/src/store'
-import { hasComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { traverseEntityNode } from '@xrengine/engine/src/ecs/functions/EntityTreeFunctions'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
+import { useDispatch } from '@atlasfoundation/client-core/src/store'
+import { hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { traverseEntityNode } from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
 import {
   SnapMode,
   TransformMode,
@@ -9,8 +9,8 @@ import {
   TransformPivot,
   TransformPivotType,
   TransformSpace
-} from '@xrengine/engine/src/scene/constants/transformConstants'
-import { DisableTransformTagComponent } from '@xrengine/engine/src/transform/components/DisableTransformTagComponent'
+} from '@atlasfoundation/engine/src/scene/constants/transformConstants'
+import { DisableTransformTagComponent } from '@atlasfoundation/engine/src/transform/components/DisableTransformTagComponent'
 
 import { EditorHistory, executeCommand, executeCommandWithHistoryOnSelection, revertHistory } from '../classes/History'
 import EditorCommands from '../constants/EditorCommands'

@@ -1,11 +1,10 @@
 /**
- * @author dforrer / https://github.com/dforrer
  * Developed as part of a project at University of Applied Sciences and Arts Northwestern Switzerland (www.fhnw.ch)
  */
 import { Matrix4 } from 'three'
 
-import { Entity } from '@xrengine/engine/src/ecs/classes/Entity'
-import { EntityTreeNode } from '@xrengine/engine/src/ecs/classes/EntityTree'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
 
 export const IDENTITY_MAT_4 = new Matrix4().identity()
 

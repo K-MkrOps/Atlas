@@ -8,7 +8,7 @@ import hooks from './channel.hooks'
 import createModel from './channel.model'
 
 // Add this service to the service type index
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     channel: Channel
   }
@@ -23,7 +23,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new Channel(options, app)
   event.docs = channelDocs
@@ -39,7 +38,6 @@ export default (app: Application) => {
    *
    * @param data which is parsed to create channel
    * @returns created channel data
-   * @author Vyacheslav Solovjov
    */
   service.publish('created', async (data): Promise<any> => {
     try {
@@ -200,7 +198,6 @@ export default (app: Application) => {
    *
    * @param data which is used to update channel
    * @returns updated channel data
-   * @author Vyacheslav Solovjov
    */
   service.publish('patched', async (data): Promise<any> => {
     try {
@@ -361,7 +358,6 @@ export default (app: Application) => {
    *
    * @param data which contains userId! and userId2
    * @returns deleted channel data
-   * @author Vyacheslav Solovjov
    */
   service.publish('removed', async (data): Promise<any> => {
     let targetIds

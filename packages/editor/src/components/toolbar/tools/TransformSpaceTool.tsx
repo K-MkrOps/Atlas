@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { TransformSpace } from '@xrengine/engine/src/scene/constants/transformConstants'
+import { TransformSpace } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import LanguageIcon from '@mui/icons-material/Language'
 
@@ -12,7 +12,6 @@ import * as styles from '../styles.module.scss'
 
 /**
  *
- * @author Robert Long
  */
 const transformSpaceOptions = [
   { label: 'Selection', value: TransformSpace.LocalSelection },

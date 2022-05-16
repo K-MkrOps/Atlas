@@ -1,8 +1,8 @@
 import { BadRequest, NotFound } from '@feathersjs/errors'
 import { Id, NullableId, Params, ServiceMethods } from '@feathersjs/feathers'
 
-import { getTicketsAssignment } from '@xrengine/matchmaking/src/functions'
-import { OpenMatchTicketAssignment } from '@xrengine/matchmaking/src/interfaces'
+import { getTicketsAssignment } from '@atlasfoundation/matchmaking/src/functions'
+import { OpenMatchTicketAssignment } from '@atlasfoundation/matchmaking/src/interfaces'
 
 import { Application } from '../../../declarations'
 import config from '../../appconfig'
@@ -15,7 +15,6 @@ interface ServiceOptions {}
 /**
  * A class for OpenMatch Tickets service
  *
- * @author Vyacheslav Solovjov
  */
 export class MatchTicketAssignment implements ServiceMethods<Data> {
   app: Application

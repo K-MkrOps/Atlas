@@ -1,6 +1,6 @@
 import { CameraHelper, Matrix4, PerspectiveCamera } from 'three'
 
-import { ComponentJson } from '@xrengine/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import {
   ComponentDeserializeFunction,

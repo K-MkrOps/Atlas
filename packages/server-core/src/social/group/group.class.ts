@@ -2,7 +2,7 @@ import { Paginated, Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import { Op } from 'sequelize'
 
-import { Group as GroupInterface } from '@xrengine/common/src/interfaces/Group'
+import { Group as GroupInterface } from '@atlasfoundation/common/src/interfaces/Group'
 
 import { Application } from '../../../declarations'
 import { UserDataType } from '../../user/user/user.class'
@@ -11,7 +11,6 @@ export type GroupDataType = GroupInterface
 /**
  * A class for Croup service
  *
- * @author Vyacheslav Solovjov
  */
 export class Group<T = GroupDataType> extends Service<T> {
   app: Application
@@ -26,7 +25,6 @@ export class Group<T = GroupDataType> extends Service<T> {
    *
    * @param params of query which contains group limit and number skip
    * @returns {@Object} of group
-   * @author Vyacheslav Solovjov
    */
 
   async find(params?: Params): Promise<Paginated<T>> {

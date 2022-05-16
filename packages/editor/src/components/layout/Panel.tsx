@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 /**
  *
- *  @author Robert Long
  */
 export const PanelIcon = (styled as any).div`
   color: var(--textColor);
@@ -13,7 +12,6 @@ export const PanelIcon = (styled as any).div`
 
 /**
  *
- *  @author Robert Long
  */
 export const PanelTitle = (styled as any).div`
   color: var(--textColor);
@@ -22,7 +20,6 @@ export const PanelTitle = (styled as any).div`
 
 /**
  *
- *  @author Hanzla  Mateen
  */
 export const PanelDragContainer = (styled as any).div`
   display: flex;
@@ -44,7 +41,6 @@ export const PanelDragContainer = (styled as any).div`
 
 /**
  *
- *  @author Robert Long
  */
 export const PanelContainer = (styled as any).div`
   position: relative;
@@ -58,7 +54,6 @@ export const PanelContainer = (styled as any).div`
 `
 /**
  *
- *  @author Robert Long
  */
 export const PanelToolbar = (styled as any).div`
   display: flex;
@@ -70,7 +65,6 @@ export const PanelToolbar = (styled as any).div`
 
 /**
  *
- *  @author Robert Long
  */
 export const PanelContent = (styled as any).div`
   display: flex;
@@ -82,7 +76,6 @@ export const PanelContent = (styled as any).div`
 
 /**
  *
- *  @author Robert Long
  */
 export const Panel = (props) => {
   const { icon, title, children, toolbarContent, ...rest } = props

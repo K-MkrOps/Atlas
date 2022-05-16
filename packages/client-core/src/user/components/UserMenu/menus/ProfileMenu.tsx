@@ -4,7 +4,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
 
-import { validateEmail, validatePhoneNumber } from '@xrengine/common/src/config'
+import { validateEmail, validatePhoneNumber } from '@atlasfoundation/common/src/config'
 
 import { Check, Close, Create, GitHub, Send } from '@mui/icons-material'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
@@ -307,7 +307,7 @@ const ProfileMenu = (props: Props): JSX.Element => {
   }
 
   const goToEthNFT = () => {
-    let token = JSON.stringify(localStorage.getItem('TheOverlay-Auth-Store'))
+    let token = JSON.stringify(localStorage.getItem('Atlas-Auth-Store'))
     if (selfUser.id.value && token)
       window.open(
         `${globalThis.process.env['VITE_ETH_MARKETPLACE']}?data=${selfUser.id.value}&token=${token}`,

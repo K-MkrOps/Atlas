@@ -1,10 +1,10 @@
-import { createState, SetInitialStateAction, State } from '@speigg/hookstate'
+import { createState, SetInitialStateAction, State } from '@hoostate/core'
 import React from 'react'
 import Reconciler from 'react-reconciler'
 
 import { HyperStore, StringLiteral } from './StoreFunctions'
 
-export * from '@speigg/hookstate'
+export * from '@hoostate/core'
 
 type StateDefinition<StoreName extends string, S> = {
   store: StringLiteral<StoreName>

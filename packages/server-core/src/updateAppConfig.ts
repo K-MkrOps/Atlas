@@ -8,7 +8,7 @@ dotenv.config()
 const db = {
   username: process.env.MYSQL_USER ?? 'server',
   password: process.env.MYSQL_PASSWORD ?? 'password',
-  database: process.env.MYSQL_DATABASE ?? 'xrengine',
+  database: process.env.MYSQL_DATABASE ?? 'atlas',
   host: process.env.MYSQL_HOST ?? '127.0.0.1',
   port: process.env.MYSQL_PORT ?? 3306,
   dialect: 'mysql',
@@ -255,35 +255,6 @@ export const updateAppConfig = async (): Promise<void> => {
       logger.error(e, `[updateAppConfig]: Failed to read awsSetting: ${e.message}`)
     })
   promises.push(promisePromise)
-
-  const chargebeeSetting = sequelizeClient.define('chargebeeSetting', {
-    url: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    apiKey: {
-      type: DataTypes.STRING,
-      allowNull: true
-    }
-  })
-  const chargebeeSettingPromise = chargebeeSetting
-    .findAll()
-    .then(([dbChargebee]) => {
-      const dbChargebeeConfig = dbChargebee && {
-        url: dbChargebee.url,
-        apiKey: dbChargebee.apiKey
-      }
-      if (dbChargebeeConfig) {
-        appConfig.chargebee = {
-          ...appConfig.chargebee,
-          ...dbChargebeeConfig
-        }
-      }
-    })
-    .catch((e) => {
-      logger.error(e, `[updateAppConfig]: Failed to read chargebeeSetting: ${e.message}`)
-    })
-  promises.push(chargebeeSettingPromise)
 
   const clientSetting = sequelizeClient.define('clientSetting', {
     logo: {

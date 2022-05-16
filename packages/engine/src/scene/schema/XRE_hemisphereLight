@@ -3,7 +3,7 @@
     "title": "XRE_hemisphereLight glTF extension",
     "$id": "XRE_hemisphereLight.schema.json",
     "type": "object",
-    "description": "serialization extension for XREngine hemisphere light components",
+    "description": "serialization extension for Atlas hemisphere light components",
     "allOf": [{"$ref": "glTFProperty.schema.json"}],
     "properties": {
         "skyColor": {

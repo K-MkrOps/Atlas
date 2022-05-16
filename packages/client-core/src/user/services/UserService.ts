@@ -1,9 +1,9 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, none, useState } from '@speigg/hookstate'
+import { createState, none, useState } from '@hoostate/core'
 
-import { Relationship } from '@xrengine/common/src/interfaces/Relationship'
-import { RelationshipSeed } from '@xrengine/common/src/interfaces/Relationship'
-import { User } from '@xrengine/common/src/interfaces/User'
+import { Relationship } from '@atlasfoundation/common/src/interfaces/Relationship'
+import { RelationshipSeed } from '@atlasfoundation/common/src/interfaces/Relationship'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
 
 import { client } from '../../feathers'
 import { store, useDispatch } from '../../store'

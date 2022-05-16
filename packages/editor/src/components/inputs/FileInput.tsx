@@ -8,7 +8,6 @@ let nextId = 0
 /**
  * Properties for created FileInput class.
  *
- * @author Robert Long
  * @type {Object}
  * @property [String]
  * @property [function]
@@ -22,7 +21,6 @@ type FileInputProps = {
 /**
  * State created for for FileInput class.
  *
- * @author Robert Long
  * @type {Object}
  * @property {string} id
  */
@@ -33,7 +31,6 @@ type FileInputState = {
 /**
  * FileInput used to render the view of component for File input.
  *
- * @author Robert Long
  * @type {Object}
  */
 export const FileInput = (props: FileInputProps) => {

@@ -1,16 +1,16 @@
-import { store } from '@xrengine/client-core/src/store'
-import { SceneJson } from '@xrengine/common/src/interfaces/SceneInterface'
-import { EntityTreeNode } from '@xrengine/engine/src/ecs/classes/EntityTree'
-import { createEntity } from '@xrengine/engine/src/ecs/functions/EntityFunctions'
+import { store } from '@atlasfoundation/client-core/src/store'
+import { SceneJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { createEntity } from '@atlasfoundation/engine/src/ecs/functions/EntityFunctions'
 import {
   addEntityNodeInTree,
   getEntityNodeArrayFromEntities,
   traverseEntityNode
-} from '@xrengine/engine/src/ecs/functions/EntityTreeFunctions'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
-import { ScenePrefabTypes } from '@xrengine/engine/src/scene/functions/registerPrefabs'
-import { reparentObject3D } from '@xrengine/engine/src/scene/functions/ReparentFunction'
-import { createNewEditorNode, loadSceneEntity } from '@xrengine/engine/src/scene/functions/SceneLoading'
+} from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { ScenePrefabTypes } from '@atlasfoundation/engine/src/scene/functions/registerPrefabs'
+import { reparentObject3D } from '@atlasfoundation/engine/src/scene/functions/ReparentFunction'
+import { createNewEditorNode, loadSceneEntity } from '@atlasfoundation/engine/src/scene/functions/SceneLoading'
 
 import { executeCommand } from '../classes/History'
 import EditorCommands from '../constants/EditorCommands'

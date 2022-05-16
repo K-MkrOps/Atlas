@@ -2,15 +2,13 @@ import { HookContext } from '@feathersjs/feathers'
 import dauria from 'dauria'
 import { iff, isProvider } from 'feathers-hooks-common'
 
-import collectAnalytics from '@xrengine/server-core/src/hooks/collect-analytics'
-import replaceThumbnailLink from '@xrengine/server-core/src/hooks/replace-thumbnail-link'
-import attachOwnerIdInQuery from '@xrengine/server-core/src/hooks/set-loggedin-user-in-query'
+import collectAnalytics from '@atlasfoundation/server-core/src/hooks/collect-analytics'
+import replaceThumbnailLink from '@atlasfoundation/server-core/src/hooks/replace-thumbnail-link'
+import attachOwnerIdInQuery from '@atlasfoundation/server-core/src/hooks/set-loggedin-user-in-query'
 
 import authenticate from '../../hooks/authenticate'
 import restrictUserRole from '../../hooks/restrict-user-role'
-import multiLogger from '../../logger'
-
-const logger = multiLogger.child({ component: 'server-core:static-resource' })
+import logger from '../../logger'
 
 export default {
   before: {

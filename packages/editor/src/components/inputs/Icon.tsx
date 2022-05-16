@@ -3,7 +3,6 @@ import React from 'react'
 /**
  * Icon used to render view for icon component.
  *
- * @author Robert Long
  * @param {object} props
  * @constructor
  */

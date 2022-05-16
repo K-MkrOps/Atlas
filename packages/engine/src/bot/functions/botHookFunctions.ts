@@ -1,8 +1,8 @@
 import { MathUtils, Quaternion, Vector3 } from 'three'
 
 import { Engine } from '../../ecs/classes/Engine'
-import { getEngineState } from '../../ecs/classes/EngineState'
-import { getComponent, hasComponent } from '../../ecs/functions/ComponentFunctions'
+import { accessEngineState } from '../../ecs/classes/EngineService'
+import { getComponent } from '../../ecs/functions/ComponentFunctions'
 import { useWorld } from '../../ecs/functions/SystemHooks'
 import { TransformComponent } from '../../transform/components/TransformComponent'
 import { BotHooks, XRBotHooks } from '../enums/BotHooks'
@@ -21,6 +21,7 @@ import {
 } from './xrBotHookFunctions'
 
 export const BotHookFunctions = {
+  [BotHooks.InitializeBot]: initializeBot,
   [BotHooks.LocationLoaded]: locationLoaded,
   [BotHooks.SceneLoaded]: sceneLoaded,
   [BotHooks.GetPlayerPosition]: getPlayerPosition,
@@ -40,18 +41,22 @@ export const BotHookFunctions = {
   [XRBotHooks.TweenXRInputSource]: tweenXRInputSource
 }
 
+export function initializeBot() {
+  Engine.instance.isBot = true
+}
+
 // === ENGINE === //
 
 export function locationLoaded() {
-  return getEngineState().joinedWorld.value
+  return accessEngineState().joinedWorld.value
 }
 
 export function sceneLoaded() {
-  return getEngineState().sceneLoaded.value
+  return accessEngineState().sceneLoaded.value
 }
 
 export function getPlayerPosition() {
-  return getComponent(Engine.instance.currentWorld.localClientEntity, TransformComponent)?.position
+  return getComponent(useWorld().localClientEntity, TransformComponent)?.position
 }
 
 export function getSceneMetadata() {
@@ -68,5 +73,5 @@ export function rotatePlayer({ angle }) {
 }
 
 export function getClients() {
-  return Array.from(useWorld().clients)
+  return useWorld().clients
 }

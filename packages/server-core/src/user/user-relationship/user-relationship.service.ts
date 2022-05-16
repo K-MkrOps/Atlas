@@ -1,6 +1,6 @@
 import { Op } from 'sequelize'
 
-import { UserRelationshipInterface } from '@xrengine/common/src/dbmodels/UserRelationship'
+import { UserRelationshipInterface } from '@atlasfoundation/common/src/dbmodels/UserRelationship'
 
 import { Application } from '../../../declarations'
 import logger from '../../logger'
@@ -9,7 +9,7 @@ import { UserRelationship } from './user-relationship.class'
 import hooks from './user-relationship.hooks'
 import createModel from './user-relationship.model'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'user-relationship': UserRelationship
   }
@@ -25,7 +25,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new UserRelationship(options, app)
   event.docs = userRalationshipDocs

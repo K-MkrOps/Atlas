@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ template "xrengine.director.fullname" . }}
-  namespace: {{ include "xrengine.matchmaking-namespace" . }}
+  name: {{ template "atlas.director.fullname" . }}
+  namespace: {{ include "atlas.matchmaking-namespace" . }}
   labels:
-    {{- include "xrengine.director.labels" . | nindent 4 }}
+    {{- include "atlas.director.labels" . | nindent 4 }}
 data:
 {{- if .Values.director.extraEnv }}
 {{ toYaml .Values.director.extraEnv | indent 2 }}

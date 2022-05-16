@@ -3,7 +3,7 @@ import { Aws } from './aws-setting.class'
 import hooks from './aws-setting.hooks'
 import createModel from './aws-setting.model'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'aws-setting': Aws
   }

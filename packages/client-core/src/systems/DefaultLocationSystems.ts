@@ -1,4 +1,4 @@
-import { SystemModuleType } from '@xrengine/engine/src/ecs/functions/SystemFunctions'
+import { SystemModuleType } from '@atlasfoundation/engine/src/ecs/functions/SystemFunctions'
 
 export const DefaultLocationSystems: SystemModuleType<any>[] = [
   {

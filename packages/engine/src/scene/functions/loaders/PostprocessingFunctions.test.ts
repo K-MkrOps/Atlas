@@ -1,7 +1,7 @@
 import assert from 'assert'
 import proxyquire from 'proxyquire'
 
-import { ComponentJson } from '@xrengine/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { Engine } from '../../../ecs/classes/Engine'
 import { Entity } from '../../../ecs/classes/Entity'
@@ -21,7 +21,7 @@ import { SCENE_COMPONENT_POSTPROCESSING } from './PostprocessingFunctions'
 describe('PostprocessingFunctions', () => {
   let entity: Entity
   let postprocessingFunctions = proxyquire('./PostprocessingFunctions', {
-    '@xrengine/engine/src/common/functions/isClient': { isClient: true },
+    '@atlasfoundation/engine/src/common/functions/isClient': { isClient: true },
     '../../../renderer/functions/configureEffectComposer': { configureEffectComposer: () => {} }
   })
 
@@ -42,7 +42,7 @@ describe('PostprocessingFunctions', () => {
   describe('deserializePostprocessing()', () => {
     it('does not create Postprocessing Component while not on client side', () => {
       const _postprocessingFunctions = proxyquire('./PostprocessingFunctions', {
-        '@xrengine/engine/src/common/functions/isClient': { isClient: false }
+        '@atlasfoundation/engine/src/common/functions/isClient': { isClient: false }
       })
       _postprocessingFunctions.deserializePostprocessing(entity, sceneComponent)
 

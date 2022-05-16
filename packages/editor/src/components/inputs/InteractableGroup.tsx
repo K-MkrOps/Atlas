@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { ImageFileTypes, ModelFileTypes, VideoFileTypes } from '@xrengine/engine/src/assets/constants/fileTypes'
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { InteractableComponent } from '@xrengine/engine/src/interaction/components/InteractableComponent'
-import { ModelComponent } from '@xrengine/engine/src/scene/components/ModelComponent'
+import { ImageFileTypes, ModelFileTypes, VideoFileTypes } from '@atlasfoundation/engine/src/assets/constants/fileTypes'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { InteractableComponent } from '@atlasfoundation/engine/src/interaction/components/InteractableComponent'
+import { ModelComponent } from '@atlasfoundation/engine/src/scene/components/ModelComponent'
 
 import { setPropertyOnSelectionEntities } from '../../classes/History'
 import { ItemTypes } from '../../constants/AssetTypes'
@@ -19,7 +19,6 @@ import StringInput from './StringInput'
 /**
  * Array containing options for InteractableOption.
  *
- * @author Ron Oyama
  * @type {Array}
  */
 const InteractableOption = [

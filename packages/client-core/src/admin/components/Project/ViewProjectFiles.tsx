@@ -4,10 +4,10 @@ import React from 'react'
 import {
   AssetSelectionChangePropsType,
   AssetsPreviewPanel
-} from '@xrengine/editor/src/components/assets/AssetsPreviewPanel'
-import FileBrowserContentPanel from '@xrengine/editor/src/components/assets/FileBrowserContentPanel'
-import { DndWrapper } from '@xrengine/editor/src/components/dnd/DndWrapper'
-import { DockContainer } from '@xrengine/editor/src/components/EditorContainer'
+} from '@atlasfoundation/editor/src/components/assets/AssetsPreviewPanel'
+import FileBrowserContentPanel from '@atlasfoundation/editor/src/components/assets/FileBrowserContentPanel'
+import { DndWrapper } from '@atlasfoundation/editor/src/components/dnd/DndWrapper'
+import { DockContainer } from '@atlasfoundation/editor/src/components/EditorContainer'
 
 import Drawer from '@mui/material/Drawer'
 

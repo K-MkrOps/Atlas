@@ -2,12 +2,15 @@ import { Params } from '@feathersjs/feathers'
 import fs from 'fs'
 import path from 'path'
 
-import { AvatarProps } from '@xrengine/common/src/interfaces/AvatarInterface'
-import { CommonKnownContentTypes } from '@xrengine/common/src/utils/CommonKnownContentTypes'
+import { AvatarProps } from '@atlasfoundation/common/src/interfaces/AvatarInterface'
+import { CommonKnownContentTypes } from '@atlasfoundation/common/src/utils/CommonKnownContentTypes'
 
 import { Application } from '../../../declarations'
 import logger from '../../logger'
+import { useStorageProvider } from '../../media/storageprovider/storageprovider'
 import { addGenericAssetToS3AndStaticResources } from '../../media/upload-media/upload-asset.service'
+
+const provider = useStorageProvider()
 
 export type AvatarUploadArguments = {
   avatar: Buffer

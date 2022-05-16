@@ -1,18 +1,17 @@
 import type { WebLayer3D } from '@etherealjs/web-layer/three'
 import { DoubleSide, Mesh, MeshBasicMaterial, SphereGeometry } from 'three'
 
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { EngineActions } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { World } from '@xrengine/engine/src/ecs/classes/World'
-import { addComponent, getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { matchActionOnce } from '@xrengine/engine/src/networking/functions/matchActionOnce'
-import { PersistTagComponent } from '@xrengine/engine/src/scene/components/PersistTagComponent'
-import { ObjectLayers } from '@xrengine/engine/src/scene/constants/ObjectLayers'
-import { textureLoader } from '@xrengine/engine/src/scene/constants/Util'
-import { setObjectLayers } from '@xrengine/engine/src/scene/functions/setObjectLayers'
-import { XRUIComponent } from '@xrengine/engine/src/xrui/components/XRUIComponent'
-import { createTransitionState } from '@xrengine/engine/src/xrui/functions/createTransitionState'
-import { ObjectFitFunctions } from '@xrengine/engine/src/xrui/functions/ObjectFitFunctions'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { EngineActions } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { matchActionOnce, receiveActionOnce } from '@atlasfoundation/engine/src/networking/functions/matchActionOnce'
+import { ObjectLayers } from '@atlasfoundation/engine/src/scene/constants/ObjectLayers'
+import { textureLoader } from '@atlasfoundation/engine/src/scene/constants/Util'
+import { setObjectLayers } from '@atlasfoundation/engine/src/scene/functions/setObjectLayers'
+import { XRUIComponent } from '@atlasfoundation/engine/src/xrui/components/XRUIComponent'
+import { createTransitionState } from '@atlasfoundation/engine/src/xrui/functions/createTransitionState'
+import { ObjectFitFunctions } from '@atlasfoundation/engine/src/xrui/functions/ObjectFitFunctions'
 
 import { accessSceneState } from '../world/services/SceneService'
 import { LoadingSystemState } from './state/LoadingState'
@@ -37,11 +36,9 @@ export default async function XRUILoadingSystem(world: World) {
     thumbnailUrl ? textureLoader.loadAsync(thumbnailUrl) : undefined
   ])
 
-  addComponent(ui.entity, PersistTagComponent, {})
-
   const mesh = new Mesh(
-    new SphereGeometry(10),
-    new MeshBasicMaterial({ side: DoubleSide, map: texture, transparent: true, depthWrite: true, depthTest: false })
+    new SphereGeometry(0.3),
+    new MeshBasicMaterial({ side: DoubleSide, map: texture, transparent: true })
   )
   // flip inside out
   mesh.scale.set(-1, 1, 1)

@@ -30,11 +30,11 @@ Projects have a few conventions.
 
 - `sceneName.thumbnail.png` is an auto-generated scene thumbnail file
 
-- `xrengine.config.ts` the project configuration, where client routes, database 
+- `atlas.config.ts` the project configuration, where client routes, database 
   models, feathers services and the project thumbnail can be defined
 
 A project can also have a package.json to provide custom dependencies.
-`@xrengine/*` monorepo dependencies will be symlinked and not needed, but some
+`@atlasfoundation/*` monorepo dependencies will be symlinked and not needed, but some
 package managers (such as pnpm) require these to be defined. If so, they should
 be defined in `peerDependencies`.
 
@@ -50,7 +50,7 @@ cd myrepo
 code .
 ```
 
-This will create a folder name `myrepo` which must contain an `xrengine.config.ts`
+This will create a folder name `myrepo` which must contain an `atlas.config.ts`
 file, and open the project in a new vscode window (such that git commands can be 
 handled by the new window). All you need to do now to run this project is re-run
 the stack (with `npm run dev`).
@@ -81,7 +81,7 @@ uncommitted & unpushed files will be lost.
 
 ## Config
 
-The xrengine config file has the following options:
+The atlas config file has the following options:
 
 ```ts
 export interface ProjectConfigInterface {
@@ -118,7 +118,7 @@ export interface ProjectEventHooks {
 
 These functions are called when the project they belong to are installed, 
 updated (such as scenes saved) or uninstalled respectively. This is used in the 
-default xrengine project to install the default avatars. 
+default atlas project to install the default avatars. 
 See `/packages/projects/default-project/projectEventHooks.ts`.
 
 ### Thumbnail
@@ -158,4 +158,4 @@ The `databaseSeed` property is a relative path that points to a file which must
 return type `ServicesSeedConfig` from `../packages/common/src/interfaces/ServicesSeedConfig.ts`
 which is run when the database seeder is run. This can be useful for setting 
 custom locations, which can be seen in the 
-[xrengine demo project](https://github.com/XRFoundation/demo-xrengine-project).
+[atlas demo project](https://github.com/AtlasFoundation/demo-atlas-project).

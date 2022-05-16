@@ -3,7 +3,7 @@
   "$id": "XRE_media.schema.json",
   "title": "XRE_media glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine media components",
+  "description": "serialization extension for Atlas media components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "controls": { "type": "boolean" },

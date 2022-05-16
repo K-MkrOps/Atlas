@@ -1,8 +1,11 @@
-import { store } from '@xrengine/client-core/src/store'
-import { EntityTreeNode } from '@xrengine/engine/src/ecs/classes/EntityTree'
-import { cloneEntityNode, getEntityNodeArrayFromEntities } from '@xrengine/engine/src/ecs/functions/EntityTreeFunctions'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
-import { serializeWorld } from '@xrengine/engine/src/scene/functions/serializeWorld'
+import { store } from '@atlasfoundation/client-core/src/store'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import {
+  cloneEntityNode,
+  getEntityNodeArrayFromEntities
+} from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { serializeWorld } from '@atlasfoundation/engine/src/scene/functions/serializeWorld'
 
 import { executeCommand } from '../classes/History'
 import EditorCommands from '../constants/EditorCommands'

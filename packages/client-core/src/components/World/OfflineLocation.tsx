@@ -1,18 +1,18 @@
 import React from 'react'
 
-import { useAuthState } from '@xrengine/client-core/src/user/services/AuthService'
-import { UserId } from '@xrengine/common/src/interfaces/UserId'
-import { SpawnPoints } from '@xrengine/engine/src/avatar/AvatarSpawnSystem'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { getEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { receiveJoinWorld } from '@xrengine/engine/src/networking/functions/receiveJoinWorld'
-import { useHookEffect, useState } from '@xrengine/hyperflux'
+import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { SpawnPoints } from '@atlasfoundation/engine/src/avatar/AvatarSpawnSystem'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { receiveJoinWorld } from '@atlasfoundation/engine/src/networking/functions/receiveJoinWorld'
+import { useHookEffect } from '@atlasfoundation/hyperflux'
 
 import { client } from '../../feathers'
 import GameServerWarnings from './GameServerWarnings'
 
 export const OfflineLocation = () => {
-  const engineState = useState(getEngineState())
+  const engineState = useEngineState()
   const authState = useAuthState()
 
   /** OFFLINE */
@@ -38,8 +38,8 @@ export const OfflineLocation = () => {
 
       const avatarSpawnPose = SpawnPoints.instance.getRandomSpawnPoint()
       receiveJoinWorld({
-        highResTimeOrigin: performance.timeOrigin,
-        worldStartTime: performance.now(),
+        elapsedTime: 0,
+        clockTime: Date.now(),
         client: {
           index: 1,
           name: authState.user.name.value

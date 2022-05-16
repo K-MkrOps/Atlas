@@ -1,6 +1,6 @@
 # IPFS
 
-IPFS charts for [XREngine](https://xrfoundation.io/).
+IPFS charts for [Atlas](https://atlasfoundation.io/).
 
 ## Installing the Chart
 

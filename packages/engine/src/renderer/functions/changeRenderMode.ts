@@ -1,9 +1,8 @@
 import { RenderPass } from 'postprocessing'
 import { Light, MeshBasicMaterial, MeshNormalMaterial } from 'three'
 
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
 
-import { updateShadowMap } from '../../scene/functions/loaders/RenderSettingsFunction'
 import { RenderModes, RenderModesType } from '../constants/RenderModes'
 import { accessEngineRendererState } from '../EngineRendererState'
 import { EngineRenderer } from '../WebGLRendererSystem'
@@ -45,20 +44,24 @@ export function changeRenderMode(mode: RenderModesType): void {
       renderPass.overrideMaterial = null!
       break
     case RenderModes.LIT:
+      EngineRenderer.instance.renderer.shadowMap.enabled = false
       renderPass.overrideMaterial = null!
       break
     case RenderModes.SHADOW:
+      EngineRenderer.instance.renderer.shadowMap.enabled = true
       renderPass.overrideMaterial = null!
       break
     case RenderModes.WIREFRAME:
+      EngineRenderer.instance.renderer.shadowMap.enabled = false
       renderPass.overrideMaterial = new MeshBasicMaterial({
         wireframe: true
       })
       break
     case RenderModes.NORMALS:
+      EngineRenderer.instance.renderer.shadowMap.enabled = false
       renderPass.overrideMaterial = new MeshNormalMaterial()
       break
   }
 
-  updateShadowMap(mode === RenderModes.SHADOW)
+  EngineRenderer.instance.renderer.shadowMap.needsUpdate = true
 }

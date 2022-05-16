@@ -1,13 +1,11 @@
 import { Sequelize } from 'sequelize'
 
-import { isDev } from '@xrengine/common/src/utils/isDev'
-import config from '@xrengine/server-core/src/appconfig'
+import { isDev } from '@atlasfoundation/common/src/utils/isDev'
+import config from '@atlasfoundation/server-core/src/appconfig'
 
 import { Application } from '../declarations'
-import multiLogger from './logger'
+import logger from './logger'
 import { seeder } from './seeder'
-
-const logger = multiLogger.child({ component: 'server-core:sequelize' })
 
 export default (app: Application): void => {
   try {
@@ -37,7 +35,7 @@ export default (app: Application): void => {
         await sequelize.query('SET FOREIGN_KEY_CHECKS = 0')
 
         const tableCount = await sequelize.query(
-          `select table_schema as xrengine,count(*) as tables from information_schema.tables where table_type = \'BASE TABLE\' and table_schema not in (\'information_schema\', \'sys\', \'performance_schema\', \'mysql\') group by table_schema order by table_schema;`
+          `select table_schema as atlas,count(*) as tables from information_schema.tables where table_type = \'BASE TABLE\' and table_schema not in (\'information_schema\', \'sys\', \'performance_schema\', \'mysql\') group by table_schema order by table_schema;`
         )
         const prepareDb = process.env.PREPARE_DATABASE === 'true' || (isDev && tableCount[0] && !tableCount[0][0])
         // Sync to the database

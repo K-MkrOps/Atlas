@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { EngineRenderer } from '@xrengine/engine/src/renderer/WebGLRendererSystem'
-import { DirectionalLightComponent } from '@xrengine/engine/src/scene/components/DirectionalLightComponent'
-import { Object3DComponent } from '@xrengine/engine/src/scene/components/Object3DComponent'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { EngineRenderer } from '@atlasfoundation/engine/src/renderer/WebGLRendererSystem'
+import { DirectionalLightComponent } from '@atlasfoundation/engine/src/scene/components/DirectionalLightComponent'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
 
 import BoltIcon from '@mui/icons-material/Bolt'
 
@@ -21,7 +21,6 @@ import { EditorComponentType, updateProperty } from './Util'
 /**
  * DirectionalLightNodeEditor is used provides  properties to customize DirectionaLight element.
  *
- *  @author Robert Long
  *  @type {Component class}
  */
 export const DirectionalLightNodeEditor: EditorComponentType = (props) => {

@@ -1,8 +1,8 @@
-# Default values for xrengine.
+# Default values for atlas.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-domain: xrengine.dev
+domain: atlas.dev
 
 bot:
   enabled: true
@@ -10,7 +10,7 @@ bot:
 
   replicaCount: 1
   image:
-    repository: lagunalabs/xrengine-bot
+    repository: lagunalabs/atlas-bot
     tag: latest
     pullPolicy: IfNotPresent
 

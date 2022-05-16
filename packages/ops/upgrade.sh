@@ -4,4 +4,4 @@ RELEASE=$1
 
 helm repo update
 
-helm upgrade --install $RELEASE xrengine/xrengine --values values/$RELEASE.values.yaml
+helm upgrade --install $RELEASE atlas/atlas --values values/$RELEASE.values.yaml

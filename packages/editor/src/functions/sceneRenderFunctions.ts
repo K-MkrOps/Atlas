@@ -1,22 +1,25 @@
 import { Group, Object3D, Scene, Vector3, WebGLInfo } from 'three'
 
-import { store } from '@xrengine/client-core/src/store'
-import { SceneJson } from '@xrengine/common/src/interfaces/SceneInterface'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { Entity } from '@xrengine/engine/src/ecs/classes/Entity'
-import { removeEntity } from '@xrengine/engine/src/ecs/functions/EntityFunctions'
-import { emptyEntityTree } from '@xrengine/engine/src/ecs/functions/EntityTreeFunctions'
+import { store } from '@atlasfoundation/client-core/src/store'
+import { SceneJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { initializeCameraComponent } from '@atlasfoundation/engine/src/camera/systems/CameraSystem'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { addComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { removeEntity } from '@atlasfoundation/engine/src/ecs/functions/EntityFunctions'
+import { emptyEntityTree } from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
 import {
   accessEngineRendererState,
   EngineRendererAction,
   restoreEngineRendererData
-} from '@xrengine/engine/src/renderer/EngineRendererState'
-import { EngineRenderer } from '@xrengine/engine/src/renderer/WebGLRendererSystem'
-import InfiniteGridHelper from '@xrengine/engine/src/scene/classes/InfiniteGridHelper'
-import TransformGizmo from '@xrengine/engine/src/scene/classes/TransformGizmo'
-import { ObjectLayers } from '@xrengine/engine/src/scene/constants/ObjectLayers'
-import { loadSceneFromJSON } from '@xrengine/engine/src/scene/functions/SceneLoading'
-import { dispatchAction } from '@xrengine/hyperflux'
+} from '@atlasfoundation/engine/src/renderer/EngineRendererState'
+import { configureEffectComposer } from '@atlasfoundation/engine/src/renderer/functions/configureEffectComposer'
+import { EngineRenderer } from '@atlasfoundation/engine/src/renderer/WebGLRendererSystem'
+import InfiniteGridHelper from '@atlasfoundation/engine/src/scene/classes/InfiniteGridHelper'
+import TransformGizmo from '@atlasfoundation/engine/src/scene/classes/TransformGizmo'
+import { ObjectLayers } from '@atlasfoundation/engine/src/scene/constants/ObjectLayers'
+import { loadSceneFromJSON } from '@atlasfoundation/engine/src/scene/functions/SceneLoading'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { ActionSets, EditorMapping } from '../controls/input-mappings'
 import { initInputEvents } from '../controls/InputEvents'
@@ -53,12 +56,13 @@ export const SceneState: SceneStateType = {
 }
 
 export async function initializeScene(projectFile: SceneJson): Promise<Error[] | void> {
+  EngineRenderer.instance.disableUpdate = true
   SceneState.isInitialized = false
 
   if (!Engine.instance.currentWorld.scene) Engine.instance.currentWorld.scene = new Scene()
 
   // getting scene data
-  await loadSceneFromJSON(projectFile, [])
+  await loadSceneFromJSON(projectFile)
 
   Engine.instance.currentWorld.camera.position.set(0, 5, 10)
   Engine.instance.currentWorld.camera.lookAt(new Vector3())
@@ -89,7 +93,6 @@ export async function initializeScene(projectFile: SceneJson): Promise<Error[] |
 /**
  * Function initializeRenderer used to render canvas.
  *
- * @author Robert Long
  * @param  {any} canvas [ contains canvas data ]
  */
 export async function initializeRenderer(): Promise<void> {
@@ -98,7 +101,10 @@ export async function initializeRenderer(): Promise<void> {
 
     addInputActionMapping(ActionSets.EDITOR, EditorMapping)
 
+    configureEffectComposer()
+
     store.dispatch(EditorAction.rendererInitialized(true))
+    EngineRenderer.instance.disableUpdate = false
 
     accessEngineRendererState().automatic.set(false)
     await restoreEditorHelperData()
@@ -152,7 +158,6 @@ function removeUnusedObjects(object3d: Object3D) {
 /**
  * Function exportScene used to export scene.
  *
- * @author Robert Long
  * @param  {any}  signal       [show the Network status]
  * @param  {Object}  [options={}]
  * @return {Promise}              [scene data as object]

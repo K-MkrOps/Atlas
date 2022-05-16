@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 /**
- * @author Abhishek Pathak
  */
 const AudioPreview = styled.audio`
   display: block;
@@ -13,7 +12,6 @@ const AudioPreview = styled.audio`
 `
 
 /**
- * @author Abhishek Pathak <abhi.pathak401@gmail.com>
  * @param props
  * @returns
  */

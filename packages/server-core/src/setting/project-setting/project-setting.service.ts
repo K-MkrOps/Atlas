@@ -2,7 +2,7 @@ import { Application } from '../../../declarations'
 import { ProjectSetting } from './project-setting.class'
 import hooks from './project-setting.hooks'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'project-setting': ProjectSetting
   }

@@ -1,6 +1,6 @@
 import { Color, DoubleSide, Mesh, Plane, PlaneBufferGeometry, ShaderMaterial, Vector3 } from 'three'
 
-import { dispatchAction } from '@xrengine/hyperflux'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { Engine } from '../../ecs/classes/Engine'
 import { EngineRendererAction } from '../../renderer/EngineRendererState'

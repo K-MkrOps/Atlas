@@ -1,21 +1,19 @@
-import { pipe } from '@xrengine/common/src/utils/pipe'
-import { Application } from '@xrengine/server-core/declarations'
-import config from '@xrengine/server-core/src/appconfig'
+import { pipe } from '@atlasfoundation/common/src/utils/pipe'
+import { Application } from '@atlasfoundation/server-core/declarations'
+import config from '@atlasfoundation/server-core/src/appconfig'
 import {
   configureK8s,
   configureOpenAPI,
   configureRedis,
   configureSocketIO,
   createFeathersExpressApp
-} from '@xrengine/server-core/src/createApp'
-import multiLogger from '@xrengine/server-core/src/logger'
+} from '@atlasfoundation/server-core/src/createApp'
+import logger from '@atlasfoundation/server-core/src/logger'
 
 import collectAnalytics from './collect-analytics'
 
-const logger = multiLogger.child({ component: 'analytics' })
-
 process.on('unhandledRejection', (error, promise) => {
-  logger.error(error, 'UNHANDLED REJECTION - Promise: %o', promise)
+  console.error('UNHANDLED REJECTION - Promise: ', promise, ', Error: ', error, ').')
 })
 
 const analyticsServerPipe = pipe(configureSocketIO())
@@ -27,17 +25,14 @@ export const start = async (): Promise<Application> => {
   app.set('port', config.server.port)
 
   collectAnalytics(app)
-  logger.info('Analytics server running.')
+  console.log('Analytics server running')
 
   const port = config.analytics.port || 5050
 
   await app.listen(port)
 
-  logger.info('Started listening on ' + port)
-
-  process.on('unhandledRejection', (error, promise) => {
-    logger.error(error, 'UNHANDLED REJECTION - Promise: %o', promise)
-  })
+  console.log('Started listening on', port)
+  process.on('unhandledRejection', (reason, p) => logger.error('Unhandled Rejection at: Promise ', p, reason))
 
   return app
 }

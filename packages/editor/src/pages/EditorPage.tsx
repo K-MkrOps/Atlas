@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { RouteComponentProps } from 'react-router-dom'
 
-import { useProjectState } from '@xrengine/client-core/src/common/services/ProjectService'
-import { useDispatch } from '@xrengine/client-core/src/store'
-import { useAuthState } from '@xrengine/client-core/src/user/services/AuthService'
-import { UserId } from '@xrengine/common/src/interfaces/UserId'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { initSystems } from '@xrengine/engine/src/ecs/functions/SystemFunctions'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
-import { SystemUpdateType } from '@xrengine/engine/src/ecs/functions/SystemUpdateType'
-import { initializeCoreSystems, initializeSceneSystems } from '@xrengine/engine/src/initializeEngine'
-import { loadEngineInjection } from '@xrengine/projects/loadEngineInjection'
+import { useProjectState } from '@atlasfoundation/client-core/src/common/services/ProjectService'
+import { useDispatch } from '@atlasfoundation/client-core/src/store'
+import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { SystemUpdateType } from '@atlasfoundation/engine/src/ecs/functions/SystemUpdateType'
+import { initializeCoreSystems, initializeSceneSystems } from '@atlasfoundation/engine/src/initializeEngine'
+import { loadEngineInjection } from '@atlasfoundation/projects/loadEngineInjection'
 
 import EditorContainer from '../components/EditorContainer'
 import { EditorAction, useEditorState } from '../services/EditorServices'
+
+const engineRendererCanvasId = 'engine-renderer-canvas'
 
 export const EditorPage = (props: RouteComponentProps<{ sceneName: string; projectName: string }>) => {
   const editorState = useEditorState()
@@ -25,6 +26,19 @@ export const EditorPage = (props: RouteComponentProps<{ sceneName: string; proje
   const [clientInitialized, setClientInitialized] = useState(false)
   const [engineReady, setEngineReady] = useState(false)
   const [isAuthenticated, setAuthenticated] = useState(false)
+
+  const canvasStyle = {
+    zIndex: -1,
+    width: '100%',
+    height: '100%',
+    position: 'fixed',
+    WebkitUserSelect: 'none',
+    pointerEvents: 'auto',
+    userSelect: 'none',
+    visibility: editorState.projectName.value ? 'visible' : 'hidden'
+  } as React.CSSProperties
+
+  const canvas = <canvas id={engineRendererCanvasId} style={canvasStyle} />
 
   const systems = [
     {
@@ -83,15 +97,19 @@ export const EditorPage = (props: RouteComponentProps<{ sceneName: string; proje
     if (clientInitialized || projectState.projects.value.length <= 0) return
     setClientInitialized(true)
     Engine.instance.isEditor = true
-    const world = Engine.instance.currentWorld
-    initializeCoreSystems().then(async () => {
-      initSystems(world, systems)
+    initializeCoreSystems(systems).then(async () => {
       await initializeSceneSystems()
       const projects = projectState.projects.value.map((project) => project.name)
+      const world = useWorld()
       await loadEngineInjection(world, projects)
       setEngineReady(true)
     })
   }, [projectState.projects.value])
 
-  return <>{engineReady && editorState.projectName.value && isAuthenticated && <EditorContainer />}</>
+  return (
+    <>
+      {canvas}
+      {engineReady && editorState.projectName.value && isAuthenticated && <EditorContainer />}
+    </>
+  )
 }

@@ -1,9 +1,9 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, none, useState } from '@speigg/hookstate'
+import { createState, none, useState } from '@hoostate/core'
 import _ from 'lodash'
 
-import { User } from '@xrengine/common/src/interfaces/User'
-import { UserRelationship } from '@xrengine/common/src/interfaces/UserRelationship'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
+import { UserRelationship } from '@atlasfoundation/common/src/interfaces/UserRelationship'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'

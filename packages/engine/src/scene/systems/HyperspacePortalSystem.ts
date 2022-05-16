@@ -6,7 +6,7 @@ import { createAvatarController } from '../../avatar/functions/createAvatar'
 import { switchCameraMode } from '../../avatar/functions/switchCameraMode'
 import { CameraMode } from '../../camera/types/CameraMode'
 import { Engine } from '../../ecs/classes/Engine'
-import { EngineActions } from '../../ecs/classes/EngineState'
+import { EngineActions } from '../../ecs/classes/EngineService'
 import { World } from '../../ecs/classes/World'
 import { addComponent, defineQuery, getComponent, removeComponent } from '../../ecs/functions/ComponentFunctions'
 import { LocalInputTagComponent } from '../../input/components/LocalInputTagComponent'
@@ -30,7 +30,7 @@ export default async function HyperspacePortalSystem(world: World) {
   light.layers.enable(ObjectLayers.Portal)
 
   return () => {
-    const { deltaSeconds: delta } = world
+    const { delta } = world
 
     const playerObj = getComponent(world.localClientEntity, Object3DComponent)
 

@@ -1,5 +1,5 @@
-Thank you for installing IPFS by XRFoundation
+Thank you for installing IPFS by Atlas Foundation
 
 We would love to hear your feedback:
-- contact us on https://xrfoundation.io/
+- contact us on https://atlasfoundation.io/
 - join our Discord on https://discord.gg/xrf

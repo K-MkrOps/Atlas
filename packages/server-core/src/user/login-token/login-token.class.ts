@@ -2,7 +2,7 @@ import crypto from 'crypto'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import moment from 'moment'
 
-import { LoginTokenInterface } from '@xrengine/common/src/dbmodels/LoginToken'
+import { LoginTokenInterface } from '@atlasfoundation/common/src/dbmodels/LoginToken'
 
 import { Application } from '../../../declarations'
 import config from '../../appconfig'
@@ -11,7 +11,6 @@ export type LoginTokenDataType = LoginTokenInterface & { identityProviderId: str
 /**
  * A class for Login Token service
  *
- * @author Vyacheslav Solovjov
  */
 
 export class LoginToken<T = LoginTokenDataType> extends Service<T> {
@@ -27,7 +26,6 @@ export class LoginToken<T = LoginTokenDataType> extends Service<T> {
    *
    * @param data with identityProviderId in it
    * @returns {@Object} contains token
-   * @author Vyacheslav Solovjov
    */
   async create(data: any): Promise<T> {
     const { identityProviderId } = data

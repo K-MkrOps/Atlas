@@ -1,4 +1,4 @@
-import { AssetUploadType } from '@xrengine/common/src/interfaces/UploadAssetInterface'
+import { AssetUploadType } from '@atlasfoundation/common/src/interfaces/UploadAssetInterface'
 
 import { client } from '../../feathers'
 import { useDispatch } from '../../store'

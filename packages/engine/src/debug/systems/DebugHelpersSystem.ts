@@ -12,7 +12,7 @@ import {
   Vector3
 } from 'three'
 
-import { addActionReceptor } from '@xrengine/hyperflux'
+import { addActionReceptor } from '@atlasfoundation/hyperflux'
 
 import { AvatarComponent } from '../../avatar/components/AvatarComponent'
 import { Engine } from '../../ecs/classes/Engine'
@@ -28,7 +28,6 @@ import { ColliderComponent } from '../../physics/components/ColliderComponent'
 import { ObstaclesComponent } from '../../physics/components/ObstaclesComponent'
 import { VelocityComponent } from '../../physics/components/VelocityComponent'
 import { accessEngineRendererState, EngineRendererActionType } from '../../renderer/EngineRendererState'
-import InfiniteGridHelper from '../../scene/classes/InfiniteGridHelper'
 import { TransformComponent } from '../../transform/components/TransformComponent'
 import { XRInputSourceComponent } from '../../xr/components/XRInputSourceComponent'
 import { DebugArrowComponent } from '../DebugArrowComponent'

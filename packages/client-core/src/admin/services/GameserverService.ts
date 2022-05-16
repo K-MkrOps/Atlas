@@ -1,6 +1,6 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { GameServerPatch } from '@xrengine/common/src/interfaces/Instance'
+import { GameServerPatch } from '@atlasfoundation/common/src/interfaces/Instance'
 
 import { client } from '../../feathers'
 import { useDispatch } from '../../store'

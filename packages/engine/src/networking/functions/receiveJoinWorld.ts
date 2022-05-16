@@ -1,18 +1,17 @@
 // spawnPose is temporary - just so portals work for now - will be removed in favor of gameserver-gameserver communication
 import { Quaternion, Vector3 } from 'three'
 
-import { dispatchAction } from '@xrengine/hyperflux'
-import { Action } from '@xrengine/hyperflux/functions/ActionFunctions'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
+import { Action } from '@atlasfoundation/hyperflux/functions/ActionFunctions'
 
-import { performance } from '../../common/functions/performance'
 import { Engine } from '../../ecs/classes/Engine'
-import { EngineActions, getEngineState } from '../../ecs/classes/EngineState'
+import { accessEngineState, EngineActions } from '../../ecs/classes/EngineService'
 import { AvatarProps } from '../interfaces/WorldState'
 import { NetworkWorldAction } from './NetworkWorldAction'
 
 export type JoinWorldProps = {
-  highResTimeOrigin: number
-  worldStartTime: number
+  elapsedTime: number
+  clockTime: number
   client: { name: string; index: number }
   cachedActions: Required<Action<any>>[]
   avatarDetail: AvatarProps
@@ -24,11 +23,11 @@ export const receiveJoinWorld = (props: JoinWorldProps) => {
     dispatchAction(Engine.instance.store, EngineActions.connectToWorldTimeout({ instance: true }))
     return
   }
-  const { highResTimeOrigin, worldStartTime, client, cachedActions, avatarDetail, avatarSpawnPose } = props
+  const { elapsedTime, clockTime, client, cachedActions, avatarDetail, avatarSpawnPose } = props
   console.log(
     'RECEIVED JOIN WORLD RESPONSE',
-    highResTimeOrigin,
-    worldStartTime,
+    elapsedTime,
+    clockTime,
     client,
     cachedActions,
     avatarDetail,
@@ -37,9 +36,11 @@ export const receiveJoinWorld = (props: JoinWorldProps) => {
   dispatchAction(Engine.instance.store, EngineActions.joinedWorld())
   const world = Engine.instance.currentWorld
 
-  world.startTime = highResTimeOrigin - performance.timeOrigin + worldStartTime
+  world.elapsedTime = elapsedTime + (Date.now() - clockTime) / 1000
+  world.fixedTick = Math.floor(world.elapsedTime / world.fixedDelta)
+  world.fixedElapsedTime = world.fixedTick * world.fixedDelta
 
-  const engineState = getEngineState()
+  const engineState = accessEngineState()
 
   const spawnPose = engineState.isTeleporting.value
     ? {

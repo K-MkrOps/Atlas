@@ -1,4 +1,4 @@
-import { createMappedComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
+import { createMappedComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 
 import { ActionKey, ActionSets, ActionState, InputActionMapping } from '../controls/input-mappings'
 

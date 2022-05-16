@@ -5,7 +5,7 @@ import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator'
 import { useHistory } from 'react-router-dom'
 import { Dropdown } from 'semantic-ui-react'
 
-import { User } from '@xrengine/common/src/interfaces/User'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
 
 import MuiAlert, { AlertProps } from '@mui/material/Alert'
 import Button from '@mui/material/Button'
@@ -198,7 +198,7 @@ const InviteModal = (props: Props) => {
               [styles.modaContent]: true
             })}
           >
-            <Typography variant="h5" align="center" className="mt-4 mb-4" component="h4">
+            <Typography variant="h5" align="center" className="mt-4 mb-4" component="h4" style={{ color: '#fff' }}>
               {t('admin:components.invite.sendInvite')}
             </Typography>
             <Dropdown
@@ -275,6 +275,7 @@ const InviteModal = (props: Props) => {
               </Grid>
 
               <TextValidator
+                style={{ color: '#fff' }}
                 variant="outlined"
                 margin="normal"
                 fullWidth
@@ -289,6 +290,7 @@ const InviteModal = (props: Props) => {
                 onChange={(e) => setToken(e.target.value)}
               />
               <FormGroup row className={styles.locationModalButtons}>
+                {' '}
                 <Button type="submit" variant="contained" className={styles.submitButton}>
                   {t('admin:components.invite.sendInvitation')}
                 </Button>
@@ -337,6 +339,7 @@ const InviteModal = (props: Props) => {
     //       className={styles.input}
     //       name="passcode"
     //       placeholder="Enter valid Passcode or None"
+    //       style={{ color: '#fff' }}
     //       autoComplete="off"
     //       value={passcode}
     //       onChange={(e) => setPasscode(e.target.value)}
@@ -405,6 +408,7 @@ const InviteModal = (props: Props) => {
     //       className={styles.input}
     //       name="token"
     //       placeholder="Please enter US phone number or E-mail"
+    //       style={{ color: '#fff' }}
     //       autoComplete="off"
     //       value={token}
     //       onChange={(e) => setToken(e.target.value)}

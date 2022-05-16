@@ -18,8 +18,6 @@ export const ContextMenuTrigger = _ContextMenuTrigger
 
 /**
  *
- * @author Robert Long
- * @author Abhishek Pathak
  */
 export const ContextMenuStyles = createGlobalStyle<any>`
   .react-contextmenu {
@@ -98,7 +96,6 @@ export const ContextMenuStyles = createGlobalStyle<any>`
 
 /**
  *
- * @author Robert Long
  * @param {ReactNode} children
  * @param {string} id
  * @param {any} rest

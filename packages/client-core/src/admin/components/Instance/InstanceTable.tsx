@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Instance } from '@xrengine/common/src/interfaces/Instance'
-import { Location } from '@xrengine/common/src/interfaces/Location'
+import { Instance } from '@atlasfoundation/common/src/interfaces/Instance'
+import { Location } from '@atlasfoundation/common/src/interfaces/Location'
 
 import { useAuthState } from '../../../user/services/AuthService'
 import ConfirmModal from '../../common/ConfirmModal'
@@ -16,13 +16,6 @@ interface Props {
   search: any
 }
 
-/**
- * JSX used to display table of instance
- *
- * @param props
- * @returns DOM Element
- * @author KIMENYI Kevin
- */
 const InstanceTable = (props: Props) => {
   const { search } = props
   const [page, setPage] = useState(0)

@@ -3,7 +3,7 @@ import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import _ from 'lodash'
 import { Op } from 'sequelize'
 
-import { AvatarInterface } from '@xrengine/common/src/interfaces/AvatarInterface'
+import { AvatarInterface } from '@atlasfoundation/common/src/interfaces/AvatarInterface'
 
 import { Application } from '../../../declarations'
 
@@ -12,7 +12,6 @@ export type AvatarDataType = AvatarInterface
 /**
  * A class for Static Resource  service
  *
- * @author Vyacheslav Solovjov
  */
 export class StaticResource<T = AvatarDataType> extends Service<T> {
   public docs: any

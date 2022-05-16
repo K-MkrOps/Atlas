@@ -4,7 +4,7 @@ import fsStore from 'fs-blob-store'
 import glob from 'glob'
 import path from 'path/posix'
 
-import { FileContentType } from '@xrengine/common/src/interfaces/FileContentType'
+import { FileContentType } from '@atlasfoundation/common/src/interfaces/FileContentType'
 
 import config from '../../appconfig'
 import logger from '../../logger'
@@ -189,7 +189,6 @@ export class LocalStorage implements StorageProviderInterface {
   }
 
   /**
-   * @author Abhishek Pathak
    * @param relativeDirPath
    * @returns
    */
@@ -204,7 +203,6 @@ export class LocalStorage implements StorageProviderInterface {
   }
 
   /**
-   * @author Nayankumar Patel
    * @param oldName
    * @param oldPath
    * @param newName

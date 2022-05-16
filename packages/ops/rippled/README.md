@@ -1,6 +1,6 @@
 # Rippled
 
-Rippled charts for [XREngine](https://xrfoundation.io/).
+Rippled charts for [Atlas](https://atlasfoundation.io/).
 
 ## Installing the Chart
 

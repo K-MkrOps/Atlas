@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-import { AvatarStates } from '@xrengine/engine/src/avatar/animation/Util'
-import { changeAvatarAnimationState } from '@xrengine/engine/src/avatar/animation/Util'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
+import { AvatarStates } from '@atlasfoundation/engine/src/avatar/animation/Util'
+import { changeAvatarAnimationState } from '@atlasfoundation/engine/src/avatar/animation/Util'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
 
 import { NavigateBefore, NavigateNext } from '@mui/icons-material'
 import Button from '@mui/material/Button'

@@ -3,7 +3,7 @@
   "$id": "XRE_envMap.schema.json",
   "title": "XRE_envMap glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine environment map components",
+  "description": "serialization extension for Atlas environment map components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "type": {

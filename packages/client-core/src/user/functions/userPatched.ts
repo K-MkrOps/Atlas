@@ -1,7 +1,7 @@
-import { resolveUser } from '@xrengine/common/src/interfaces/User'
-import { addComponent, getComponent, hasComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { getEid } from '@xrengine/engine/src/networking/utils/getUser'
-import { UserNameComponent } from '@xrengine/engine/src/scene/components/UserNameComponent'
+import { resolveUser } from '@atlasfoundation/common/src/interfaces/User'
+import { addComponent, getComponent, hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { getEid } from '@atlasfoundation/engine/src/networking/utils/getUser'
+import { UserNameComponent } from '@atlasfoundation/engine/src/scene/components/UserNameComponent'
 
 import { _updateUsername } from '../../social/services/utils/chatSystem'
 import { useDispatch } from '../../store'

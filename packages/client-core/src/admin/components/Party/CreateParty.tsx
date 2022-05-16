@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Instance } from '@xrengine/common/src/interfaces/Instance'
+import { Instance } from '@atlasfoundation/common/src/interfaces/Instance'
 
 import DialogContentText from '@mui/material/DialogContentText'
 import FormControl from '@mui/material/FormControl'

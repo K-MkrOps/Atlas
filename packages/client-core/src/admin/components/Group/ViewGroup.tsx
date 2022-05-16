@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Group } from '@xrengine/common/src/interfaces/Group'
+import { Group } from '@atlasfoundation/common/src/interfaces/Group'
 
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'

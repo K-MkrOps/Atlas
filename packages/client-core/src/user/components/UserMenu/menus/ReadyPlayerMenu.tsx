@@ -6,14 +6,14 @@ import {
   MAX_ALLOWED_TRIANGLES,
   THUMBNAIL_HEIGHT,
   THUMBNAIL_WIDTH
-} from '@xrengine/common/src/constants/AvatarConstants'
-import { AssetLoader } from '@xrengine/engine/src/assets/classes/AssetLoader'
-import { loadAvatarForPreview } from '@xrengine/engine/src/avatar/functions/avatarFunctions'
-import { Entity } from '@xrengine/engine/src/ecs/classes/Entity'
-import { createEntity, removeEntity } from '@xrengine/engine/src/ecs/functions/EntityFunctions'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
-import { getOrbitControls } from '@xrengine/engine/src/input/functions/loadOrbitControl'
-import { OrbitControls } from '@xrengine/engine/src/input/functions/OrbitControls'
+} from '@atlasfoundation/common/src/constants/AvatarConstants'
+import { AssetLoader } from '@atlasfoundation/engine/src/assets/classes/AssetLoader'
+import { loadAvatarForPreview } from '@atlasfoundation/engine/src/avatar/functions/avatarFunctions'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { createEntity, removeEntity } from '@atlasfoundation/engine/src/ecs/functions/EntityFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { getOrbitControls } from '@atlasfoundation/engine/src/input/functions/loadOrbitControl'
+import { OrbitControls } from '@atlasfoundation/engine/src/input/functions/OrbitControls'
 
 import { ArrowBack, Check, Help } from '@mui/icons-material'
 import CircularProgress from '@mui/material/CircularProgress'

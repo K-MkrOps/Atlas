@@ -1,13 +1,13 @@
-import { createState } from '@speigg/hookstate'
-import { useState } from '@speigg/hookstate'
+import { createState } from '@hoostate/core'
+import { useState } from '@hoostate/core'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { WorldState } from '@xrengine/engine/src/networking/interfaces/WorldState'
-import { createXRUI } from '@xrengine/engine/src/xrui/functions/createXRUI'
-import { useXRUIState } from '@xrengine/engine/src/xrui/functions/useXRUIState'
-import { getState } from '@xrengine/hyperflux'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { WorldState } from '@atlasfoundation/engine/src/networking/interfaces/WorldState'
+import { createXRUI } from '@atlasfoundation/engine/src/xrui/functions/createXRUI'
+import { useXRUIState } from '@atlasfoundation/engine/src/xrui/functions/useXRUIState'
+import { getState } from '@atlasfoundation/hyperflux'
 
 import { useUserState } from '../../user/services/UserService'
 

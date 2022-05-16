@@ -78,7 +78,7 @@ const ThemePlayground = () => {
 
   const rows = [
     {
-      name: 'Josh',
+      name: 'Eric',
       userRole: 'Admin',
       location: 'test',
       inviteCode: 'NULL',
@@ -95,7 +95,7 @@ const ThemePlayground = () => {
       )
     },
     {
-      name: 'Liam',
+      name: 'Jeremy',
       userRole: 'User',
       location: 'apartment',
       inviteCode: 'NULL',
@@ -112,7 +112,7 @@ const ThemePlayground = () => {
       )
     },
     {
-      name: 'Gheric',
+      name: 'Gordon',
       userRole: 'Moderator',
       location: 'test',
       inviteCode: 'NULL',
@@ -137,7 +137,7 @@ const ThemePlayground = () => {
       <br />
       <Box className="themeDemoArea">
         <nav className="navbar">
-          <div className="logoSection">XR-Engine</div>
+          <div className="logoSection">Atlas</div>
         </nav>
         <div className="mainSection">
           <div className="sidebar">
@@ -261,11 +261,11 @@ const ThemePlayground = () => {
                     <SettingIcon />
                   </IconButton>
                 </div>
-                <label className="textSubheading">Outlined Button:</label>
+                <label className="textSubheading">Filled Button:</label>
                 <Button variant="outlined" className="outlinedButton">
                   Cancel
                 </Button>
-                <label className="textSubheading">Filled Button:</label>
+                <label className="textSubheading">Outlined Button:</label>
                 <Button variant="contained" className="filledButton">
                   Submit
                 </Button>
@@ -301,11 +301,11 @@ const ThemePlayground = () => {
                   MenuProps={{ classes: { paper: 'selectPaper' } }}
                   onChange={(e) => setSelectValue(e.target.value)}
                 >
-                  <MenuItem value="" key={-1} disabled classes={{ root: 'option', selected: 'optionSelected' }}>
+                  <MenuItem value="" disabled classes={{ root: 'option' }}>
                     Select Option
                   </MenuItem>
                   {['Option 1', 'Option 2', 'Option 3', 'Option 4'].map((el, index) => (
-                    <MenuItem value={el} key={index} classes={{ root: 'option', selected: 'optionSelected' }}>
+                    <MenuItem value={el} key={index} classes={{ root: 'option' }}>
                       {el}
                     </MenuItem>
                   ))}
@@ -331,7 +331,7 @@ const ThemePlayground = () => {
               </Button>
               <Dialog
                 open={dialog}
-                className="popupMainBackground"
+                className="drawer"
                 PaperProps={{ className: 'drawerPaper' }}
                 onClose={() => setDialog(false)}
               ></Dialog>

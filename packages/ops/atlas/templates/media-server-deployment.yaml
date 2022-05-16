@@ -2,18 +2,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "xrengine.media.fullname" . }}
+  name: {{ include "atlas.media.fullname" . }}
   labels:
-    {{- include "xrengine.media.labels" . | nindent 4 }}
+    {{- include "atlas.media.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.media.replicaCount }}
   selector:
     matchLabels:
-      {{- include "xrengine.media.selectorLabels" . | nindent 6 }}
+      {{- include "atlas.media.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{- include "xrengine.media.selectorLabels" . | nindent 8 }}
+        {{- include "atlas.media.selectorLabels" . | nindent 8 }}
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/media-server-configmap.yaml") . | sha256sum }}
     spec:
@@ -21,7 +21,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
     {{- end }}
-      serviceAccountName: {{ include "xrengine.media.serviceAccountName" . }}
+      serviceAccountName: {{ include "atlas.media.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.media.podSecurityContext | nindent 8 }}
       {{- $releaseName := .Release.Name }}
@@ -36,10 +36,10 @@ spec:
           imagePullPolicy: {{ .Values.media.image.pullPolicy }}
           envFrom:
             - configMapRef:
-                name: {{ include "xrengine.media.fullname" . }}
+                name: {{ include "atlas.media.fullname" . }}
                 optional: true
             - configMapRef:
-                name: {{ include "xrengine.api.fullname" . }}
+                name: {{ include "atlas.api.fullname" . }}
                 optional: true
           env:
             - name: SERVER_MODE
@@ -60,7 +60,7 @@ spec:
                   {{- if .Values.mariadb.existingSecret }}
                   name: {{ .Values.mariadb.existingSecret }}
                   {{- else }}
-                  name: {{ template "xrengine.mariadb.fullname" . }}
+                  name: {{ template "atlas.mariadb.fullname" . }}
                   {{- end }}
                   key: mariadb-password
               {{- end }}

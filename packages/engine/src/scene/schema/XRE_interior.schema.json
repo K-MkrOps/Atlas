@@ -3,7 +3,7 @@
   "$id": "XRE_interior.schema.json",
   "title": "XRE_interior glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine interior components",
+  "description": "serialization extension for Atlas interior components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "cubeMap": { "$ref": "url.schema.json" },

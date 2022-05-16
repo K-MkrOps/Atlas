@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { VideoFileTypes } from '@xrengine/engine/src/assets/constants/fileTypes'
+import { VideoFileTypes } from '@atlasfoundation/engine/src/assets/constants/fileTypes'
 
 import { ItemTypes } from '../../constants/AssetTypes'
 import FileBrowserInput from './FileBrowserInput'
@@ -8,8 +8,6 @@ import FileBrowserInput from './FileBrowserInput'
 /**
  * VideoInput used to render component view for video inputs.
  *
- * @author Robert Long
- * @author Hanzla Mateen
  * @param       {function} onChange
  * @param       {any} rest
  * @constructor

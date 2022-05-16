@@ -1,6 +1,6 @@
 import { Group, Object3D, Quaternion, Vector3 } from 'three'
 
-import { dispatchAction } from '@xrengine/hyperflux'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { BoneNames } from '../../avatar/AvatarBoneMatching'
 import { AvatarAnimationComponent } from '../../avatar/components/AvatarAnimationComponent'
@@ -26,7 +26,6 @@ const assignControllerAndGrip = (xrManager, controller, grip, i): void => {
 
 /**
  * Map input source controller groups to correct index
- * @author Mohsen Heydari <github.com/mohsenheydari>
  * @param xrInput
  * @returns {void}
  */
@@ -118,7 +117,6 @@ const controllerGripRight = new Group()
 
 /**
  * Setup XRInputSourceComponent on entity, required for all input control types
- * @author Hamza Mushtaq <github.com/hamzzam>
  * @returns XRInputSourceComponentType
  */
 
@@ -147,7 +145,6 @@ export const setupXRInputSourceComponent = (entity: Entity) => {
 
 /**
  * Initializes XR controllers for local client
- * @author Hamza Mushtaq <github.com/hamzzam>
  * @returns {void}
  */
 
@@ -168,7 +165,6 @@ export const bindXRControllers = () => {
 
 /**
  * Initializes XR hand controllers for local client
- * @author Mohsen Heydari <github.com/mohsenheydari>
  * @coauthor Hamza Mushtaq <github.com/hamzzam>
  * @returns {void}
  */
@@ -205,7 +201,6 @@ export const bindXRHandEvents = () => {
 }
 
 /**
- * @author Josh Field <github.com/HexaField>
  * @returns {void}
  */
 
@@ -228,7 +223,6 @@ export const startWebXR = async (): Promise<void> => {
 }
 
 /**
- * @author Josh Field <github.com/HexaField>
  * @returns {void}
  */
 
@@ -247,7 +241,6 @@ export const endXR = (): void => {
 }
 
 /**
- * @author Josh Field <github.com/HexaField>
  * @returns {boolean}
  */
 
@@ -262,7 +255,6 @@ const quat = new Quaternion()
 
 /**
  * Gets the hand position in world space
- * @author Josh Field <github.com/HexaField>
  * @param entity the player entity
  * @param hand which hand to get
  * @returns {Vector3}
@@ -287,7 +279,6 @@ export const getHandPosition = (entity: Entity, hand: ParityValue = ParityValue.
 
 /**
  * Gets the hand rotation in world space
- * @author Josh Field <github.com/HexaField>
  * @param entity the player entity
  * @param hand which hand to get
  * @returns {Quaternion}
@@ -309,7 +300,6 @@ export const getHandRotation = (entity: Entity, hand: ParityValue = ParityValue.
 
 /**
  * Gets the hand transform in world space
- * @author Josh Field <github.com/HexaField>
  * @param entity the player entity
  * @param hand which hand to get
  * @returns { position: Vector3, rotation: Quaternion }
@@ -343,7 +333,6 @@ export const getHandTransform = (
 
 /**
  * Gets the head transform in world space
- * @author Josh Field <github.com/HexaField>
  * @param entity the player entity
  * @returns { position: Vector3, rotation: Quaternion }
  */

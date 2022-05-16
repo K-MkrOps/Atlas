@@ -3,10 +3,9 @@ import { Paginated, Params, ServiceMethods } from '@feathersjs/feathers'
 import axios from 'axios'
 import { SequelizeServiceOptions } from 'feathers-sequelize/types'
 
-import { IdentityProviderInterface } from '@xrengine/common/src/dbmodels/IdentityProvider'
+import { IdentityProviderInterface } from '@atlasfoundation/common/src/dbmodels/IdentityProvider'
 
 import { Application } from '../../../declarations'
-import logger from '../../logger'
 
 export class DicscordBotAuth<T = any> implements Partial<ServiceMethods<T>> {
   app: Application
@@ -50,12 +49,9 @@ export class DicscordBotAuth<T = any> implements Partial<ServiceMethods<T>> {
         return this.app.service('user').get(ipCreation.userId)
       }
     } catch (err) {
-      logger.error(err)
-      if (errors[err.response.status]) {
-        throw new errors[err.response.status]()
-      } else {
-        throw new Error(err)
-      }
+      console.log(err)
+      if (errors[err.response.status]) throw new errors[err.response.status]()
+      else throw new Error(err)
     }
   }
 }

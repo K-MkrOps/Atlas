@@ -3,7 +3,7 @@
   "$id": "XRE_boxCollider.schema.json",
   "title": "XRE_boxCollider glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine box collider components",
+  "description": "serialization extension for Atlas box collider components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "isTrigger": {

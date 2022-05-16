@@ -1,15 +1,15 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, none, useState } from '@speigg/hookstate'
+import { createState, none, useState } from '@hoostate/core'
 
-import { Channel } from '@xrengine/common/src/interfaces/Channel'
-import { Group } from '@xrengine/common/src/interfaces/Group'
-import { Instance } from '@xrengine/common/src/interfaces/Instance'
-import { Message } from '@xrengine/common/src/interfaces/Message'
-import { Party } from '@xrengine/common/src/interfaces/Party'
-import { User } from '@xrengine/common/src/interfaces/User'
-import { handleCommand, isCommand } from '@xrengine/engine/src/common/functions/commandHandler'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { isPlayerLocal } from '@xrengine/engine/src/networking/utils/isPlayerLocal'
+import { Channel } from '@atlasfoundation/common/src/interfaces/Channel'
+import { Group } from '@atlasfoundation/common/src/interfaces/Group'
+import { Instance } from '@atlasfoundation/common/src/interfaces/Instance'
+import { Message } from '@atlasfoundation/common/src/interfaces/Message'
+import { Party } from '@atlasfoundation/common/src/interfaces/Party'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
+import { handleCommand, isCommand } from '@atlasfoundation/engine/src/common/functions/commandHandler'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { isPlayerLocal } from '@atlasfoundation/engine/src/networking/utils/isPlayerLocal'
 
 import { AlertService } from '../../common/services/AlertService'
 import { accessLocationInstanceConnectionState } from '../../common/services/LocationInstanceConnectionService'
@@ -26,7 +26,7 @@ interface ChatMessageProps {
 
 //State
 
-// TODO: find existing interfaces for these or move these to @xrengine/common/src/interfaces
+// TODO: find existing interfaces for these or move these to @atlasfoundation/common/src/interfaces
 const state = createState({
   channels: {
     channels: [] as Channel[],

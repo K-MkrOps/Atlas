@@ -1,9 +1,13 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { AudioComponent } from '@xrengine/engine/src/audio/components/AudioComponent'
-import { AudioType, DistanceModel, DistanceModelOptions } from '@xrengine/engine/src/audio/constants/AudioConstants'
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
+import { AudioComponent } from '@atlasfoundation/engine/src/audio/components/AudioComponent'
+import {
+  AudioType,
+  DistanceModel,
+  DistanceModelOptions
+} from '@atlasfoundation/engine/src/audio/constants/AudioConstants'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 
 import CompoundNumericInput from '../inputs/CompoundNumericInput'
 import InputGroup from '../inputs/InputGroup'
@@ -21,7 +25,6 @@ const AudioTypeOptions = [
  * AudioSourceProperties provides properties to custom audio element on the scene
  * used inside AudioNodeEditor component.
  *
- * @author Robert Long
  * @param       {any} node
  * @param       {any} multiEdit
  * @constructor

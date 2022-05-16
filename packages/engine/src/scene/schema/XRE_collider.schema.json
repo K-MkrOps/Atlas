@@ -3,7 +3,7 @@
   "$id": "XRE_collider.schema.json",
   "title": "XRE_collider glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine collider components",
+  "description": "serialization extension for Atlas collider components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "type": {

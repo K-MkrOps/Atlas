@@ -8,22 +8,22 @@
 
 .tableCellHeader {
   background: var(--tableHeaderBackground) !important;
-  color: var(--textColor) !important;
+  color: #f1f1f1 !important;
   border-bottom: 2px solid var(--mainBackground) !important;
 }
 
 .tableCellBody {
   border-bottom: 1px solid var(--mainBackground) !important;
-  color: var(--textColor) !important;
+  color: #f1f1f1 !important;
   background: var(--tableCellBackground) !important;
 }
 
 .tableFooter {
   background: var(--tableFooterBackground) !important;
-  color: var(--textColor) !important;
+  color: #f1f1f1 !important;
   overflow: unset;
 }
 
 .spanWhite {
-  color: var(--textColor) !important;
+  color: #f1f1f1 !important;
 }

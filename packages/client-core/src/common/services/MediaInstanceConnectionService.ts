@@ -1,11 +1,11 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { ChannelType } from '@xrengine/common/src/interfaces/Channel'
-import { InstanceServerProvisionResult } from '@xrengine/common/src/interfaces/InstanceServerProvisionResult'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { Network } from '@xrengine/engine/src/networking/classes/Network'
-import { MediaStreams } from '@xrengine/engine/src/networking/systems/MediaStreamSystem'
-import { dispatchAction } from '@xrengine/hyperflux'
+import { ChannelType } from '@atlasfoundation/common/src/interfaces/Channel'
+import { InstanceServerProvisionResult } from '@atlasfoundation/common/src/interfaces/InstanceServerProvisionResult'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
+import { MediaStreams } from '@atlasfoundation/engine/src/networking/systems/MediaStreamSystem'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { client } from '../../feathers'
 import { accessLocationState } from '../../social/services/LocationService'

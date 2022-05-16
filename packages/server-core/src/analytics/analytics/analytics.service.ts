@@ -6,7 +6,7 @@ import hooks from './analytics.hooks'
 import createModel from './analytics.model'
 
 // Add this service to the service type index
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     analytics: Analytics
   }
@@ -22,7 +22,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new Analytics(options, app)
   event.docs = instanceProvisionDocs

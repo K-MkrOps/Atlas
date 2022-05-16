@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { ProjectInterface } from '@xrengine/common/src/dbmodels/Project'
+import { ProjectInterface } from '@atlasfoundation/common/src/dbmodels/Project'
 
 import { Application } from '../../../declarations'
 

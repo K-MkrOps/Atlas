@@ -1,19 +1,19 @@
-# Default values for xrengine.
+# Default values for atlas.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-domain: xrengine.dev
+domain: atlas.dev
 
 release:
   name: dev
 
 director:
   enabled: true
-  name: xrengine-matchmaking-director
+  name: atlas-matchmaking-director
 
   replicaCount: 1
   image:
-    repository: xrengine-matchmaking-director
+    repository: atlas-matchmaking-director
     tag: latest
     pullPolicy: IfNotPresent
 
@@ -56,11 +56,11 @@ director:
 
 matchfunction:
   enabled: true
-  name: xrengine-matchmaking-matchfunction
+  name: atlas-matchmaking-matchfunction
 
   replicaCount: 1
   image:
-    repository: xrengine-matchmaking-matchfunction
+    repository: atlas-matchmaking-matchfunction
     tag: latest
     pullPolicy: IfNotPresent
 

@@ -4,7 +4,7 @@ import messageStatusDocs from './message-status.docs'
 import hooks from './message-status.hooks'
 import createModel from './message-status.model'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'message-status': MessageStatus
   }
@@ -20,7 +20,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
 
   const event = new MessageStatus(options, app)
@@ -30,7 +29,6 @@ export default (app: Application) => {
   /**
    * Get our initialized service so that we can register hooks
    *
-   * @author Vyacheslav Solovjov
    */
   const service = app.service('message-status')
 

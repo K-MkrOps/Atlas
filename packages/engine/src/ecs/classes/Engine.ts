@@ -1,7 +1,7 @@
 import { XRFrame } from 'three'
 
-import type { UserId } from '@xrengine/common/src/interfaces/UserId'
-import { createHyperStore } from '@xrengine/hyperflux'
+import type { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { createHyperStore } from '@atlasfoundation/hyperflux'
 
 import { nowMilliseconds } from '../../common/functions/nowMilliseconds'
 import type { World } from '../classes/World'
@@ -10,22 +10,16 @@ import type { SystemModuleType } from '../functions/SystemFunctions'
 export class Engine {
   static instance: Engine
 
-  /** Systems to inject after core systems */
-  injectedSystems: SystemModuleType<any>[] = []
-
   /** The uuid of the logged-in user */
   userId: UserId
 
   store = createHyperStore({
     name: 'ENGINE',
     getDispatchId: () => 'engine',
-    getDispatchTime: () => Engine.instance.frameTime
+    getDispatchTime: () => Engine.instance.elapsedTime
   })
 
-  /**
-   * Current frame timestamp, relative to performance.timeOrigin
-   */
-  frameTime = nowMilliseconds()
+  elapsedTime = 0
 
   engineTimer: { start: Function; stop: Function; clear: Function } = null!
 

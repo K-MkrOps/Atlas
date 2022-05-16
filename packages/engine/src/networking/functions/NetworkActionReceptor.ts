@@ -1,8 +1,8 @@
-import { none } from '@speigg/hookstate'
+import { none } from '@hoostate/core'
 import matches from 'ts-matches'
 
-import { UserId } from '@xrengine/common/src/interfaces/UserId'
-import { addActionReceptor, dispatchAction, getState } from '@xrengine/hyperflux'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { addActionReceptor, dispatchAction, getState } from '@atlasfoundation/hyperflux'
 
 import { Engine } from '../../ecs/classes/Engine'
 import { World } from '../../ecs/classes/World'
@@ -193,13 +193,13 @@ const setUserTyping = (action) => {
   })
 }
 
-/**
- * @author Gheric Speiginer <github.com/speigg>
- * @author Josh Field <github.com/HexaField>
- */
 const createNetworkActionReceptor = (world: World) =>
   addActionReceptor(world.store, function NetworkActionReceptor(action) {
     matches(action)
+      .when(NetworkWorldAction.timeSync.matches, ({ elapsedTime, clockTime }) => {
+        // todo: smooth out time sync over multiple frames
+        world.elapsedTime = elapsedTime + (Date.now() - clockTime) / 1000
+      })
       .when(NetworkWorldAction.createClient.matches, ({ $from, name, index: userIndex }) =>
         addClient(world, $from, name, userIndex)
       )

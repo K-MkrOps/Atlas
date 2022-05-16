@@ -3,7 +3,7 @@
   "$id": "XRE_cameraProperties.schema.json",
   "title": "XRE_cameraProperties glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine camera properties components",
+  "description": "serialization extension for Atlas camera properties components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "fov": {

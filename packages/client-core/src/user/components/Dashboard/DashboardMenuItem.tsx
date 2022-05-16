@@ -59,11 +59,11 @@ const DashboardMenuItem = (props: Props) => {
               <Link key={index} to={sidebarItem.path} className={styles.textLink}>
                 <ListItem
                   classes={{ selected: styles.selected }}
-                  style={{ color: 'var(--iconButtonColor)' }}
+                  style={{ color: 'white' }}
                   selected={sidebarItem.path === pathname}
                   button
                 >
-                  <ListItemIcon className={styles.drawerIconColor}>{sidebarItem.icon}</ListItemIcon>
+                  <ListItemIcon>{sidebarItem.icon}</ListItemIcon>
                   <ListItemText primary={t(sidebarItem.name)} />
                 </ListItem>
               </Link>

@@ -1,5 +1,4 @@
-import { download } from "@xrengine/server-core/src/projects/project/downloadProjects";
-import { createDefaultStorageProvider } from "@xrengine/server-core/src/media/storageprovider/storageprovider";
+import { download } from "@atlasfoundation/server-core/src/projects/project/downloadProjects";
 import dotenv from 'dotenv';
 import Sequelize from 'sequelize';
 import path from "path";
@@ -11,7 +10,7 @@ dotenv.config();
 const db = {
     username: process.env.MYSQL_USER ?? 'server',
     password: process.env.MYSQL_PASSWORD ?? 'password',
-    database: process.env.MYSQL_DATABASE ?? 'xrengine',
+    database: process.env.MYSQL_DATABASE ?? 'atlas',
     host: process.env.MYSQL_HOST ?? '127.0.0.1',
     port: process.env.MYSQL_PORT ?? 3306,
     dialect: 'mysql'
@@ -23,7 +22,6 @@ db.url = process.env.MYSQL_URL ??
 
 async function installAllProjects() {
   try {
-    createDefaultStorageProvider()
     const localProjectDirectory = path.join(appRootPath.path, 'packages/projects/projects')
     if (!fs.existsSync(localProjectDirectory)) fs.mkdirSync(localProjectDirectory, { recursive: true })
     logger.info('running installAllProjects')

@@ -1,7 +1,7 @@
-@import "@xrengine/client-core/src/styles/imports.module.scss";
+@import "@atlasfoundation/client-core/src/styles/imports.module.scss";
 
 .primaryForeground {
-  color: var(--textColor);
+  color: var(--iconButtonHoverColor);
 }
 
 .apiRefresh {
@@ -69,16 +69,12 @@
       }
 
       svg {
-        color: var(--iconButtonColor);
-      }
-
-      img {
-        color: var(--iconButtonColor);
+        color: var(--textColor);
       }
 
       &:hover {
         cursor: pointer;
-        background-color: var(--iconButtonHoverColor);
+        background-color: var(--iconButtonSelectedBackground);
       }
 
       &:last-child {
@@ -568,13 +564,13 @@
 
       :global(.MuiSlider-root) {
         &.slider {
-          color: var(--iconButtonSelectedBackground);
+          color: var(--iconButtonHoverColor);
           margin: 0 10px;
         }
 
         :global(.MuiSlider-thumb) {
-          background: var(--iconButtonSelectedBackground);
-          border: var(--iconButtonSelectedBackground);
+          background: var(--iconButtonHoverColor);
+          border: var(--iconButtonHoverColor);
           width: 16px;
           height: 16px;
         }
@@ -821,7 +817,7 @@
         display: block;
         transform: none;
         margin-bottom: 5px;
-        color: var(--textColor);
+        color: #666;
         font-size: 0.8rem;
       }
 
@@ -833,7 +829,7 @@
         }
 
         &:global(.Mui-checked) svg {
-          color: var(--iconButtonColor);
+          color: var(--purpleButtonColor);
         }
 
         &:hover {
@@ -1951,12 +1947,8 @@
 }
 
 .selectPaper {
-  background: var(--inputBackground);
-  color: var(--textColor);
-
-  &:global(.Mui-selected) {
-    background: var(--dropdownMenuSelectedBackground);
-  }
+  background: #343b41;
+  color: #f1f1f1;
 }
 
 .rootBtn {
@@ -2034,10 +2026,6 @@
 
   &:hover {
     background: var(--dropdownMenuHoverBackground);
-  }
-
-  &:global(.Mui-selected) {
-    background: var(--dropdownMenuSelectedBackground);
   }
 }
 

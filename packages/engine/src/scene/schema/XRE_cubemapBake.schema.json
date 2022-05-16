@@ -3,7 +3,7 @@
   "title": "XRE_cubemapBake glTF extension",
   "$id": "XRE_cubemapBake.schema.json",
   "type": "object",
-  "description": "serialization extension for XREngine cubemap bake components",
+  "description": "serialization extension for Atlas cubemap bake components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "bakePosition": {

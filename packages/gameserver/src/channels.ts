@@ -1,14 +1,13 @@
 import { Paginated } from '@feathersjs/feathers/lib'
-
 import '@feathersjs/transport-commons'
-
 import { decode } from 'jsonwebtoken'
 
-import { IdentityProviderInterface } from '@xrengine/common/src/dbmodels/IdentityProvider'
-import { InstanceInterface } from '@xrengine/common/src/dbmodels/Instance'
-import { UserId } from '@xrengine/common/src/interfaces/UserId'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { EngineActions, getEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
+import { IdentityProviderInterface } from '@atlasfoundation/common/src/dbmodels/IdentityProvider'
+import { InstanceInterface } from '@atlasfoundation/common/src/dbmodels/Instance'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { accessEngineState, EngineActions } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { initSystems } from '@atlasfoundation/engine/src/ecs/functions/SystemFunctions'
 import {
   createEngine,
   initializeCoreSystems,
@@ -16,20 +15,18 @@ import {
   initializeNode,
   initializeRealtimeSystems,
   initializeSceneSystems
-} from '@xrengine/engine/src/initializeEngine'
-import { Network } from '@xrengine/engine/src/networking/classes/Network'
-import { loadSceneFromJSON } from '@xrengine/engine/src/scene/functions/SceneLoading'
-import { dispatchAction } from '@xrengine/hyperflux'
-import { loadEngineInjection } from '@xrengine/projects/loadEngineInjection'
-// import { getPortalByEntityId } from '@xrengine/server-core/src/entities/component/portal.controller'
-// import { setRemoteLocationDetail } from '@xrengine/engine/src/scene/functions/createPortal'
-import { getSystemsFromSceneData } from '@xrengine/projects/loadSystemInjection'
-import { Application } from '@xrengine/server-core/declarations'
-import config from '@xrengine/server-core/src/appconfig'
-import multiLogger from '@xrengine/server-core/src/logger'
-import getLocalServerIp from '@xrengine/server-core/src/util/get-local-server-ip'
-
-const logger = multiLogger.child({ component: 'gameserver:channels' })
+} from '@atlasfoundation/engine/src/initializeEngine'
+import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
+import { loadSceneFromJSON } from '@atlasfoundation/engine/src/scene/functions/SceneLoading'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
+import { loadEngineInjection } from '@atlasfoundation/projects/loadEngineInjection'
+// import { getPortalByEntityId } from '@atlasfoundation/server-core/src/entities/component/portal.controller'
+// import { setRemoteLocationDetail } from '@atlasfoundation/engine/src/scene/functions/createPortal'
+import { getSystemsFromSceneData } from '@atlasfoundation/projects/loadSystemInjection'
+import { Application } from '@atlasfoundation/server-core/declarations'
+import config from '@atlasfoundation/server-core/src/appconfig'
+import logger from '@atlasfoundation/server-core/src/logger'
+import getLocalServerIp from '@atlasfoundation/server-core/src/util/get-local-server-ip'
 
 interface SocketIOConnectionType {
   provider: string
@@ -65,21 +62,20 @@ type InstanceMetadata = {
 const loadScene = async (app: Application, scene: string) => {
   const [projectName, sceneName] = scene.split('/')
   // const sceneRegex = /\/([A-Za-z0-9]+)\/([a-f0-9-]+)$/
+  const sceneResult = await app.service('scene').get({ projectName, sceneName, metadataOnly: false }, null!)
+  const sceneData = sceneResult.data.scene as any // SceneData
 
-  const isInitialized = getEngineState().isEngineInitialized.value
-
-  const sceneResultPromise = app.service('scene').get({ projectName, sceneName, metadataOnly: false }, null!)
+  const isInitialized = accessEngineState().isEngineInitialized.value
 
   if (!isInitialized) {
-    const projectsPromise = app.service('project').find(null!)
-
+    const systems = await getSystemsFromSceneData(projectName, sceneData, false)
+    const projects = (await app.service('project').find(null!)).data.map((project) => project.name)
+    Engine.instance.publicPath = config.client.url
     await initializeCoreSystems()
     await initializeRealtimeSystems(false, true)
     await initializeSceneSystems()
-
-    Engine.instance.publicPath = config.client.url
     const world = Engine.instance.currentWorld
-    const projects = (await projectsPromise).data.map((project) => project.name)
+    await initSystems(world, systems)
     await loadEngineInjection(world, projects)
 
     const userId = 'world' as UserId
@@ -90,11 +86,9 @@ const loadScene = async (app: Application, scene: string) => {
     world.userIndexToUserId.set(hostIndex, userId)
   }
 
-  const sceneData = (await sceneResultPromise).data.scene as any // SceneData
-  const sceneSystems = getSystemsFromSceneData(projectName, sceneData, false)
-  await loadSceneFromJSON(sceneData, sceneSystems)
+  await loadSceneFromJSON(sceneData)
 
-  logger.info('Scene loaded!')
+  console.log('Scene loaded!')
   dispatchAction(Engine.instance.store, EngineActions.joinedWorld())
 
   // const portals = getAllComponentsOfType(PortalComponent)
@@ -111,14 +105,14 @@ const createNewInstance = async (app: Application, newInstance: InstanceMetadata
   const { locationId, channelId } = newInstance
 
   if (channelId) {
-    logger.info('channelId: ' + channelId)
+    console.log('channelId: ', channelId)
     newInstance.channelId = channelId
   } else {
-    logger.info('locationId: ' + locationId)
+    console.log('locationId: ' + locationId)
     newInstance.locationId = locationId
   }
 
-  logger.info('Creating new instance: %o', newInstance)
+  console.log('Creating new instance:', newInstance)
   const instanceResult = (await app.service('instance').create(newInstance)) as InstanceInterface
   await app.agonesSDK.allocate()
   app.instance = instanceResult
@@ -175,7 +169,7 @@ const handleInstance = async (
   channelId: string,
   userId: UserId
 ) => {
-  logger.info('Initialized new gameserver instance.')
+  console.log('Initialized new gameserver instance')
 
   const localIp = await getLocalServerIp(app.isChannelInstance)
   const selfIpAddress = `${status.address}:${status.portsList[0].port}`
@@ -189,7 +183,7 @@ const handleInstance = async (
   const existingInstanceResult = (await app.service('instance').find({
     query: existingInstanceQuery
   })) as Paginated<InstanceInterface>
-  // logger.info('existingInstanceResult: %o', existingInstanceResult.data)
+  // console.log('existingInstanceResult', existingInstanceResult.data)
   if (existingInstanceResult.total === 0) {
     const newInstance = {
       currentUsers: 1,
@@ -248,7 +242,7 @@ const authorizeUserToJoinServer = async (app: Application, instance, userId: Use
       }
     })) as any
     if (thisUserAuthorized.total === 0) {
-      logger.info(`User "${userId}" not authorized to be on this server.`)
+      console.log('User', userId, 'not authorized to be on this server')
       return false
     }
   }
@@ -315,7 +309,7 @@ const notifyWorldAndPartiesUserHasJoined = async (
 
 const handleUserAttendance = async (app: Application, userId: UserId) => {
   const instanceIdKey = app.isChannelInstance ? 'channelInstanceId' : 'instanceId'
-  logger.info(`Patching user ${userId} ${instanceIdKey} to ${app.instance.id}`)
+  console.log(`Patching user ${userId} ${instanceIdKey} to ${app.instance.id}`)
 
   await app.service('user').patch(userId, {
     [instanceIdKey]: app.instance.id
@@ -356,10 +350,11 @@ const loadGameserver = async (
 ) => {
   app.isChannelInstance = channelId != null
 
-  logger.info('Creating new gameserver or updating current one.')
-  logger.info('agones state is %o', status.state)
-  logger.info('app instance is %o', app.instance)
-  logger.info({ instanceLocationId: app.instance?.locationId, locationId })
+  console.log('Creating new GS or updating current one')
+  console.log('agones state is', status.state)
+  console.log('app instance is', app.instance)
+
+  console.log(app.instance?.locationId, locationId)
 
   /**
    * Since local environments do not have the ability to run multiple gameservers,
@@ -400,19 +395,19 @@ const loadGameserver = async (
       })
       return true
     } catch (err) {
-      logger.info('Could not update instance, likely because it is a local one that does not exist.')
+      console.log('Could not update instance, likely because it is a local one that does not exist')
     }
   }
 }
 
 const shutdownGameserver = async (app: Application, instanceId: string) => {
-  logger.info('Deleting instance ' + instanceId)
+  console.log('Deleting instance ' + instanceId)
   try {
     await app.service('instance').patch(instanceId, {
       ended: true
     })
   } catch (err) {
-    logger.error(err)
+    console.log(err)
   }
   if (app.gsSubdomainNumber != null) {
     const gsSubdomainProvision = (await app.service('gameserver-subdomain-provision').find({
@@ -452,7 +447,7 @@ const handleUserDisconnect = async (app: Application, connection, user, instance
       currentUsers: activeUsersCount
     })
   } catch (err) {
-    logger.info('Failed to patch instance user count, likely because it was destroyed.')
+    console.log('Failed to patch instance user count, likely because it was destroyed')
   }
 
   const instanceIdKey = app.isChannelInstance ? 'channelInstanceId' : 'instanceId'
@@ -473,7 +468,8 @@ const handleUserDisconnect = async (app: Application, connection, user, instance
       }
     )
     .catch((err) => {
-      logger.warn(err, "Failed to patch user, probably because they don't have an ID yet.")
+      console.warn("Failed to patch user, probably because they don't have an ID yet")
+      console.log(err)
     })
   await app.service('instance-attendance').patch(
     null,
@@ -499,7 +495,7 @@ const handleUserDisconnect = async (app: Application, connection, user, instance
 }
 
 const onConnection = (app: Application) => async (connection: SocketIOConnectionType) => {
-  logger.info('Connection: %o', connection)
+  console.log('connection', connection)
 
   if (!connection.socketQuery?.token) return
 
@@ -518,16 +514,10 @@ const onConnection = (app: Application) => async (connection: SocketIOConnection
   let channelId = connection.socketQuery.channelId!
   const sceneId: string = connection.socketQuery.sceneId
 
-  if (!sceneId) {
-    return logger.warn("Scene ID is empty, can't init.")
-  }
+  if (sceneId === '') return console.warn("Scene ID is empty, can't init")
 
-  if (locationId === '') {
-    locationId = undefined!
-  }
-  if (channelId === '') {
-    channelId = undefined!
-  }
+  if (locationId === '') locationId = undefined!
+  if (channelId === '') channelId = undefined!
   const gsResult = await app.agonesSDK.getGameServer()
   const status = gsResult.status as GameserverStatus
 
@@ -581,10 +571,10 @@ const onDisconnection = (app: Application) => async (connection: SocketIOConnect
     try {
       instance = app.instance && instanceId != null ? await app.service('instance').get(instanceId) : {}
     } catch (err) {
-      logger.warn('Could not get instance, likely because it is a local one that no longer exists.')
+      console.log('Could not get instance, likely because it is a local one that no longer exists')
     }
-    logger.info('instanceId: ' + instanceId)
-    logger.info('user instanceId: ' + user.instanceId)
+    console.log('instanceId: ' + instanceId)
+    console.log('user instanceId: ' + user.instanceId)
 
     if (instanceId != null && instance != null) {
       await handleUserDisconnect(app, connection, user, instanceId)

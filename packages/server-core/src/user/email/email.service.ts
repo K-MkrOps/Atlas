@@ -7,7 +7,7 @@ import { Email } from './email.class'
 import emailDocs from './email.docs'
 import hooks from './email.hooks'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     email: Email
   }
@@ -17,7 +17,6 @@ export default (app: Application): void => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = Mailer(smtpTransport({ ...config.email.smtp }))
   event.docs = emailDocs

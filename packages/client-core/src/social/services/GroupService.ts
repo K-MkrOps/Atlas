@@ -1,9 +1,9 @@
-import { createState, none, useState } from '@speigg/hookstate'
+import { createState, none, useState } from '@hoostate/core'
 import _ from 'lodash'
 
-import { CreateGroup, Group } from '@xrengine/common/src/interfaces/Group'
-import { GroupResult } from '@xrengine/common/src/interfaces/GroupResult'
-import { GroupUser } from '@xrengine/common/src/interfaces/GroupUser'
+import { CreateGroup, Group } from '@atlasfoundation/common/src/interfaces/Group'
+import { GroupResult } from '@atlasfoundation/common/src/interfaces/GroupResult'
+import { GroupUser } from '@atlasfoundation/common/src/interfaces/GroupUser'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'

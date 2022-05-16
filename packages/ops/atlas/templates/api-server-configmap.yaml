@@ -2,9 +2,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ template "xrengine.api.fullname" . }}
+  name: {{ template "atlas.api.fullname" . }}
   labels:
-    {{- include "xrengine.api.labels" . | nindent 4 }}
+    {{- include "atlas.api.labels" . | nindent 4 }}
 data:
 {{- if .Values.api.extraEnv }}
 {{ toYaml .Values.api.extraEnv | indent 2 }}

@@ -1,6 +1,6 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { ProjectInterface } from '@xrengine/common/src/interfaces/ProjectInterface'
+import { ProjectInterface } from '@atlasfoundation/common/src/interfaces/ProjectInterface'
 
 import { client } from '../../feathers'
 import { store, useDispatch } from '../../store'

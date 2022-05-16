@@ -1,9 +1,9 @@
 import { BadRequest, NotFound } from '@feathersjs/errors'
 import { Id, NullableId, Params, ServiceMethods } from '@feathersjs/feathers'
 
-import { createTicket, deleteTicket, getTicket } from '@xrengine/matchmaking/src/functions'
-import { OpenMatchTicket } from '@xrengine/matchmaking/src/interfaces'
-import config from '@xrengine/server-core/src/appconfig'
+import { createTicket, deleteTicket, getTicket } from '@atlasfoundation/matchmaking/src/functions'
+import { OpenMatchTicket } from '@atlasfoundation/matchmaking/src/interfaces'
+import config from '@atlasfoundation/server-core/src/appconfig'
 
 import { Application } from '../../../declarations'
 import { emulate_createTicket, emulate_getTicket } from '../emulate'
@@ -25,7 +25,6 @@ function isValidTicketParams(data: unknown): data is TicketParams {
 /**
  * A class for OpenMatch Tickets service
  *
- * @author Vyacheslav Solovjov
  */
 export class MatchTicket implements ServiceMethods<Data> {
   app: Application

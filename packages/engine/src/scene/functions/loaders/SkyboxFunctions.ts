@@ -1,7 +1,7 @@
 import { Color, Object3D, sRGBEncoding } from 'three'
 import { Vector3 } from 'three'
 
-import { ComponentJson } from '@xrengine/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import {
   ComponentDeserializeFunction,
@@ -26,7 +26,17 @@ import { IgnoreRaycastTagComponent } from '../../components/IgnoreRaycastTagComp
 import { Object3DComponent } from '../../components/Object3DComponent'
 import { SkyboxComponent, SkyboxComponentType } from '../../components/SkyboxComponent'
 import { SkyTypeEnum } from '../../constants/SkyTypeEnum'
-import { getPmremGenerator, loadCubeMapTexture, textureLoader } from '../../constants/Util'
+import {
+  cubeTextureLoader,
+  getPmremGenerator,
+  negx,
+  negy,
+  negz,
+  posx,
+  posy,
+  posz,
+  textureLoader
+} from '../../constants/Util'
 import { addError, removeError } from '../ErrorFunctions'
 
 export const SCENE_COMPONENT_SKYBOX = 'skybox'
@@ -72,15 +82,19 @@ export const updateSkybox: ComponentUpdateFunction = (entity: Entity) => {
       break
 
     case SkyTypeEnum.cubemap:
-      loadCubeMapTexture(
-        component.cubemapPath,
+      cubeTextureLoader.setPath(component.cubemapPath).load(
+        [posx, negx, posy, negy, posz, negz],
         (texture) => {
           texture.encoding = sRGBEncoding
           Engine.instance.currentWorld.scene.background = texture
           removeError(entity, 'error')
         },
-        undefined,
-        (error) => addError(entity, 'error', error.message)
+        (_res) => {
+          /* console.log(_res) */
+        },
+        (error) => {
+          addError(entity, 'error', error.message)
+        }
       )
       break
 

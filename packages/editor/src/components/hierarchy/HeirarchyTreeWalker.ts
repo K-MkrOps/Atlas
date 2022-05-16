@@ -1,6 +1,6 @@
-import { Entity } from '@xrengine/engine/src/ecs/classes/Entity'
-import { EntityTreeNode } from '@xrengine/engine/src/ecs/classes/EntityTree'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
 
 export type HeirarchyTreeNodeType = {
   depth: number
@@ -18,7 +18,6 @@ export type HeirarchyTreeCollapsedNodeType = { [key: number]: boolean }
 /**
  * treeWalker function used to handle tree.
  *
- * @author Robert Long
  * @param  {entityNode}    collapsedNodes
  */
 export function* heirarchyTreeWalker(

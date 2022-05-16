@@ -22,14 +22,14 @@ import {
   XRSession
 } from 'three'
 
-import { isDev } from '@xrengine/common/src/utils/isDev'
-import { addActionReceptor, dispatchAction } from '@xrengine/hyperflux'
+import { isDev } from '@atlasfoundation/common/src/utils/isDev'
+import { addActionReceptor, dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { CSM } from '../assets/csm/CSM'
 import { ExponentialMovingAverage } from '../common/classes/ExponentialAverageCurve'
 import { nowMilliseconds } from '../common/functions/nowMilliseconds'
 import { Engine } from '../ecs/classes/Engine'
-import { EngineActions, getEngineState } from '../ecs/classes/EngineState'
+import { accessEngineState, EngineActions } from '../ecs/classes/EngineService'
 import { Entity } from '../ecs/classes/Entity'
 import { World } from '../ecs/classes/World'
 import { matchActionOnce } from '../networking/functions/matchActionOnce'
@@ -40,6 +40,7 @@ import {
   EngineRendererReceptor,
   restoreEngineRendererData
 } from './EngineRendererState'
+import { configureEffectComposer } from './functions/configureEffectComposer'
 import WebGL from './THREE.WebGL'
 
 export interface EffectComposerWithSchema extends EffectComposer {
@@ -59,7 +60,7 @@ export interface EffectComposerWithSchema extends EffectComposer {
 let lastRenderTime = 0
 
 export class EngineRenderer {
-  static instance: EngineRenderer
+  static instance
 
   /** Is resize needed? */
   needsResize: boolean
@@ -88,6 +89,9 @@ export class EngineRenderer {
   averageTimePeriods = 3 * 60 // 3 seconds @ 60fps
   /** init ExponentialMovingAverage */
   movingAverage = new ExponentialMovingAverage(this.averageTimePeriods)
+
+  /** To Disable update for renderer */
+  disableUpdate = false
 
   renderer: WebGLRenderer = null!
   effectComposer: EffectComposerWithSchema = null!
@@ -156,6 +160,8 @@ export class EngineRenderer {
 
     this.renderer.autoClear = true
     this.effectComposer = new EffectComposer(this.renderer) as any
+
+    configureEffectComposer()
   }
 
   /** Called on resize, sets resize flag. */
@@ -173,7 +179,7 @@ export class EngineRenderer {
       this.renderer.render(Engine.instance.currentWorld.scene, Engine.instance.currentWorld.camera)
     } else {
       const state = accessEngineRendererState()
-      const engineState = getEngineState()
+      const engineState = accessEngineState()
       if (state.automatic.value && engineState.joinedWorld.value) this.changeQualityLevel()
       if (this.rendereringEnabled) {
         if (this.needsResize) {
@@ -235,6 +241,8 @@ export class EngineRenderer {
 }
 
 export default async function WebGLRendererSystem(world: World) {
+  EngineRenderer.instance.initialize()
+
   matchActionOnce(Engine.instance.store, EngineActions.joinedWorld.matches, () => {
     restoreEngineRendererData()
   })
@@ -242,7 +250,7 @@ export default async function WebGLRendererSystem(world: World) {
   addActionReceptor(Engine.instance.store, EngineRendererReceptor)
 
   return () => {
-    EngineRenderer.instance.execute(world.deltaSeconds)
+    EngineRenderer.instance.execute(world.delta)
   }
 }
 

@@ -1,6 +1,6 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { ActiveRoutesInterface } from '@xrengine/common/src/interfaces/Route'
+import { ActiveRoutesInterface } from '@atlasfoundation/common/src/interfaces/Route'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'

@@ -1,10 +1,10 @@
 import { Box3 } from 'three'
 
-import { ComponentJson } from '@xrengine/common/src/interfaces/SceneInterface'
-import { AvatarDissolveComponent } from '@xrengine/engine/src/avatar/components/AvatarDissolveComponent'
-import { AvatarEffectComponent, MaterialMap } from '@xrengine/engine/src/avatar/components/AvatarEffectComponent'
-import { DissolveEffect } from '@xrengine/engine/src/avatar/DissolveEffect'
-import { loadGrowingEffectObject } from '@xrengine/engine/src/avatar/functions/avatarFunctions'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
+import { AvatarDissolveComponent } from '@atlasfoundation/engine/src/avatar/components/AvatarDissolveComponent'
+import { AvatarEffectComponent, MaterialMap } from '@atlasfoundation/engine/src/avatar/components/AvatarEffectComponent'
+import { DissolveEffect } from '@atlasfoundation/engine/src/avatar/DissolveEffect'
+import { loadGrowingEffectObject } from '@atlasfoundation/engine/src/avatar/functions/avatarFunctions'
 
 import {
   ComponentDeserializeFunction,
@@ -25,7 +25,7 @@ import { addError, removeError } from '../ErrorFunctions'
 
 type VolumetricObject3D = UpdateableObject3D & {
   userData: {
-    player: typeof import('@xrfoundation/volumetric/player').default.prototype
+    player: typeof import('volumetric/player').default.prototype
     isEffect: boolean
     time: number
   }
@@ -35,10 +35,10 @@ type VolumetricObject3D = UpdateableObject3D & {
   callbacks()
 }
 
-let DracosisPlayer = null! as typeof import('@xrfoundation/volumetric/player').default
+let DracosisPlayer = null! as typeof import('volumetric/player').default
 
 if (isClient) {
-  Promise.all([import('@xrfoundation/volumetric/player')]).then(([module1]) => {
+  Promise.all([import('volumetric/player')]).then(([module1]) => {
     DracosisPlayer = module1.default
   })
 }

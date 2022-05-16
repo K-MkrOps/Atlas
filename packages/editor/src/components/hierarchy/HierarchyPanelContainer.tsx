@@ -5,17 +5,17 @@ import { useTranslation } from 'react-i18next'
 import AutoSizer from 'react-virtualized-auto-sizer'
 import { areEqual, FixedSizeList } from 'react-window'
 
-import { AllFileTypes } from '@xrengine/engine/src/assets/constants/fileTypes'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
+import { AllFileTypes } from '@atlasfoundation/engine/src/assets/constants/fileTypes'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 import {
   getEntityNodeArrayFromEntities,
   traverseEntityNode
-} from '@xrengine/engine/src/ecs/functions/EntityTreeFunctions'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
-import { NameComponent } from '@xrengine/engine/src/scene/components/NameComponent'
-import { Object3DComponent } from '@xrengine/engine/src/scene/components/Object3DComponent'
-import { useHookEffect } from '@xrengine/hyperflux'
+} from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { NameComponent } from '@atlasfoundation/engine/src/scene/components/NameComponent'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
+import { useHookEffect } from '@atlasfoundation/hyperflux'
 
 import { EditorCameraComponent } from '../../classes/EditorCameraComponent'
 import { executeCommandWithHistory, setPropertyOnEntityNode } from '../../classes/History'
@@ -36,7 +36,6 @@ import styles from './styles.module.scss'
 /**
  * uploadOption initializing object containing Properties multiple, accepts.
  *
- * @author Robert Long
  * @type {Object}
  */
 const uploadOptions = {
@@ -47,7 +46,6 @@ const uploadOptions = {
 /**
  * getNodeKey function used to get object id at given index.
  *
- * @author Robert Long
  * @param  {number} index [index of the node to get object id]
  * @param  {object} data
  * @return {string}
@@ -59,14 +57,12 @@ function getNodeKey(index: number, data: HierarchyTreeNodeData) {
 /**
  * initializing MemoTreeNode.
  *
- * @author Robert Long
  */
 const MemoTreeNode = memo(HierarchyTreeNode, areEqual)
 
 /**
  * HierarchyPanel function component provides view for hierarchy tree.
  *
- * @author Robert Long
  * @constructor
  */
 export default function HierarchyPanel() {

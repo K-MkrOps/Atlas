@@ -6,6 +6,5 @@ const Hidden = (styled as any).div`
 
 /**
  *
- * @author Robert Long
  */
 export default Hidden

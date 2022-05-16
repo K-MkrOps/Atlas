@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useHookEffect } from '@xrengine/hyperflux'
-import { loadConfigForProject } from '@xrengine/projects/loadConfigForProject'
+import { useHookEffect } from '@atlasfoundation/hyperflux'
+import { loadConfigForProject } from '@atlasfoundation/projects/loadConfigForProject'
 
 import { Button, Grid, InputBase, MenuItem, Paper, TextField, Typography } from '@mui/material'
 
@@ -129,7 +129,13 @@ const Project = (props: Props) => {
                     <Grid item xs={6}>
                       <label>Key Name</label>
                       <Paper component="div" className={styles.createInput}>
-                        <InputBase name="key" disabled className={styles.input} value={setting.key} />
+                        <InputBase
+                          name="key"
+                          disabled
+                          className={styles.input}
+                          value={setting.key}
+                          style={{ color: '#fff' }}
+                        />
                       </Paper>
                     </Grid>
                     <Grid item xs={6}>
@@ -139,6 +145,7 @@ const Project = (props: Props) => {
                           name="value"
                           className={styles.input}
                           value={setting.value}
+                          style={{ color: '#fff' }}
                           onChange={(e) => handleValueChange(index, e)}
                         />
                       </Paper>
@@ -147,14 +154,14 @@ const Project = (props: Props) => {
                 ))
               ) : (
                 <Grid item marginBottom="20px">
-                  <Typography>No schema available in xrengine.config.ts</Typography>
+                  <Typography>No schema available in atlas.config.ts</Typography>
                 </Grid>
               )}
             </Grid>
           </Grid>
           {settings?.length > 0 && (
             <Grid item container xs={12}>
-              <Button sx={{ maxWidth: '100%' }} variant="outlined" onClick={handleCancel}>
+              <Button sx={{ maxWidth: '100%' }} variant="outlined" style={{ color: '#fff' }} onClick={handleCancel}>
                 {t('admin:components.setting.cancel')}
               </Button>
               &nbsp; &nbsp;

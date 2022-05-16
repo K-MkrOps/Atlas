@@ -1,4 +1,4 @@
-import { defineAction } from '@xrengine/hyperflux'
+import { defineAction } from '@atlasfoundation/hyperflux'
 
 import { matchesWeightsParameters } from '../../avatar/animation/Util'
 import {
@@ -26,6 +26,16 @@ export class NetworkWorldAction {
   static destroyClient = defineAction({
     store: 'WORLD',
     type: 'network.DESTROY_CLIENT',
+    $to: 'others'
+  })
+
+  static timeSync = defineAction({
+    store: 'WORLD',
+    type: 'network.TIME_SYNC',
+    elapsedTime: matchesWithDefault(matches.number, () => Engine.instance.currentWorld.elapsedTime),
+    clockTime: matchesWithDefault(matches.number, () => Date.now()),
+    $time: -1,
+    $from: matchesHost,
     $to: 'others'
   })
 

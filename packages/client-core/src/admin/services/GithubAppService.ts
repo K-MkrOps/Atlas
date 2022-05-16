@@ -1,6 +1,6 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { GithubAppInterface } from '@xrengine/common/src/interfaces/GithubAppInterface'
+import { GithubAppInterface } from '@atlasfoundation/common/src/interfaces/GithubAppInterface'
 
 import { client } from '../../feathers'
 import { store } from '../../store'

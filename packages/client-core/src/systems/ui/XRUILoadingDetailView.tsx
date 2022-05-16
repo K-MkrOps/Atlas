@@ -1,12 +1,12 @@
-import { createState, State, useHookstate } from '@speigg/hookstate'
+import { createState, State, useHookstate } from '@hoostate/core'
 import getImagePalette from 'image-palette-core'
 import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Color } from 'three'
 
-import { useEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { createXRUI, XRUI } from '@xrengine/engine/src/xrui/functions/createXRUI'
-import { useXRUIState } from '@xrengine/engine/src/xrui/functions/useXRUIState'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { createXRUI, XRUI } from '@atlasfoundation/engine/src/xrui/functions/createXRUI'
+import { useXRUIState } from '@atlasfoundation/engine/src/xrui/functions/useXRUIState'
 
 import { useSceneState } from '../../world/services/SceneService'
 import ProgressBar from './SimpleProgressBar'

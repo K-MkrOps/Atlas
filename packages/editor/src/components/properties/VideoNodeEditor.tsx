@@ -1,11 +1,11 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { getComponent, hasComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { ErrorComponent } from '@xrengine/engine/src/scene/components/ErrorComponent'
-import { VideoComponent } from '@xrengine/engine/src/scene/components/VideoComponent'
-import { toggleVideo } from '@xrengine/engine/src/scene/functions/loaders/VideoFunctions'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { getComponent, hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { ErrorComponent } from '@atlasfoundation/engine/src/scene/components/ErrorComponent'
+import { VideoComponent } from '@atlasfoundation/engine/src/scene/components/VideoComponent'
+import { toggleVideo } from '@atlasfoundation/engine/src/scene/functions/loaders/VideoFunctions'
 
 import VideocamIcon from '@mui/icons-material/Videocam'
 
@@ -20,7 +20,6 @@ import { EditorComponentType, updateProperty } from './Util'
 /**
  * VideoNodeEditor used to render editor view for property customization.
  *
- * @author Robert Long
  * @param       {any} props
  * @constructor
  */

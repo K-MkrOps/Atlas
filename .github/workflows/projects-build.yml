@@ -21,18 +21,18 @@ jobs:
     if: ${{ needs.secrets-gate.outputs.ok == 'enabled' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout XREngine
+      - name: Checkout Atlas
         uses: actions/checkout@v3
-      - name: Checkout XREngine-Project-eCommerce Project
-        uses: actions/checkout@v3
-        with:
-          repository: XRFoundation/XREngine-Project-eCommerce
-          path: './packages/projects/projects/XREngine-Project-eCommerce'
-      - name: Checkout XREngine-Project-Demo Project
+      - name: Checkout Atlas-Project-eCommerce Project
         uses: actions/checkout@v3
         with:
-          repository: XRFoundation/XREngine-Project-Demo
-          path: './packages/projects/projects/XREngine-Project-Demo'
+          repository: AtlasFoundation/Atlas-Project-eCommerce
+          path: './packages/projects/projects/Atlas-Project-eCommerce'
+      - name: Checkout Atlas-Project-Demo Project
+        uses: actions/checkout@v3
+        with:
+          repository: AtlasFoundation/Atlas-Project-Demo
+          path: './packages/projects/projects/Atlas-Project-Demo'
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:

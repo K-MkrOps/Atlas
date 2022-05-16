@@ -1,5 +1,5 @@
 apiVersion: v2
-name: xrengine
+name: atlas
 description: A Helm chart for Kubernetes
 icon: https://avatars3.githubusercontent.com/u/61642798
 

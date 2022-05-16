@@ -2,9 +2,9 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: {{ include "xrengine.builder.fullname" . }}
+  name: {{ include "atlas.builder.fullname" . }}
   labels:
-    {{- include "xrengine.builder.labels" . | nindent 4 }}
+    {{- include "atlas.builder.labels" . | nindent 4 }}
 rules:
   - apiGroups:
       - ""

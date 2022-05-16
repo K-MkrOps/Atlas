@@ -1,11 +1,6 @@
 // Credit https://github.com/maximeq/three-js-capsule-geometry
 import { BufferAttribute, BufferGeometry, Vector2, Vector3 } from 'three'
 
-// helper letiables
-
-/**
- * @author maximequiblier
- */
 export class CapsuleBufferGeometry extends BufferGeometry {
   parameters
   radiusTop: number

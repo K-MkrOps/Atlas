@@ -1,4 +1,4 @@
-import defaultThemeSettings from '@xrengine/common/src/constants/DefaultThemeSettings'
+import defaultThemeSettings from '@atlasfoundation/common/src/constants/DefaultThemeSettings'
 
 export const clientSeed = {
   path: 'client-setting',
@@ -19,11 +19,11 @@ export const clientSeed = {
       icon512px: '/android-chrome-512x512.png',
       appBackground: 'static/main-background.png',
       appTitle: 'static/overlay_mark.svg',
-      appSubtitle: 'by XR Foundation',
+      appSubtitle: 'by Atlas Foundation',
       appDescription: 'Realtime 3D social application for everyone to enjoy.',
       appSocialLinks: JSON.stringify([
-        { icon: 'static/discord.svg', link: 'https://discord.gg/xrf' },
-        { icon: 'static/github.svg', link: 'https://github.com/XRFoundation' }
+        { icon: 'static/discord.svg', link: 'https://discord.gg/atlasfoundation' },
+        { icon: 'static/github.svg', link: 'https://github.com/AtlasFoundation' }
       ]),
       themeSettings: JSON.stringify(defaultThemeSettings)
     }

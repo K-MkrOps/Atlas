@@ -2,17 +2,17 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
-import { hasComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
-import { PersistTagComponent } from '@xrengine/engine/src/scene/components/PersistTagComponent'
-import { PreventBakeTagComponent } from '@xrengine/engine/src/scene/components/PreventBakeTagComponent'
-import { SceneTagComponent } from '@xrengine/engine/src/scene/components/SceneTagComponent'
-import { VisibleComponent } from '@xrengine/engine/src/scene/components/VisibleComponent'
-import { SCENE_COMPONENT_PERSIST } from '@xrengine/engine/src/scene/functions/loaders/PersistFunctions'
-import { SCENE_COMPONENT_PREVENT_BAKE } from '@xrengine/engine/src/scene/functions/loaders/PreventBakeFunctions'
-import { SCENE_COMPONENT_VISIBLE } from '@xrengine/engine/src/scene/functions/loaders/VisibleFunctions'
-import { DisableTransformTagComponent } from '@xrengine/engine/src/transform/components/DisableTransformTagComponent'
-import { TransformComponent } from '@xrengine/engine/src/transform/components/TransformComponent'
+import { hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { PersistTagComponent } from '@atlasfoundation/engine/src/scene/components/PersistTagComponent'
+import { PreventBakeTagComponent } from '@atlasfoundation/engine/src/scene/components/PreventBakeTagComponent'
+import { SceneTagComponent } from '@atlasfoundation/engine/src/scene/components/SceneTagComponent'
+import { VisibleComponent } from '@atlasfoundation/engine/src/scene/components/VisibleComponent'
+import { SCENE_COMPONENT_PERSIST } from '@atlasfoundation/engine/src/scene/functions/loaders/PersistFunctions'
+import { SCENE_COMPONENT_PREVENT_BAKE } from '@atlasfoundation/engine/src/scene/functions/loaders/PreventBakeFunctions'
+import { SCENE_COMPONENT_VISIBLE } from '@atlasfoundation/engine/src/scene/functions/loaders/VisibleFunctions'
+import { DisableTransformTagComponent } from '@atlasfoundation/engine/src/transform/components/DisableTransformTagComponent'
+import { TransformComponent } from '@atlasfoundation/engine/src/transform/components/TransformComponent'
 
 import { executeCommandWithHistoryOnSelection } from '../../classes/History'
 import { TagComponentOperation } from '../../commands/TagComponentCommand'
@@ -27,7 +27,6 @@ import TransformPropertyGroup from './TransformPropertyGroup'
 /**
  * StyledNodeEditor used as wrapper container element properties container.
  *
- * @author Robert Long
  * @type {styled component}
  */
 const StyledNodeEditor = (styled as any).div`
@@ -36,7 +35,6 @@ const StyledNodeEditor = (styled as any).div`
 /**
  * PropertiesHeader used as a wrapper for NameInputGroupContainer component.
  *
- * @author Robert Long
  */
 const PropertiesHeader = (styled as any).div`
   border: none !important;
@@ -46,7 +44,6 @@ const PropertiesHeader = (styled as any).div`
 /**
  * NameInputGroupContainer used to provides styles and contains NameInputGroup and VisibleInputGroup.
  *
- *  @author Robert Long
  *  @type {Styled Component}
  */
 const NameInputGroupContainer = (styled as any).div`
@@ -54,7 +51,6 @@ const NameInputGroupContainer = (styled as any).div`
 /**
  * Styled component used to provide styles for visiblity checkbox.
  *
- * @author Robert Long
  */
 const VisibleInputGroup = (styled as any)(InputGroup)`
   & > label {
@@ -65,7 +61,6 @@ const VisibleInputGroup = (styled as any)(InputGroup)`
 /**
  * Styled component used to provide styles for visiblity checkbox.
  *
- * @author Robert Long
  */
 const PersistInputGroup = (styled as any)(InputGroup)`
  & > label {
@@ -76,7 +71,6 @@ const PersistInputGroup = (styled as any)(InputGroup)`
 /**
  * PropertiesPanelContent used as container element contains content of editor view.
  *
- * @author Robert Long
  * @type {Styled Component}
  */
 const PropertiesPanelContent = (styled as any).div`
@@ -87,7 +81,6 @@ const PropertiesPanelContent = (styled as any).div`
 /**
  * NoNodeSelectedMessage used to show the message when no selected no is there.
  *
- * @author Robert Long
  * @type {Styled component}
  */
 const NoNodeSelectedMessage = (styled as any).div`
@@ -95,13 +88,12 @@ const NoNodeSelectedMessage = (styled as any).div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--textColor);
+  color: white;
 `
 
 /**
  * PropertiesPanelContainer used to render editor view to customize property of selected element.
  *
- * @author Robert Long
  * @extends Component
  */
 export const PropertiesPanelContainer = () => {

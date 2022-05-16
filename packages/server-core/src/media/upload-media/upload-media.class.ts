@@ -10,7 +10,6 @@ interface ServiceOptions {}
 /**
  * A class for Upload Media service
  *
- * @author Vyacheslav Solovjov
  */
 export class UploadMedia implements ServiceMethods<Data> {
   app: Application

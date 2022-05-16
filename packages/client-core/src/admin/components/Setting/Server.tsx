@@ -88,27 +88,63 @@ const Server = (props: serverProps) => {
           <br />
           <label>{t('admin:components.setting.mode')}</label>
           <Paper component="div" className={styles.createInput}>
-            <InputBase name="mode" className={styles.input} disabled value={serverSetting?.mode || 'test'} />
+            <InputBase
+              name="mode"
+              className={styles.input}
+              disabled
+              style={{ color: '#fff' }}
+              value={serverSetting?.mode || 'test'}
+            />
           </Paper>
           <label> {t('admin:components.setting.hostName')}</label>
           <Paper component="div" className={styles.createInput}>
-            <InputBase name="hostname" className={styles.input} disabled value={serverSetting?.hostname || 'test'} />
+            <InputBase
+              name="hostname"
+              className={styles.input}
+              disabled
+              style={{ color: '#fff' }}
+              value={serverSetting?.hostname || 'test'}
+            />
           </Paper>
           <label>{t('admin:components.setting.port')}</label>
           <Paper component="div" className={styles.createInput}>
-            <InputBase name="port" className={styles.input} value={serverSetting?.port || ''} disabled />
+            <InputBase
+              name="port"
+              className={styles.input}
+              value={serverSetting?.port || ''}
+              disabled
+              style={{ color: '#fff' }}
+            />
           </Paper>
           <label> {t('admin:components.setting.clientHost')}</label>
           <Paper component="div" className={styles.createInput}>
-            <InputBase name="clienthost" className={styles.input} disabled value={serverSetting?.clientHost || ''} />
+            <InputBase
+              name="clienthost"
+              className={styles.input}
+              disabled
+              style={{ color: '#fff' }}
+              value={serverSetting?.clientHost || ''}
+            />
           </Paper>
           <label>{t('admin:components.setting.rootDirectory')}</label>
           <Paper component="div" className={styles.createInput}>
-            <InputBase name="rootDir" className={styles.input} disabled value={serverSetting?.rootDir || ''} />
+            <InputBase
+              name="rootDir"
+              className={styles.input}
+              disabled
+              style={{ color: '#fff' }}
+              value={serverSetting?.rootDir || ''}
+            />
           </Paper>
           <label>{t('admin:components.setting.publicDirectory')}</label>
           <Paper component="div" className={styles.createInput}>
-            <InputBase name="publicDir" className={styles.input} disabled value={serverSetting?.publicDir || ''} />
+            <InputBase
+              name="publicDir"
+              className={styles.input}
+              disabled
+              style={{ color: '#fff' }}
+              value={serverSetting?.publicDir || ''}
+            />
           </Paper>
           <label>{t('admin:components.setting.nodeModulesDirectory')}</label>
           <Paper component="div" className={styles.createInput}>
@@ -116,6 +152,7 @@ const Server = (props: serverProps) => {
               name="nodeModule"
               className={styles.input}
               disabled
+              style={{ color: '#fff' }}
               value={serverSetting?.nodeModulesDir || ''}
             />
           </Paper>{' '}
@@ -125,6 +162,7 @@ const Server = (props: serverProps) => {
               name="localStorageProvider"
               className={styles.input}
               disabled
+              style={{ color: '#fff' }}
               value={serverSetting?.localStorageProvider || ''}
             />
           </Paper>
@@ -147,6 +185,7 @@ const Server = (props: serverProps) => {
               name="StorageProvider"
               className={styles.input}
               disabled
+              style={{ color: '#fff' }}
               value={serverSetting?.storageProvider || ''}
             />
           </Paper>
@@ -158,6 +197,7 @@ const Server = (props: serverProps) => {
             <InputBase
               name="googleTrackingid"
               className={styles.input}
+              style={{ color: '#fff' }}
               value={gaTrackingId || ''}
               onChange={(e) => setGaTrackingId(e.target.value)}
             />
@@ -170,7 +210,13 @@ const Server = (props: serverProps) => {
             <List component="div" disablePadding>
               <ListItem button className={styles.nested}>
                 <Paper component="div" className={styles.createInput}>
-                  <InputBase name="hub" className={styles.input} disabled value={serverSetting?.hub?.endpoint || ''} />
+                  <InputBase
+                    name="hub"
+                    className={styles.input}
+                    style={{ color: '#fff' }}
+                    disabled
+                    value={serverSetting?.hub?.endpoint || ''}
+                  />
                 </Paper>
               </ListItem>
             </List>
@@ -189,21 +235,40 @@ const Server = (props: serverProps) => {
           </Collapse>
           <label>{t('admin:components.setting.url')}</label>
           <Paper component="div" className={styles.createInput}>
-            <InputBase name="url" className={styles.input} disabled value={serverSetting?.url || ''} />
+            <InputBase
+              name="url"
+              className={styles.input}
+              disabled
+              style={{ color: '#fff' }}
+              value={serverSetting?.url || ''}
+            />
           </Paper>
           <label> {t('admin:components.setting.certPath')} </label>
           <Paper component="div" className={styles.createInput}>
-            <InputBase name="certPath" className={styles.input} disabled value={serverSetting?.certPath || ''} />
+            <InputBase
+              name="certPath"
+              className={styles.input}
+              disabled
+              style={{ color: '#fff' }}
+              value={serverSetting?.certPath || ''}
+            />
           </Paper>
           <label> {t('admin:components.setting.keyPath')} </label>
           <Paper component="div" className={styles.createInput}>
-            <InputBase name="keyPath" className={styles.input} disabled value={serverSetting?.keyPath || ''} />
+            <InputBase
+              name="keyPath"
+              className={styles.input}
+              disabled
+              style={{ color: '#fff' }}
+              value={serverSetting?.keyPath || ''}
+            />
           </Paper>
           <label> {t('admin:components.setting.githubPrivateKey')} </label>
           <Paper component="div" className={styles.createInput}>
             <InputBase
               name="GithubPrivateKey"
               className={styles.input}
+              style={{ color: '#fff' }}
               value={gitPem || ''}
               onChange={(e) => setGitPem(e.target.value)}
             />
@@ -221,11 +286,17 @@ const Server = (props: serverProps) => {
           </Paper>
           <label> {t('admin:components.setting.releaseName')} </label>
           <Paper component="div" className={styles.createInput}>
-            <InputBase name="releaseName" className={styles.input} disabled value={serverSetting?.releaseName || ''} />
+            <InputBase
+              name="releaseName"
+              className={styles.input}
+              disabled
+              style={{ color: '#fff' }}
+              value={serverSetting?.releaseName || ''}
+            />
           </Paper>
         </Grid>
       </Grid>
-      <Button sx={{ maxWidth: '100%' }} variant="outlined" className={styles.cancelButton} onClick={handleCancel}>
+      <Button sx={{ maxWidth: '100%' }} variant="outlined" style={{ color: '#fff' }} onClick={handleCancel}>
         {t('admin:components.setting.cancel')}
       </Button>
       &nbsp; &nbsp;

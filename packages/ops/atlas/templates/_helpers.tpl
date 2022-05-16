@@ -2,35 +2,35 @@
 {{/*
 Expand the name of the chart.
 */}}
-# {{- define "xrengine.name" -}}
+# {{- define "atlas.name" -}}
 # {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 # {{- end -}}
 
-{{- define "xrengine.analytics.name" -}}
+{{- define "atlas.analytics.name" -}}
 {{- default .Chart.Name .Values.analytics.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
-{{- define "xrengine.client.name" -}}
+{{- define "atlas.client.name" -}}
 {{- default .Chart.Name .Values.client.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
-{{- define "xrengine.api.name" -}}
+{{- define "atlas.api.name" -}}
 {{- default .Chart.Name .Values.api.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
-{{- define "xrengine.media.name" -}}
+{{- define "atlas.media.name" -}}
 {{- default .Chart.Name .Values.media.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
-{{- define "xrengine.gameserver.name" -}}
+{{- define "atlas.gameserver.name" -}}
 {{- default .Chart.Name .Values.gameserver.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
-{{- define "xrengine.editor.name" -}}
+{{- define "atlas.editor.name" -}}
 {{- default .Chart.Name .Values.editor.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
-{{- define "xrengine.testbot.name" -}}
+{{- define "atlas.testbot.name" -}}
 {{- default .Chart.Name (.Values.testbot).nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
@@ -40,7 +40,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "xrengine.fullname" -}}
+{{- define "atlas.fullname" -}}
 {{- if .Values.fullnameOverride -}}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -54,7 +54,7 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 
 
-{{- define "xrengine.analytics.fullname" -}}
+{{- define "atlas.analytics.fullname" -}}
 {{- if .Values.analytics.fullnameOverride -}}
 {{- .Values.analytics.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -63,7 +63,7 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 
 
-{{- define "xrengine.client.fullname" -}}
+{{- define "atlas.client.fullname" -}}
 {{- if .Values.client.fullnameOverride -}}
 {{- .Values.client.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -72,7 +72,7 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 
 
-{{- define "xrengine.api.fullname" -}}
+{{- define "atlas.api.fullname" -}}
 {{- if .Values.api.fullnameOverride -}}
 {{- .Values.api.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -81,7 +81,7 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 
 
-{{- define "xrengine.media.fullname" -}}
+{{- define "atlas.media.fullname" -}}
 {{- if .Values.media.fullnameOverride -}}
 {{- .Values.media.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -89,7 +89,7 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 {{- end -}}
 
-{{- define "xrengine.gameserver.fullname" -}}
+{{- define "atlas.gameserver.fullname" -}}
 {{- if .Values.gameserver.fullnameOverride -}}
 {{- .Values.gameserver.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -98,7 +98,7 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 
 
-{{- define "xrengine.testbot.fullname" -}}
+{{- define "atlas.testbot.fullname" -}}
 {{- if (.Values.testbot).fullnameOverride -}}
 {{- .Values.testbot.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -106,12 +106,12 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 {{- end -}}
 
-{{- define "xrengine.client.host" -}}
+{{- define "atlas.client.host" -}}
 {{- printf "%s.%s.%s" "dashboard" .Release.Name .Values.domain -}}
 {{- end -}}
 
 
-{{- define "xrengine.media.host" -}}
+{{- define "atlas.media.host" -}}
 {{- printf "%s.%s.%s" "media" .Release.Name .Values.domain -}}
 {{- end -}}
 
@@ -120,16 +120,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "xrengine.chart" -}}
+{{- define "atlas.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{/*
 Common labels
 */}}
-{{- define "xrengine.analytics.labels" -}}
-helm.sh/chart: {{ include "xrengine.chart" . }}
-{{ include "xrengine.analytics.selectorLabels" . }}
+{{- define "atlas.analytics.labels" -}}
+helm.sh/chart: {{ include "atlas.chart" . }}
+{{ include "atlas.analytics.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -139,8 +139,8 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "xrengine.analytics.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "xrengine.analytics.name" . }}
+{{- define "atlas.analytics.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "atlas.analytics.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/component: analytics
 {{- end -}}
@@ -148,9 +148,9 @@ app.kubernetes.io/component: analytics
 {{/*
 Common labels
 */}}
-{{- define "xrengine.client.labels" -}}
-helm.sh/chart: {{ include "xrengine.chart" . }}
-{{ include "xrengine.client.selectorLabels" . }}
+{{- define "atlas.client.labels" -}}
+helm.sh/chart: {{ include "atlas.chart" . }}
+{{ include "atlas.client.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -160,8 +160,8 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "xrengine.client.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "xrengine.client.name" . }}
+{{- define "atlas.client.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "atlas.client.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/component: client
 {{- end -}}
@@ -170,9 +170,9 @@ app.kubernetes.io/component: client
 {{/*
 Common labels
 */}}
-{{- define "xrengine.api.labels" -}}
-helm.sh/chart: {{ include "xrengine.chart" . }}
-{{ include "xrengine.api.selectorLabels" . }}
+{{- define "atlas.api.labels" -}}
+helm.sh/chart: {{ include "atlas.chart" . }}
+{{ include "atlas.api.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -182,8 +182,8 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "xrengine.api.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "xrengine.api.name" . }}
+{{- define "atlas.api.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "atlas.api.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/component: api
 {{- end -}}
@@ -192,9 +192,9 @@ app.kubernetes.io/component: api
 {{/*
 Common labels
 */}}
-{{- define "xrengine.media.labels" -}}
-helm.sh/chart: {{ include "xrengine.chart" . }}
-{{ include "xrengine.media.selectorLabels" . }}
+{{- define "atlas.media.labels" -}}
+helm.sh/chart: {{ include "atlas.chart" . }}
+{{ include "atlas.media.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -204,8 +204,8 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "xrengine.media.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "xrengine.media.name" . }}
+{{- define "atlas.media.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "atlas.media.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/component: media
 {{- end -}}
@@ -213,9 +213,9 @@ app.kubernetes.io/component: media
 {{/*
 Common labels
 */}}
-{{- define "xrengine.gameserver.labels" -}}
-helm.sh/chart: {{ include "xrengine.chart" . }}
-{{ include "xrengine.gameserver.selectorLabels" . }}
+{{- define "atlas.gameserver.labels" -}}
+helm.sh/chart: {{ include "atlas.chart" . }}
+{{ include "atlas.gameserver.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -225,8 +225,8 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "xrengine.gameserver.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "xrengine.gameserver.name" . }}
+{{- define "atlas.gameserver.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "atlas.gameserver.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/component: gameserver
 {{- end -}}
@@ -235,9 +235,9 @@ app.kubernetes.io/component: gameserver
 {{/*
 Common labels
 */}}
-{{- define "xrengine.testbot.labels" -}}
-helm.sh/chart: {{ include "xrengine.chart" . }}
-{{ include "xrengine.testbot.selectorLabels" . }}
+{{- define "atlas.testbot.labels" -}}
+helm.sh/chart: {{ include "atlas.chart" . }}
+{{ include "atlas.testbot.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -247,8 +247,8 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "xrengine.testbot.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "xrengine.testbot.name" . }}
+{{- define "atlas.testbot.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "atlas.testbot.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/component: testbot
 {{- end -}}
@@ -257,9 +257,9 @@ app.kubernetes.io/component: testbot
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "xrengine.analytics.serviceAccountName" -}}
+{{- define "atlas.analytics.serviceAccountName" -}}
 {{- if .Values.analytics.serviceAccount.create -}}
-    {{ default (include "xrengine.analytics.fullname" .) .Values.analytics.serviceAccount.name }}
+    {{ default (include "atlas.analytics.fullname" .) .Values.analytics.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.analytics.serviceAccount.name }}
 {{- end -}}
@@ -269,9 +269,9 @@ Create the name of the service account to use
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "xrengine.client.serviceAccountName" -}}
+{{- define "atlas.client.serviceAccountName" -}}
 {{- if .Values.client.serviceAccount.create -}}
-    {{ default (include "xrengine.client.fullname" .) .Values.client.serviceAccount.name }}
+    {{ default (include "atlas.client.fullname" .) .Values.client.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.client.serviceAccount.name }}
 {{- end -}}
@@ -281,9 +281,9 @@ Create the name of the service account to use
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "xrengine.api.serviceAccountName" -}}
+{{- define "atlas.api.serviceAccountName" -}}
 {{- if .Values.api.serviceAccount.create -}}
-    {{ default (include "xrengine.api.fullname" .) .Values.api.serviceAccount.name }}
+    {{ default (include "atlas.api.fullname" .) .Values.api.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.api.serviceAccount.name }}
 {{- end -}}
@@ -292,9 +292,9 @@ Create the name of the service account to use
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "xrengine.media.serviceAccountName" -}}
+{{- define "atlas.media.serviceAccountName" -}}
 {{- if .Values.media.serviceAccount.create -}}
-    {{ default (include "xrengine.media.fullname" .) .Values.media.serviceAccount.name }}
+    {{ default (include "atlas.media.fullname" .) .Values.media.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.media.serviceAccount.name }}
 {{- end -}}
@@ -303,9 +303,9 @@ Create the name of the service account to use
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "xrengine.gameserver.serviceAccountName" -}}
+{{- define "atlas.gameserver.serviceAccountName" -}}
 {{- if .Values.gameserver.serviceAccount.create -}}
-    {{ default (include "xrengine.gameserver.fullname" .) .Values.gameserver.serviceAccount.name }}
+    {{ default (include "atlas.gameserver.fullname" .) .Values.gameserver.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.gameserver.serviceAccount.name }}
 {{- end -}}
@@ -315,9 +315,9 @@ Create the name of the service account to use
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "xrengine.testbot.serviceAccountName" -}}
+{{- define "atlas.testbot.serviceAccountName" -}}
 {{- if ((.Values.testbot).serviceAccount).create -}}
-    {{ default (include "xrengine.testbot.fullname" .) .Values.testbot.serviceAccount.name }}
+    {{ default (include "atlas.testbot.fullname" .) .Values.testbot.serviceAccount.name }}
 {{- else -}}
     {{ default "default" ((.Values.testbot).serviceAccount).name }}
 {{- end -}}
@@ -328,7 +328,7 @@ Create the name of the service account to use
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}
-{{- define "xrengine.mariadb.fullname" -}}
+{{- define "atlas.mariadb.fullname" -}}
 {{- if ((.Values.mariadb).fullnameOverride) -}}
 {{- .Values.mariadb.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -341,9 +341,9 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{/*
 Set maria host
 */}}
-{{- define "xrengine.mariadb.host" -}}
+{{- define "atlas.mariadb.host" -}}
 {{- if ((.Values.mariadb).enabled) -}}
-{{- template "xrengine.mariadb.fullname" . -}}
+{{- template "atlas.mariadb.fullname" . -}}
 {{- else if ((.Values.mariadb).externalHost) -}}
 {{- .Values.mariadb.externalHost | quote -}}
 {{- end -}}

@@ -4,12 +4,13 @@ import fs from 'fs'
 import path from 'path'
 
 import logger from '../../logger'
-import { getStorageProvider } from '../../media/storageprovider/storageprovider'
+import { useStorageProvider } from '../../media/storageprovider/storageprovider'
 import { getFileKeysRecursive } from '../../media/storageprovider/storageProviderUtils'
 import { deleteFolderRecursive, writeFileSyncRecursive } from '../../util/fsHelperFunctions'
 
+const storageProvider = useStorageProvider()
+
 export const download = async (projectName) => {
-  const storageProvider = getStorageProvider()
   try {
     logger.info(`[ProjectLoader]: Installing project "${projectName}"...`)
     const files = await getFileKeysRecursive(`projects/${projectName}/`)
@@ -23,15 +24,13 @@ export const download = async (projectName) => {
 
     await Promise.all(
       files.map(async (filePath) => {
-        if (path.parse(filePath).ext.length > 0) {
-          logger.info(`[ProjectLoader]: - downloading "${filePath}"`)
-          const fileResult = await storageProvider.getObject(filePath)
+        logger.info(`[ProjectLoader]: - downloading "${filePath}"`)
+        const fileResult = await storageProvider.getObject(filePath)
 
-          if (fileResult.Body.length === 0) {
-            logger.info(`[ProjectLoader]: WARNING file "${filePath}" is empty`)
-          }
-          writeFileSyncRecursive(path.join(appRootPath.path, 'packages/projects', filePath), fileResult.Body)
+        if (fileResult.Body.length === 0) {
+          logger.info(`[ProjectLoader]: WARNING file "${filePath}" is empty`)
         }
+        writeFileSyncRecursive(path.join(appRootPath.path, 'packages/projects', filePath), fileResult.Body)
       })
     )
 
@@ -42,13 +41,13 @@ export const download = async (projectName) => {
         npmInstallProcess.once('exit', resolve)
         npmInstallProcess.once('error', resolve)
         npmInstallProcess.once('disconnect', resolve)
-        npmInstallProcess.stdout.on('data', (data) => logger.info(data.toString()))
-      }).then((result) => logger.info(result))
+        npmInstallProcess.stdout.on('data', (data) => console.log(data.toString()))
+      }).then(console.log)
       await Promise.race([
         npmInstallPromise,
         new Promise<void>((resolve) => {
           setTimeout(() => {
-            logger.warn(`WARNING: npm installing ${projectName} too long!`)
+            console.log(`WARNING: npm installing ${projectName} too long!`)
             resolve()
           }, 20 * 60 * 1000) // timeout after 10 minutes
         })

@@ -1,8 +1,8 @@
 import { Box3, Matrix3, Sphere, Spherical, Vector3 } from 'three'
 
-import { World } from '@xrengine/engine/src/ecs/classes/World'
-import { defineQuery, getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { Object3DComponent } from '@xrengine/engine/src/scene/components/Object3DComponent'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import { defineQuery, getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
 
 import { EditorCameraComponent } from '../classes/EditorCameraComponent'
 
@@ -11,9 +11,6 @@ const MAX_FOCUS_DISTANCE = 1000
 const PAN_SPEED = 1
 const ORBIT_SPEED = 5
 
-/**
- * @author Gheric Speiginer <github.com/speigg>
- */
 export default async function GizmoSystem(world: World) {
   const box = new Box3()
   const delta = new Vector3()

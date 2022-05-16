@@ -4,7 +4,7 @@ import { Paginated } from '@feathersjs/feathers/lib'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import Sequelize, { Op } from 'sequelize'
 
-import { User as UserInterface } from '@xrengine/common/src/interfaces/User'
+import { User as UserInterface } from '@atlasfoundation/common/src/interfaces/User'
 
 import { Application } from '../../../declarations'
 

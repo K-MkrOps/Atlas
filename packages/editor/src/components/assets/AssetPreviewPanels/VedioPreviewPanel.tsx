@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 /**
- * @author Abhishek Pathak
  */
 const VedioPreview = styled.video`
   display: block;
@@ -12,7 +11,6 @@ const VedioPreview = styled.video`
 `
 
 /**
- * @author Abhishek Pathak <abhi.pathak401@gmail.com>
  * @param props
  * @returns
  */

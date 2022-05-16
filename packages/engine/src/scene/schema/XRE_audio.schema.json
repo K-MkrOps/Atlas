@@ -3,7 +3,7 @@
   "$id": "XRE_audio.schema.json",
   "title": "XRE_audio glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine audio components",
+  "description": "serialization extension for Atlas audio components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "audioSource": {

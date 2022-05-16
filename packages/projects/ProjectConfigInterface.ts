@@ -1,5 +1,5 @@
-import type { World } from '@xrengine/engine/src/ecs/classes/World'
-import type { Application } from '@xrengine/server-core/declarations'
+import type { World } from '@atlasfoundation/engine/src/ecs/classes/World'
+import type { Application } from '@atlasfoundation/server-core/declarations'
 
 export interface ProjectConfigInterface {
   /**

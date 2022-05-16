@@ -1,6 +1,6 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { store } from '@xrengine/client-core/src/store'
+import { store } from '@atlasfoundation/client-core/src/store'
 
 export enum TaskStatus {
   NOT_STARTED = 0,

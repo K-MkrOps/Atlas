@@ -2,20 +2,18 @@ import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocation, useRouteMatch } from 'react-router-dom'
 
-import Layout from '@xrengine/client-core/src/components/Layout'
-import { LoadingCircle } from '@xrengine/client-core/src/components/LoadingCircle'
-import { LoadEngineWithScene } from '@xrengine/client-core/src/components/World/LoadEngineWithScene'
-import LoadLocationScene from '@xrengine/client-core/src/components/World/LoadLocationScene'
-import NetworkInstanceProvisioning from '@xrengine/client-core/src/components/World/NetworkInstanceProvisioning'
-import OfflineLocation from '@xrengine/client-core/src/components/World/OfflineLocation'
-import { LocationAction, useLocationState } from '@xrengine/client-core/src/social/services/LocationService'
-import { useDispatch } from '@xrengine/client-core/src/store'
-import { DefaultLocationSystems } from '@xrengine/client-core/src/systems/DefaultLocationSystems'
-import { AuthService } from '@xrengine/client-core/src/user/services/AuthService'
-import { SceneService } from '@xrengine/client-core/src/world/services/SceneService'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { useEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { useHookEffect } from '@xrengine/hyperflux'
+import Layout from '@atlasfoundation/client-core/src/components/Layout'
+import { LoadingCircle } from '@atlasfoundation/client-core/src/components/LoadingCircle'
+import { LoadEngineWithScene } from '@atlasfoundation/client-core/src/components/World/LoadEngineWithScene'
+import LoadLocationScene from '@atlasfoundation/client-core/src/components/World/LoadLocationScene'
+import NetworkInstanceProvisioning from '@atlasfoundation/client-core/src/components/World/NetworkInstanceProvisioning'
+import OfflineLocation from '@atlasfoundation/client-core/src/components/World/OfflineLocation'
+import { LocationAction, useLocationState } from '@atlasfoundation/client-core/src/social/services/LocationService'
+import { useDispatch } from '@atlasfoundation/client-core/src/store'
+import { AuthService } from '@atlasfoundation/client-core/src/user/services/AuthService'
+import { SceneService } from '@atlasfoundation/client-core/src/world/services/SceneService'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { useHookEffect } from '@atlasfoundation/hyperflux'
 
 const LocationPage = () => {
   const { t } = useTranslation()
@@ -32,7 +30,6 @@ const LocationPage = () => {
   useEffect(() => {
     dispatch(LocationAction.setLocationName(locationName))
     AuthService.listenForUserPatch()
-    Engine.instance.injectedSystems.push(...DefaultLocationSystems)
   }, [])
 
   /**

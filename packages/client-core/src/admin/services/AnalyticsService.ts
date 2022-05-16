@@ -1,6 +1,6 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { AdminAnalytics, AdminAnalyticsResult } from '@xrengine/common/src/interfaces/AdminAnalyticsData'
+import { AdminAnalytics, AdminAnalyticsResult } from '@atlasfoundation/common/src/interfaces/AdminAnalyticsData'
 
 import { client } from '../../feathers'
 import { store, useDispatch } from '../../store'

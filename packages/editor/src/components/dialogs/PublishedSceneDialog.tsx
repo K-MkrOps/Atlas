@@ -7,7 +7,6 @@ import PreviewDialog from './PreviewDialog'
 /**
  * PublishedSceneDialog used to show dialog when scene get published.
  *
- * @author Robert Long
  * @param       {function} onCancel
  * @param       {string} sceneName
  * @param       {string} sceneUrl

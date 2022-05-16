@@ -1,7 +1,6 @@
 /**
  * An object for swagger documentation configuration
  *
- * @author
  */
 
 // TODO: unfinished

@@ -16,7 +16,7 @@
   flex-direction: row;
   align-items: center;
   padding-left: 5px;
-  color: var(--textColor);
+  color: white;
   cursor: pointer;
 
   &:hover {
@@ -30,18 +30,18 @@
 
 .paperDialog {
   background: var(--popupBackground) !important;
-  color: var(--textColor);
+  color: #f1f1f1;
   width: 100%;
   padding: 40px 10px;
 }
 
 .primaryText {
-  color: var(--textColor);
+  color: #f1f1f1;
   font-size: 1.3rem;
 }
 
 .secondaryText {
-  color: var(--textColor);
+  color: #b3b3b3;
 }
 
 .inputContainer {
@@ -51,12 +51,12 @@
   margin-left: 5px;
   background: #343b41;
   border: 1px solid #23282c;
-  color: var(--textColor) !important;
+  color: #f1f1f1 !important;
 }
 
 .input {
   flex: 1;
-  color: var(--textColor);
+  color: #f1f1f1;
 }
 
 .contentContainer {
@@ -77,7 +77,6 @@
     width: 100px;
     font-size: 14px;
     flex-shrink: 0;
-    color: var(--textColor);
     background-color: var(--buttonFilled);
   }
 }
@@ -153,10 +152,6 @@
     &:focus-visible {
       background: var(--dropdownMenuHoverBackground);
     }
-
-    &:global(.Mui-selected) {
-      background: var(--dropdownMenuSelectedBackground);
-    }
   }
 }
 
@@ -174,9 +169,5 @@
 }
 
 .separator {
-  color: var(--textColor);
-}
-
-.breadcrumb {
-  color: var(--textColor);
+  color: #5d646c;
 }

@@ -17,10 +17,6 @@ import {
   Vector4
 } from 'three'
 
-/**
- * @author Mark Kellogg - http://www.github.com/mkkellogg
- */
-
 //=======================================
 // Trail Renderer
 //=======================================

@@ -1,7 +1,3 @@
-/**
- * @author Mugen87 / https://github.com/Mugen87
- */
-
 import { Vehicle } from 'yuka';
 
 class CustomVehicle extends Vehicle {

@@ -1,19 +1,19 @@
 {
-  "name": "@xrengine/hyperflux",
+  "name": "@atlasfoundation/hyperflux",
   "version": "0.5.3",
   "main": "index.ts",
-  "description": "State Management for XREngine",
+  "description": "State Management for Atlas",
   "repository": {
     "type": "git",
-    "url": "git://github.com/XRFoundation/XREngine.git"
+    "url": "git://github.com/AtlasFoundation/Atlas.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/XRFoundation/XREngine/issues"
+    "url": "https://github.com/AtlasFoundation/Atlas/issues"
   },
   "dependencies": {
-    "@speigg/hookstate": "3.0.13-stable-state",
+    "@hookstate/core": "^3.0.13",
     "react-reconciler": "^0.27.0"
   },
   "scripts": {

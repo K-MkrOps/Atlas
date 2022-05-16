@@ -91,9 +91,9 @@ describe('Physics Interation Tests', () => {
     const runPhysics = await PhysicsSystem(world)
 
     const execute = () => {
-      world.fixedDeltaSeconds = mockDelta
+      world.fixedDelta = mockDelta
       world.fixedTick += 1
-      world.elapsedSeconds += mockDelta
+      world.elapsedTime += mockDelta
       runPhysics()
     }
 

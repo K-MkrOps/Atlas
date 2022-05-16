@@ -4,7 +4,7 @@ import userRoleDocs from './user-role.docs'
 import hooks from './user-role.hooks'
 import createModel from './user-role.model'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'user-role': UserRole
   }
@@ -20,7 +20,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new UserRole(options, app)
   event.docs = userRoleDocs

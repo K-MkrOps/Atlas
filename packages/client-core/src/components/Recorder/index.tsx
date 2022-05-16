@@ -9,7 +9,6 @@ declare const window: any
 /**
  * Checks whether the argument is an object
  *
- * @author Abhinav Shah
  * @param {any} o
  */
 function isObject(o) {
@@ -19,7 +18,6 @@ function isObject(o) {
 /**
  * Checks whether constraints are valid
  *
- * @author Abhinav Shah
  * @param {MediaStreamConstraints} mediaType
  */
 function validateMediaTrackConstraints(mediaType) {
@@ -46,7 +44,6 @@ function validateMediaTrackConstraints(mediaType) {
 const noop = () => {}
 
 /**
- * @author Abhinav Shah
  * @callback Callback
  * @param {Blob} blob
  *
@@ -280,7 +277,6 @@ function useMediaRecorder({
 
 /**
  *
- * @author Abhinav Shah
  * @typedef LiveStreamPreviewProps
  * @type {object}
  * @property {MediaStream} stream

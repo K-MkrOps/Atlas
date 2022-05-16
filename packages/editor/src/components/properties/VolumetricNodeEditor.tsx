@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { VolumetricFileTypes } from '@xrengine/engine/src/assets/constants/fileTypes'
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { VolumetricComponent } from '@xrengine/engine/src/scene/components/VolumetricComponent'
-import { VolumetricPlayMode } from '@xrengine/engine/src/scene/constants/VolumetricPlayMode'
-import { toggleVolumetric } from '@xrengine/engine/src/scene/functions/loaders/VolumetricFunctions'
+import { VolumetricFileTypes } from '@atlasfoundation/engine/src/assets/constants/fileTypes'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { VolumetricComponent } from '@atlasfoundation/engine/src/scene/components/VolumetricComponent'
+import { VolumetricPlayMode } from '@atlasfoundation/engine/src/scene/constants/VolumetricPlayMode'
+import { toggleVolumetric } from '@atlasfoundation/engine/src/scene/functions/loaders/VolumetricFunctions'
 
 import VideocamIcon from '@mui/icons-material/Videocam'
 
@@ -40,7 +40,6 @@ const PlayModeOptions = [
 /**
  * VolumetricNodeEditor provides the editor view to customize properties.
  *
- * @author Robert Long
  * @param       {any} props
  * @constructor
  */

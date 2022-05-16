@@ -42,10 +42,10 @@ export const ContactForm = () => {
       )
       .then(
         (_) => {
-          displayDialog(t('xrengineContact.lbl-success'))
+          displayDialog(t('atlasContact.lbl-success'))
         },
         (_) => {
-          displayDialog(t('xrengineContact.lbl-failure'))
+          displayDialog(t('atlasContact.lbl-failure'))
         }
       )
 
@@ -66,15 +66,15 @@ export const ContactForm = () => {
 
     if (!userName) {
       flag = true
-      validationError.userName = t('xrengineContact.err-username')
+      validationError.userName = t('atlasContact.err-username')
     }
     if (!emailAddress) {
       flag = true
-      validationError.emailAddress = t('xrengineContact.err-email')
+      validationError.emailAddress = t('atlasContact.err-email')
     }
     if (!message) {
       flag = true
-      validationError.message = t('xrengineContact.err-msg')
+      validationError.message = t('atlasContact.err-msg')
     }
 
     setError(validationError)
@@ -105,15 +105,15 @@ export const ContactForm = () => {
 
   return (
     <div className={styles.emailDiv}>
-      <p className={styles.emailTitle}>{t('xrengineContact.header')}</p>
-      <p className={styles.emailDetail}>{t('xrengineContact.description')}</p>
+      <p className={styles.emailTitle}>{t('atlasContact.header')}</p>
+      <p className={styles.emailDetail}>{t('atlasContact.description')}</p>
       <div className={styles.formControl}>
-        <label className={styles.inputLabel}>{t('xrengineContact.lbl-name')}</label>
+        <label className={styles.inputLabel}>{t('atlasContact.lbl-name')}</label>
         <input type="text" className={styles.emailInput} value={userName} name="userName" onChange={handleChange} />
         {error.userName && <p className={styles.error}>{error.userName}</p>}
       </div>
       <div className={styles.formControl}>
-        <label className={styles.inputLabel}>{t('xrengineContact.lbl-email')}</label>
+        <label className={styles.inputLabel}>{t('atlasContact.lbl-email')}</label>
         <input
           type="text"
           className={styles.emailInput}
@@ -124,7 +124,7 @@ export const ContactForm = () => {
         {error.emailAddress && <p className={styles.error}>{error.emailAddress}</p>}
       </div>
       <div className={styles.formControl}>
-        <label className={styles.inputLabel}>{t('xrengineContact.lbl-company')}</label>
+        <label className={styles.inputLabel}>{t('atlasContact.lbl-company')}</label>
         <input
           type="text"
           className={styles.emailInput}
@@ -134,13 +134,13 @@ export const ContactForm = () => {
         />
       </div>
       <div className={styles.formControl}>
-        <label className={styles.inputLabel}>{t('xrengineContact.lbl-project')}</label>
+        <label className={styles.inputLabel}>{t('atlasContact.lbl-project')}</label>
         <textarea rows={4} className={styles.descriptionInput} value={message} name="message" onChange={handleChange} />
         {error.message && <p className={styles.error}>{error.message}</p>}
       </div>
       <div className={styles.btnContainer}>
         <button type="button" onClick={handleSubmit}>
-          {t('xrengineContact.lbl-send')}
+          {t('atlasContact.lbl-send')}
         </button>
       </div>
       <Dialog open={!!dialogMsg} onClose={() => displayDialog('')}>
@@ -149,7 +149,7 @@ export const ContactForm = () => {
             {dialogMsg}
           </DialogContentText>
           <button type="button" onClick={() => displayDialog('')}>
-            {t('xrengineContact.lbl-ok')}
+            {t('atlasContact.lbl-ok')}
           </button>
         </DialogContent>
       </Dialog>

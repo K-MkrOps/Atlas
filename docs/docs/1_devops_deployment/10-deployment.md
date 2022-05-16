@@ -4,8 +4,8 @@
 
 [Managing Helm Charts](../packages/ops/docs/release-helm-chart.md)
 
-[Cloudformation Scripts](../packages/ops/xrengine-cloudformation)
+[Cloudformation Scripts](../packages/ops/atlas-cloudformation)
 
-[Cloudformation Scripts](../packages/ops/xrengine-cloudformation)
+[Cloudformation Scripts](../packages/ops/atlas-cloudformation)
 
 

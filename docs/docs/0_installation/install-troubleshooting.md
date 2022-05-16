@@ -4,7 +4,7 @@
 
 ### Invalid Certificate errors in local environment
 
-As of this writing, the cert provided in the xrengine package for local use
+As of this writing, the cert provided in the atlas package for local use
 is not adequately signed. Browsers will throw up warnings about going to insecure pages.
 You should be able to tell the browser to ignore it, usually by clicking on some sort
 of 'advanced options' button or link and then something along the lines of 'go there anyway'.
@@ -101,7 +101,7 @@ Example
 
 Type in terminal
 
-     npm i <packagename> -w @xrengine/editor
+     npm i <packagename> -w @atlasfoundation/editor
 
 ### To repopulate database
 
@@ -116,8 +116,8 @@ Try
     npm run dev-reinit 
 or
  
-    docker container stop xrengine_db
-    docker container rm xrengine_db
+    docker container stop atlas_db
+    docker container rm atlas_db
     docker container prune
     npm run dev-docker
     npm run dev-reinit

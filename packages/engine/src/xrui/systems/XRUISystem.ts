@@ -1,11 +1,11 @@
 import { Color, Mesh, Raycaster } from 'three'
 
-import { UserId } from '@xrengine/common/src/interfaces/UserId'
-import { dispatchAction } from '@xrengine/hyperflux'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { AvatarComponent } from '../../avatar/components/AvatarComponent'
 import { Engine } from '../../ecs/classes/Engine'
-import { EngineActions } from '../../ecs/classes/EngineState'
+import { EngineActions } from '../../ecs/classes/EngineService'
 import { World } from '../../ecs/classes/World'
 import { defineQuery, getComponent } from '../../ecs/functions/ComponentFunctions'
 import { InputComponent } from '../../input/components/InputComponent'

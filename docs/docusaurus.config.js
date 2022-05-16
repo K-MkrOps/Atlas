@@ -6,23 +6,18 @@ const commonExludePaths = [
   '**/tests/**'
 ];
 
-/**
- *
- * @author Abhinav Shah
- * @author Hanzla Mateen
- */
 module.exports = {
-  title: 'xrengine',
+  title: 'atlas',
   tagline:
     'An end-to-end solution for hosting humans and AI in a virtual space, built on top of react, three.js and express/feathers.',
-  url: 'https://xrfoundation.github.io',
-  baseUrl: '/xrengine-docs/',
+  url: 'https://atlasfoundation.github.io',
+  baseUrl: '/atlas-docs/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon:
-    'https://github.com/xrfoundation/xrengine/raw/dev/xrengine%20black.png',
-  organizationName: 'XRFoundation', // Usually your GitHub org/user name.
-  projectName: 'xrengine-docs', // Usually your repo name.
+    'https://github.com/atlasfoundation/atlas/raw/dev/atlas%20black.png',
+  organizationName: 'AtlasFoundation', // Usually your GitHub org/user name.
+  projectName: 'atlas-docs', // Usually your repo name.
   plugins: [
     // [
     //   'docusaurus-plugin-typedoc',
@@ -152,10 +147,10 @@ module.exports = {
   ],
   themeConfig: {
     navbar: {
-      title: 'XREngine',
+      title: 'Atlas',
       logo: {
         alt: 'Logo',
-        src: 'https://github.com/XRFoundation/XREngine/raw/dev/xrengine%20black.png',
+        src: 'https://github.com/AtlasFoundation/Atlas/raw/dev/atlas%20black.png',
       },
       items: [
         {
@@ -174,16 +169,16 @@ module.exports = {
           items: [
             {
               label: 'Discord',
-              href: 'https://discord.gg/xrf',
+              href: 'https://discord.gg/atlasfoundation',
             },
             {
               label: 'Github',
-              href: 'https://github.com/XRFoundation/XREngine',
+              href: 'https://github.com/AtlasFoundation/Atlas',
             }
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} XRFoundation.`,
+      copyright: `Copyright © ${new Date().getFullYear()} AtlasFoundation.`,
     },
   },
   presets: [
@@ -194,7 +189,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/XRFoundation/XREngine/packages/docs/',
+            'https://github.com/AtlasFoundation/Atlas/packages/docs/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

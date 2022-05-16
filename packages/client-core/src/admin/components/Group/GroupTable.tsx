@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Group } from '@xrengine/common/src/interfaces/Group'
+import { Group } from '@atlasfoundation/common/src/interfaces/Group'
 
 import { useAuthState } from '../../../user/services/AuthService'
 import ConfirmModal from '../../common/ConfirmModal'

@@ -3,7 +3,7 @@ import { Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 import { Op } from 'sequelize'
 
-import { Message as MessageInterface } from '@xrengine/common/src/interfaces/Message'
+import { Message as MessageInterface } from '@atlasfoundation/common/src/interfaces/Message'
 
 import { Application } from '../../../declarations'
 import logger from '../../logger'

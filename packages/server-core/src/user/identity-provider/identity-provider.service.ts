@@ -4,7 +4,7 @@ import identyDocs from './identity-provider.docs'
 import hooks from './identity-provider.hooks'
 import createModel from './identity-provider.model'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'identity-provider': IdentityProvider
   }
@@ -13,7 +13,6 @@ declare module '@xrengine/common/declarations' {
 /**
  * Initialize our service with any options it requires and docs
  *
- * @author Vyacheslav Solovjov
  */
 export default (app: Application): void => {
   const options = {

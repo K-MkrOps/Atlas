@@ -2,7 +2,7 @@ import { pipe } from 'bitecs'
 import { Box3, Mesh, Quaternion, Vector3 } from 'three'
 import matches from 'ts-matches'
 
-import { addActionReceptor } from '@xrengine/hyperflux'
+import { addActionReceptor } from '@atlasfoundation/hyperflux'
 
 import { AvatarComponent } from '../../avatar/components/AvatarComponent'
 import { Engine } from '../../ecs/classes/Engine'
@@ -44,11 +44,6 @@ const colliderQuery = defineQuery([ColliderComponent])
 const collisionComponent = defineQuery([CollisionComponent])
 
 // Simulation Handlers
-
-/**
- * @author HydraFire <github.com/HydraFire>
- * @author Josh Field <github.com/HexaField>
- */
 
 const scratchBox = new Box3()
 const processBoundingBox = (entity: Entity, force = false) => {
@@ -227,7 +222,7 @@ export default async function PhysicsSystem(world: World) {
 
     // step physics world
     for (let i = 0; i < world.physics.substeps; i++) {
-      world.physics.scene.simulate((world.physics.timeScale * world.fixedDeltaSeconds) / world.physics.substeps, true)
+      world.physics.scene.simulate((world.physics.timeScale * world.fixedDelta) / world.physics.substeps, true)
       world.physics.scene.fetchResults(true)
     }
   }

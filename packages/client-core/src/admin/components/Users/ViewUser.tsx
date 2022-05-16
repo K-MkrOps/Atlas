@@ -2,9 +2,9 @@ import _ from 'lodash'
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { AdminScopeType } from '@xrengine/common/src/interfaces/AdminScopeType'
-import { User } from '@xrengine/common/src/interfaces/User'
-import { CreateEditUser } from '@xrengine/common/src/interfaces/User'
+import { AdminScopeType } from '@atlasfoundation/common/src/interfaces/AdminScopeType'
+import { User } from '@atlasfoundation/common/src/interfaces/User'
+import { CreateEditUser } from '@atlasfoundation/common/src/interfaces/User'
 
 import { Save } from '@mui/icons-material'
 import Avatar from '@mui/material/Avatar'
@@ -253,6 +253,7 @@ const ViewUser = (props: Props) => {
                   className={styles.input}
                   name="name"
                   placeholder={t('admin:components.user.enterName')}
+                  style={{ color: '#fff' }}
                   autoComplete="off"
                   value={state.name}
                   onChange={handleInputChange}

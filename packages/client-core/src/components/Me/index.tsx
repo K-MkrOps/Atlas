@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { MediaStreams } from '@xrengine/engine/src/networking/systems/MediaStreamSystem'
+import { MediaStreams } from '@atlasfoundation/engine/src/networking/systems/MediaStreamSystem'
 
 import PartyParticipantWindow from '../PartyParticipantWindow'
 

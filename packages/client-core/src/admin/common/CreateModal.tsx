@@ -38,10 +38,10 @@ const CreateModal = (props: Props) => {
           </Typography>
           {children}
           <DialogActions>
-            <Button onClick={handleClose} className={styles.cancelButton}>
+            <Button onClick={handleClose} className={styles.spanNone}>
               {t('admin:components.common.cancel')}
             </Button>
-            <Button className={styles.submitButton} autoFocus onClick={submit}>
+            <Button className={styles.spanDange} autoFocus onClick={submit}>
               {action}
             </Button>
           </DialogActions>

@@ -4,7 +4,7 @@ import staticResourceTypeDocs from './static-resource-type.docs'
 import hooks from './static-resource-type.hooks'
 import createModel from './static-resource-type.model'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'static-resource-type': StaticResourceType
   }
@@ -20,7 +20,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new StaticResourceType(options, app)
   event.docs = staticResourceTypeDocs
@@ -29,7 +28,6 @@ export default (app: Application) => {
   /**
    * Get our initialized service so that we can register hooks
    *
-   * @author Vyacheslav Solovjov
    */
   const service = app.service('static-resource-type')
 

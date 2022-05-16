@@ -1,7 +1,7 @@
-import { createState } from '@speigg/hookstate'
+import { createState } from '@hoostate/core'
 import { Object3D } from 'three'
 
-import { ComponentJson } from '@xrengine/common/src/interfaces/SceneInterface'
+import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import {
   ComponentDeserializeFunction,

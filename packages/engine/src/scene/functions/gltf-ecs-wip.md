@@ -1,15 +1,15 @@
 # ECS GLTF Object Metadata
 
-The gltf format and all threejs objects support userData / user properties, which can store arbitrary data as JSON. This can enable interop and usage of data outside of the xrengine ecosystem.
+The gltf format and all threejs objects support userData / user properties, which can store arbitrary data as JSON. This can enable interop and usage of data outside of the atlas ecosystem.
 
 
 Model userData properties
 
 ```ts
 {
-  [xrengine.entity]: name
-  [xrengine.prefab-type.property]: value
-  [xrengine.component-type.property]: value
+  [atlas.entity]: name
+  [atlas.prefab-type.property]: value
+  [atlas.component-type.property]: value
 }
 ```
 
@@ -17,9 +17,9 @@ Golf holes example
 
 ```ts
 {
-  "xrengine.entity": “GolfHole-0"
-  "xrengine.box-collider.isTrigger": true
-  "xrengine.CustomComponent.value": 12345
+  "atlas.entity": “GolfHole-0"
+  "atlas.box-collider.isTrigger": true
+  "atlas.CustomComponent.value": 12345
 }
 ```
 

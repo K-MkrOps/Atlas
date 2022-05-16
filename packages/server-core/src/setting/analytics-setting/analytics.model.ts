@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
 
-import { AnalyticsSettingInterface } from '@xrengine/common/src/dbmodels/AnalyticsSetting'
+import { AnalyticsSettingInterface } from '@atlasfoundation/common/src/dbmodels/AnalyticsSetting'
 
 import { Application } from '../../../declarations'
 

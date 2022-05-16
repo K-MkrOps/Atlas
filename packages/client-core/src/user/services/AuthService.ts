@@ -1,22 +1,28 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, Downgraded, useState } from '@speigg/hookstate'
+import { createState, Downgraded, useState } from '@hoostate/core'
 // TODO: Decouple this
-// import { endVideoChat, leave } from '@xrengine/engine/src/networking/functions/SocketWebRTCClientFunctions';
+// import { endVideoChat, leave } from '@atlasfoundation/engine/src/networking/functions/SocketWebRTCClientFunctions';
 import axios from 'axios'
 import i18n from 'i18next'
 import querystring from 'querystring'
 import { v1 } from 'uuid'
 
-import { validateEmail, validatePhoneNumber } from '@xrengine/common/src/config'
-import { AuthUser, AuthUserSeed, resolveAuthUser } from '@xrengine/common/src/interfaces/AuthUser'
-import { AvatarInterface, AvatarProps } from '@xrengine/common/src/interfaces/AvatarInterface'
-import { IdentityProvider, IdentityProviderSeed } from '@xrengine/common/src/interfaces/IdentityProvider'
-import { resolveUser, resolveWalletUser, User, UserSeed, UserSetting } from '@xrengine/common/src/interfaces/User'
-import { UserApiKey } from '@xrengine/common/src/interfaces/UserApiKey'
-import { UserAvatar } from '@xrengine/common/src/interfaces/UserAvatar'
-import { Engine } from '@xrengine/engine/src/ecs/classes/Engine'
-import { NetworkWorldAction } from '@xrengine/engine/src/networking/functions/NetworkWorldAction'
-import { dispatchAction } from '@xrengine/hyperflux'
+import { validateEmail, validatePhoneNumber } from '@atlasfoundation/common/src/config'
+import { AuthUser, AuthUserSeed, resolveAuthUser } from '@atlasfoundation/common/src/interfaces/AuthUser'
+import { AvatarInterface, AvatarProps } from '@atlasfoundation/common/src/interfaces/AvatarInterface'
+import { IdentityProvider, IdentityProviderSeed } from '@atlasfoundation/common/src/interfaces/IdentityProvider'
+import {
+  resolveUser,
+  resolveWalletUser,
+  User,
+  UserSeed,
+  UserSetting
+} from '@atlasfoundation/common/src/interfaces/User'
+import { UserApiKey } from '@atlasfoundation/common/src/interfaces/UserApiKey'
+import { UserAvatar } from '@atlasfoundation/common/src/interfaces/UserAvatar'
+import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
+import { NetworkWorldAction } from '@atlasfoundation/engine/src/networking/functions/NetworkWorldAction'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { AlertService } from '../../common/services/AlertService'
 import { client } from '../../feathers'
@@ -204,6 +210,7 @@ export const AuthService = {
           res = await (client as any).reAuthenticate()
         }
         const authUser = resolveAuthUser(res)
+        if (isDev) globalThis.userId = authUser.identityProvider.userId
         dispatch(AuthAction.loginUserSuccess(authUser))
         await AuthService.loadUserData(authUser.identityProvider.userId)
       } else {

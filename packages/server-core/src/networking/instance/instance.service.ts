@@ -5,7 +5,7 @@ import instanceDocs from './instance.docs'
 import hooks from './instance.hooks'
 import createModel from './instance.model'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     instance: Instance
   }
@@ -21,7 +21,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new Instance(options, app)
   event.docs = instanceDocs
@@ -36,7 +35,6 @@ export default (app: Application) => {
    *
    * @param data
    * @returns deleted channel
-   * @author Vyacheslav Solovjov
    */
   service.publish('removed', async (data): Promise<any> => {
     try {

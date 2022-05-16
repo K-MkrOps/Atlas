@@ -1,16 +1,18 @@
 import { Params } from '@feathersjs/feathers'
 
-import { SceneData } from '@xrengine/common/src/interfaces/SceneInterface'
+import { SceneData } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 
 import { Application } from '../../../declarations'
 import logger from '../../logger'
-import { getStorageProvider } from '../../media/storageprovider/storageprovider'
+import { useStorageProvider } from '../../media/storageprovider/storageprovider'
 import { getAllPortals, getCubemapBake, getPortal } from './scene-helper'
 import { getSceneData, Scene } from './scene.class'
 import projectDocs from './scene.docs'
 import hooks from './scene.hooks'
 
-declare module '@xrengine/common/declarations' {
+const storageProvider = useStorageProvider()
+
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     scene: Scene
   }
@@ -33,7 +35,6 @@ type GetScenesArgsType = {
 
 export const getScenesForProject = (app: Application) => {
   return async function (args: GetScenesArgsType, params?: Params): Promise<{ data: SceneData[] }> {
-    const storageProvider = getStorageProvider()
     const { projectName, metadataOnly, internal } = args
     try {
       const project = await app.service('project').get(projectName, params)
@@ -90,7 +91,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new Scene(app)
   event.docs = projectDocs
@@ -111,7 +111,6 @@ export default (app: Application) => {
   /**
    * Get our initialized service so that we can register hooks
    *
-   * @author Vyacheslav Solovjov
    */
   const service = app.service('scene')
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { TransformMode } from '@xrengine/engine/src/scene/constants/transformConstants'
+import { TransformMode } from '@atlasfoundation/engine/src/scene/constants/transformConstants'
 
 import { useEditorHelperState } from '../../services/EditorHelperState'
 import { useSelectionState } from '../../services/SelectionServices'
@@ -10,7 +10,6 @@ import styles from './styles.module.scss'
 /**
  * ControlText used to render viewport.
  *
- * @author Robert Long
  * @constructor
  */
 export function ControlText() {

@@ -2,27 +2,28 @@ import { detect, detectOS } from 'detect-browser'
 import _ from 'lodash'
 import { AudioListener, PerspectiveCamera } from 'three'
 
-import { BotUserAgent } from '@xrengine/common/src/constants/BotUserAgent'
-import { addActionReceptor, dispatchAction, registerState } from '@xrengine/hyperflux'
-import ActionFunctions from '@xrengine/hyperflux/functions/ActionFunctions'
+import { addActionReceptor, dispatchAction, registerState } from '@atlasfoundation/hyperflux'
+import ActionFunctions from '@atlasfoundation/hyperflux/functions/ActionFunctions'
 
 import { getGLTFLoader } from './assets/classes/AssetLoader'
 import { initializeKTX2Loader } from './assets/functions/createGLTFLoader'
+import { BotHookFunctions } from './bot/functions/botHookFunctions'
 import { isClient } from './common/functions/isClient'
 import { Timer } from './common/functions/Timer'
 import { Engine } from './ecs/classes/Engine'
-import { EngineActions, EngineEventReceptor, EngineState } from './ecs/classes/EngineState'
+import { EngineActions, EngineEventReceptor } from './ecs/classes/EngineService'
 import { createWorld } from './ecs/classes/World'
+import { reset } from './ecs/functions/EngineFunctions'
 import { initSystems, SystemModuleType } from './ecs/functions/SystemFunctions'
 import { SystemUpdateType } from './ecs/functions/SystemUpdateType'
+import { removeClientInputListeners } from './input/functions/clientInputListeners'
+import { Network } from './networking/classes/Network'
 import { matchActionOnce } from './networking/functions/matchActionOnce'
 import { NetworkActionReceptor } from './networking/functions/NetworkActionReceptor'
 import { EngineRenderer } from './renderer/WebGLRendererSystem'
+import InfiniteGridHelper from './scene/classes/InfiniteGridHelper'
 import { ObjectLayers } from './scene/constants/ObjectLayers'
-
 import './threejsPatches'
-
-import { Network } from './networking/classes/Network'
 import { FontManager } from './xrui/classes/FontManager'
 
 /**
@@ -57,7 +58,8 @@ export const initializeBrowser = () => {
   world.camera.layers.enable(ObjectLayers.Avatar)
   world.camera.layers.enable(ObjectLayers.UI)
 
-  Engine.instance.isBot = navigator.userAgent === BotUserAgent
+  InfiniteGridHelper.instance = new InfiniteGridHelper()
+  Engine.instance.scene.add(InfiniteGridHelper.instance)
 
   const browser = detect()
   const os = detectOS(navigator.userAgent)
@@ -70,6 +72,8 @@ export const initializeBrowser = () => {
   ;(window as any).safariWebBrowser = browser?.name === 'safari'
 
   Engine.instance.isHMD = /Oculus/i.test(navigator.userAgent) // TODO: more HMDs;
+
+  globalThis.botHooks = BotHookFunctions
 
   setupInitialClickListener()
 
@@ -100,11 +104,11 @@ export const initializeNode = () => {
   // node currently does not need to initialize anything
 }
 
-const executeWorlds = (elapsedTime) => {
-  Engine.instance.frameTime = elapsedTime
+const executeWorlds = (delta, elapsedTime) => {
+  Engine.instance.elapsedTime = elapsedTime
   ActionFunctions.applyIncomingActions(Engine.instance.store)
   for (const world of Engine.instance.worlds) {
-    world.execute(elapsedTime)
+    world.execute(delta)
   }
 }
 
@@ -138,7 +142,7 @@ export const initializeMediaServerSystems = async () => {
   dispatchAction(Engine.instance.store, EngineActions.initializeEngine({ initialised: true }))
 }
 
-export const initializeCoreSystems = async () => {
+export const initializeCoreSystems = async (systems: SystemModuleType<any>[] = []) => {
   const systemsToLoad: SystemModuleType<any>[] = []
   systemsToLoad.push(
     {
@@ -194,7 +198,7 @@ export const initializeCoreSystems = async () => {
   await initSystems(world, systemsToLoad)
 
   // load injected systems which may rely on core systems
-  await initSystems(world, Engine.instance.injectedSystems)
+  await initSystems(world, systems)
 
   Engine.instance.engineTimer = Timer(executeWorlds)
   Engine.instance.engineTimer.start()
@@ -306,7 +310,6 @@ export const initializeSceneSystems = async () => {
       }
     )
 
-    // todo: figure out the race condition that is stopping us from moving this to SceneObjectSystem
     initializeKTX2Loader(getGLTFLoader())
   }
 
@@ -337,4 +340,13 @@ export const initializeRealtimeSystems = async (media = true, pose = true) => {
   }
 
   await initSystems(Engine.instance.currentWorld, systemsToLoad)
+}
+
+export const shutdownEngine = async () => {
+  removeClientInputListeners()
+
+  Engine.instance.engineTimer?.clear()
+  Engine.instance.engineTimer = null!
+
+  reset()
 }

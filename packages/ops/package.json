@@ -1,9 +1,9 @@
 {
-  "name": "@xrengine/ops",
+  "name": "@atlasfoundation/ops",
   "version": "0.5.3",
   "private": true,
-  "description": "Dev Ops tooling for XREngine",
-  "repository": "http://github.com/XRFoundation/XREngine",
-  "author": "XREngine",
+  "description": "Dev Ops tooling for Atlas",
+  "repository": "http://github.com/AtlasFoundation/Atlas",
+  "author": "Atlas",
   "license": "MIT"
 }

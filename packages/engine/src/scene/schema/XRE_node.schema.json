@@ -3,7 +3,7 @@
   "$id": "XRE_node.schema.json",
   "title": "XRE_node glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine scene nodes",
+  "description": "serialization extension for Atlas scene nodes",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "uuid": {

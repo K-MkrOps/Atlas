@@ -2,7 +2,7 @@ import _ from 'lodash'
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Group } from '@xrengine/common/src/interfaces/Group'
+import { Group } from '@atlasfoundation/common/src/interfaces/Group'
 
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
@@ -100,6 +100,7 @@ const EditGroup = (props: Props) => {
             className={styles.input}
             name="name"
             placeholder={t('admin:components.group.enterGroupName')}
+            style={{ color: '#fff' }}
             autoComplete="off"
             value={state.name}
             onChange={handleChange}
@@ -114,6 +115,7 @@ const EditGroup = (props: Props) => {
             className={styles.input}
             name="description"
             placeholder={t('admin:components.group.enterGroupDescription')}
+            style={{ color: '#fff' }}
             autoComplete="off"
             value={state.description}
             onChange={handleChange}

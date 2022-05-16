@@ -1,7 +1,7 @@
 import { Quaternion, SkinnedMesh, Vector2, Vector3 } from 'three'
 
-import { isDev } from '@xrengine/common/src/utils/isDev'
-import { dispatchAction } from '@xrengine/hyperflux'
+import { isDev } from '@atlasfoundation/common/src/utils/isDev'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { FollowCameraComponent } from '../camera/components/FollowCameraComponent'
 import { TargetCameraRotationComponent } from '../camera/components/TargetCameraRotationComponent'
@@ -282,7 +282,7 @@ export const setCameraRotation: InputBehaviorType = (
   inputKey: InputAlias,
   inputValue: InputValue
 ): void => {
-  const { deltaSeconds: delta } = useWorld()
+  const { delta } = useWorld()
   const followComponent = getComponent(entity, FollowCameraComponent)
 
   switch (inputKey) {

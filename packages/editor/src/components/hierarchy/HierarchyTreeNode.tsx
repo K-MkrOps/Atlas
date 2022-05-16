@@ -2,14 +2,14 @@ import React, { KeyboardEvent, StyleHTMLAttributes, useCallback, useEffect } fro
 import { useDrag, useDrop } from 'react-dnd'
 import { getEmptyImage } from 'react-dnd-html5-backend'
 
-import { useEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { Entity } from '@xrengine/engine/src/ecs/classes/Entity'
-import { EntityTreeNode } from '@xrengine/engine/src/ecs/classes/EntityTree'
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { getEntityNodeArrayFromEntities } from '@xrengine/engine/src/ecs/functions/EntityTreeFunctions'
-import { useWorld } from '@xrengine/engine/src/ecs/functions/SystemHooks'
-import { ErrorComponent } from '@xrengine/engine/src/scene/components/ErrorComponent'
-import { NameComponent } from '@xrengine/engine/src/scene/components/NameComponent'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { getEntityNodeArrayFromEntities } from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { ErrorComponent } from '@atlasfoundation/engine/src/scene/components/ErrorComponent'
+import { NameComponent } from '@atlasfoundation/engine/src/scene/components/NameComponent'
 
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight'
@@ -30,7 +30,6 @@ import styles from './styles.module.scss'
 /**
  * getNodeElId function provides id for node.
  *
- * @author Robert Long
  * @param  {object} node
  * @return {string}
  */

@@ -1,16 +1,16 @@
-# Default values for xrengine.
+# Default values for atlas.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-domain: xrengine.dev
+domain: atlas.dev
 
 client:
   enabled: true
-  name: xrengine-client
+  name: atlas-client
 
   replicaCount: 1
   image:
-    repository: lagunalabs/xrengine
+    repository: lagunalabs/atlas
     tag: latest
     pullPolicy: IfNotPresent
 
@@ -58,11 +58,11 @@ release:
 
 api:
   enabled: true
-  name: xrengine-api
+  name: atlas-api
 
   replicaCount: 1
   image:
-    repository: lagunalabs/xrengine
+    repository: lagunalabs/atlas
     tag: latest
     pullPolicy: IfNotPresent
 
@@ -107,7 +107,7 @@ api:
 
     # automatically filled by chart.. ignore
     # MYSQL_PORT: 3306
-    # MYSQL_DATABASE: xrengine
+    # MYSQL_DATABASE: atlas
     # MYSQL_USER: server
     # MYSQL_PASSWORD: password
 
@@ -147,11 +147,11 @@ api:
 
 media:
   enabled: true
-  name: xrengine-media
+  name: atlas-media
 
   replicaCount: 1
   image:
-    repository: lagunalabs/xrengine
+    repository: lagunalabs/atlas
     tag: latest
     pullPolicy: IfNotPresent
 
@@ -196,7 +196,7 @@ media:
 
     # automatically filled by chart.. ignore
     # MYSQL_PORT: 3306
-    # MYSQL_DATABASE: xrengine
+    # MYSQL_DATABASE: atlas
     # MYSQL_USER: server
     # MYSQL_PASSWORD: password
 
@@ -236,12 +236,12 @@ media:
 
 editor:
   enabled: true
-  name: xrengine-editor
+  name: atlas-editor
 
   replicaCount: 1
   image:
-    # Reminder: Editor image still on xrengine we didn't create image for xrengine
-    repository: xrengine/editor
+    # Reminder: Editor image still on atlas we didn't create image for atlas
+    repository: atlas/editor
     tag: latest
     pullPolicy: IfNotPresent
 
@@ -287,7 +287,7 @@ gameserver:
 
   replicaCount: 1
   image:
-    repository: lagunalabs/xrengine
+    repository: lagunalabs/atlas
     tag: latest
     pullPolicy: IfNotPresent
 
@@ -314,7 +314,7 @@ gameserver:
 ########### Subcharts - values here will overwrite the subchart
 
 sql:
-  database: xrengine
+  database: atlas
   user: server
   password: password
   host: host.minikube.internal
@@ -328,11 +328,11 @@ redis:
 
 analytics:
   enabled: false
-  name: xrengine-analytics
+  name: atlas-analytics
 
   replicaCount: 1
   image:
-    repository: lagunalabs/xrengine
+    repository: lagunalabs/atlas
     tag: latest
     pullPolicy: IfNotPresent
 

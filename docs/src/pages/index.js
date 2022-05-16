@@ -38,7 +38,6 @@ const features = [
 
 /**
  * 
- * @author Abhinav Shah
  * @param {any} imageUrl
  * @param {any} title
  * @param {any} description 
@@ -58,13 +57,6 @@ function Feature({imageUrl, title, description}) {
     </div>
   );
 }
-      
-/**
- * 
- * 
- * @author Abhinav Shah
- * @returns 
- */
 export default function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;

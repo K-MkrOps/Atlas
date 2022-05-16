@@ -1,6 +1,6 @@
 import { Quaternion, Vector3 } from 'three'
 
-import { addActionReceptor } from '@xrengine/hyperflux'
+import { addActionReceptor } from '@atlasfoundation/hyperflux'
 
 import { Engine } from '../ecs/classes/Engine'
 import { World } from '../ecs/classes/World'

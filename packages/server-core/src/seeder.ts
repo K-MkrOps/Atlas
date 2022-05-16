@@ -11,7 +11,6 @@ const settingsServiceNames = [
   'analytics-setting',
   'authentication-setting',
   'aws-setting',
-  'chargebee-setting',
   'client-setting',
   'email-setting',
   'game-server-setting',

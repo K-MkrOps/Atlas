@@ -10,7 +10,6 @@ import styles from '../styles.module.scss'
 /**
  * Stats used to show stats of  memory and  render.
  *
- * @author Robert Long
  * @constructor
  */
 const StatsTool = () => {
@@ -44,7 +43,6 @@ const StatsTool = () => {
   /**
    * Rendering stats view in ViewportToolbar and shows when click on toggleStats
    *
-   * @author Robert Long
    */
   return (
     <>

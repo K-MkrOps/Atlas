@@ -1,5 +1,5 @@
 {
-  "name": "@xrengine/common",
+  "name": "@atlasfoundation/common",
   "version": "0.5.3",
   "main": "lib/common.umd.js",
   "module": "lib/common.es.js",
@@ -7,14 +7,14 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Shared types for other XREngine packages",
+  "description": "Shared types for other Atlas packages",
   "scripts": {
     "check-errors": "tsc --noemit",
     "build-publish": "rimraf lib && cti entrypoint ./src -o index.ts && cross-env NODE_OPTIONS=--max_old_space_size=4096 APP_ENV=production vite build --config vite.build.js",
     "update-name-gh-package": "node scripts/update-name-gh-package.js"
   },
-  "repository": "http://github.com/XRFoundation/XREngine",
-  "author": "XREngine",
+  "repository": "http://github.com/AtlasFoundation/Atlas",
+  "author": "Atlas",
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-alias": "3.1.9",

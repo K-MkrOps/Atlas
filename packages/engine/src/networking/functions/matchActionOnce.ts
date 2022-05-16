@@ -1,9 +1,9 @@
 import matches, { Validator } from 'ts-matches'
 
-import { addActionReceptor, removeActionReceptor } from '@xrengine/hyperflux'
-import { HyperStore } from '@xrengine/hyperflux/functions/StoreFunctions'
+import { addActionReceptor, removeActionReceptor } from '@atlasfoundation/hyperflux'
+import { HyperStore } from '@atlasfoundation/hyperflux/functions/StoreFunctions'
 
-import { EngineActionType } from '../../ecs/classes/EngineState'
+import { EngineActionType } from '../../ecs/classes/EngineService'
 
 /**
  *

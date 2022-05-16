@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { ProjectInterface } from '@xrengine/common/src/interfaces/ProjectInterface'
+import { ProjectInterface } from '@atlasfoundation/common/src/interfaces/ProjectInterface'
 
 import Cached from '@mui/icons-material/Cached'
 import Cross from '@mui/icons-material/Cancel'

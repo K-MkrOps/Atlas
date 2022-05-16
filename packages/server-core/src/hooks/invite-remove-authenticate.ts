@@ -1,7 +1,7 @@
 import { BadRequest } from '@feathersjs/errors'
 import { HookContext } from '@feathersjs/feathers'
 
-import { IdentityProviderInterface } from '@xrengine/common/src/dbmodels/IdentityProvider'
+import { IdentityProviderInterface } from '@atlasfoundation/common/src/dbmodels/IdentityProvider'
 
 import Paginated from '../types/PageObject'
 import { UserDataType } from '../user/user/user.class'

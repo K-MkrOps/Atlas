@@ -1,4 +1,4 @@
-import { World } from '@xrengine/engine/src/ecs/classes/World'
+import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
 
 export default async function TempSystem(world: World) {
   let count = 0

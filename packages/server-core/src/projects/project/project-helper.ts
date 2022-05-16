@@ -1,17 +1,17 @@
 import appRootPath from 'app-root-path'
 import path from 'path'
 
-import { ProjectConfigInterface, ProjectEventHooks } from '@xrengine/projects/ProjectConfigInterface'
+import { ProjectConfigInterface, ProjectEventHooks } from '@atlasfoundation/projects/ProjectConfigInterface'
 
 import { Application } from '../../../declarations'
 import config from '../../appconfig'
 import logger from '../../logger'
-import { getStorageProvider } from '../../media/storageprovider/storageprovider'
+import { useStorageProvider } from '../../media/storageprovider/storageprovider'
 
 export const retriggerBuilderService = async (app: Application) => {
   try {
     // invalidate cache for all installed projects
-    await getStorageProvider().createInvalidation(['projects*'])
+    await useStorageProvider().createInvalidation(['projects*'])
   } catch (e) {
     logger.error(e, `[Project Rebuild]: Failed to invalidate cache with error: ${e.message}`)
   }
@@ -21,7 +21,7 @@ export const retriggerBuilderService = async (app: Application) => {
     try {
       logger.info('Attempting to reload k8s clients!')
       const restartClientsResponse = await app.k8AppsClient.patchNamespacedDeployment(
-        `${config.server.releaseName}-builder-xrengine-builder`,
+        `${config.server.releaseName}-builder-atlas-builder`,
         'default',
         {
           spec: {
@@ -67,12 +67,11 @@ export const onProjectEvent = async (
 
 export const getProjectConfig = async (projectName: string): Promise<ProjectConfigInterface> => {
   try {
-    return (await import(`@xrengine/projects/projects/${projectName}/xrengine.config.ts`)).default
+    return (await import(`@atlasfoundation/projects/projects/${projectName}/atlas.config.ts`)).default
   } catch (e) {
     logger.error(
       e,
-      '[Projects]: WARNING project with ' +
-        `name ${projectName} has no xrengine.config.ts file - this is not recommended.`
+      '[Projects]: WARNING project with ' + `name ${projectName} has no atlas.config.ts file - this is not recommended.`
     )
     return null!
   }

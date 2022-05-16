@@ -2,16 +2,16 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ include "xrengine.testbot.fullname" . }}
+  name: {{ include "atlas.testbot.fullname" . }}
   labels:
-    {{- include "xrengine.testbot.labels" . | nindent 4 }}
+    {{- include "atlas.testbot.labels" . | nindent 4 }}
 spec:
   suspend: {{ .Values.testbot.suspend }}
   backoffLimit: 0
   template:
     metadata:
       labels:
-        {{- include "xrengine.testbot.selectorLabels" . | nindent 8 }}
+        {{- include "atlas.testbot.selectorLabels" . | nindent 8 }}
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/test-bot-configmap.yaml") . | sha256sum }}
     spec:
@@ -20,7 +20,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
     {{- end }}
-      serviceAccountName: {{ include "xrengine.testbot.serviceAccountName" . }}
+      serviceAccountName: {{ include "atlas.testbot.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.testbot.podSecurityContext | nindent 8 }}
       {{- $releaseName := .Release.Name }}
@@ -35,8 +35,8 @@ spec:
           - /bin/sh
           - -exc
           - |
-            apiName="${RELEASE_NAME}-xrengine-api"
-            clientName="${RELEASE_NAME}-xrengine-client"
+            apiName="${RELEASE_NAME}-atlas-api"
+            clientName="${RELEASE_NAME}-atlas-client"
             gamesvrName="${RELEASE_NAME}-gameserver"
 
             apiCount=$(kubectl get deploy $apiName -o jsonpath='{.status.availableReplicas}')
@@ -75,7 +75,7 @@ spec:
                 echo "Gameserver ready count: $gamesvrCount"
             done
 
-            echo "XREngine is now ready"
+            echo "Atlas is now ready"
             exit 0
         env:
           - name: RELEASE_NAME
@@ -88,7 +88,7 @@ spec:
           imagePullPolicy: {{ .Values.testbot.image.pullPolicy }}
           envFrom:
             - configMapRef:
-                name: {{ include "xrengine.testbot.fullname" . }}
+                name: {{ include "atlas.testbot.fullname" . }}
                 optional: true
           env:
             - name: SERVER_MODE
@@ -120,7 +120,7 @@ spec:
                   {{- if .Values.mariadb.existingSecret }}
                   name: {{ .Values.mariadb.existingSecret }}
                   {{- else }}
-                  name: {{ template "xrengine.mariadb.fullname" . }}
+                  name: {{ template "atlas.mariadb.fullname" . }}
                   {{- end }}
                   key: mariadb-password
               {{- end }}
@@ -132,7 +132,7 @@ spec:
             - name: MYSQL_USER
               value: server
             - name: MYSQL_DATABASE
-              value: xrengine
+              value: atlas
             - name: MYSQL_PASSWORD
               value: password
             - name: MYSQL_HOST

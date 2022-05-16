@@ -1,12 +1,12 @@
 {{- if and (.Values.media).enabled (ne (.Values.media.ingress.disabled | default "") "true") -}}
-{{- $fullName := include "xrengine.media.fullname" . -}}
+{{- $fullName := include "atlas.media.fullname" . -}}
 {{- $svcPort := .Values.media.service.port -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    {{- include "xrengine.media.labels" . | nindent 4 }}
+    {{- include "atlas.media.labels" . | nindent 4 }}
   {{- with .Values.media.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}

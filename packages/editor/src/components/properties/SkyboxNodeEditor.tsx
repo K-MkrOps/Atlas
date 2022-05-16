@@ -2,15 +2,16 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Color } from 'three'
 
-import { useEngineState } from '@xrengine/engine/src/ecs/classes/EngineState'
-import { getComponent, hasComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { ErrorComponent } from '@xrengine/engine/src/scene/components/ErrorComponent'
+import { getDirectoryFromUrl } from '@atlasfoundation/common/src/utils/getDirectoryFromUrl'
+import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { getComponent, hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { ErrorComponent } from '@atlasfoundation/engine/src/scene/components/ErrorComponent'
 import {
   SkyboxComponent,
   SkyboxComponentType,
   SkyBoxShaderProps
-} from '@xrengine/engine/src/scene/components/SkyboxComponent'
-import { SkyTypeEnum } from '@xrengine/engine/src/scene/constants/SkyTypeEnum'
+} from '@atlasfoundation/engine/src/scene/components/SkyboxComponent'
+import { SkyTypeEnum } from '@atlasfoundation/engine/src/scene/constants/SkyTypeEnum'
 
 import CloudIcon from '@mui/icons-material/Cloud'
 
@@ -32,7 +33,6 @@ const radiansToHours = (rads: number) => rads * 24
 /**
  * Types of skyboxes
  *
- * @author Robert Long
  * @type {Array}
  */
 const SkyOption = [
@@ -57,7 +57,6 @@ const SkyOption = [
 /**
  * SkyboxNodeEditor component class used to render editor view to customize component property.
  *
- * @author Robert Long
  * @type {class component}
  */
 export const SkyboxNodeEditor: EditorComponentType = (props) => {
@@ -76,7 +75,8 @@ export const SkyboxNodeEditor: EditorComponentType = (props) => {
   }
 
   const onChangeCubemapPathOption = (path) => {
-    const directory = path[path.length - 1] === '/' ? path.substring(0, path.length - 1) : path
+    const directory = getDirectoryFromUrl(path)
+
     if (directory !== skyComponent.cubemapPath) {
       setPropertyOnSelectionEntities({
         component: SkyboxComponent,

@@ -1,9 +1,9 @@
 import assert from 'assert'
 import { Mesh, MeshNormalMaterial, Quaternion, SphereBufferGeometry, Vector3 } from 'three'
 
-import { NetworkId } from '@xrengine/common/src/interfaces/NetworkId'
-import { UserId } from '@xrengine/common/src/interfaces/UserId'
-import ActionFunctions from '@xrengine/hyperflux/functions/ActionFunctions'
+import { NetworkId } from '@atlasfoundation/common/src/interfaces/NetworkId'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import ActionFunctions from '@atlasfoundation/hyperflux/functions/ActionFunctions'
 
 import { Engine } from '../../src/ecs/classes/Engine'
 import { addComponent, getComponent, hasComponent } from '../../src/ecs/functions/ComponentFunctions'

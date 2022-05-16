@@ -1,9 +1,9 @@
 import assert from 'assert'
 import { Quaternion, Vector3 } from 'three'
 
-import { NetworkId } from '@xrengine/common/src/interfaces/NetworkId'
-import { UserId } from '@xrengine/common/src/interfaces/UserId'
-import ActionFunctions from '@xrengine/hyperflux/functions/ActionFunctions'
+import { NetworkId } from '@atlasfoundation/common/src/interfaces/NetworkId'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
+import ActionFunctions from '@atlasfoundation/hyperflux/functions/ActionFunctions'
 
 import { Engine } from '../../ecs/classes/Engine'
 import { addComponent, defineQuery, getComponent, hasComponent } from '../../ecs/functions/ComponentFunctions'

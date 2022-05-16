@@ -1,9 +1,9 @@
 import React, { ChangeEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { PostprocessingComponent } from '@xrengine/engine/src/scene/components/PostprocessingComponent'
-import { Effects } from '@xrengine/engine/src/scene/constants/PostProcessing'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { PostprocessingComponent } from '@atlasfoundation/engine/src/scene/components/PostprocessingComponent'
+import { Effects } from '@atlasfoundation/engine/src/scene/constants/PostProcessing'
 
 import LooksIcon from '@mui/icons-material/Looks'
 import Checkbox from '@mui/material/Checkbox'
@@ -14,7 +14,6 @@ import ColorInput from '../inputs/ColorInput'
 import CompoundNumericInput from '../inputs/CompoundNumericInput'
 import InputGroup from '../inputs/InputGroup'
 import SelectInput from '../inputs/SelectInput'
-import styles from '../styles.module.scss'
 import NodeEditor from './NodeEditor'
 import { EditorComponentType } from './Util'
 
@@ -165,7 +164,6 @@ const PredicationMode = [
 ]
 
 /**
- * @author Abhishek Pathak <abhi.pathak401@gmail.com>
  */
 export const PostProcessingNodeEditor: EditorComponentType = (props) => {
   const { t } = useTranslation()
@@ -312,11 +310,10 @@ export const PostProcessingNodeEditor: EditorComponentType = (props) => {
       return (
         <div key={effect}>
           <Checkbox
-            classes={{ checked: styles.checkbox }}
             onChange={(e) => onChangeCheckBox(e, effect)}
             checked={postprocessingComponent.options[effect]?.isActive}
           />
-          <span style={{ color: 'var(--textColor)' }}>{effect}</span>
+          <span style={{ color: '#9FA4B5' }}>{effect}</span>
           {postprocessingComponent.options[effect]?.isActive && <div>{renderEffectsTypes(effect)}</div>}
         </div>
       )

@@ -3,7 +3,7 @@
   "$id": "XRE_loopAnimation.schema.json",
   "title": "XRE_loopAnimation glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine loop animation components",
+  "description": "serialization extension for Atlas loop animation components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "mixer": {

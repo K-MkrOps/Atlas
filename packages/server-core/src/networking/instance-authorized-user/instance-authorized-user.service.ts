@@ -6,7 +6,7 @@ import hooks from './instance-authorized-user.hooks'
 import createModel from './instance-authorized-user.model'
 
 // Add this service to the service type index
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'instance-authorized-user': InstanceAuthorizedUser
   }
@@ -22,7 +22,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new InstanceAuthorizedUser(options, app)
   event.docs = instanceAuthorizedUserDocs

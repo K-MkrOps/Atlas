@@ -20,10 +20,6 @@ import { registerDefaultSceneFunctions } from '../functions/registerSceneFunctio
 import { reparentObject3D } from '../functions/ReparentFunction'
 import { Updatable } from '../interfaces/Updatable'
 
-/**
- * @author Josh Field <github.com/HexaField>
- */
-
 // TODO: refactor this to be named something more generic like ObjectSystem, add object-object interactions (physics & non physics)
 // GameManagerSystem already has physics interaction behaviors, these could be made generic and not game dependent
 
@@ -141,7 +137,7 @@ export default async function SceneObjectSystem(world: World) {
 
     for (const entity of updatableQuery()) {
       const obj = getComponent(entity, Object3DComponent)?.value as unknown as Updatable
-      obj?.update(world.fixedDeltaSeconds)
+      obj?.update(world.fixedDelta)
     }
 
     for (const _ of simpleMaterialsQuery.enter()) {

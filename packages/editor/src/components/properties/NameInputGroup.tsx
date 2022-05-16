@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
-import { EntityTreeNode } from '@xrengine/engine/src/ecs/classes/EntityTree'
-import { getComponent } from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { NameComponent } from '@xrengine/engine/src/scene/components/NameComponent'
-import { Object3DComponent } from '@xrengine/engine/src/scene/components/Object3DComponent'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
+import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { NameComponent } from '@atlasfoundation/engine/src/scene/components/NameComponent'
+import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
 
 import { setPropertyOnSelectionEntities } from '../../classes/History'
 import { useSelectionState } from '../../services/SelectionServices'
@@ -16,7 +16,6 @@ import { EditorComponentType } from './Util'
 /**
  * Creating styled component using InputGroup component.
  *
- * @author Robert Long
  * @type {Styled Component}
  */
 const StyledNameInputGroup = (styled as any)(InputGroup)`
@@ -28,7 +27,6 @@ const StyledNameInputGroup = (styled as any)(InputGroup)`
 /**
  * NameInputGroup is used to render input group PropertiesPanelContainer.
  *
- * @author Robert Long
  * @type {class component}
  */
 export const NameInputGroup: EditorComponentType = (props) => {

@@ -1,8 +1,3 @@
-/**
- * 
- * @author Abhinav Shah
- * @author Hanzla Mateen
- */
 module.exports = {
   sidebar: {
     'Getting Started': [

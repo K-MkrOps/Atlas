@@ -3,7 +3,7 @@
   "$id": "XRE_metadata.schema.json",
   "title": "XRE_metadata glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine metadata components",
+  "description": "serialization extension for Atlas metadata components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {
     "meta_data": { "type": "string" }

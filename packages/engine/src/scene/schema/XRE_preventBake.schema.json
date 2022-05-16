@@ -3,7 +3,7 @@
   "$id": "XRE_preventBake.schema.json",
   "title": "XRE_preventBake glTF extension",
   "type": "object",
-  "description": "serialization extension for XREngine prevent bake components",
+  "description": "serialization extension for Atlas prevent bake components",
   "allOf": [{ "$ref": "glTFProperty.schema.json" }],
   "properties": {},
   "extensions": {},

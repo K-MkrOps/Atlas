@@ -1,7 +1,7 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
-import { StaticResource } from '@xrengine/common/src/interfaces/StaticResource'
-import { StaticResourceResult } from '@xrengine/common/src/interfaces/StaticResourceResult'
+import { StaticResource } from '@atlasfoundation/common/src/interfaces/StaticResource'
+import { StaticResourceResult } from '@atlasfoundation/common/src/interfaces/StaticResourceResult'
 
 import { client } from '../../feathers'
 import { store, useDispatch } from '../../store'

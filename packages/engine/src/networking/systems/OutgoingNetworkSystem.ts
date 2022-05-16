@@ -46,7 +46,7 @@ export default async function OutgoingNetworkSystem(world: World) {
   const serialize = createDataWriter()
 
   return () => {
-    if (!getEngineState().isEngineInitialized.value) return
+    if (!accessEngineState().isEngineInitialized.value) return
 
     serializeAndSend(world, serialize)
   }

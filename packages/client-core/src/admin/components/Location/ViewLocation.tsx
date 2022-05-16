@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { LocationFetched } from '@xrengine/common/src/interfaces/Location'
+import { LocationFetched } from '@atlasfoundation/common/src/interfaces/Location'
 
 import { Save } from '@mui/icons-material'
 import Avatar from '@mui/material/Avatar'
@@ -217,6 +217,7 @@ const ViewLocation = (props: Props) => {
                   className={styles.input}
                   name="name"
                   placeholder={t('admin:components.locationModal.enterName')}
+                  style={{ color: '#fff' }}
                   autoComplete="off"
                   value={state.name}
                   onChange={handleInputChange}
@@ -231,6 +232,7 @@ const ViewLocation = (props: Props) => {
                   className={styles.input}
                   name="maxUsers"
                   placeholder={t('admin:components.locationModal.enterMaxUsers')}
+                  style={{ color: '#fff' }}
                   autoComplete="off"
                   type="number"
                   value={state.maxUsers}

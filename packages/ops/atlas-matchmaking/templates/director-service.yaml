@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "xrengine.director.fullname" . }}
-  namespace: {{ include "xrengine.matchmaking-namespace" . }}
+  name: {{ include "atlas.director.fullname" . }}
+  namespace: {{ include "atlas.matchmaking-namespace" . }}
   labels:
-    {{- include "xrengine.director.labels" . | nindent 4 }}
+    {{- include "atlas.director.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.director.service.type }}
   ports:
@@ -14,5 +14,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "xrengine.director.selectorLabels" . | nindent 4 }}
+    {{- include "atlas.director.selectorLabels" . | nindent 4 }}
 {{- end -}}

@@ -9,7 +9,6 @@ import NumericInput from './NumericInput'
 
 /**
  *
- * @author Robert Long
  */
 const StepperInputContainer = (styled as any).div`
   display: flex;
@@ -26,7 +25,6 @@ const StepperInputContainer = (styled as any).div`
 
 /**
  *
- * @author Robert Long
  */
 const StepperButton = (styled as any).button`
   display: flex;
@@ -57,7 +55,6 @@ const StepperButton = (styled as any).button`
 /**
  *
  *
- * @author Robert Long
  * @param {any} style
  * @param {any} className
  * @param {any} decrementTooltip

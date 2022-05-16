@@ -5,7 +5,7 @@ import groupUserDocs from './group-user.docs'
 import hooks from './group-user.hooks'
 import createModel from './group-user.model'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'group-user': GroupUser
   }
@@ -21,7 +21,6 @@ export default (app: Application) => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Vyacheslav Solovjov
    */
   const event = new GroupUser(options, app)
   event.docs = groupUserDocs
@@ -36,7 +35,6 @@ export default (app: Application) => {
    *
    * @param data which is parsed to create group user
    * @returns created group user
-   * @author Vyacheslav Solovjov
    */
   service.publish('created', async (data): Promise<any> => {
     try {
@@ -95,7 +93,6 @@ export default (app: Application) => {
    *
    * @param data which is used to update group user
    * @returns updated GroupUser data
-   * @author Vyacheslav Solovjov
    */
   service.publish('patched', async (data): Promise<any> => {
     try {
@@ -153,7 +150,6 @@ export default (app: Application) => {
    *
    * @param data which contains groupId
    * @returns deleted channel data
-   * @author Vyacheslav Solovjov
    */
   service.publish('removed', async (data): Promise<any> => {
     try {

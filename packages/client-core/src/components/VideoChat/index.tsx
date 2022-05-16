@@ -1,14 +1,14 @@
 import * as React from 'react'
 
-import { useLocationState } from '@xrengine/client-core/src/social/services/LocationService'
+import { useLocationState } from '@atlasfoundation/client-core/src/social/services/LocationService'
 import {
   configureMediaTransports,
   endVideoChat
-} from '@xrengine/client-core/src/transports/SocketWebRTCClientFunctions'
-import { SocketWebRTCClientTransport } from '@xrengine/client-core/src/transports/SocketWebRTCClientTransport'
-import { useAuthState } from '@xrengine/client-core/src/user/services/AuthService'
-import { Network } from '@xrengine/engine/src/networking/classes/Network'
-import { MediaStreams } from '@xrengine/engine/src/networking/systems/MediaStreamSystem'
+} from '@atlasfoundation/client-core/src/transports/SocketWebRTCClientFunctions'
+import { SocketWebRTCClientTransport } from '@atlasfoundation/client-core/src/transports/SocketWebRTCClientTransport'
+import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
+import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
+import { MediaStreams } from '@atlasfoundation/engine/src/networking/systems/MediaStreamSystem'
 
 import { CallEnd, VideoCall } from '@mui/icons-material'
 import Fab from '@mui/material/Fab'

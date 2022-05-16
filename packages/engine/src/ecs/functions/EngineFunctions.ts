@@ -1,17 +1,16 @@
 /** Functions to provide engine level functionalities. */
 import { Color, Object3D } from 'three'
 
-import { dispatchAction } from '@xrengine/hyperflux'
+import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { AssetLoader, disposeDracoLoaderWorkers } from '../../assets/classes/AssetLoader'
 import { isClient } from '../../common/functions/isClient'
-import { removeClientInputListeners } from '../../input/functions/clientInputListeners'
 import { configureEffectComposer } from '../../renderer/functions/configureEffectComposer'
 import disposeScene from '../../renderer/functions/disposeScene'
 import { EngineRenderer } from '../../renderer/WebGLRendererSystem'
 import { PersistTagComponent } from '../../scene/components/PersistTagComponent'
 import { Engine } from '../classes/Engine'
-import { EngineActions } from '../classes/EngineState'
+import { EngineActions } from '../classes/EngineService'
 import { Entity } from '../classes/Entity'
 import { EntityTreeNode } from '../classes/EntityTree'
 import { World } from '../classes/World'
@@ -23,16 +22,6 @@ import {
   traverseEntityNode,
   traverseEntityNodeParent
 } from './EntityTreeFunctions'
-import { unloadSystems } from './SystemFunctions'
-
-export const shutdownEngine = async () => {
-  removeClientInputListeners()
-
-  Engine.instance.engineTimer?.clear()
-  Engine.instance.engineTimer = null!
-
-  reset()
-}
 
 /** Reset the engine and remove everything from memory. */
 export function reset() {
@@ -87,9 +76,8 @@ export function reset() {
   Engine.instance.currentWorld.prevInputState.clear()
 }
 
-export const unloadScene = (world: World, removePersisted = false) => {
+export const unloadScene = async (world: World, removePersisted = false) => {
   unloadAllEntities(world, removePersisted)
-  unloadSystems(world, true)
 
   dispatchAction(Engine.instance.store, EngineActions.sceneUnloaded())
 

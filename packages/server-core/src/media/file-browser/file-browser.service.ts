@@ -6,7 +6,7 @@ import { Application } from '../../../declarations'
 import { FileBrowserService } from './file-browser.class'
 import hooks from './file-browser.hooks'
 
-declare module '@xrengine/common/declarations' {
+declare module '@atlasfoundation/common/declarations' {
   interface ServiceTypes {
     'file-browser': FileBrowserService
     'file-browser/upload': any
@@ -52,14 +52,12 @@ export default (app: Application): any => {
   /**
    * Initialize our service with any options it requires and docs
    *
-   * @author Abhishek Pathak
    */
   app.use('file-browser', fileBrowser)
 
   /**
    * Get our initialized service so that we can register hooks
    *
-   * @author Abhishek Pathak
    */
   const service = app.service('file-browser')
 

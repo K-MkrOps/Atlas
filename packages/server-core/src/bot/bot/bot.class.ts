@@ -1,7 +1,7 @@
 import { NullableId, Paginated, Params } from '@feathersjs/feathers'
 import { SequelizeServiceOptions, Service } from 'feathers-sequelize'
 
-import { AdminBot } from '@xrengine/common/src/interfaces/AdminBot'
+import { AdminBot } from '@atlasfoundation/common/src/interfaces/AdminBot'
 
 import { Application } from '../../../declarations'
 

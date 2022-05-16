@@ -1,12 +1,12 @@
 {{- if and (.Values.api).enabled (ne (((.Values.api).ingress).disabled | default "") "true") -}}
-{{- $fullName := include "xrengine.api.fullname" . -}}
+{{- $fullName := include "atlas.api.fullname" . -}}
 {{- $svcPort := .Values.api.service.port -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    {{- include "xrengine.api.labels" . | nindent 4 }}
+    {{- include "atlas.api.labels" . | nindent 4 }}
   {{- with .Values.api.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}

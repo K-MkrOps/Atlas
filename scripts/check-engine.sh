@@ -1,5 +1,5 @@
-apiName="${RELEASE_NAME}-xrengine-api"
-clientName="${RELEASE_NAME}-xrengine-client"
+apiName="${RELEASE_NAME}-atlas-api"
+clientName="${RELEASE_NAME}-atlas-client"
 gamesvrName="${RELEASE_NAME}-gameserver"
 
 apiCount=$(kubectl get deploy $apiName -o jsonpath='{.status.availableReplicas}')
@@ -38,5 +38,5 @@ do
     echo "Gameserver ready count: $gamesvrCount"
 done
 
-echo "XREngine is now ready"
+echo "Atlas is now ready"
 exit 0

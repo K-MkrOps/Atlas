@@ -1,13 +1,13 @@
-import { store } from '@xrengine/client-core/src/store'
-import { EntityTreeNode } from '@xrengine/engine/src/ecs/classes/EntityTree'
+import { store } from '@atlasfoundation/client-core/src/store'
+import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
 import {
   addComponent,
   ComponentConstructor,
   getComponent,
   hasComponent,
   removeComponent
-} from '@xrengine/engine/src/ecs/functions/ComponentFunctions'
-import { EntityNodeComponent } from '@xrengine/engine/src/scene/components/EntityNodeComponent'
+} from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import { EntityNodeComponent } from '@atlasfoundation/engine/src/scene/components/EntityNodeComponent'
 
 import { serializeObject3DArray, serializeProperties } from '../functions/debug'
 import { EditorAction } from '../services/EditorServices'
