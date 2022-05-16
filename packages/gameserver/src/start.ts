@@ -15,7 +15,7 @@ import {
   configureSocketIO,
   createFeathersExpressApp
 } from '@atlasfoundation/server-core/src/createApp'
-import multiLogger from '@atlasfoundation/server-core/src/logger'
+import logger from '@atlasfoundation/server-core/src/logger'
 
 import channels from './channels'
 import { SocketWebRTCServerTransport } from './SocketWebRTCServerTransport'

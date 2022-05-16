@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router'
 
 import { LocationInstanceConnectionAction } from '@atlasfoundation/client-core/src/common/services/LocationInstanceConnectionService'
@@ -14,40 +14,31 @@ import { dispatchAction, useHookEffect } from '@atlasfoundation/hyperflux'
 
 import { AppAction, GeneralStateList } from '../../common/services/AppService'
 import { SocketWebRTCClientTransport } from '../../transports/SocketWebRTCClientTransport'
-import { initClient, loadScene } from './LocationLoadHelper'
+import { initClient } from './LocationLoadHelper'
 
 export const LoadEngineWithScene = () => {
   const history = useHistory()
   const dispatch = useDispatch()
   const engineState = useEngineState()
   const sceneState = useSceneState()
-  const [clientInitialized, setClientInitialized] = useState(false)
   const [clientReady, setClientReady] = useState(false)
 
-  useEffect(() => {
-    initEngine()
+  /**
+   * initialise the client
+   */
+  useHookEffect(() => {
+    initClient().then(() => {
+      setClientReady(true)
+    })
   }, [])
 
   /**
-   * Once we know what projects we need, initialise the client.
+   * load the scene whenever it changes
    */
   useHookEffect(() => {
-    // We assume that the number of projects will always be greater than 0 as the default project is assumed un-deletable
-    if (!clientInitialized && engineState.isEngineInitialized.value && sceneState.currentScene.value) {
-      setClientInitialized(true)
-      initClient(sceneState.currentScene.value!).then(() => {
-        setClientReady(true)
-      })
-    }
-  }, [engineState.isEngineInitialized, sceneState.currentScene])
-
-  /**
-   * Once we have the scene data, load the location
-   */
-  useHookEffect(() => {
-    const sceneJSON = sceneState.currentScene.ornull?.scene.value
-    if (clientReady && sceneJSON) {
-      loadLocation(sceneJSON)
+    const sceneData = sceneState.currentScene.value
+    if (clientReady && sceneData) {
+      loadScene(sceneData)
     }
   }, [clientReady, sceneState.currentScene])
 
@@ -78,7 +69,7 @@ export const LoadEngineWithScene = () => {
 
       console.log('reseting connection for portal teleport')
 
-      const world = useWorld()
+      const world = Engine.instance.currentWorld
 
       dispatch(SceneAction.currentSceneChanged(null))
       history.push('/location/' + world.activePortal.location)
@@ -92,5 +83,5 @@ export const LoadEngineWithScene = () => {
     }
   }, [engineState.isTeleporting])
 
-  return canvas
+  return <></>
 }

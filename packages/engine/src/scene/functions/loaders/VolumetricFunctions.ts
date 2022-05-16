@@ -35,11 +35,11 @@ type VolumetricObject3D = UpdateableObject3D & {
   callbacks()
 }
 
-let DracosisPlayer = null! as typeof import('volumetric/player').default
+let VolumetricPlayer = null! as typeof import('volumetric/player').default
 
 if (isClient) {
   Promise.all([import('volumetric/player')]).then(([module1]) => {
-    DracosisPlayer = module1.default
+    VolumetricPlayer = module1.default
   })
 }
 
@@ -50,7 +50,7 @@ export const VolumetricCallbacks = [
   { label: 'Seek', value: 'seek' }
 ]
 
-export const VolumetricsExtensions = ['drcs', 'uvol']
+export const VolumetricsExtensions = ['uvol']
 export const SCENE_COMPONENT_VOLUMETRIC = 'volumetric'
 export const SCENE_COMPONENT_VOLUMETRIC_DEFAULT_VALUES = {
   paths: [],
@@ -85,7 +85,7 @@ export const updateVolumetric: ComponentUpdateFunction = (entity: Entity, proper
         obj3d.userData.player.dispose()
       }
 
-      obj3d.userData.player = new DracosisPlayer({
+      obj3d.userData.player = new VolumetricPlayer({
         scene: obj3d,
         renderer: EngineRenderer.instance.renderer,
         paths,

@@ -30,7 +30,7 @@ export const useAlertState = () => useState(state) as any as typeof state
 let timerId: any
 
 let alertTimeout = 10000
-if (globalThis.process.env['VITE_ALERT_TIMEOUT']) alertTimeout = parseInt(globalThis.process.env['VITE_ALERT_TIMEOUT'])
+if (globalThis?.process?.env['VITE_ALERT_TIMEOUT']) alertTimeout = parseInt(globalThis.process.env['VITE_ALERT_TIMEOUT'])
 
 export const AlertService = {
   alertSuccess: async (message: string) => {

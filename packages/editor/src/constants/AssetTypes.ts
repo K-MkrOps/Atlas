@@ -13,7 +13,7 @@ export const ItemTypes = {
   Models: ['glb', 'gltf', 'model/gltf'],
   Scripts: ['tsx', 'ts', 'jsx', 'js'],
   Videos: ['mp4', 'm3u8', 'video/mp4'],
-  Volumetrics: ['drcs', 'uvol'],
+  Volumetrics: ['uvol'],
   Node: 'Node',
   Prefab: 'Prefab'
 }

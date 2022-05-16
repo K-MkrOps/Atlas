@@ -25,6 +25,7 @@ import InfiniteGridHelper from './scene/classes/InfiniteGridHelper'
 import { ObjectLayers } from './scene/constants/ObjectLayers'
 import './threejsPatches'
 import { FontManager } from './xrui/classes/FontManager'
+import { EngineState } from './ecs/classes/EngineState'
 
 /**
  * Creates a new instance of the engine and engine renderer. This initializes all properties and state for the engine,
@@ -59,7 +60,7 @@ export const initializeBrowser = () => {
   world.camera.layers.enable(ObjectLayers.UI)
 
   InfiniteGridHelper.instance = new InfiniteGridHelper()
-  Engine.instance.scene.add(InfiniteGridHelper.instance)
+  world.scene.add(InfiniteGridHelper.instance)
 
   const browser = detect()
   const os = detectOS(navigator.userAgent)

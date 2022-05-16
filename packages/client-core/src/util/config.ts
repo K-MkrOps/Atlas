@@ -1,4 +1,4 @@
-export const localBuildOrDev = process.env.APP_ENV === 'development' || process.env['VITE_LOCAL_BUILD'] === 'true'
+export const localBuildOrDev = globalThis.process.env.APP_ENV === 'development' || globalThis.process.env['VITE_LOCAL_BUILD'] === 'true'
 
 export const serverHost = localBuildOrDev
   ? `https://${globalThis.process.env['VITE_SERVER_HOST']}:${globalThis.process.env['VITE_SERVER_PORT']}`

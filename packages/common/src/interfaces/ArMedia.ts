@@ -4,6 +4,6 @@ export interface ArMedia {
   title: string
   manifestUrl?: string
   previewUrl?: string
-  dracosisUrl?: string
+  volumetricUrl?: string
   audioUrl?: string
 }

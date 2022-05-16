@@ -41,26 +41,8 @@ export const HomePage = (): any => {
           />
         </Helmet>
         <div className="main-background">
-          <div className="img-container">
-            {clientSetting?.appBackground && <img src={clientSetting.appBackground} alt="" />}
-          </div>
         </div>
-        <nav className="navbar">
-          <div className="logo-section">
-            {clientSetting?.appTitle && <object className="lander-logo" data={clientSetting.appTitle} />}
-            <div className="logo-bottom">
-              {clientSetting?.appSubtitle && <span className="white-txt">{clientSetting.appSubtitle}</span>}
-            </div>
-          </div>
-        </nav>
         <div className="main-section">
-          <div className="desc">
-            {clientSetting?.appDescription && (
-              <Trans t={t} i18nKey={clientSetting.appDescription}>
-                <span>{clientSetting.appDescription}</span>
-              </Trans>
-            )}
-          </div>
           <div className="form-container">
             <style>
               {`
@@ -77,19 +59,6 @@ export const HomePage = (): any => {
               `}
             </style>
             <ProfileMenu />
-          </div>
-        </div>
-        <div className="link-container">
-          <div className="link-block">
-            {clientSetting?.appSocialLinks?.length > 0 &&
-              clientSetting.appSocialLinks.map((social, index) => (
-                <a key={index} target="_blank" className="icon" href={social.link}>
-                  <img src={social.icon} />
-                </a>
-              ))}
-          </div>
-          <div className="logo-bottom">
-            {clientSetting?.appSubtitle && <span className="white-txt">{clientSetting.appSubtitle}</span>}
           </div>
         </div>
       </div>
