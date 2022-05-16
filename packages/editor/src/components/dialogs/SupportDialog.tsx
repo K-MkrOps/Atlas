@@ -24,7 +24,8 @@ export function SupportDialog({ onCancel, ...props }) {
             <a href="https://github.com/AtlasFoundation/Atlas/issues/new" target="_blank" rel="noopener noreferrer">
               GitHub Issue
             </a>
-            &nbsp; or e-mail us for support at <a href="mailto:support@atlasfoundation.dev">support@atlasfoundation.dev</a>
+            &nbsp; or e-mail us for support at{' '}
+            <a href="mailto:support@atlasfoundation.dev">support@atlasfoundation.dev</a>
           </Trans>
         </p>
         <p>

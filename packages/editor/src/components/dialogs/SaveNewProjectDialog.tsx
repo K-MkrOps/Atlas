@@ -28,7 +28,7 @@ export function SaveNewProjectDialog({ thumbnailUrl, initialName, onConfirm, onC
   /**
    * onConfirmCallback callback function is used handle confirm dialog.
    *
-     * @type {function}
+   * @type {function}
    */
   const onConfirmCallback = useCallback(
     (e) => {
@@ -41,7 +41,7 @@ export function SaveNewProjectDialog({ thumbnailUrl, initialName, onConfirm, onC
   /**
    * onCancelCallback callback function used to handle cancel of dialog.
    *
-     * @type {function}
+   * @type {function}
    */
   const onCancelCallback = useCallback(
     (e) => {

@@ -1,10 +1,10 @@
-import { createState, SetInitialStateAction, State } from '@speigg/hookstate'
+import { createState, SetInitialStateAction, State } from '@hoostate/core'
 import React from 'react'
 import Reconciler from 'react-reconciler'
 
 import { HyperStore, StringLiteral } from './StoreFunctions'
 
-export * from '@speigg/hookstate'
+export * from '@hoostate/core'
 
 type StateDefinition<StoreName extends string, S> = {
   store: StringLiteral<StoreName>
@@ -69,6 +69,10 @@ const ReactorReconciler = Reconciler({
 function addStateReactor(store: HyperStore<any>, reactor: () => void) {
   let root = store.reactors.get(reactor)
   if (!root) {
+    /**
+     * @todo @speigg look into this
+     */
+    // @ts-ignore
     root = ReactorReconciler.createContainer(reactor, 0, false, null)
     ReactorReconciler.updateContainer(
       () => {

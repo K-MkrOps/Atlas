@@ -7,7 +7,11 @@ import { GLTFExporter } from '@atlasfoundation/engine/src/assets/exporters/gltf/
 import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
 import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
 import { World } from '@atlasfoundation/engine/src/ecs/classes/World'
-import { getAllComponents, getComponent, hasComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import {
+  getAllComponents,
+  getComponent,
+  hasComponent
+} from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
 
 import { AssetComponentType } from '../components/AssetComponent'

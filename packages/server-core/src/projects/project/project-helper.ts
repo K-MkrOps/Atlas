@@ -71,8 +71,7 @@ export const getProjectConfig = async (projectName: string): Promise<ProjectConf
   } catch (e) {
     logger.error(
       e,
-      '[Projects]: WARNING project with ' +
-        `name ${projectName} has no atlas.config.ts file - this is not recommended.`
+      '[Projects]: WARNING project with ' + `name ${projectName} has no atlas.config.ts file - this is not recommended.`
     )
     return null!
   }

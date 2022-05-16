@@ -1,4 +1,4 @@
-import { none } from '@speigg/hookstate'
+import { none } from '@hoostate/core'
 import matches from 'ts-matches'
 
 import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'

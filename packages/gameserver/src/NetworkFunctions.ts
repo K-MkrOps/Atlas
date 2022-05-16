@@ -6,9 +6,9 @@ import { User } from '@atlasfoundation/common/src/interfaces/User'
 import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 import { SpawnPoints } from '@atlasfoundation/engine/src/avatar/AvatarSpawnSystem'
 import checkPositionIsValid from '@atlasfoundation/engine/src/common/functions/checkPositionIsValid'
+import { performance } from '@atlasfoundation/engine/src/common/functions/performance'
 import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
 import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
-import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
 import { NetworkWorldAction } from '@atlasfoundation/engine/src/networking/functions/NetworkWorldAction'
 import { JoinWorldProps } from '@atlasfoundation/engine/src/networking/functions/receiveJoinWorld'
 import { AvatarProps } from '@atlasfoundation/engine/src/networking/interfaces/WorldState'
@@ -18,7 +18,7 @@ import { dispatchAction } from '@atlasfoundation/hyperflux'
 import { Action } from '@atlasfoundation/hyperflux/functions/ActionFunctions'
 import config from '@atlasfoundation/server-core/src/appconfig'
 import { localConfig } from '@atlasfoundation/server-core/src/config'
-import logger from '@atlasfoundation/server-core/src/logger'
+import multiLogger from '@atlasfoundation/server-core/src/logger'
 import getLocalServerIp from '@atlasfoundation/server-core/src/util/get-local-server-ip'
 
 import { SocketWebRTCServerTransport } from './SocketWebRTCServerTransport'
@@ -397,12 +397,16 @@ export async function handleDisconnect(socket): Promise<any> {
   }
 }
 
-export async function handleLeaveWorld(socket, data, callback): Promise<any> {
+export async function handleLeaveWorld(
+  networkTransport: SocketWebRTCServerTransport,
+  socket,
+  data,
+  callback
+): Promise<any> {
   const world = Engine.instance.currentWorld
   const userId = getUserIdFromSocketId(socket.id)!
-  if (Network.instance.transports)
-    for (const [, transport] of Object.entries(Network.instance.transports))
-      if ((transport as any).appData.peerId === userId) closeTransport(transport)
+  for (const [, transport] of Object.entries(networkTransport.mediasoupTransports))
+    if ((transport as any).appData.peerId === userId) closeTransport(networkTransport, transport)
   if (world.clients.has(userId)) {
     dispatchAction(world.store, NetworkWorldAction.destroyClient({ $from: userId }))
   }

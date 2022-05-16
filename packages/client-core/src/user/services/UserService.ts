@@ -1,5 +1,5 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, none, useState } from '@speigg/hookstate'
+import { createState, none, useState } from '@hoostate/core'
 
 import { Relationship } from '@atlasfoundation/common/src/interfaces/Relationship'
 import { RelationshipSeed } from '@atlasfoundation/common/src/interfaces/Relationship'

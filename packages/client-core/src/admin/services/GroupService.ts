@@ -1,4 +1,4 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
 import { CreateGroup, Group } from '@atlasfoundation/common/src/interfaces/Group'
 import { GroupResult } from '@atlasfoundation/common/src/interfaces/GroupResult'

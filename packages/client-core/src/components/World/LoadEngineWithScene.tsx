@@ -5,31 +5,16 @@ import { LocationInstanceConnectionAction } from '@atlasfoundation/client-core/s
 import { LocationService } from '@atlasfoundation/client-core/src/social/services/LocationService'
 import { useDispatch } from '@atlasfoundation/client-core/src/store'
 import { leave } from '@atlasfoundation/client-core/src/transports/SocketWebRTCClientFunctions'
-import { getWorldTransport } from '@atlasfoundation/client-core/src/transports/SocketWebRTCClientTransport'
 import { SceneAction, useSceneState } from '@atlasfoundation/client-core/src/world/services/SceneService'
 import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
-import { EngineActions, useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
-import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
+import { EngineActions, useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineState'
+import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
 import { teleportToScene } from '@atlasfoundation/engine/src/scene/functions/teleportToScene'
-import { useHookEffect } from '@atlasfoundation/hyperflux'
-import { dispatchAction } from '@atlasfoundation/hyperflux'
+import { dispatchAction, useHookEffect } from '@atlasfoundation/hyperflux'
 
 import { AppAction, GeneralStateList } from '../../common/services/AppService'
-import { initClient, initEngine, loadLocation } from './LocationLoadHelper'
-
-const engineRendererCanvasId = 'engine-renderer-canvas'
-
-const canvasStyle = {
-  zIndex: 0,
-  width: '100%',
-  height: '100%',
-  position: 'fixed',
-  WebkitUserSelect: 'none',
-  pointerEvents: 'auto',
-  userSelect: 'none'
-} as React.CSSProperties
-
-const canvas = <canvas id={engineRendererCanvasId} style={canvasStyle} />
+import { SocketWebRTCClientTransport } from '../../transports/SocketWebRTCClientTransport'
+import { initClient, loadScene } from './LocationLoadHelper'
 
 export const LoadEngineWithScene = () => {
   const history = useHistory()
@@ -100,7 +85,7 @@ export const LoadEngineWithScene = () => {
       LocationService.getLocationByName(world.activePortal.location)
 
       // shut down connection with existing GS
-      leave(getWorldTransport())
+      leave(Network.instance.getTransport('world') as SocketWebRTCClientTransport)
       dispatch(LocationInstanceConnectionAction.disconnect())
 
       teleportToScene()

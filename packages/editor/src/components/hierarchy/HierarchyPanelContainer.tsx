@@ -157,7 +157,7 @@ export default function HierarchyPanel() {
 
   const onClick = useCallback((e: MouseEvent, node: HeirarchyTreeNodeType) => {
     if (e.detail === 2) {
-      const cameraComponent = getComponent(Engine.instance.activeCameraEntity, EditorCameraComponent)
+      const cameraComponent = getComponent(Engine.instance.currentWorld.activeCameraEntity, EditorCameraComponent)
       cameraComponent.focusedObjects = [node.entityNode]
       cameraComponent.refocus = true
     }
@@ -330,7 +330,7 @@ export default function HierarchyPanel() {
   return (
     <>
       <div className={styles.panelContainer}>
-        {Engine.instance.scene && (
+        {Engine.instance.currentWorld.scene && (
           <AutoSizer>
             {({ height, width }) => (
               <FixedSizeList

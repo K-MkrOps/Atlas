@@ -1,5 +1,5 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, Downgraded, useState } from '@speigg/hookstate'
+import { createState, Downgraded, useState } from '@hoostate/core'
 // TODO: Decouple this
 // import { endVideoChat, leave } from '@atlasfoundation/engine/src/networking/functions/SocketWebRTCClientFunctions';
 import axios from 'axios'
@@ -11,13 +11,16 @@ import { validateEmail, validatePhoneNumber } from '@atlasfoundation/common/src/
 import { AuthUser, AuthUserSeed, resolveAuthUser } from '@atlasfoundation/common/src/interfaces/AuthUser'
 import { AvatarInterface, AvatarProps } from '@atlasfoundation/common/src/interfaces/AvatarInterface'
 import { IdentityProvider, IdentityProviderSeed } from '@atlasfoundation/common/src/interfaces/IdentityProvider'
-import { resolveUser, resolveWalletUser, User, UserSeed, UserSetting } from '@atlasfoundation/common/src/interfaces/User'
+import {
+  resolveUser,
+  resolveWalletUser,
+  User,
+  UserSeed,
+  UserSetting
+} from '@atlasfoundation/common/src/interfaces/User'
 import { UserApiKey } from '@atlasfoundation/common/src/interfaces/UserApiKey'
 import { UserAvatar } from '@atlasfoundation/common/src/interfaces/UserAvatar'
-import { isDev } from '@atlasfoundation/common/src/utils/isDev'
 import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
-import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
-import { MessageTypes } from '@atlasfoundation/engine/src/networking/enums/MessageTypes'
 import { NetworkWorldAction } from '@atlasfoundation/engine/src/networking/functions/NetworkWorldAction'
 import { dispatchAction } from '@atlasfoundation/hyperflux'
 
@@ -26,7 +29,6 @@ import { client } from '../../feathers'
 import { accessLocationState } from '../../social/services/LocationService'
 import { accessPartyState } from '../../social/services/PartyService'
 import { store, useDispatch } from '../../store'
-import { SocketWebRTCClientTransport } from '../../transports/SocketWebRTCClientTransport'
 import { serverHost } from '../../util/config'
 import { accessStoredLocalState, StoredLocalAction, StoredLocalActionType } from '../../util/StoredLocalState'
 import { uploadToFeathersService } from '../../util/upload'

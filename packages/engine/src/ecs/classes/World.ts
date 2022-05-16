@@ -1,22 +1,26 @@
 import * as bitecs from 'bitecs'
+import { AudioListener, Object3D, OrthographicCamera, PerspectiveCamera, Scene, XRFrame } from 'three'
 
 import { NetworkId } from '@atlasfoundation/common/src/interfaces/NetworkId'
 import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
-import { createHyperStore } from '@atlasfoundation/hyperflux'
+import { createHyperStore, registerState } from '@atlasfoundation/hyperflux'
 
 import { AvatarComponent } from '../../avatar/components/AvatarComponent'
 import { SceneLoaderType } from '../../common/constants/PrefabFunctionType'
 import { isClient } from '../../common/functions/isClient'
 import { nowMilliseconds } from '../../common/functions/nowMilliseconds'
+import { InputValue } from '../../input/interfaces/InputValue'
 import { Network } from '../../networking/classes/Network'
 import { NetworkObjectComponent } from '../../networking/components/NetworkObjectComponent'
 import { NetworkClient } from '../../networking/interfaces/NetworkClient'
+import { WorldState } from '../../networking/interfaces/WorldState'
 import { Physics } from '../../physics/classes/Physics'
 import { NameComponent } from '../../scene/components/NameComponent'
 import { Object3DComponent } from '../../scene/components/Object3DComponent'
 import { PersistTagComponent } from '../../scene/components/PersistTagComponent'
 import { PortalComponent } from '../../scene/components/PortalComponent'
+import { ObjectLayers } from '../../scene/constants/ObjectLayers'
 import {
   addComponent,
   defineQuery,
@@ -48,9 +52,9 @@ export class World {
     addComponent(this.worldEntity, PersistTagComponent, {}, this)
 
     initializeEntityTree(this)
+    this.scene.layers.set(ObjectLayers.Scene)
 
-    // @TODO support multiple networks per world
-    Network.instance = new Network()
+    registerState(this.store, WorldState)
   }
 
   static [CreateWorld] = () => new World()
@@ -58,7 +62,7 @@ export class World {
   /**
    * The UserId of the host
    */
-  hostId = 'server' as UserId
+  hostId = 'world' as UserId
 
   /**
    * Check if this user is hosting the world.
@@ -101,7 +105,34 @@ export class World {
     defaultDispatchDelay: 1
   })
 
+  /**
+   * Reference to the three.js scene object.
+   */
+  scene = new Scene()
+
   physics = new Physics()
+
+  /**
+   * Map of object lists by layer
+   * (automatically updated by the SceneObjectSystem)
+   */
+  objectLayerList = {} as { [layer: number]: Set<Object3D> }
+
+  /**
+   * Reference to the three.js perspective camera object.
+   */
+  camera: PerspectiveCamera | OrthographicCamera = null!
+  activeCameraEntity: Entity = null!
+  activeCameraFollowTarget: Entity | null = null
+
+  /**
+   * Reference to the audioListener.
+   * This is a virtual listner for all positional and non-positional audio.
+   */
+  audioListener: AudioListener = null!
+
+  inputState = new Map<any, InputValue>()
+  prevInputState = new Map<any, InputValue>()
 
   #entityQuery = bitecs.defineQuery([bitecs.Not(EntityRemovedComponent)])
   entityQuery = () => this.#entityQuery(this) as Entity[]
@@ -236,10 +267,13 @@ export class World {
   execute(delta: number) {
     const start = nowMilliseconds()
     const incomingActions = [...this.store.actions.incoming]
-    const incomingBufferLength = Network.instance?.incomingMessageQueueUnreliable.getBufferLength()
+    const incomingBufferLength = Network.instance
+      .getTransport('world')
+      ?.incomingMessageQueueUnreliable.getBufferLength()
 
-    this.delta = Math.min(TimerConfig.MAX_DELTA, delta)
-    this.elapsedTime += delta
+    const worldElapsedSeconds = (frameTime - this.startTime) / 1000
+    this.deltaSeconds = Math.max(0, Math.min(TimerConfig.MAX_DELTA_SECONDS, worldElapsedSeconds - this.elapsedSeconds))
+    this.elapsedSeconds = worldElapsedSeconds
 
     for (const system of this.pipelines[SystemUpdateType.UPDATE]) system.execute()
     for (const system of this.pipelines[SystemUpdateType.PRE_RENDER]) system.execute()

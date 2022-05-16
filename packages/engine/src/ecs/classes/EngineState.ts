@@ -1,5 +1,7 @@
+import { useState } from '@hoostate/core'
+
 import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
-import { defineAction, defineState, getState, useState } from '@atlasfoundation/hyperflux'
+import { defineAction, defineState, getState } from '@atlasfoundation/hyperflux'
 
 import { matches, matchesUserId, Validator } from '../../common/functions/MatchesUtils'
 import { InteractableComponentType } from '../../interaction/components/InteractableComponent'

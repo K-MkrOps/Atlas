@@ -1,4 +1,4 @@
-import { createState } from '@speigg/hookstate'
+import { createState } from '@hoostate/core'
 
 import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 

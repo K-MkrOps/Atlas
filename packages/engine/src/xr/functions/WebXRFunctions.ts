@@ -201,14 +201,14 @@ export const bindXRHandEvents = () => {
 }
 
 /**
-* @returns {void}
+ * @returns {void}
  */
 
 export const startWebXR = async (): Promise<void> => {
   const world = Engine.instance.currentWorld
 
   removeComponent(world.localClientEntity, FollowCameraComponent)
-  container.add(Engine.instance.camera)
+  container.add(Engine.instance.currentWorld.camera)
 
   setupXRInputSourceComponent(world.localClientEntity)
 
@@ -223,14 +223,14 @@ export const startWebXR = async (): Promise<void> => {
 }
 
 /**
-* @returns {void}
+ * @returns {void}
  */
 
 export const endXR = (): void => {
   // EngineRenderer.instance.xrSession?.end()
   EngineRenderer.instance.xrSession = null!
   EngineRenderer.instance.xrManager.setSession(null!)
-  Engine.instance.scene.add(Engine.instance.camera)
+  Engine.instance.currentWorld.scene.add(Engine.instance.currentWorld.camera)
 
   const world = Engine.instance.currentWorld
   addComponent(world.localClientEntity, FollowCameraComponent, FollowCameraDefaultValues)
@@ -241,7 +241,7 @@ export const endXR = (): void => {
 }
 
 /**
-* @returns {boolean}
+ * @returns {boolean}
  */
 
 export const isInXR = (entity: Entity) => {
@@ -255,7 +255,7 @@ const quat = new Quaternion()
 
 /**
  * Gets the hand position in world space
-* @param entity the player entity
+ * @param entity the player entity
  * @param hand which hand to get
  * @returns {Vector3}
  */
@@ -279,7 +279,7 @@ export const getHandPosition = (entity: Entity, hand: ParityValue = ParityValue.
 
 /**
  * Gets the hand rotation in world space
-* @param entity the player entity
+ * @param entity the player entity
  * @param hand which hand to get
  * @returns {Quaternion}
  */
@@ -300,7 +300,7 @@ export const getHandRotation = (entity: Entity, hand: ParityValue = ParityValue.
 
 /**
  * Gets the hand transform in world space
-* @param entity the player entity
+ * @param entity the player entity
  * @param hand which hand to get
  * @returns { position: Vector3, rotation: Quaternion }
  */
@@ -333,21 +333,21 @@ export const getHandTransform = (
 
 /**
  * Gets the head transform in world space
-* @param entity the player entity
+ * @param entity the player entity
  * @returns { position: Vector3, rotation: Quaternion }
  */
 
 export const getHeadTransform = (entity: Entity): { position: Vector3; rotation: Quaternion; scale: Vector3 } => {
   const xrInputSourceComponent = getComponent(entity, XRInputSourceComponent)
   if (xrInputSourceComponent) {
-    Engine.instance.camera.matrix.decompose(vec3, quat, v3)
+    Engine.instance.currentWorld.camera.matrix.decompose(vec3, quat, v3)
     return {
       position: vec3,
       rotation: quat,
       scale: uniformScale
     }
   }
-  const cameraTransform = getComponent(Engine.instance.activeCameraEntity, TransformComponent)
+  const cameraTransform = getComponent(Engine.instance.currentWorld.activeCameraEntity, TransformComponent)
   return {
     position: cameraTransform.position,
     rotation: cameraTransform.rotation,

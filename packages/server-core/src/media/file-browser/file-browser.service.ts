@@ -52,13 +52,13 @@ export default (app: Application): any => {
   /**
    * Initialize our service with any options it requires and docs
    *
-     */
+   */
   app.use('file-browser', fileBrowser)
 
   /**
    * Get our initialized service so that we can register hooks
    *
-     */
+   */
   const service = app.service('file-browser')
 
   service.hooks(hooks as any)

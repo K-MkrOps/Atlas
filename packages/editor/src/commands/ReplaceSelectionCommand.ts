@@ -1,7 +1,11 @@
 import { store } from '@atlasfoundation/client-core/src/store'
 import { Entity } from '@atlasfoundation/engine/src/ecs/classes/Entity'
 import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
-import { addComponent, hasComponent, removeComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import {
+  addComponent,
+  hasComponent,
+  removeComponent
+} from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 import { getEntityNodeArrayFromEntities } from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
 import { SelectTagComponent } from '@atlasfoundation/engine/src/scene/components/SelectTagComponent'
 

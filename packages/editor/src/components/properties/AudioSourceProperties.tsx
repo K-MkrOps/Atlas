@@ -2,7 +2,11 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { AudioComponent } from '@atlasfoundation/engine/src/audio/components/AudioComponent'
-import { AudioType, DistanceModel, DistanceModelOptions } from '@atlasfoundation/engine/src/audio/constants/AudioConstants'
+import {
+  AudioType,
+  DistanceModel,
+  DistanceModelOptions
+} from '@atlasfoundation/engine/src/audio/constants/AudioConstants'
 import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 
 import CompoundNumericInput from '../inputs/CompoundNumericInput'

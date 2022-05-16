@@ -1,6 +1,9 @@
 import { store } from '@atlasfoundation/client-core/src/store'
 import { EntityTreeNode } from '@atlasfoundation/engine/src/ecs/classes/EntityTree'
-import { cloneEntityNode, getEntityNodeArrayFromEntities } from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
+import {
+  cloneEntityNode,
+  getEntityNodeArrayFromEntities
+} from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
 import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
 import { serializeWorld } from '@atlasfoundation/engine/src/scene/functions/serializeWorld'
 

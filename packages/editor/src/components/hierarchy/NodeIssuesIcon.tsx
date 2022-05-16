@@ -71,7 +71,7 @@ export function NodeIssuesIcon({ node }) {
   /**
    * renderInfo function used to return view.
    *
-     * @type {function}
+   * @type {function}
    */
   const renderInfo = useCallback(() => {
     return (

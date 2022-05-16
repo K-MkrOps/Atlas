@@ -1,4 +1,4 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
 export const LoadingSystemState = createState({
   opacity: 1

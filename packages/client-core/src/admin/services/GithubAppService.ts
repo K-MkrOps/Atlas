@@ -1,4 +1,4 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
 import { GithubAppInterface } from '@atlasfoundation/common/src/interfaces/GithubAppInterface'
 

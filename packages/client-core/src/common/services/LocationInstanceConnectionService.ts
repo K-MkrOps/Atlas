@@ -1,10 +1,11 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
 import { Instance } from '@atlasfoundation/common/src/interfaces/Instance'
 import { InstanceServerProvisionResult } from '@atlasfoundation/common/src/interfaces/InstanceServerProvisionResult'
+import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
-import { EngineActions } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { EngineActions } from '@atlasfoundation/engine/src/ecs/classes/EngineState'
 import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
 import { dispatchAction } from '@atlasfoundation/hyperflux'
 
@@ -119,7 +120,7 @@ export const LocationInstanceConnectionService = {
   connectToServer: async () => {
     const dispatch = useDispatch()
     dispatch(LocationInstanceConnectionAction.connecting())
-    const transport = Network.instance.transportHandler.getWorldTransport() as SocketWebRTCClientTransport
+    const transport = Network.instance.getTransport('world' as UserId) as SocketWebRTCClientTransport
     console.log('connectToServer', !!transport.socket, transport)
     if (transport.socket) {
       await leave(transport, false)

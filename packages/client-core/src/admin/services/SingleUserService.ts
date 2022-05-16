@@ -1,4 +1,4 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
 import { UserSeed } from '@atlasfoundation/common/src/interfaces/User'
 import { User } from '@atlasfoundation/common/src/interfaces/User'

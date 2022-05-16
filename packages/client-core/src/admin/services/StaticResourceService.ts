@@ -1,4 +1,4 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
 import { StaticResource } from '@atlasfoundation/common/src/interfaces/StaticResource'
 import { StaticResourceResult } from '@atlasfoundation/common/src/interfaces/StaticResourceResult'

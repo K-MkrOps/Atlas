@@ -193,6 +193,7 @@ const Analytics = (props: Props) => {
             </ToggleButton>
           </ToggleButtonGroup>
           <div className={styles.datePickerContainer}>
+            {/* @ts-ignore */}
             <LocalizationProvider dateAdapter={DateAdapter}>
               <MobileDateTimePicker
                 value={startDate}

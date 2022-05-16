@@ -1,11 +1,11 @@
-import { AudioListener, Object3D, OrthographicCamera, PerspectiveCamera, Scene, XRFrame } from 'three'
+import { XRFrame } from 'three'
 
 import type { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 import { createHyperStore } from '@atlasfoundation/hyperflux'
 
-import type { InputValue } from '../../input/interfaces/InputValue'
+import { nowMilliseconds } from '../../common/functions/nowMilliseconds'
 import type { World } from '../classes/World'
-import type { Entity } from './Entity'
+import type { SystemModuleType } from '../functions/SystemFunctions'
 
 export class Engine {
   static instance: Engine
@@ -36,33 +36,6 @@ export class Engine {
    * All worlds that are currently instantiated
    */
   worlds: World[] = []
-
-  /**
-   * Reference to the three.js scene object.
-   */
-  scene: Scene = null!
-
-  /**
-   * Map of object lists by layer
-   * (automatically updated by the SceneObjectSystem)
-   */
-  objectLayerList = {} as { [layer: number]: Set<Object3D> }
-
-  /**
-   * Reference to the three.js perspective camera object.
-   */
-  camera: PerspectiveCamera | OrthographicCamera = null!
-  activeCameraEntity: Entity = null!
-  activeCameraFollowTarget: Entity | null = null
-
-  /**
-   * Reference to the audioListener.
-   * This is a virtual listner for all positional and non-positional audio.
-   */
-  audioListener: AudioListener = null!
-
-  inputState = new Map<any, InputValue>()
-  prevInputState = new Map<any, InputValue>()
 
   publicPath: string = null!
 

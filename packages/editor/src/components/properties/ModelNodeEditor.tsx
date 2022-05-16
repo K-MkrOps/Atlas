@@ -7,7 +7,11 @@ import { AnimationManager } from '@atlasfoundation/engine/src/avatar/AnimationMa
 import { AnimationComponent } from '@atlasfoundation/engine/src/avatar/components/AnimationComponent'
 import { LoopAnimationComponent } from '@atlasfoundation/engine/src/avatar/components/LoopAnimationComponent'
 import { useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
-import { getComponent, hasComponent, removeComponent } from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
+import {
+  getComponent,
+  hasComponent,
+  removeComponent
+} from '@atlasfoundation/engine/src/ecs/functions/ComponentFunctions'
 import { traverseEntityNode } from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
 import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
 import { InteractableComponent } from '@atlasfoundation/engine/src/interaction/components/InteractableComponent'

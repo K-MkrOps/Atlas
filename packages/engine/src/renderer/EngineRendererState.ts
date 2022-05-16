@@ -1,4 +1,4 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
 import { isIOS } from '@atlasfoundation/common/src/utils/isIOS'
 import { dispatchAction } from '@atlasfoundation/hyperflux'
@@ -108,13 +108,14 @@ function updateState(): void {
 
   changeRenderMode(state.renderMode.value)
 
-  if (Engine.instance.isEditor && state.nodeHelperVisibility.value)
-    Engine.instance.camera.layers.enable(ObjectLayers.NodeHelper)
-  else Engine.instance.camera.layers.disable(ObjectLayers.NodeHelper)
+  if (state.nodeHelperVisibility.value) Engine.instance.currentWorld.camera.layers.enable(ObjectLayers.NodeHelper)
+  else Engine.instance.currentWorld.camera.layers.disable(ObjectLayers.NodeHelper)
 
   if (Engine.instance.isEditor) {
     InfiniteGridHelper.instance.setGridHeight(state.gridHeight.value)
     InfiniteGridHelper.instance.visible = state.gridVisibility.value
+  } else {
+    Engine.instance.currentWorld.camera.layers.disable(ObjectLayers.NodeHelper)
   }
 }
 

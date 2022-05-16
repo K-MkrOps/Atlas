@@ -1,4 +1,4 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
 import { DialogSeed } from '@atlasfoundation/common/src/interfaces/Dialog'
 import { Dialog } from '@atlasfoundation/common/src/interfaces/Dialog'

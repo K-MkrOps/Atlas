@@ -492,6 +492,17 @@ function findHandBones(handBone: Object3D) {
   }
 }
 
+export function findSkinnedMeshes(model: Object3D) {
+  let meshes: SkinnedMesh[] = []
+  model.traverse((obj: SkinnedMesh) => {
+    if (obj.isSkinnedMesh) {
+      meshes.push(obj)
+    }
+  })
+
+  return meshes
+}
+
 /**
  * Creates a skeleton form given bone chain
  * @param bone first bone in the chain

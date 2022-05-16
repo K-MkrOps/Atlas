@@ -3,7 +3,6 @@ import { NavMesh } from 'yuka'
 
 import { createMappedComponent } from '../../ecs/functions/ComponentFunctions'
 
-
 export type NavMeshComponentType = {
   yukaNavMesh?: NavMesh
   navTarget: Object3D

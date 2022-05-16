@@ -1,4 +1,4 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
 import { ChannelType } from '@atlasfoundation/common/src/interfaces/Channel'
 import { InstanceServerProvisionResult } from '@atlasfoundation/common/src/interfaces/InstanceServerProvisionResult'
@@ -139,7 +139,7 @@ export const MediaInstanceConnectionService = {
     const currentLocation = locationState.currentLocation.location
     const sceneId = currentLocation?.sceneId?.value
 
-    const transport = Network.instance.transportHandler.getMediaTransport() as SocketWebRTCClientTransport
+    const transport = Network.instance.getTransport('media') as SocketWebRTCClientTransport
     if (transport.socket) {
       await endVideoChat(transport, { endConsumers: true })
       await leave(transport, false)

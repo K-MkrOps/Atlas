@@ -22,7 +22,11 @@ import {
 } from '@atlasfoundation/engine/src/ecs/functions/EntityTreeFunctions'
 import { createEngine, initializeCoreSystems } from '@atlasfoundation/engine/src/initializeEngine'
 import '@atlasfoundation/engine/src/patchEngineNode'
-import { AssetComponent, AssetLoadedComponent, LoadState } from '@atlasfoundation/engine/src/scene/components/AssetComponent'
+import {
+  AssetComponent,
+  AssetLoadedComponent,
+  LoadState
+} from '@atlasfoundation/engine/src/scene/components/AssetComponent'
 import { ModelComponent } from '@atlasfoundation/engine/src/scene/components/ModelComponent'
 import { gltfToSceneJson, handleScenePaths } from '@atlasfoundation/engine/src/scene/functions/GLTFConversion'
 import {

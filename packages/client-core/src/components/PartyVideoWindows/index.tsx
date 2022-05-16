@@ -1,4 +1,4 @@
-import { useState } from '@speigg/hookstate'
+import { useState } from '@hoostate/core'
 import React, { useEffect } from 'react'
 
 import { useMediaInstanceConnectionState } from '@atlasfoundation/client-core/src/common/services/MediaInstanceConnectionService'

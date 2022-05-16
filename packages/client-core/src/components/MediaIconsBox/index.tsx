@@ -6,7 +6,10 @@ import {
   MediaInstanceConnectionService,
   useMediaInstanceConnectionState
 } from '@atlasfoundation/client-core/src/common/services/MediaInstanceConnectionService'
-import { MediaStreamService, useMediaStreamState } from '@atlasfoundation/client-core/src/media/services/MediaStreamService'
+import {
+  MediaStreamService,
+  useMediaStreamState
+} from '@atlasfoundation/client-core/src/media/services/MediaStreamService'
 import { useChatState } from '@atlasfoundation/client-core/src/social/services/ChatService'
 import { useLocationState } from '@atlasfoundation/client-core/src/social/services/LocationService'
 import {
@@ -18,22 +21,23 @@ import {
   pauseProducer,
   resumeProducer
 } from '@atlasfoundation/client-core/src/transports/SocketWebRTCClientFunctions'
-import { getMediaTransport } from '@atlasfoundation/client-core/src/transports/SocketWebRTCClientTransport'
 import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
 import { Engine } from '@atlasfoundation/engine/src/ecs/classes/Engine'
-import { EngineActions, useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineService'
+import { EngineActions, useEngineState } from '@atlasfoundation/engine/src/ecs/classes/EngineState'
 import {
   startFaceTracking,
   startLipsyncTracking,
   stopFaceTracking,
   stopLipsyncTracking
 } from '@atlasfoundation/engine/src/input/functions/WebcamInput'
+import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
 import { MediaStreams } from '@atlasfoundation/engine/src/networking/systems/MediaStreamSystem'
 import { dispatchAction } from '@atlasfoundation/hyperflux'
 
 import { Mic, MicOff, Videocam, VideocamOff } from '@mui/icons-material'
 import FaceIcon from '@mui/icons-material/Face'
 
+import { SocketWebRTCClientTransport } from '../../transports/SocketWebRTCClientTransport'
 import styles from './index.module.scss'
 
 interface Props {
@@ -89,7 +93,7 @@ const MediaIconsBox = (props: Props) => {
       stopLipsyncTracking()
       MediaStreamService.updateFaceTrackingState()
     } else {
-      const mediaTransport = getMediaTransport()
+      const mediaTransport = Network.instance.getTransport('media') as SocketWebRTCClientTransport
       if (await configureMediaTransports(mediaTransport, ['video', 'audio'])) {
         MediaStreams.instance.setFaceTracking(true)
         startFaceTracking()
@@ -100,7 +104,7 @@ const MediaIconsBox = (props: Props) => {
   }
 
   const checkEndVideoChat = async () => {
-    const mediaTransport = getMediaTransport()
+    const mediaTransport = Network.instance.getTransport('media') as SocketWebRTCClientTransport
     if (
       (MediaStreams.instance.audioPaused || MediaStreams.instance?.camAudioProducer == null) &&
       (MediaStreams.instance.videoPaused || MediaStreams.instance?.camVideoProducer == null) &&
@@ -114,7 +118,7 @@ const MediaIconsBox = (props: Props) => {
     }
   }
   const handleMicClick = async () => {
-    const mediaTransport = getMediaTransport()
+    const mediaTransport = Network.instance.getTransport('media') as SocketWebRTCClientTransport
     if (await configureMediaTransports(mediaTransport, ['audio'])) {
       if (MediaStreams.instance?.camAudioProducer == null) await createCamAudioProducer(mediaTransport)
       else {
@@ -128,7 +132,7 @@ const MediaIconsBox = (props: Props) => {
   }
 
   const handleCamClick = async () => {
-    const mediaTransport = getMediaTransport()
+    const mediaTransport = Network.instance.getTransport('media') as SocketWebRTCClientTransport
     if (await configureMediaTransports(mediaTransport, ['video'])) {
       if (MediaStreams.instance?.camVideoProducer == null) await createCamVideoProducer(mediaTransport)
       else {

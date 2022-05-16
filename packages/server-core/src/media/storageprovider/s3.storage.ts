@@ -260,7 +260,7 @@ export class S3Provider implements StorageProviderInterface {
   }
 
   /**
-     * @param oldName
+   * @param oldName
    * @param oldPath
    * @param newName
    * @param newPath

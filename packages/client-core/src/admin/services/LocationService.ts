@@ -1,5 +1,5 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
 import { Location } from '@atlasfoundation/common/src/interfaces/Location'
 import { LocationType } from '@atlasfoundation/common/src/interfaces/LocationType'

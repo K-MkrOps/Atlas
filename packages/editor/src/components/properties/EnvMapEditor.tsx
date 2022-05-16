@@ -7,7 +7,10 @@ import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/Componen
 import { EnvmapComponent } from '@atlasfoundation/engine/src/scene/components/EnvmapComponent'
 import { ErrorComponent } from '@atlasfoundation/engine/src/scene/components/ErrorComponent'
 import { EnvMapSourceType, EnvMapTextureType } from '@atlasfoundation/engine/src/scene/constants/EnvMapEnum'
-import { deserializeEnvMap, SCENE_COMPONENT_ENVMAP } from '@atlasfoundation/engine/src/scene/functions/loaders/EnvMapFunctions'
+import {
+  deserializeEnvMap,
+  SCENE_COMPONENT_ENVMAP
+} from '@atlasfoundation/engine/src/scene/functions/loaders/EnvMapFunctions'
 
 import { setPropertyOnSelectionEntities } from '../../classes/History'
 import ColorInput from '../inputs/ColorInput'

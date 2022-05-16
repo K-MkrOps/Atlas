@@ -1,10 +1,13 @@
-import { Downgraded } from '@speigg/hookstate'
+import { Downgraded } from '@hoostate/core'
 import React, { memo, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import InfiniteScroll from 'react-infinite-scroller'
 
 import ConfirmModal from '@atlasfoundation/client-core/src/admin/common/ConfirmModal'
-import { FileBrowserService, useFileBrowserState } from '@atlasfoundation/client-core/src/common/services/FileBrowserService'
+import {
+  FileBrowserService,
+  useFileBrowserState
+} from '@atlasfoundation/client-core/src/common/services/FileBrowserService'
 import { ScenePrefabs } from '@atlasfoundation/engine/src/scene/functions/registerPrefabs'
 
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'

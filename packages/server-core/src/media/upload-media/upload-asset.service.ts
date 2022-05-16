@@ -2,7 +2,10 @@ import { Params } from '@feathersjs/feathers'
 import express from 'express'
 import multer from 'multer'
 
-import { AdminAssetUploadArgumentsType, AssetUploadType } from '@atlasfoundation/common/src/interfaces/UploadAssetInterface'
+import {
+  AdminAssetUploadArgumentsType,
+  AssetUploadType
+} from '@atlasfoundation/common/src/interfaces/UploadAssetInterface'
 
 import { Application } from '../../../declarations'
 import restrictUserRole from '../../hooks/restrict-user-role'

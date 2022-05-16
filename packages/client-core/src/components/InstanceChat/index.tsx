@@ -1,9 +1,12 @@
-import { useState } from '@speigg/hookstate'
+import { useState } from '@hoostate/core'
 import React, { useEffect } from 'react'
 
 import { useLocationInstanceConnectionState } from '@atlasfoundation/client-core/src/common/services/LocationInstanceConnectionService'
 import { ChatService, useChatState } from '@atlasfoundation/client-core/src/social/services/ChatService'
-import { getChatMessageSystem, removeMessageSystem } from '@atlasfoundation/client-core/src/social/services/utils/chatSystem'
+import {
+  getChatMessageSystem,
+  removeMessageSystem
+} from '@atlasfoundation/client-core/src/social/services/utils/chatSystem'
 import { useAuthState } from '@atlasfoundation/client-core/src/user/services/AuthService'
 import { Channel } from '@atlasfoundation/common/src/interfaces/Channel'
 import { isCommand } from '@atlasfoundation/engine/src/common/functions/commandHandler'

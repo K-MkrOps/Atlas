@@ -97,7 +97,9 @@ export const setupSocketFunctions = (transport: SocketWebRTCServerTransport) => 
 
     socket.on('disconnect', () => handleDisconnect(socket))
 
-    socket.on(MessageTypes.LeaveWorld.toString(), (data, callback) => handleLeaveWorld(socket, data, callback))
+    socket.on(MessageTypes.LeaveWorld.toString(), (data, callback) =>
+      handleLeaveWorld(transport, socket, data, callback)
+    )
 
     socket.on(MessageTypes.WebRTCTransportCreate.toString(), async (data: WebRtcTransportParams, callback) =>
       handleWebRtcTransportCreate(transport, socket, data, callback)
@@ -108,15 +110,15 @@ export const setupSocketFunctions = (transport: SocketWebRTCServerTransport) => 
     )
 
     socket.on(MessageTypes.WebRTCTransportConnect.toString(), async (data, callback) =>
-      handleWebRtcTransportConnect(socket, data, callback)
+      handleWebRtcTransportConnect(transport, socket, data, callback)
     )
 
     socket.on(MessageTypes.WebRTCTransportClose.toString(), async (data, callback) =>
-      handleWebRtcTransportClose(socket, data, callback)
+      handleWebRtcTransportClose(transport, socket, data, callback)
     )
 
     socket.on(MessageTypes.WebRTCCloseProducer.toString(), async (data, callback) =>
-      handleWebRtcCloseProducer(socket, data, callback)
+      handleWebRtcCloseProducer(transport, socket, data, callback)
     )
 
     socket.on(MessageTypes.WebRTCSendTrack.toString(), async (data, callback) =>
@@ -128,27 +130,27 @@ export const setupSocketFunctions = (transport: SocketWebRTCServerTransport) => 
     )
 
     socket.on(MessageTypes.WebRTCPauseConsumer.toString(), async (data, callback) =>
-      handleWebRtcPauseConsumer(socket, data, callback)
+      handleWebRtcPauseConsumer(transport, socket, data, callback)
     )
 
     socket.on(MessageTypes.WebRTCResumeConsumer.toString(), async (data, callback) =>
-      handleWebRtcResumeConsumer(socket, data, callback)
+      handleWebRtcResumeConsumer(transport, socket, data, callback)
     )
 
     socket.on(MessageTypes.WebRTCCloseConsumer.toString(), async (data, callback) =>
-      handleWebRtcCloseConsumer(socket, data, callback)
+      handleWebRtcCloseConsumer(transport, socket, data, callback)
     )
 
     socket.on(MessageTypes.WebRTCConsumerSetLayers.toString(), async (data, callback) =>
-      handleWebRtcConsumerSetLayers(socket, data, callback)
+      handleWebRtcConsumerSetLayers(transport, socket, data, callback)
     )
 
     socket.on(MessageTypes.WebRTCResumeProducer.toString(), async (data, callback) =>
-      handleWebRtcResumeProducer(socket, data, callback)
+      handleWebRtcResumeProducer(transport, socket, data, callback)
     )
 
     socket.on(MessageTypes.WebRTCPauseProducer.toString(), async (data, callback) =>
-      handleWebRtcPauseProducer(socket, data, callback)
+      handleWebRtcPauseProducer(transport, socket, data, callback)
     )
 
     socket.on(MessageTypes.WebRTCRequestNearbyUsers.toString(), async (data, callback) =>
@@ -156,7 +158,7 @@ export const setupSocketFunctions = (transport: SocketWebRTCServerTransport) => 
     )
 
     socket.on(MessageTypes.WebRTCRequestCurrentProducers.toString(), async (data, callback) =>
-      handleWebRtcRequestCurrentProducers(socket, data, callback)
+      handleWebRtcRequestCurrentProducers(transport, socket, data, callback)
     )
 
     socket.on(MessageTypes.InitializeRouter.toString(), async (data, callback) =>

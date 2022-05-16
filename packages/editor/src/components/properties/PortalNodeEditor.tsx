@@ -34,7 +34,7 @@ const euler = new Euler()
 /**
  * PortalNodeEditor provides the editor for properties of PortalNode.
  *
-* @type {class component}
+ * @type {class component}
  */
 export const PortalNodeEditor: EditorComponentType = (props) => {
   const [portals, setPortals] = useState<Array<{ value: string; label: string }>>([])
@@ -97,7 +97,7 @@ export const PortalNodeEditor: EditorComponentType = (props) => {
       {/* TODO */}
       {/* <InputGroup name="Cubemap Bake" label={t('editor:properties.portal.lbl-cubemapBake')}>
         <SelectInput
-          options={Engine.instance.scene.children
+          options={Engine.instance.currentWorld.scene.children
             .filter((obj: Object3D) => {
               return (obj as any).nodeName === CubemapBakeportalComponent.nodeName
             })

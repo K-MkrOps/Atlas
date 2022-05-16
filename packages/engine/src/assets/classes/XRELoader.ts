@@ -5,7 +5,11 @@ import { getComponent } from '@atlasfoundation/engine/src/ecs/functions/Componen
 import { useWorld } from '@atlasfoundation/engine/src/ecs/functions/SystemHooks'
 import { Object3DComponent } from '@atlasfoundation/engine/src/scene/components/Object3DComponent'
 import { gltfToSceneJson } from '@atlasfoundation/engine/src/scene/functions/GLTFConversion'
-import { loadECSData, loadSceneFromJSON, preCacheAssets } from '@atlasfoundation/engine/src/scene/functions/SceneLoading'
+import {
+  loadECSData,
+  loadSceneFromJSON,
+  preCacheAssets
+} from '@atlasfoundation/engine/src/scene/functions/SceneLoading'
 
 import { AssetLoader } from './AssetLoader'
 

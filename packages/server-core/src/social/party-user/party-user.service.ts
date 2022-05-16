@@ -23,7 +23,7 @@ export default (app: Application): void => {
   /**
    * An object for swagger documentation configiration
    *
-     */
+   */
   const event = new PartyUser(options, app)
   event.docs = partyUserDocs
 

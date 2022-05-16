@@ -56,12 +56,12 @@ export function reset() {
   // }
 
   // delete all what is left on scene
-  if (Engine.instance.scene) {
-    disposeScene(Engine.instance.scene)
-    Engine.instance.scene = null!
+  if (Engine.instance.currentWorld.scene) {
+    disposeScene(Engine.instance.currentWorld.scene)
+    Engine.instance.currentWorld.scene = null!
   }
 
-  Engine.instance.camera = null!
+  Engine.instance.currentWorld.camera = null!
 
   if (EngineRenderer.instance.renderer) {
     EngineRenderer.instance.renderer.clear(true, true, true)
@@ -72,8 +72,8 @@ export function reset() {
   AssetLoader.Cache.clear()
 
   dispatchAction(Engine.instance.store, EngineActions.initializeEngine({ initialised: false }))
-  Engine.instance.inputState.clear()
-  Engine.instance.prevInputState.clear()
+  Engine.instance.currentWorld.inputState.clear()
+  Engine.instance.currentWorld.prevInputState.clear()
 }
 
 export const unloadScene = async (world: World, removePersisted = false) => {
@@ -81,8 +81,8 @@ export const unloadScene = async (world: World, removePersisted = false) => {
 
   dispatchAction(Engine.instance.store, EngineActions.sceneUnloaded())
 
-  Engine.instance.scene.background = new Color('black')
-  Engine.instance.scene.environment = null
+  Engine.instance.currentWorld.scene.background = new Color('black')
+  Engine.instance.currentWorld.scene.environment = null
 
   isClient && configureEffectComposer()
 
@@ -120,7 +120,7 @@ export const unloadAllEntities = (world: World, removePersisted = false) => {
     entityNodesToRemove.forEach((node) => removeEntityNodeFromParent(node, world.entityTree))
   }
 
-  Engine.instance.scene.traverse((o: any) => {
+  Engine.instance.currentWorld.scene.traverse((o: any) => {
     if (!o.entity) return
     if (!entitiesToRemove.includes(o.entity)) return
 
@@ -141,6 +141,6 @@ export const unloadAllEntities = (world: World, removePersisted = false) => {
     sceneObjectsToRemove.push(o)
   })
 
-  sceneObjectsToRemove.forEach((o) => Engine.instance.scene.remove(o))
+  sceneObjectsToRemove.forEach((o) => Engine.instance.currentWorld.scene.remove(o))
   entitiesToRemove.forEach((entity) => removeEntity(entity, true))
 }

@@ -1,4 +1,4 @@
-import { createState, useState } from '@speigg/hookstate'
+import { createState, useState } from '@hoostate/core'
 
 import { AvatarInterface } from '@atlasfoundation/common/src/interfaces/AvatarInterface'
 import { AvatarResult } from '@atlasfoundation/common/src/interfaces/AvatarResult'

@@ -1,4 +1,4 @@
-import { createState, Downgraded, useState } from '@speigg/hookstate'
+import { createState, Downgraded, useState } from '@hoostate/core'
 
 import { store } from '../store'
 
@@ -12,9 +12,7 @@ export const accessStoredLocalState = () => state
 export const useStoredLocalState = () => useState(state) as any as typeof state
 
 if (typeof window !== 'undefined') {
-  const rawState = localStorage.getItem(
-    globalThis.process.env['VITE_LOCAL_STORAGE_KEY'] || 'atlas-client-store-key-v1'
-  )
+  const rawState = localStorage.getItem(globalThis.process.env['VITE_LOCAL_STORAGE_KEY'] || 'atlas-client-store-key-v1')
   if (rawState) {
     const newState = JSON.parse(rawState)
     //console.log(newState)

@@ -62,7 +62,7 @@ export function Collapsible({ label, open, children }) {
   /**
    * toggleCollapsed callback function used to handle toggle on collapse.
    *
-     * @type {styled component}
+   * @type {styled component}
    */
   const toggleCollapsed = useCallback(() => {
     setCollapsed((collapsed) => !collapsed)

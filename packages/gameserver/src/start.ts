@@ -5,7 +5,6 @@ import https from 'https'
 import psList from 'ps-list'
 
 import { pipe } from '@atlasfoundation/common/src/utils/pipe'
-import { Network } from '@atlasfoundation/engine/src/networking/classes/Network'
 import '@atlasfoundation/engine/src/patchEngineNode'
 import { Application } from '@atlasfoundation/server-core/declarations'
 import config from '@atlasfoundation/server-core/src/appconfig'
@@ -14,13 +13,12 @@ import {
   configureOpenAPI,
   configureRedis,
   configureSocketIO,
-  createFeathersExpressApp,
-  serverPipe
+  createFeathersExpressApp
 } from '@atlasfoundation/server-core/src/createApp'
-import logger from '@atlasfoundation/server-core/src/logger'
+import multiLogger from '@atlasfoundation/server-core/src/logger'
 
 import channels from './channels'
-import { ServerTransportHandler, SocketWebRTCServerTransport } from './SocketWebRTCServerTransport'
+import { SocketWebRTCServerTransport } from './SocketWebRTCServerTransport'
 
 // import preloadLocation from './preload-location'
 
@@ -33,7 +31,6 @@ process.on('unhandledRejection', (error, promise) => {
 })
 
 const onSocketIO = (app: Application) => {
-  Network.instance.transportHandler = new ServerTransportHandler()
   app.transport = new SocketWebRTCServerTransport(app)
   app.transport.initialize()
 }

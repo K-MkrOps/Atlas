@@ -1,6 +1,6 @@
 import { detect, detectOS } from 'detect-browser'
 import _ from 'lodash'
-import { AudioListener, PerspectiveCamera, Scene } from 'three'
+import { AudioListener, PerspectiveCamera } from 'three'
 
 import { addActionReceptor, dispatchAction, registerState } from '@atlasfoundation/hyperflux'
 import ActionFunctions from '@atlasfoundation/hyperflux/functions/ActionFunctions'
@@ -17,9 +17,9 @@ import { reset } from './ecs/functions/EngineFunctions'
 import { initSystems, SystemModuleType } from './ecs/functions/SystemFunctions'
 import { SystemUpdateType } from './ecs/functions/SystemUpdateType'
 import { removeClientInputListeners } from './input/functions/clientInputListeners'
+import { Network } from './networking/classes/Network'
 import { matchActionOnce } from './networking/functions/matchActionOnce'
 import { NetworkActionReceptor } from './networking/functions/NetworkActionReceptor'
-import { WorldState } from './networking/interfaces/WorldState'
 import { EngineRenderer } from './renderer/WebGLRendererSystem'
 import InfiniteGridHelper from './scene/classes/InfiniteGridHelper'
 import { ObjectLayers } from './scene/constants/ObjectLayers'
@@ -33,11 +33,11 @@ import { FontManager } from './xrui/classes/FontManager'
  */
 export const createEngine = () => {
   Engine.instance = new Engine()
+  Network.instance = new Network()
   Engine.instance.currentWorld = createWorld()
-  Engine.instance.scene = new Scene()
-  Engine.instance.scene.layers.set(ObjectLayers.Scene)
   EngineRenderer.instance = new EngineRenderer()
-  registerState(Engine.instance.currentWorld.store, WorldState)
+  if (isClient) EngineRenderer.instance.initialize()
+  registerState(Engine.instance.store, EngineState)
   addActionReceptor(Engine.instance.store, EngineEventReceptor)
 }
 
@@ -48,14 +48,15 @@ export const createEngine = () => {
  */
 export const initializeBrowser = () => {
   Engine.instance.publicPath = location.origin
-  Engine.instance.audioListener = new AudioListener()
-  Engine.instance.audioListener.context.resume()
-  Engine.instance.camera = new PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 10000)
-  Engine.instance.camera.add(Engine.instance.audioListener)
-  Engine.instance.camera.layers.disableAll()
-  Engine.instance.camera.layers.enable(ObjectLayers.Scene)
-  Engine.instance.camera.layers.enable(ObjectLayers.Avatar)
-  Engine.instance.camera.layers.enable(ObjectLayers.UI)
+  const world = Engine.instance.currentWorld
+  world.audioListener = new AudioListener()
+  world.audioListener.context.resume()
+  world.camera = new PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 10000)
+  world.camera.add(world.audioListener)
+  world.camera.layers.disableAll()
+  world.camera.layers.enable(ObjectLayers.Scene)
+  world.camera.layers.enable(ObjectLayers.Avatar)
+  world.camera.layers.enable(ObjectLayers.UI)
 
   InfiniteGridHelper.instance = new InfiniteGridHelper()
   Engine.instance.scene.add(InfiniteGridHelper.instance)

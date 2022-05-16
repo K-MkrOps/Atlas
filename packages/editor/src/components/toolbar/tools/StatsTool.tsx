@@ -43,7 +43,7 @@ const StatsTool = () => {
   /**
    * Rendering stats view in ViewportToolbar and shows when click on toggleStats
    *
-     */
+   */
   return (
     <>
       <div className={styles.toolbarInputGroup + ' ' + styles.playButtonContainer} id="stats">

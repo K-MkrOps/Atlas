@@ -189,7 +189,7 @@ export class LocalStorage implements StorageProviderInterface {
   }
 
   /**
-     * @param relativeDirPath
+   * @param relativeDirPath
    * @returns
    */
   listFolderContent = async (relativeDirPath: string): Promise<FileContentType[]> => {
@@ -203,7 +203,7 @@ export class LocalStorage implements StorageProviderInterface {
   }
 
   /**
-     * @param oldName
+   * @param oldName
    * @param oldPath
    * @param newName
    * @param newPath
