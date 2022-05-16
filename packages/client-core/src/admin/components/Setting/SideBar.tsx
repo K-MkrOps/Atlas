@@ -18,7 +18,6 @@ import styles from '../../styles/settings.module.scss'
 const settings = ({
   handleAuth,
   handleAws,
-  handleChargebee,
   handleRedis,
   handleEmail,
   handleClient,
@@ -32,7 +31,6 @@ const settings = ({
   gameFocused,
   clientFocused,
   authFocused,
-  chargebeeFocused,
   redisFocused,
   analyticsFocused,
   projectFocused,
@@ -146,19 +144,6 @@ const settings = ({
             </Avatar>
           </ListItemAvatar>
           <ListItemText primary="Aws" />
-        </ListItem>
-        <Divider variant="inset" component="li" sx={{ marginLeft: '0px' }} />
-        <ListItem
-          button
-          onClick={handleChargebee}
-          className={chargebeeFocused ? `${styles.focused}` : `${styles.notFocused}`}
-        >
-          <ListItemAvatar>
-            <Avatar style={{ background: '#5e5a4d' }}>
-              <Icon icon="logos:chargebee-icon" />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary="Chargebee" />
         </ListItem>
         <Divider variant="inset" component="li" sx={{ marginLeft: '0px' }} />
         <ListItem button onClick={handleRedis} className={redisFocused ? `${styles.focused}` : `${styles.notFocused}`}>

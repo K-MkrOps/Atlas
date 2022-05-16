@@ -1,5 +1,4 @@
 import appRootPath from 'app-root-path'
-import * as chargebeeInst from 'chargebee'
 import dotenv from 'dotenv-flow'
 import path from 'path'
 import url from 'url'
@@ -289,11 +288,6 @@ const aws = {
   }
 }
 
-const chargebee = {
-  url: process.env.CHARGEBEE_SITE + '.chargebee.com' || 'dummy.not-chargebee.com',
-  apiKey: process.env.CHARGEBEE_API_KEY!
-}
-
 const redis = {
   enabled: process.env.REDIS_ENABLED === 'true',
   address: process.env.REDIS_ADDRESS!,
@@ -321,7 +315,6 @@ const config = {
   analytics,
   authentication,
   aws,
-  chargebee,
   client,
   db,
   email,
@@ -338,10 +331,5 @@ const config = {
   noSSL: process.env.NOSSL === 'true',
   localBuild: process.env.VITE_LOCAL_BUILD === 'true'
 }
-
-chargebeeInst.configure({
-  site: process.env.CHARGEBEE_SITE!,
-  api_key: config.chargebee.apiKey
-})
 
 export default config

@@ -256,35 +256,6 @@ export const updateAppConfig = async (): Promise<void> => {
     })
   promises.push(promisePromise)
 
-  const chargebeeSetting = sequelizeClient.define('chargebeeSetting', {
-    url: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    apiKey: {
-      type: DataTypes.STRING,
-      allowNull: true
-    }
-  })
-  const chargebeeSettingPromise = chargebeeSetting
-    .findAll()
-    .then(([dbChargebee]) => {
-      const dbChargebeeConfig = dbChargebee && {
-        url: dbChargebee.url,
-        apiKey: dbChargebee.apiKey
-      }
-      if (dbChargebeeConfig) {
-        appConfig.chargebee = {
-          ...appConfig.chargebee,
-          ...dbChargebeeConfig
-        }
-      }
-    })
-    .catch((e) => {
-      logger.error(e, `[updateAppConfig]: Failed to read chargebeeSetting: ${e.message}`)
-    })
-  promises.push(chargebeeSettingPromise)
-
   const clientSetting = sequelizeClient.define('clientSetting', {
     logo: {
       type: DataTypes.STRING,
