@@ -1,5 +1,5 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, none, useState } from '@hoostate/core'
+import { createState, none, useState } from '@hookstate/core'
 
 import { Channel } from '@atlasfoundation/common/src/interfaces/Channel'
 import { Group } from '@atlasfoundation/common/src/interfaces/Group'

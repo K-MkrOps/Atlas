@@ -1,4 +1,4 @@
-import { createState } from '@hoostate/core'
+import { createState } from '@hookstate/core'
 import { Object3D } from 'three'
 
 import { ComponentJson } from '@atlasfoundation/common/src/interfaces/SceneInterface'

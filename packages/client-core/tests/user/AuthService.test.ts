@@ -1,4 +1,4 @@
-import { createState, Downgraded } from '@hoostate/core'
+import { createState, Downgraded } from '@hookstate/core'
 import assert from 'assert'
 
 import { AuthUserSeed } from '@atlasfoundation/common/src/interfaces/AuthUser'

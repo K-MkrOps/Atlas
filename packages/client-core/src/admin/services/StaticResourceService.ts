@@ -1,4 +1,4 @@
-import { createState, useState } from '@hoostate/core'
+import { createState, useState } from '@hookstate/core'
 
 import { StaticResource } from '@atlasfoundation/common/src/interfaces/StaticResource'
 import { StaticResourceResult } from '@atlasfoundation/common/src/interfaces/StaticResourceResult'

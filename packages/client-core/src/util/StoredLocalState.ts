@@ -1,4 +1,4 @@
-import { createState, Downgraded, useState } from '@hoostate/core'
+import { createState, Downgraded, useState } from '@hookstate/core'
 
 import { store } from '../store'
 

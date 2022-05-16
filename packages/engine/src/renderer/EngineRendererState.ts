@@ -1,4 +1,4 @@
-import { createState, useState } from '@hoostate/core'
+import { createState, useState } from '@hookstate/core'
 
 import { isIOS } from '@atlasfoundation/common/src/utils/isIOS'
 import { dispatchAction } from '@atlasfoundation/hyperflux'

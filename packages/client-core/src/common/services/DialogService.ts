@@ -1,4 +1,4 @@
-import { createState, useState } from '@hoostate/core'
+import { createState, useState } from '@hookstate/core'
 
 import { DialogSeed } from '@atlasfoundation/common/src/interfaces/Dialog'
 import { Dialog } from '@atlasfoundation/common/src/interfaces/Dialog'

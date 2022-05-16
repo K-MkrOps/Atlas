@@ -1,5 +1,5 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, useState } from '@hoostate/core'
+import { createState, useState } from '@hookstate/core'
 
 import { AdminBot, CreateBotAsAdmin } from '@atlasfoundation/common/src/interfaces/AdminBot'
 

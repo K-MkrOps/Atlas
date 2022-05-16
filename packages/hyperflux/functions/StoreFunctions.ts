@@ -1,4 +1,4 @@
-import { State } from '@hoostate/core'
+import { State } from '@hookstate/core'
 
 import { Action, ActionReceptor } from './ActionFunctions'
 

@@ -1,4 +1,4 @@
-import { createState, useState } from '@hoostate/core'
+import { createState, useState } from '@hookstate/core'
 
 import { AlertService } from '../../common/services/AlertService'
 import { useDispatch } from '../../store'

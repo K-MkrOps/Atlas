@@ -1,4 +1,4 @@
-import { createState, useState } from '@hoostate/core'
+import { createState, useState } from '@hookstate/core'
 
 import { ChannelType } from '@atlasfoundation/common/src/interfaces/Channel'
 import { InstanceServerProvisionResult } from '@atlasfoundation/common/src/interfaces/InstanceServerProvisionResult'

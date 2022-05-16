@@ -1,4 +1,4 @@
-import { createState, useState } from '@hoostate/core'
+import { createState, useState } from '@hookstate/core'
 
 import { NearbyUser } from '@atlasfoundation/engine/src/networking/functions/getNearbyUsers'
 import { MediaStreams } from '@atlasfoundation/engine/src/networking/systems/MediaStreamSystem'

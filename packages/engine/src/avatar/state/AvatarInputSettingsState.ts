@@ -1,4 +1,4 @@
-import { createState, useState } from '@hoostate/core'
+import { createState, useState } from '@hookstate/core'
 
 import { XR_FOLLOW_MODE, XR_ROTATION_MODE } from '@atlasfoundation/engine/src/xr/types/XRUserSettings'
 

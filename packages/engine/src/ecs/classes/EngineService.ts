@@ -1,4 +1,4 @@
-import { createState, useState } from '@hoostate/core'
+import { createState, useState } from '@hookstate/core'
 
 import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'
 import { defineAction } from '@atlasfoundation/hyperflux'

@@ -1,5 +1,5 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, Downgraded, useState } from '@hoostate/core'
+import { createState, Downgraded, useState } from '@hookstate/core'
 // TODO: Decouple this
 // import { endVideoChat, leave } from '@atlasfoundation/engine/src/networking/functions/SocketWebRTCClientFunctions';
 import axios from 'axios'

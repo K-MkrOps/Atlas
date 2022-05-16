@@ -1,4 +1,4 @@
-import { createState } from '@hoostate/core'
+import { createState } from '@hookstate/core'
 import React, { useEffect, useState } from 'react'
 
 import { useXRUIState } from '@atlasfoundation/engine/src/xrui/functions/useXRUIState'

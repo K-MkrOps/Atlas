@@ -1,4 +1,4 @@
-import { useState } from '@hoostate/core'
+import { useState } from '@hookstate/core'
 import React, { useEffect } from 'react'
 
 import { useLocationInstanceConnectionState } from '@atlasfoundation/client-core/src/common/services/LocationInstanceConnectionService'

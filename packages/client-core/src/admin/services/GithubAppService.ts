@@ -1,4 +1,4 @@
-import { createState, useState } from '@hoostate/core'
+import { createState, useState } from '@hookstate/core'
 
 import { GithubAppInterface } from '@atlasfoundation/common/src/interfaces/GithubAppInterface'
 

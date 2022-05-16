@@ -1,4 +1,4 @@
-import { none } from '@hoostate/core'
+import { none } from '@hookstate/core'
 import matches from 'ts-matches'
 
 import { UserId } from '@atlasfoundation/common/src/interfaces/UserId'

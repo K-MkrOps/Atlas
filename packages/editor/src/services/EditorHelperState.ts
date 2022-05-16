@@ -1,4 +1,4 @@
-import { createState, useState } from '@hoostate/core'
+import { createState, useState } from '@hookstate/core'
 
 import { store } from '@atlasfoundation/client-core/src/store'
 import { ClientStorage } from '@atlasfoundation/engine/src/common/classes/ClientStorage'

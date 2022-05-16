@@ -1,4 +1,4 @@
-import { createState, useState } from '@hoostate/core'
+import { createState, useState } from '@hookstate/core'
 
 import { UserSeed } from '@atlasfoundation/common/src/interfaces/User'
 import { User } from '@atlasfoundation/common/src/interfaces/User'

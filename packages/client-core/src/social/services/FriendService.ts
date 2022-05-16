@@ -1,5 +1,5 @@
 import { Paginated } from '@feathersjs/feathers'
-import { createState, none, useState } from '@hoostate/core'
+import { createState, none, useState } from '@hookstate/core'
 import _ from 'lodash'
 
 import { User } from '@atlasfoundation/common/src/interfaces/User'

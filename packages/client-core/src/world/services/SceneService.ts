@@ -1,4 +1,4 @@
-import { createState, useState } from '@hoostate/core'
+import { createState, useState } from '@hookstate/core'
 
 import { SceneData } from '@atlasfoundation/common/src/interfaces/SceneInterface'
 

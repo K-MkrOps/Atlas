@@ -1,4 +1,4 @@
-import { createState, useState } from '@hoostate/core'
+import { createState, useState } from '@hookstate/core'
 
 import { CreateGroup, Group } from '@atlasfoundation/common/src/interfaces/Group'
 import { GroupResult } from '@atlasfoundation/common/src/interfaces/GroupResult'
